@@ -9,6 +9,8 @@ import UIKit
 
 protocol AddTextDelegate: AnyObject {
     func addText(text: String, font: UIFont)
+    func colorValue(color:String)
+    func gradientValue(index: Int)
 }
 
 class TextEditView: UIView {
@@ -19,7 +21,6 @@ class TextEditView: UIView {
     let selectedBtIndex = 1
     
     var plistArray: NSArray!
-    var plistArray1: NSArray!
     var plistAttayForTextEditOption: NSArray!
     var btnScrollView: UIScrollView!
     var selectedIndexView: UIView!
@@ -326,15 +327,15 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let font = UIFont(name: arrayForFont[indexPath.row] as! String, size: 15.0) ?? UIFont.systemFont(ofSize: 15)
-        delegateForText?.addText(text: "Add Your Text", font: font)
+        if currentOption.rawValue == TextEditingOption.Color.rawValue {
+            
+            if let colorString = plistArray[indexPath.row] as? String {
+                delegateForText?.colorValue(color: colorString)
+            }
+            
+        }
         
-//        let tempArray = self.getStickerArray(index: currentSelectedSticker)
-//        let filename = tempArray[indexPath.row]
-//        
-//        if let value  = plistArray[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
-//            let imagePath = "\(value)/\(filename)"
-//            self.delegateForSticker?.sendSticker(sticker: imagePath)
-//        }
+        
+ 
     }
 }

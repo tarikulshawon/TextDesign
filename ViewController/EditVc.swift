@@ -47,6 +47,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var lbl3: UILabel!
     
     @IBOutlet weak var transParentView: UIImageView!
+    var currentTextStickerView: TextStickerContainerView?
     var imageInfoObj = ImageInfoData()
     weak var delegateFor: callDelegate?
     var stickerObjList = [StickerValueObj]()
@@ -582,10 +583,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             if self.currentlyActiveIndex != BtnNameInt.Adjust.rawValue {
                 bottomSpaceForAdjust.constant = -1000
             }
-            if self.currentlyActiveIndex != BtnNameInt.Stickers.rawValue {
+            if self.currentlyActiveIndex != BtnNameInt.Graphics.rawValue {
                 bottomSpaceFoSticker.constant = -1000
             }
-            if self.currentlyActiveIndex != BtnNameInt.Draw.rawValue {
+            if self.currentlyActiveIndex != BtnNameInt.Quotes.rawValue {
                 bottomSpaceForDrawer.constant = -1000
             }
             
@@ -607,10 +608,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 if self.currentlyActiveIndex == BtnNameInt.Adjust.rawValue {
                     bottomSpaceForAdjust.constant = 0
                 }
-                if self.currentlyActiveIndex == BtnNameInt.Stickers.rawValue {
+                if self.currentlyActiveIndex == BtnNameInt.Graphics.rawValue {
                     bottomSpaceFoSticker.constant = 0
                 }
-                if self.currentlyActiveIndex == BtnNameInt.Draw.rawValue {
+                if self.currentlyActiveIndex == BtnNameInt.Quotes.rawValue {
                     bottomSpaceForDrawer.constant = 0
                 }
                 if self.currentlyActiveIndex == BtnNameInt.Overlay.rawValue {
@@ -716,22 +717,22 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 }
                 
             }
-            if btnValue == BtnName.Stickers.rawValue {
+            if btnValue == BtnName.Graphics.rawValue {
                 let p = self.bottomSpaceFoSticker.constant < 0 ? 0 : -1000
                 
                 if p == 0 {
-                    currentlyActiveIndex = BtnNameInt.Stickers.rawValue
+                    currentlyActiveIndex = BtnNameInt.Graphics.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }
                 
             }
             
-            if btnValue == BtnName.Draw.rawValue {
+            if btnValue == BtnName.Quotes.rawValue {
                 let p = self.bottomSpaceForDrawer.constant < 0 ? 0 : -1000
                 
                 if p == 0 {
-                    currentlyActiveIndex = BtnNameInt.Draw.rawValue
+                    currentlyActiveIndex = BtnNameInt.Quotes.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }
@@ -775,6 +776,27 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    
+    func gradientValue(index: Int) {
+        
+        if let objArray = plistArray1[index] as? NSArray {
+            var allcolors: [CGColor] = []
+            for item in objArray {
+                let color = getColor(colorString: item as? String ?? "")
+                allcolors.append(color.cgColor)
+            }
+            
+            let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+            currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: uimage)
+        }
+        
+       
+    }
+    
+    func colorValue(color: String) {
+       currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
+    }
+    
     func addText(text: String, font: UIFont) {
         print("[AddText] delegate called")
         let frame = CGRect(x: 0, y: 0, width: 160, height: 200)
@@ -804,7 +826,8 @@ extension EditVc: TextStickerContainerViewDelegate {
     }
     
     func setCurrentTextStickerView(textStickerContainerView: TextStickerContainerView) {
-        // TODO
+         currentTextStickerView = textStickerContainerView
+        
     }
     
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {

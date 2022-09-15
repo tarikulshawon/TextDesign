@@ -21,13 +21,14 @@ var unselectedColor = UIColor(red: 152.0/255.0, green: 152.0/255.0, blue: 152.0/
 var cameraAccesMessge = "To make Live Photos, the app needs to access the Camera"
 var galleryAccessMessge = "To make Live Photos from videos the app needs to access the gallery"
 var arrayForFont: NSArray!
+var plistArray1: NSArray!
 
 
 
 enum BtnName:String {
     case Texts
-    case Stickers
-    case Draw
+    case Graphics
+    case Quotes
     case Adjust
     case Filter
     case Overlay
@@ -37,8 +38,8 @@ enum BtnName:String {
 
 enum BtnNameInt:Int {
     case Texts
-    case Stickers
-    case Draw
+    case Graphics
+    case Quotes
     case Adjust
     case Filter
     case Overlay
