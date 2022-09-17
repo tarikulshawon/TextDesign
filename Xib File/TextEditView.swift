@@ -13,6 +13,7 @@ protocol AddTextDelegate: AnyObject {
     func gradientValue(index: Int)
     func sendFonrIndex(index: Int)
     func sendTextureIndex(index: Int)
+    func addText()
 }
 
 class TextEditView: UIView {
@@ -172,10 +173,17 @@ class TextEditView: UIView {
             
         })
         
+        if currentOption.rawValue == TextEditingOption.AddText.rawValue {
+            delegateForText?.addText()
+            
+        }
+        
         if sender.tag == 700 {
             btn?.setTitleColor(unselectedColor, for: .normal)
             var btn1 = self.btnScrollView.viewWithTag(701) as? UIButton
             self.buttonAction(sender: btn1)
+            
+            
         }
         
     }

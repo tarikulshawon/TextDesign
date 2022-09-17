@@ -778,6 +778,10 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func addText() {
+        self.addText(text: "Add Text to Edit", font: UIFont.systemFont(ofSize: 15.0))
+    }
+    
     func sendTextureIndex(index: Int) {
         var value =  "Texture" + String(index) + ".png"
         currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
