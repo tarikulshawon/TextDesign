@@ -4,26 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MetalPetal.xcscheme_^#shared#^_</key>
+		<key>MetalPetal.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-TextArt-TextArtUITests.xcscheme_^#shared#^_</key>
+		<key>Pods-TextArt-TextArtUITests.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Pods-TextArt.xcscheme_^#shared#^_</key>
+		<key>Pods-TextArt.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-TextArtTests.xcscheme_^#shared#^_</key>
+		<key>Pods-TextArtTests.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>SwiftHSVColorPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>
