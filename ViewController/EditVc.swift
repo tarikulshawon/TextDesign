@@ -688,6 +688,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         // cell?.iconImv.tintColor = UIColor.red
         if let btnValue = cell?.iconLabel.text {
             if btnValue == BtnName.Texts.rawValue {
+                self.addText(text: "ADD TEXT TO EDIT", font: UIFont.systemFont(ofSize: 15.0))
                 let p = self.bottomSpaceOfFontLoaderView.constant < 0 ? 0 : -1000
                 
                 if p == 0 {
@@ -776,6 +777,15 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func sendFonrIndex(index: Int) {
+        
+        print(currentTextStickerView?.textStickerView?.fontSize)
+        currentTextStickerView?.textStickerView.font =  UIFont(name: arrayForFont[index] as! String, size: (currentTextStickerView?.textStickerView?.fontSize)!)
+        currentTextStickerView?.currentFontIndex = index
+        
+        
+    }
+    
     
     func gradientValue(index: Int) {
         
@@ -788,6 +798,7 @@ extension EditVc: AddTextDelegate {
             
             let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
             currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: uimage)
+            currentTextStickerView?.currentGradientIndex = index
         }
         
        
@@ -795,6 +806,7 @@ extension EditVc: AddTextDelegate {
     
     func colorValue(color: String) {
        currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
+       currentTextStickerView?.currentColorSting = color
     }
     
     func addText(text: String, font: UIFont) {
@@ -803,6 +815,7 @@ extension EditVc: AddTextDelegate {
         let sticker = TextStickerContainerView(frame: frame)
         sticker.tag = tagValue + 7 // TODO: implement in alternative way
         sticker.delegate = self
+        sticker.currentFontIndex = -1
         
         sticker.pathName = font.fontName //
         sticker.pathType = "TEXT"
@@ -817,6 +830,7 @@ extension EditVc: AddTextDelegate {
         screenSortView.addSubview(sticker)
         screenSortView.clipsToBounds = true
         tagValue = tagValue + 1
+        currentTextStickerView = sticker
     }
 }
 

@@ -15,6 +15,10 @@ protocol TextStickerContainerViewDelegate: NSObject {
 }
 
 class TextStickerContainerView: UIView {
+    var currentFontIndex = -1
+    var currentColorSting = ""
+    var fontSize = 15.0
+    var currentGradientIndex = -1
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {
         let p = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture))
         p.delegate = self
