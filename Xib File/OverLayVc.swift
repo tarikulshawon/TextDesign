@@ -127,7 +127,7 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
             
             cell.gradietImv.image =  UIImage(named: "OverlayThumb" + "\(indexPath.row - 1)"  + ".jpg")
         }
-        cell.gradietImv.layer.cornerRadius  = 15.0
+       // cell.gradietImv.layer.cornerRadius  = 15.0
         return cell
         
        

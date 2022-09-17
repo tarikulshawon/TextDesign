@@ -83,12 +83,8 @@ class TextEditView: UIView {
     
     @objc
     func buttonAction(sender: UIButton!) {
-        if sender.tag == 700 {
-            self.tempViww.backgroundColor = UIColor.clear
-        }
-        else {
-            self.tempViww.backgroundColor = titleColor
-        }
+       
+        self.tempViww.backgroundColor = titleColor
         let selectedOption = plistAttayForTextEditOption[sender.tag - 700] as? String
         switch(selectedOption) {
         case  TextEditingOption.AddText.rawValue:
@@ -203,12 +199,7 @@ class TextEditView: UIView {
             filterButton.frame = CGRect(x: xCoord, y: yCoord, width: buttonWidth, height: buttonHeight)
             filterButton.tag = 700 + i
             filterButton.backgroundColor = UIColor.clear
-            
-            if i == 0 {
-                filterButton.setImage(UIImage(named: "AddNewText"), for: .normal)
-                tempViww.backgroundColor = UIColor.clear
-            }
-            if let value = plistAttayForTextEditOption[i] as? String ,i > 0 {
+            if let value = plistAttayForTextEditOption[i] as? String{
                 filterButton.setTitle(value, for: .normal)
             }
             if i == selectedBtIndex {

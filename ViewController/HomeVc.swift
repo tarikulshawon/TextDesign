@@ -61,7 +61,6 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         let screenHeight = collectionViewHolder.frame.height
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         collectionViewHolder.addSubview(scrollView)
-        scrollView.backgroundColor = UIColor.red
 
         firstVc = FirstVc.loadFromXib()
         firstVc.frame = CGRect(x: 0,y: 0,width: screenWidth,height: screenHeight)
