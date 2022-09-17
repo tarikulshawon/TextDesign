@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
+	<string>Bubbles</string>
+	<string>Paper</string>
+	<string>FastFood</string>
+	<string>Marketing</string>
+	<string>Sale</string>
+	<string>Transport</string>
 	<string>Arrows</string>
 	<string>Comic</string>
 	<string>Cute</string>

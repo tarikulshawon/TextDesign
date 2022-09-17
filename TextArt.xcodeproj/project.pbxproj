@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
+		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
+		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
+		01B0DFD628D650A000081369 /* Sale in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD528D650A000081369 /* Sale */; };
+		01B0DFD828D650A900081369 /* Transport in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD728D650A900081369 /* Transport */; };
+		01B0DFDA28D650FF00081369 /* Marketing in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD928D650FF00081369 /* Marketing */; };
 		01BF245A69A207B6269021C1 /* Pods_TextArt_TextArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F47C02AFE36153731A9995 /* Pods_TextArt_TextArtUITests.framework */; };
 		01FD5AC728AE521800CBF70F /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5AC628AE521800CBF70F /* AddTextViewController.swift */; };
 		01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5AC928AE52AE00CBF70F /* TextStickerView.swift */; };
@@ -212,6 +218,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
+		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
+		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
+		01B0DFD528D650A000081369 /* Sale */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sale; sourceTree = "<group>"; };
+		01B0DFD728D650A900081369 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Transport; sourceTree = "<group>"; };
+		01B0DFD928D650FF00081369 /* Marketing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Marketing; sourceTree = "<group>"; };
 		01FD5AC628AE521800CBF70F /* AddTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextViewController.swift; sourceTree = "<group>"; };
 		01FD5AC928AE52AE00CBF70F /* TextStickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStickerView.swift; sourceTree = "<group>"; };
 		01FD5ACA28AE52AE00CBF70F /* TextStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStickerContainerView.swift; sourceTree = "<group>"; };
@@ -660,6 +672,12 @@
 		39CC0E2C28A4AF3F00DF1C64 /* Sticker */ = {
 			isa = PBXGroup;
 			children = (
+				01B0DFD928D650FF00081369 /* Marketing */,
+				01B0DFD728D650A900081369 /* Transport */,
+				01B0DFD528D650A000081369 /* Sale */,
+				01B0DFD328D6508000081369 /* FastFood */,
+				01B0DFD128D6506B00081369 /* Paper */,
+				01B0DFCF28D6506400081369 /* Bubbles */,
 				39CC0E3028A4AF6500DF1C64 /* Arrows */,
 				39CC0E2F28A4AF6500DF1C64 /* Comic */,
 				39CC0E3128A4AF6500DF1C64 /* Cute */,
@@ -1009,6 +1027,7 @@
 				394933C228AB34B9003E8D67 /* OverlayThumb1.jpg in Resources */,
 				39CC0E2528A4AB5900DF1C64 /* DrawVc.xib in Resources */,
 				394933C428AB34B9003E8D67 /* OverlayThumb43.jpg in Resources */,
+				01B0DFD028D6506400081369 /* Bubbles in Resources */,
 				3949335228AB33EF003E8D67 /* FilterThumb19.jpg in Resources */,
 				39F8226D28A36115008925EF /* SecondVc.xib in Resources */,
 				394933DE28AB34B9003E8D67 /* OverlayThumb30.jpg in Resources */,
@@ -1021,8 +1040,10 @@
 				39F8228628A36596008925EF /* ColorCell.xib in Resources */,
 				3949335A28AB33EF003E8D67 /* FilterThumb23.jpg in Resources */,
 				394933DA28AB34B9003E8D67 /* OverlayThumb19.jpg in Resources */,
+				01B0DFD628D650A000081369 /* Sale in Resources */,
 				394933BF28AB34B9003E8D67 /* OverlayThumb0.jpg in Resources */,
 				3949338028AB347F003E8D67 /* Texture4.png in Resources */,
+				01B0DFD228D6506B00081369 /* Paper in Resources */,
 				3949335B28AB33EF003E8D67 /* FilterThumb22.jpg in Resources */,
 				39CC0E3728A4AF6600DF1C64 /* Cute in Resources */,
 				394933C728AB34B9003E8D67 /* OverlayThumb6.jpg in Resources */,
@@ -1048,6 +1069,7 @@
 				3949334D28AB33EF003E8D67 /* FilterThumb7.jpg in Resources */,
 				3949338128AB347F003E8D67 /* Texture13.png in Resources */,
 				39CC0E3628A4AF6600DF1C64 /* Arrows in Resources */,
+				01B0DFD428D6508000081369 /* FastFood in Resources */,
 				39CC0DFC28A4A3B900DF1C64 /* Polygon.png in Resources */,
 				3949335328AB33EF003E8D67 /* FilterThumb25.jpg in Resources */,
 				3949334E28AB33EF003E8D67 /* FilterThumb17.jpg in Resources */,
@@ -1080,6 +1102,7 @@
 				3949337328AB347F003E8D67 /* Texture20.png in Resources */,
 				3949337F28AB347F003E8D67 /* Texture17.png in Resources */,
 				3949338428AB347F003E8D67 /* Texture12.png in Resources */,
+				01B0DFD828D650A900081369 /* Transport in Resources */,
 				394933EA28AB34B9003E8D67 /* OverlayThumb38.jpg in Resources */,
 				394933CB28AB34B9003E8D67 /* OverlayThumb7.jpg in Resources */,
 				39CC0E1C28A4AADE00DF1C64 /* StickerVc.xib in Resources */,
@@ -1117,6 +1140,7 @@
 				39CC0DFF28A4A3B900DF1C64 /* Premium.png in Resources */,
 				39CC0E3428A4AF6600DF1C64 /* Summer in Resources */,
 				394933C828AB34B9003E8D67 /* OverlayThumb52.jpg in Resources */,
+				01B0DFDA28D650FF00081369 /* Marketing in Resources */,
 				394933C028AB34B9003E8D67 /* OverlayThumb40.jpg in Resources */,
 				3949337828AB347F003E8D67 /* Texture18.png in Resources */,
 				394933DF28AB34B9003E8D67 /* OverlayThumb18.jpg in Resources */,
