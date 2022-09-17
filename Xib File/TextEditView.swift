@@ -12,6 +12,7 @@ protocol AddTextDelegate: AnyObject {
     func colorValue(color:String)
     func gradientValue(index: Int)
     func sendFonrIndex(index: Int)
+    func sendTextureIndex(index: Int)
 }
 
 class TextEditView: UIView {
@@ -340,6 +341,11 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         if currentOption.rawValue == TextEditingOption.Gradient.rawValue {
             delegateForText?.gradientValue(index: indexPath.row)
             
+        }
+        
+        else if currentOption.rawValue == TextEditingOption.Texture.rawValue {
+            
+            delegateForText?.sendTextureIndex(index: indexPath.row)
         }
         
         

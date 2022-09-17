@@ -688,11 +688,12 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         // cell?.iconImv.tintColor = UIColor.red
         if let btnValue = cell?.iconLabel.text {
             if btnValue == BtnName.Texts.rawValue {
-                self.addText(text: "ADD TEXT TO EDIT", font: UIFont.systemFont(ofSize: 15.0))
+               
                 let p = self.bottomSpaceOfFontLoaderView.constant < 0 ? 0 : -1000
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameInt.Texts.rawValue
+                    self.addText(text: "ADD TEXT TO EDIT", font: UIFont.systemFont(ofSize: 15.0))
                 } else {
                     currentlyActiveIndex = -1
                 }
@@ -777,9 +778,16 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func sendTextureIndex(index: Int) {
+        var value =  "Texture" + String(index) + ".png"
+        currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
+        currentTextStickerView?.currentGradientIndex = index
+        currentTextStickerView?.currentColorSting = ""
+        currentTextStickerView?.currentGradientIndex = -1
+    }
+    
     func sendFonrIndex(index: Int) {
         
-        print(currentTextStickerView?.textStickerView?.fontSize)
         currentTextStickerView?.textStickerView.font =  UIFont(name: arrayForFont[index] as! String, size: (currentTextStickerView?.textStickerView?.fontSize)!)
         currentTextStickerView?.currentFontIndex = index
         
@@ -799,6 +807,8 @@ extension EditVc: AddTextDelegate {
             let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
             currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: uimage)
             currentTextStickerView?.currentGradientIndex = index
+            currentTextStickerView?.currentColorSting = ""
+            currentTextStickerView?.currentTextureIndex = -1
         }
         
        
