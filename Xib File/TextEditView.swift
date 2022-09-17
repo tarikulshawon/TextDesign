@@ -149,7 +149,8 @@ class TextEditView: UIView {
             let btn = self.btnScrollView.viewWithTag(i+700) as? UIButton
             btn?.setTitleColor(unselectedColor, for: .normal)
         }
-        
+        var btn = self.btnScrollView.viewWithTag(sender.tag) as? UIButton
+
         UIView.animate(withDuration: 0.2, animations: {
             var value = CGFloat (sender.tag)
             sender?.setTitleColor(UIColor.white, for: .normal)
@@ -161,8 +162,6 @@ class TextEditView: UIView {
         }, completion: {_ in
             
             
-            var btn = self.btnScrollView.viewWithTag(sender.tag) as? UIButton
-            btn?.setTitleColor(UIColor.white, for: .normal)
             
             DispatchQueue.main.async {
                 self.collectionViewForTextControls.reloadData()
@@ -170,6 +169,12 @@ class TextEditView: UIView {
             
             
         })
+        
+        if sender.tag == 700 {
+            btn?.setTitleColor(unselectedColor, for: .normal)
+            var btn1 = self.btnScrollView.viewWithTag(701) as? UIButton
+            self.buttonAction(sender: btn1)
+        }
         
     }
     func stickersScrollContents() {
@@ -317,12 +322,17 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        print("hola")
         if currentOption.rawValue == TextEditingOption.Color.rawValue {
             
             if let colorString = plistArray[indexPath.row] as? String {
                 delegateForText?.colorValue(color: colorString)
             }
+            
+        }
+        
+        if currentOption.rawValue == TextEditingOption.AddText.rawValue {
+            
             
         }
         

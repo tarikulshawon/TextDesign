@@ -6,10 +6,10 @@
 	<string>Fonts</string>
 	<string>Color</string>
 	<string>Gradient</string>
+	<string>Texture</string>
 	<string>Shadow</string>
 	<string>Opacity</string>
 	<string>Align</string>
 	<string>Rotate</string>
-	<string>Texture</string>
 </array>
 </plist>
