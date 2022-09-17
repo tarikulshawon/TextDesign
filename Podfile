@@ -16,5 +16,6 @@ target 'TextArt' do
     # Pods for testing
   end
 pod 'MetalPetal/Swift'
+pod 'SwiftHSVColorPicker'
 
 end

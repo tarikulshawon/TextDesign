@@ -2,17 +2,21 @@ PODS:
   - MetalPetal/Core (1.24.2)
   - MetalPetal/Swift (1.24.2):
     - MetalPetal/Core
+  - SwiftHSVColorPicker (1.1.1)
 
 DEPENDENCIES:
   - MetalPetal/Swift
+  - SwiftHSVColorPicker
 
 SPEC REPOS:
   trunk:
     - MetalPetal
+    - SwiftHSVColorPicker
 
 SPEC CHECKSUMS:
   MetalPetal: 063cb7f12c011a22fd311a355a4bd05302fc0de4
+  SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
 
-PODFILE CHECKSUM: 25ecaa034c963ac314707599374719428f69bf94
+PODFILE CHECKSUM: 41e007528e00ac45e0007521ecaacf1fff4ca967
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

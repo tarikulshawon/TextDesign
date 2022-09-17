@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-TextArt-TextArtUITests/Pods-TextArt-TextArtUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/MetalPetal/MetalPetal.framework
+${BUILT_PRODUCTS_DIR}/SwiftHSVColorPicker/SwiftHSVColorPicker.framework
