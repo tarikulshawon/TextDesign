@@ -485,7 +485,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                     if ma.tag > 0 {
                         DBmanager.shared.updateStickerData(id: "\(ma.tag)", fileObj: obj)
-                        DBmanager.shared.updateTextData(fileNAME: obj.id, fileObj: objV)
+                        DBmanager.shared.updateTextData(fileNAME: "\(ma.tag)", fileObj: objV)
                     }
                     else {
                         DBmanager.shared.insertStickerile(fileObj: obj)
@@ -1058,7 +1058,7 @@ extension EditVc: AddTextDelegate {
         print("[AddText] delegate called")
         let frame = CGRect(x: 0, y: 0, width: 160, height: 200)
         let sticker = TextStickerContainerView(frame: frame)
-        sticker.tag = tagValue + 7 // TODO: implement in alternative way
+        sticker.tag = -1// TODO: implement in alternative way
         sticker.delegate = self
         sticker.currentFontIndex = -1
         
