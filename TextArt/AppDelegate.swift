@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 let alertView = UIAlertController(title: "Error", message: "The internet connection appears to be offline.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                    self.checkInternet()
+                    
                 })
                 alertView.addAction(action)
                 let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first

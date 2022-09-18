@@ -119,7 +119,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         mainImv.image = mainImage
         mainImv.contentMode = .scaleAspectFit
-        saveBtn.setTitle("Save", for: .normal)
+        
+        if isfromUpdate {
+            saveBtn.setTitle("Update", for: .normal)
+        } else {
+            saveBtn.setTitle("Save", for: .normal)
+        }
         saveBtn.setTitleColor(titleColor, for: .normal)
         slider1.maximumTrackTintColor = unselectedColor
         slider1.minimumTrackTintColor = titleColor
@@ -252,6 +257,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             
             sticker.textStickerView.text = textObj.text
             sticker.textStickerView.font = UIFont(name: pathName, size: 15)
+            
+            let fontIndex = Int(textObj.font)!
+            let fontSize = Int(textObj.fontSize)!
+            sticker.textStickerView.font =  UIFont(
+                name: arrayForFont[fontIndex] as! String,
+                size: CGFloat(fontSize)
+            )
             
             if textObj.color.count > 1 {
                 sticker.textStickerView.textColor = getColor(colorString: textObj.color)
@@ -432,6 +444,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centerx = "\(ma.center.x)"
                     obj.centery = "\(ma.center.y)"
                     print("Sticker info: \(obj)")
+                    
+                    
                     if ma.tag > 0 {
                         DBmanager.shared.updateStickerData(id: "\(ma.tag)", fileObj: obj)
                     }

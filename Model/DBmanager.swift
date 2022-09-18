@@ -125,7 +125,7 @@ class DBmanager: NSObject {
     }
     
     func updateTextData(fileNAME: String, fileObj: TextInfoData) {
-        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',center='\(fileObj.align)',text='\(fileObj.text)' WHERE file='\(fileNAME)'"
+        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',center='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)' WHERE file='\(fileNAME)'"
         
         if sqlite3_open(DBpath, &db) == SQLITE_OK {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -149,7 +149,7 @@ class DBmanager: NSObject {
     
     
     func insertTextFile(fileObj: TextInfoData) {
-        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)')"
+        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -214,7 +214,7 @@ class DBmanager: NSObject {
         var mutableArray = [TextInfoData]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text FROM TextInfo where file = \(fileName)"
+        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize FROM TextInfo where file = \(fileName)"
         if (sqlite3_open(DBpath, &db) == SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -229,6 +229,7 @@ class DBmanager: NSObject {
                     let rotate =     sqlite3_column_text(queryStatement, 7)
                     let align =       sqlite3_column_text(queryStatement, 8)
                     let text =       sqlite3_column_text(queryStatement, 9)
+                    let fontSize =       sqlite3_column_text(queryStatement, 10)
                    
                     obj.font = String(cString: font!)
                     obj.color = String(cString: color!)
@@ -239,6 +240,8 @@ class DBmanager: NSObject {
                     obj.rotate = String(cString: rotate!)
                     obj.align = String(cString: align!)
                     obj.text = String(cString: text!)
+                    obj.fontSize = String(cString: fontSize!)
+
                     
                     
                     mutableArray.append(obj)

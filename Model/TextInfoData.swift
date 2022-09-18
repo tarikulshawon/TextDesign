@@ -18,4 +18,5 @@ class TextInfoData {
     var align = "2"
     var rotate = "-1"
     var text = "Add Text To Edit"
+    var fontSize = "15"
 }
