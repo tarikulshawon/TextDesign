@@ -235,6 +235,28 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             if textObj.color.count > 1 {
                 sticker.textStickerView.textColor = getColor(colorString: textObj.color)
             }
+            let textureIndex = Int(textObj.texture)!
+            let gradientIndex = Int(textObj.gradient)!
+            
+            if textureIndex >= 0 {
+                var value =  "Texture" + String(textureIndex) + ".png"
+                sticker.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
+            }
+            
+            if gradientIndex >= 0 {
+                if let objArray = plistArray1[gradientIndex] as? NSArray {
+                    var allcolors: [CGColor] = []
+                    for item in objArray {
+                        let color = getColor(colorString: item as? String ?? "")
+                        allcolors.append(color.cgColor)
+                    }
+                    
+                    let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                    sticker.textStickerView.textColor = UIColor(patternImage: uimage)
+                }
+            }
+            
+
 
             sticker.textStickerView.updateTextFont()
             sticker.transform = sticker.transform.rotated(by: radians)
