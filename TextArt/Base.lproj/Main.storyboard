@@ -608,7 +608,7 @@
                                                 <rect key="frame" x="0.0" y="71" width="414" height="129"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Ec-Za-idp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
+                                                        <rect key="frame" x="10" y="0.0" width="404" height="129"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zLs-sG-cMp">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -622,12 +622,12 @@
                                                         </connections>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="9Ec-Za-idp" secondAttribute="bottom" id="7Xg-MW-hXB"/>
                                                     <constraint firstAttribute="trailing" secondItem="9Ec-Za-idp" secondAttribute="trailing" id="Qk9-H7-Ypg"/>
                                                     <constraint firstItem="9Ec-Za-idp" firstAttribute="top" secondItem="AIA-xs-jf5" secondAttribute="top" id="c3a-Wa-sHy"/>
-                                                    <constraint firstItem="9Ec-Za-idp" firstAttribute="leading" secondItem="AIA-xs-jf5" secondAttribute="leading" id="vmz-4G-Awh"/>
+                                                    <constraint firstItem="9Ec-Za-idp" firstAttribute="leading" secondItem="AIA-xs-jf5" secondAttribute="leading" constant="10" id="vmz-4G-Awh"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right" translatesAutoresizingMaskIntoConstraints="NO" id="EIE-1p-Ox0">
@@ -764,9 +764,6 @@
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
