@@ -23,10 +23,21 @@ var galleryAccessMessge = "To make Live Photos from videos the app needs to acce
 var arrayForFont: NSArray!
 var plistArray1: NSArray!
 var plistArray: NSArray!
+var dataArr:NSArray? = nil
+var dataArrRoot:NSArray? = nil
+var dataDicRoot:NSDictionary? = nil
+var imageDetailsArray = NSMutableArray()
 
 
 
-
+struct AppURL {
+    static let baseUrl = "http://www.blivestudio.com/OnlyWallpapers/"
+    static let newAppUrl = "https://itunes.apple.com/us/app/live-wallpapers-hd-for-iphone/id1141625538?mt=8"
+}
+struct ServerFileName {
+    static let menuName = "wallpapers.json"
+    static let settingName = "settings.json"
+}
 enum BtnName:String {
     case Texts
     case Graphics
@@ -62,6 +73,89 @@ enum TextEditingOption:String {
     case Align
     case Rotate
     case Texture
+}
+
+func getFileUrlWithName(fileName:String) -> URL {
+    let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+    let path = documentsDirectoryURL?.appendingPathComponent(fileName)
+    return path!
+}
+
+func isConnectedToNetwork() -> Bool {
+    guard let flags = getFlags() else { return false }
+    let isReachable = flags.contains(.reachable)
+    let needsConnection = flags.contains(.connectionRequired)
+    return (isReachable && !needsConnection)
+}
+
+func getFlags() -> SCNetworkReachabilityFlags? {
+    guard let reachability = ipv4Reachability() ?? ipv6Reachability() else {
+        return nil
+    }
+    var flags = SCNetworkReachabilityFlags()
+    if !SCNetworkReachabilityGetFlags(reachability, &flags) {
+        return nil
+    }
+    return flags
+}
+
+func ipv6Reachability() -> SCNetworkReachability? {
+    var zeroAddress = sockaddr_in6()
+    zeroAddress.sin6_len = UInt8(MemoryLayout<sockaddr_in>.size)
+    zeroAddress.sin6_family = sa_family_t(AF_INET6)
+    
+    return withUnsafePointer(to: &zeroAddress, {
+        $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+            SCNetworkReachabilityCreateWithAddress(nil, $0)
+        }
+    })
+}
+
+func isFileAvailable(fileName:String) -> Bool {
+    guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return false }
+    let path = documentsDirectoryURL.appendingPathComponent(fileName).path
+    if FileManager.default.fileExists(atPath: path) {
+       return true
+    }else {
+        return false
+    }
+}
+
+func saveToJsonFile(data:Data) {
+    // Get the url of Persons.json in document directory
+    guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+    let fileUrl = documentDirectoryUrl.appendingPathComponent("wallpapers.json")
+    
+    let fileManager = FileManager.default
+    do {
+        try fileManager.removeItem(at: fileUrl)
+    } catch {
+        // Non-fatal: file probably doesn't exist
+    }
+    
+    do {
+        try data.write(to: fileUrl, options: [])
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DataReived"), object: nil)
+        })
+        
+    } catch {
+        print(error)
+    }
+}
+
+
+
+func ipv4Reachability() -> SCNetworkReachability? {
+    var zeroAddress = sockaddr_in()
+    zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
+    zeroAddress.sin_family = sa_family_t(AF_INET)
+    
+    return withUnsafePointer(to: &zeroAddress, {
+        $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+            SCNetworkReachabilityCreateWithAddress(nil, $0)
+        }
+    })
 }
 
 

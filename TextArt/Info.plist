@@ -25,5 +25,11 @@
 	<string>To capture  Photos, the app needs access to the device Camera </string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To get Photos, the app needs access to the Gallery</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <!--Include to allow all connections (DANGER)-->
+      <key>NSAllowsArbitraryLoads</key>
+          <true/>
+    </dict>
 </dict>
 </plist>

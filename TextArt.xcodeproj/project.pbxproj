@@ -15,6 +15,8 @@
 		01B0DFD828D650A900081369 /* Transport in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD728D650A900081369 /* Transport */; };
 		01B0DFDA28D650FF00081369 /* Marketing in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD928D650FF00081369 /* Marketing */; };
 		01BF245A69A207B6269021C1 /* Pods_TextArt_TextArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F47C02AFE36153731A9995 /* Pods_TextArt_TextArtUITests.framework */; };
+		01E9232B28D7197500F21554 /* wallpapers.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E9232A28D7197500F21554 /* wallpapers.json */; };
+		01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9232C28D7231700F21554 /* ImageDetails.swift */; };
 		01FD5AC728AE521800CBF70F /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5AC628AE521800CBF70F /* AddTextViewController.swift */; };
 		01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5AC928AE52AE00CBF70F /* TextStickerView.swift */; };
 		01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5ACA28AE52AE00CBF70F /* TextStickerContainerView.swift */; };
@@ -226,6 +228,8 @@
 		01B0DFD528D650A000081369 /* Sale */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sale; sourceTree = "<group>"; };
 		01B0DFD728D650A900081369 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Transport; sourceTree = "<group>"; };
 		01B0DFD928D650FF00081369 /* Marketing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Marketing; sourceTree = "<group>"; };
+		01E9232A28D7197500F21554 /* wallpapers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wallpapers.json; sourceTree = "<group>"; };
+		01E9232C28D7231700F21554 /* ImageDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		01FD5AC628AE521800CBF70F /* AddTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextViewController.swift; sourceTree = "<group>"; };
 		01FD5AC928AE52AE00CBF70F /* TextStickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStickerView.swift; sourceTree = "<group>"; };
 		01FD5ACA28AE52AE00CBF70F /* TextStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStickerContainerView.swift; sourceTree = "<group>"; };
@@ -646,6 +650,7 @@
 		39CC0E0028A4A3BC00DF1C64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01E9232A28D7197500F21554 /* wallpapers.json */,
 				3949338928AB34B8003E8D67 /* SmallOverlay */,
 				3949335C28AB347F003E8D67 /* Textures */,
 				3949332128AB33EF003E8D67 /* FilterThumb */,
@@ -659,6 +664,7 @@
 		39CC0E0328A4A6DB00DF1C64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01E9232C28D7231700F21554 /* ImageDetails.swift */,
 				3992EF2F28AC721300F783FB /* UICustomCollectionViewLayout.swift */,
 				01FD5ADC28AED4BD00CBF70F /* TextInfoData.swift */,
 				3949331F28AB2F20003E8D67 /* StickerValueObj.swift */,
@@ -1122,6 +1128,7 @@
 				3949338728AB347F003E8D67 /* Texture2.png in Resources */,
 				39CC0E1028A4AA5C00DF1C64 /* FilterVc.xib in Resources */,
 				394933E128AB34B9003E8D67 /* OverlayThumb32.jpg in Resources */,
+				01E9232B28D7197500F21554 /* wallpapers.json in Resources */,
 				394933E628AB34B9003E8D67 /* OverlayThumb15.jpg in Resources */,
 				3949338528AB347F003E8D67 /* Texture10.png in Resources */,
 				3949334828AB33EF003E8D67 /* FilterThumb4.jpg in Resources */,
@@ -1309,6 +1316,7 @@
 				39CC0E1828A4AAC500DF1C64 /* ShapeVc.swift in Sources */,
 				39CC0DF228A4A33C00DF1C64 /* CategoryCell.swift in Sources */,
 				39CC0E2428A4AB5900DF1C64 /* DrawVc.swift in Sources */,
+				01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */,
 				01FD5ADB28AE52C700CBF70F /* StringExtension.swift in Sources */,
 				39CC0E0928A4A82C00DF1C64 /* RatioCell.swift in Sources */,
 				39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */,

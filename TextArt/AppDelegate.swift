@@ -16,7 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         DBmanager.shared.initDB()
+        
+        let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        let fileUrl = documentDirectoryUrl?.appendingPathComponent("wallpapers.json")
+        
+        let fileManager = FileManager.default
+        do {
+            try fileManager.removeItem(at: fileUrl!)
+        } catch {
+            // Non-fatal: file probably doesn't exist
+        }
+        
+        checkInternet()
         self.loadData()
+        
+        if(isFileAvailable(fileName: "wallpapers.json")) {
+            getData()
+        }
         return true
     }
 
@@ -34,6 +50,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func downloadVideoLinkAndCreateAsset(_ fileLink: String) {
+        URLSession.shared.dataTask(with: NSURL(string: fileLink)! as URL, completionHandler: { (data, response, error) -> Void in
+            // Check if data was received successfully
+            if error == nil && data != nil {
+                 saveToJsonFile(data: data!)
+                /*
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                        if let object = json as? NSArray {
+                            jsonArray = object
+                            print(object)
+                        } else if let object = json as? [Any] {
+                            // json is an array
+                            print(object)
+                        }
+                } catch {
+                    print(error.localizedDescription)
+                }*/
+            }
+        }).resume()
+    }
+    
+    
+    func checkInternet () {
+        if(isConnectedToNetwork()) {
+            self.downloadVideoLinkAndCreateAsset(AppURL.baseUrl.appending(ServerFileName.menuName))
+        }else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                let alertView = UIAlertController(title: "Error", message: "The internet connection appears to be offline.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                    self.checkInternet()
+                })
+                alertView.addAction(action)
+                let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+                if var topController = keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    topController.present(alertView, animated: true, completion: nil)
+                }
+            })
+        }
+    }
+    
+    
+    public func getData() {
+        do {
+            let file = getFileUrlWithName(fileName: "wallpapers.json")
+            do {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                if let object = json as? NSArray {
+                    
+                    
+                    dataArr = object
+                } else if let object = json as? [Any] {
+                    // json is an array
+                    print(object)
+                } else {
+                    print("JSON is invalid")
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     func stringByAppendingPathComponent(fileName: String) -> String {
         
