@@ -534,6 +534,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centery = "\(ma.center.y)"
                     print("Sticker info: \(obj)")
                     DBmanager.shared.insertStickerile(fileObj: obj)
+                    
+                    var getMax = DBmanager.shared.getMaxIdForSticker()
                   
 
                     let objV = TextInfoData()
