@@ -221,14 +221,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
         if type1.contains("TEXT") {
+            
+            var textObj = DBmanager.shared.getTextInfo(fileName: obj.fileName)
             let frame = CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height))
             let sticker = TextStickerContainerView(frame: frame)
             sticker.center = center
             sticker.tag = Int(id)
             sticker.delegate = self
                         
-            sticker.textStickerView.text = "Add your text"
+            sticker.textStickerView.text = textObj.text
             sticker.textStickerView.font = UIFont(name: pathName, size: 15)
+            
+            if textObj.color.count > 1 {
+                sticker.textStickerView.textColor = getColor(colorString: textObj.color)
+            }
 
             sticker.textStickerView.updateTextFont()
             sticker.transform = sticker.transform.rotated(by: radians)
@@ -446,7 +452,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                     let objV = TextInfoData()
                     objV.color = ma.currentColorSting
-                    objV.file = imageInfoObj.fileName
+                    objV.file = obj.fileName
                     objV.text =  ma.textStickerView.text
                     objV.font = "\(ma.currentFontIndex)"
                     objV.texture = "\(ma.currentTextureIndex)"

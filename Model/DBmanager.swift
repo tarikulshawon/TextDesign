@@ -210,11 +210,11 @@ class DBmanager: NSObject {
         }
     }
     
-    func getTextInfo(fileName: String) -> [TextInfoData] {
+    func getTextInfo(fileName: String) -> TextInfoData {
         var mutableArray = [TextInfoData]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text FROM TextInfo where FileName = \(fileName)"
+        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text FROM TextInfo where file = \(fileName)"
         if (sqlite3_open(DBpath, &db) == SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -249,7 +249,7 @@ class DBmanager: NSObject {
             sqlite3_close(db)
         }
         
-        return mutableArray
+        return mutableArray[0]
     }
     
     func getStickerInfo(fileName: String) -> [StickerValueObj]{
