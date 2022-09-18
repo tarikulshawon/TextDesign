@@ -11,7 +11,10 @@ protocol TextStickerContainerViewDelegate: NSObject {
     func editTextStickerView(textStickerContainerView: TextStickerContainerView)
     func deleteTextStickerView(textStickerContainerView: TextStickerContainerView)
     func moveViewPosition(textStickerContainerView: TextStickerContainerView)
+}
 
+protocol UpdateTextFontSize: AnyObject {
+    func updateFontSize(to: CGFloat)
 }
 
 class TextStickerContainerView: UIView {
@@ -23,6 +26,7 @@ class TextStickerContainerView: UIView {
     var shadow = -1
     var align = 1
     var rotate = -1
+    var fontSize: CGFloat = 0.0
     
     
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {
@@ -109,6 +113,12 @@ class TextStickerContainerView: UIView {
     }
 }
 
+extension TextStickerContainerView: UpdateTextFontSize {
+    func updateFontSize(to: CGFloat) {
+        fontSize = to
+    }
+}
+
 // MARK: Initialize TextSticker Data
 extension TextStickerContainerView {
 
@@ -116,6 +126,7 @@ extension TextStickerContainerView {
         let scaleController = PanControllerImageView(frame: CGRect(x: self.self.textStickerView.bounds.width +  panControllerSize, y: self.textStickerView.bounds.height + panControllerSize, width: panControllerSize, height: panControllerSize))
         scaleController.layer.name = "hide"
         scaleController.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
+        scaleController.addDelegate(delegate: self)
         
         self.breakWordController = BreakWordControllerView(frame: CGRect(x: 0, y: self.bounds.height * 0.5 - self.panControllerSize, width: self.panControllerSize * 3, height: self.panControllerSize * 2))
         self.breakWordController?.layer.name = "hide"

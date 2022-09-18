@@ -341,35 +341,29 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         }
         
         cell.layer.cornerRadius = cell.frame.size.height/2.0
+        
+        print(cell.contentView.frame.size)
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("hola")
         if currentOption.rawValue == TextEditingOption.Color.rawValue {
-            
             if let colorString = plistArray[indexPath.row] as? String {
                 delegateForText?.colorValue(color: colorString)
             }
-            
         }
         
         if currentOption.rawValue == TextEditingOption.Fonts.rawValue {
             delegateForText?.sendFonrIndex(index: indexPath.row)
-            
         }
         
         if currentOption.rawValue == TextEditingOption.Gradient.rawValue {
             delegateForText?.gradientValue(index: indexPath.row)
-            
         }
         
         else if currentOption.rawValue == TextEditingOption.Texture.rawValue {
-            
             delegateForText?.sendTextureIndex(index: indexPath.row)
         }
-        
-        
- 
     }
 }
