@@ -396,6 +396,44 @@ class DBmanager: NSObject {
         
         return getId
     }
+    
+    func getMaxIdForSticker() ->Int{
+        
+        var queryStatement: OpaquePointer? = nil
+        var getId  = -1
+        
+        let stmt =  "SELECT MAX(id) FROM StickerInfo"
+        
+        if (sqlite3_open(DBpath, &db)==SQLITE_OK) {
+            if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
+                // 2
+                while (sqlite3_step(queryStatement) == SQLITE_ROW) {
+                    
+                    
+                    
+                    let id = sqlite3_column_text(queryStatement, 0)
+                    
+                    if((id) != nil)
+                    {
+                        let str = String(cString: id!) as NSString
+                        getId = Int(str.intValue)
+                    }
+                    
+                }
+                
+                
+                
+            }
+            else{
+                let errmsg = String(cString: sqlite3_errmsg(db))
+                NSLog(errmsg)
+            }
+              sqlite3_finalize(queryStatement)
+              sqlite3_close(db)
+        }
+        
+        return getId
+    }
 }
     
      
