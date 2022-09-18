@@ -8,15 +8,13 @@
 import Foundation
 
 class TextInfoData {
-    var id = ""
-    var fileName = "0"
-    var x = "100"
-    var y = "100"
-    var width = "100"
-    var height = "100"
-    var inset = "11"
-    var type = "text"
-    var pathName = "Image"
-    var centerx = "0"
-    var centery = "0"
+    var file = ""
+    var font = "-1"
+    var color = "0,0,0"
+    var gradient = "-1"
+    var texture = "-1"
+    var opacity = "1"
+    var shadow = "-1"
+    var align = "2"
+    var rotate = "-1"
 }

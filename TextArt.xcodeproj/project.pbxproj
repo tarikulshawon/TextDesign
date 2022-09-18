@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0183BAC828D661EA00B920FA /* TextEditingObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183BAC728D661EA00B920FA /* TextEditingObj.swift */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -218,6 +219,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0183BAC728D661EA00B920FA /* TextEditingObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditingObj.swift; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				3949331628AB2D0E003E8D67 /* StickerView.swift */,
 				39CC0E2628A4AD4100DF1C64 /* ODRManager.swift */,
 				39CC0E0428A4A6FE00DF1C64 /* CustomSlider.swift */,
+				0183BAC728D661EA00B920FA /* TextEditingObj.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1281,6 +1284,7 @@
 				39F8225F28A35E7A008925EF /* FirstVc.swift in Sources */,
 				39F8228728A36596008925EF /* ColorCell.swift in Sources */,
 				01FD5AD928AE52C700CBF70F /* BorderExtenstion.swift in Sources */,
+				0183BAC828D661EA00B920FA /* TextEditingObj.swift in Sources */,
 				01FD5ADA28AE52C700CBF70F /* TextViewInof+Structure.swift in Sources */,
 				39CC0E1428A4AAB100DF1C64 /* OverLayVc.swift in Sources */,
 				3992EF3028AC721400F783FB /* UICustomCollectionViewLayout.swift in Sources */,

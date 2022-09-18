@@ -124,8 +124,8 @@ class DBmanager: NSObject {
         sqlite3_close(db)
     }
     
-    func updateTextData(id: String, fileObj: TextInfoData) {
-        let createTable = "UPDATE TextInfo SET x='\(fileObj.x)', y='\(fileObj.y)', width='\(fileObj.width)',height='\(fileObj.height)',inset='\(fileObj.inset)',centerx='\(fileObj.centerx)',centery='\(fileObj.centery)' WHERE id='\(id)'"
+    func updateTextData(fileNAME: String, fileObj: TextInfoData) {
+        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',center='\(fileObj.align)' WHERE file='\(fileNAME)'"
         
         if sqlite3_open(DBpath, &db) == SQLITE_OK {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -149,7 +149,7 @@ class DBmanager: NSObject {
     
     
     func insertTextFile(fileObj: TextInfoData) {
-        let insertData = "INSERT INTO TextInfo (FileName,x,y,width,height,inset,type,pathName,centerx,centery) VALUES  ('\(fileObj.fileName)','\(fileObj.x)','\(fileObj.y)','\(fileObj.width)','\(fileObj.height)','\(fileObj.inset)','\(fileObj.type)','\(fileObj.pathName)','\(fileObj.centerx)','\(fileObj.centery)')"
+        let insertData = "INSERT INTO TextInfo (file,font,color,grdient,texture,opacity,shadow,align,rotate) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -214,35 +214,30 @@ class DBmanager: NSObject {
         var mutableArray = [TextInfoData]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT id,FileName,x,y,width,height,inset,type,pathName,centerx,centery FROM TextInfo where FileName = \(fileName)"
+        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align FROM TextInfo where FileName = \(fileName)"
         if (sqlite3_open(DBpath, &db) == SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
                     let obj : TextInfoData = TextInfoData()
                 
-                    let id =       sqlite3_column_text(queryStatement, 0)
-                    let OverLay =  sqlite3_column_text(queryStatement, 1)
-                    let Filter =   sqlite3_column_text(queryStatement, 2)
-                    let Sticker =  sqlite3_column_text(queryStatement, 3)
-                    let Bri =      sqlite3_column_text(queryStatement, 4)
-                    let Hue =      sqlite3_column_text(queryStatement, 5)
-                    let Sat =      sqlite3_column_text(queryStatement, 6)
-                    let Cont =     sqlite3_column_text(queryStatement, 7)
-                    let ov =       sqlite3_column_text(queryStatement, 8)
-                    let ov1 =      sqlite3_column_text(queryStatement, 9)
-                    let ov2 =      sqlite3_column_text(queryStatement, 10)
-
-                    obj.id = String(cString: id!)
-                    obj.fileName = String(cString: OverLay!)
-                    obj.x = String(cString: Filter!)
-                    obj.y = String(cString: Sticker!)
-                    obj.width = String(cString: Bri!)
-                    obj.height = String(cString: Hue!)
-                    obj.inset = String(cString: Sat!)
-                    obj.type = String(cString: Cont!)
-                    obj.pathName = String(cString: ov!)
-                    obj.centerx = String(cString: ov1!)
-                    obj.centery =  String(cString: ov2!)
+                    let font =       sqlite3_column_text(queryStatement, 0)
+                    let color =  sqlite3_column_text(queryStatement, 1)
+                    let gradient =   sqlite3_column_text(queryStatement, 2)
+                    let texture =  sqlite3_column_text(queryStatement, 3)
+                    let opacity =      sqlite3_column_text(queryStatement, 4)
+                    let shadow =      sqlite3_column_text(queryStatement, 5)
+                    let rotate =     sqlite3_column_text(queryStatement, 7)
+                    let align =       sqlite3_column_text(queryStatement, 8)
+                   
+                    obj.font = String(cString: font!)
+                    obj.color = String(cString: color!)
+                    obj.gradient = String(cString: gradient!)
+                    obj.texture = String(cString: texture!)
+                    obj.opacity = String(cString: opacity!)
+                    obj.shadow = String(cString: shadow!)
+                    obj.rotate = String(cString: rotate!)
+                    obj.align = String(cString: align!)
+                    
                     
                     mutableArray.append(obj)
                 }
