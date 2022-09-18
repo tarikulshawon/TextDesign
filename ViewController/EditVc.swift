@@ -259,11 +259,17 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             sticker.textStickerView.font = UIFont(name: pathName, size: 15)
             
             let fontIndex = Int(textObj.font)!
-            let fontSize = Int(textObj.fontSize)!
-            sticker.textStickerView.font =  UIFont(
-                name: arrayForFont[fontIndex] as! String,
-                size: CGFloat(fontSize)
-            )
+            
+            let fontSize = Double(textObj.fontSize)!
+            if fontIndex < 0 {
+                sticker.textStickerView.font = UIFont.systemFont(ofSize: CGFloat(fontSize))
+            }
+            else {
+                sticker.textStickerView.font =  UIFont(
+                    name: arrayForFont[fontIndex] as! String,
+                    size: CGFloat(fontSize)
+                )
+            }
             
             if textObj.color.count > 1 {
                 sticker.textStickerView.textColor = getColor(colorString: textObj.color)
@@ -443,6 +449,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.fileName = "\(imageInfoObj.id)"
                     obj.centerx = "\(ma.center.x)"
                     obj.centery = "\(ma.center.y)"
+                    
                     print("Sticker info: \(obj)")
                     
                     
@@ -506,7 +513,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centery = "\(ma.center.y)"
                     print("Sticker info: \(obj)")
                     DBmanager.shared.insertStickerile(fileObj: obj)
-                    
+                  
+
                     let objV = TextInfoData()
                     objV.color = ma.currentColorSting
                     objV.file = obj.fileName
@@ -518,6 +526,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.shadow = "\(ma.shadow)"
                     objV.align = "\(ma.align)"
                     objV.rotate = "\(ma.rotate)"
+                    
+                    if let fontSize = ma.textStickerView?.fontSize {
+                        objV.fontSize = "\(fontSize)"
+
+                    }
                     
                     DBmanager.shared.insertTextFile(fileObj: objV)
                     
@@ -975,6 +988,7 @@ extension EditVc: AddTextDelegate {
             size: fontSize!
         )
         currentTextStickerView?.currentFontIndex = index
+        
     }
     
     func gradientValue(index: Int) {
