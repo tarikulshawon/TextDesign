@@ -327,7 +327,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             }
         }
         
-        cell.layer.cornerRadius = 10.0
+        cell.layer.cornerRadius = cell.frame.size.height/2.0
         return cell
     }
     
