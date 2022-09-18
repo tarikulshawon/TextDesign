@@ -17,4 +17,5 @@ class TextInfoData {
     var shadow = "-1"
     var align = "2"
     var rotate = "-1"
+    var text = "Add Text To Edit"
 }

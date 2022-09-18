@@ -389,7 +389,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     else {
                         DBmanager.shared.insertStickerile(fileObj: obj)
                     }
-                    
                 default:
                     return
                 }
@@ -444,6 +443,21 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centery = "\(ma.center.y)"
                     print("Sticker info: \(obj)")
                     DBmanager.shared.insertStickerile(fileObj: obj)
+                    
+                    let objV = TextInfoData()
+                    objV.color = ma.currentColorSting
+                    objV.file = imageInfoObj.fileName
+                    objV.text =  ma.textStickerView.text
+                    objV.font = "\(ma.currentFontIndex)"
+                    objV.texture = "\(ma.currentTextureIndex)"
+                    objV.gradient = "\(ma.currentGradientIndex)"
+                    objV.opacity = "\(ma.opacity)"
+                    objV.shadow = "\(ma.shadow)"
+                    objV.align = "\(ma.align)"
+                    objV.rotate = "\(ma.rotate)"
+                    
+                    DBmanager.shared.insertTextFile(fileObj: objV)
+                    
                     
                 default:
                     return
@@ -785,9 +799,9 @@ extension EditVc: AddTextDelegate {
     func sendTextureIndex(index: Int) {
         var value =  "Texture" + String(index) + ".png"
         currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
-        currentTextStickerView?.currentGradientIndex = index
         currentTextStickerView?.currentColorSting = ""
         currentTextStickerView?.currentGradientIndex = -1
+        currentTextStickerView?.currentTextureIndex = index
     }
     
     func sendFonrIndex(index: Int) {
@@ -821,6 +835,8 @@ extension EditVc: AddTextDelegate {
     func colorValue(color: String) {
        currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
        currentTextStickerView?.currentColorSting = color
+       currentTextStickerView?.currentGradientIndex = -1
+       currentTextStickerView?.currentTextureIndex = -1
     }
     
     func addText(text: String, font: UIFont) {
