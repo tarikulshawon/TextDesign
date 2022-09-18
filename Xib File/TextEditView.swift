@@ -14,6 +14,7 @@ protocol AddTextDelegate: AnyObject {
     func sendFonrIndex(index: Int)
     func sendTextureIndex(index: Int)
     func addText()
+    func showBackground()
 }
 
 class TextEditView: UIView {
@@ -23,7 +24,6 @@ class TextEditView: UIView {
     let buttonWidth: CGFloat = 60.0
     let selectedBtIndex = 1
     
-    var plistArray: NSArray!
     var plistAttayForTextEditOption: NSArray!
     var btnScrollView: UIScrollView!
     var selectedIndexView: UIView!
@@ -112,6 +112,8 @@ class TextEditView: UIView {
             currentOption = TextEditingOption.Rotate
         case  TextEditingOption.Texture.rawValue:
             currentOption = TextEditingOption.Texture
+        case  TextEditingOption.BackGround.rawValue:
+            currentOption = TextEditingOption.BackGround
         case .none:
             break
         case .some:
@@ -178,7 +180,11 @@ class TextEditView: UIView {
             
         }
         
-        if sender.tag == 700 {
+        if currentOption.rawValue == TextEditingOption.BackGround.rawValue {
+            delegateForText?.showBackground()
+        }
+        
+        if sender.tag == 700 ||  currentOption.rawValue == TextEditingOption.BackGround.rawValue {
             btn?.setTitleColor(unselectedColor, for: .normal)
             var btn1 = self.btnScrollView.viewWithTag(701) as? UIButton
             self.buttonAction(sender: btn1)

@@ -22,6 +22,8 @@ var cameraAccesMessge = "To make Live Photos, the app needs to access the Camera
 var galleryAccessMessge = "To make Live Photos from videos the app needs to access the gallery"
 var arrayForFont: NSArray!
 var plistArray1: NSArray!
+var plistArray: NSArray!
+
 
 
 
@@ -52,6 +54,7 @@ enum TextEditingOption:String {
     case AddText
     case Fonts
     case Color
+    case BackGround
     case Gradient
     case Draw
     case Shadow

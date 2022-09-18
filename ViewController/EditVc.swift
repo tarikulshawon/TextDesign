@@ -26,6 +26,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var imageViewHolder: UIView!
     @IBOutlet weak var shapeHolderView: UIView!
     
+    @IBOutlet weak var collectionViewForBackGround: UICollectionView!
     @IBOutlet weak var bottomSpaceForDrawer: NSLayoutConstraint!
     @IBOutlet weak var bottomSpaceForOverlay: NSLayoutConstraint!
     @IBOutlet weak var bottomSapceForShape: NSLayoutConstraint!
@@ -59,7 +60,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var cellGap:CGFloat =  0
     var ov:Float =  0.3
     var currentLookUpindex = 0
-    var plistArray:NSArray!
+    var plistArray2:NSArray!
     var mainImage:UIImage!
     
     var Brightness: Float = 0.0
@@ -82,10 +83,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var tagValue = 1000000
     
     
+    @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
     @IBOutlet weak var btnCollectionView: UICollectionView!
     @IBOutlet weak var mainImv: UIImageView!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var overLaySlider: CustomSlider!
+    var currentBackGroundIndex  = 0
     
     let TextEditVc: TextEditView = TextEditView.loadFromXib()
     let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
@@ -95,6 +98,22 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
     let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
     
+    
+    @IBAction func segmentValueHasChanged(_ sender: UISegmentedControl) {
+        
+        currentBackGroundIndex = sender.selectedSegmentIndex
+        collectionViewForBackGround.reloadData()
+        
+    }
+    
+    @IBAction func hideBackgorundView(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.bottomSpaceForBackGroundView.constant = -1000
+            self.view.layoutIfNeeded()
+        }, completion: {_ in
+        })
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -144,8 +163,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let emptyAutomationsCell = RatioCell.nib
         btnCollectionView?.register(emptyAutomationsCell, forCellWithReuseIdentifier: RatioCell.reusableID)
         
+        let nibName = UINib(nibName: ColorCell.reusableID, bundle: nil)
+        collectionViewForBackGround.register(nibName, forCellWithReuseIdentifier:  ColorCell.reusableID)
+        
         let path = Bundle.main.path(forResource: "btn", ofType: "plist")
-        plistArray = NSArray(contentsOfFile: path!)
+        plistArray2 = NSArray(contentsOfFile: path!)
         self.perform(#selector(self.targetMethod1), with: self, afterDelay:0.1)
         
         if isfromUpdate {
@@ -228,7 +250,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             sticker.center = center
             sticker.tag = Int(id)
             sticker.delegate = self
-                        
+            
             sticker.textStickerView.text = textObj.text
             sticker.textStickerView.font = UIFont(name: pathName, size: 15)
             
@@ -256,13 +278,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 }
             }
             
-
-
+            
+            
             sticker.textStickerView.updateTextFont()
             sticker.transform = sticker.transform.rotated(by: radians)
-
+            
             sticker.initilizeTextStickerData(mainTextView: sticker.textStickerView)
-
+            
             screenSortView.addSubview(sticker)
             screenSortView.clipsToBounds = true
         } else {
@@ -538,8 +560,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     @objc func targetMethod1() {
-        let totalCellWidth = cellWidth * CGFloat(plistArray.count)
-        let totalSpacingWidth = cellGap * CGFloat((plistArray.count - 1))
+        let totalCellWidth = cellWidth * CGFloat(plistArray2.count)
+        let totalSpacingWidth = cellGap * CGFloat((plistArray2.count - 1))
         
         let leftInset = (btnCollectionView.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
         let rightInset = leftInset
@@ -684,10 +706,67 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        plistArray.count
+        if collectionView == collectionViewForBackGround {
+            if currentBackGroundIndex == 0 {
+                return plistArray.count + 1
+            }
+        }
+        
+        return plistArray2.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == collectionViewForBackGround {
+            
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ColorCell.reusableID,
+                for: indexPath) as? ColorCell else {
+                return ColorCell()
+            }
+            
+            if currentBackGroundIndex == 0 {
+                cell.gradietImv.isHidden = true
+                
+                if indexPath.row == 0 {
+                    cell.gradietImv.image = UIImage(named: "ColorPicker")
+                    cell.gradietImv.isHidden = false
+                    cell.holderView.backgroundColor = UIColor.clear
+                }
+                else if let colorString = plistArray[indexPath.row] as? String {
+                    cell.holderView.backgroundColor = getColor(colorString: colorString)
+                    cell.gradietImv.isHidden = true
+                }
+            }
+            
+            
+            if currentBackGroundIndex == 1 {
+                
+                cell.gradietImv.image = nil
+                cell.gradietImv.isHidden = false
+                if let objArray = plistArray1[indexPath.row] as? NSArray {
+                    var allcolors: [CGColor] = []
+                    for item in objArray {
+                        let color = getColor(colorString: item as? String ?? "")
+                        allcolors.append(color.cgColor)
+                    }
+                    
+                    let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                    cell.gradietImv.contentMode = .scaleAspectFill
+                    cell.gradietImv.image = uimage
+                    
+                    
+                }
+            }
+            
+            if currentBackGroundIndex == 2 {
+                cell.gradietImv.isHidden = false
+                cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row)")
+            }
+            cell.layer.cornerRadius = cell.frame.height/2.0
+            return cell
+            
+        }
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: RatioCell.reusableID,
             for: indexPath) as? RatioCell else {
@@ -700,7 +779,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         cell.heightForLabel.constant = 20.0
         cell.backgroundColor = UIColor.clear
         
-        if let value = plistArray[indexPath.row] as? String  {
+        if let value = plistArray2[indexPath.row] as? String  {
             
             print(value)
             cell.iconImv.image = UIImage(named: value)?.withRenderingMode(.alwaysTemplate)
@@ -725,12 +804,21 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
+        
         let cell = collectionView.cellForItem(at: indexPath) as? RatioCell
+        
+        if collectionView != collectionViewForBackGround {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.bottomSpaceForBackGroundView.constant = -1000
+                self.view.layoutIfNeeded()
+            }, completion: {_ in
+            })
+        }
         
         // cell?.iconImv.tintColor = UIColor.red
         if let btnValue = cell?.iconLabel.text {
             if btnValue == BtnName.Texts.rawValue {
-               
+                
                 let p = self.bottomSpaceOfFontLoaderView.constant < 0 ? 0 : -1000
                 
                 if p == 0 {
@@ -820,6 +908,14 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func showBackground() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.bottomSpaceForBackGroundView.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: {_ in
+        })
+    }
+    
     func addText() {
         self.addText(text: "Add Text to Edit", font: UIFont.systemFont(ofSize: 15.0))
     }
@@ -857,14 +953,14 @@ extension EditVc: AddTextDelegate {
             currentTextStickerView?.currentTextureIndex = -1
         }
         
-       
+        
     }
     
     func colorValue(color: String) {
-       currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
-       currentTextStickerView?.currentColorSting = color
-       currentTextStickerView?.currentGradientIndex = -1
-       currentTextStickerView?.currentTextureIndex = -1
+        currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
+        currentTextStickerView?.currentColorSting = color
+        currentTextStickerView?.currentGradientIndex = -1
+        currentTextStickerView?.currentTextureIndex = -1
     }
     
     func addText(text: String, font: UIFont) {
@@ -881,10 +977,10 @@ extension EditVc: AddTextDelegate {
         //sticker.textStickerView.delegate = self
         sticker.textStickerView.text = text
         sticker.textStickerView.font = font
-
+        
         sticker.textStickerView.updateTextFont()
         sticker.initilizeTextStickerData(mainTextView: sticker.textStickerView)
-
+        
         screenSortView.addSubview(sticker)
         screenSortView.clipsToBounds = true
         tagValue = tagValue + 1
@@ -898,7 +994,7 @@ extension EditVc: TextStickerContainerViewDelegate {
     }
     
     func setCurrentTextStickerView(textStickerContainerView: TextStickerContainerView) {
-         currentTextStickerView = textStickerContainerView
+        currentTextStickerView = textStickerContainerView
         
     }
     

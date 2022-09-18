@@ -4,6 +4,7 @@
 <array>
 	<string>AddText</string>
 	<string>Fonts</string>
+	<string>BackGround</string>
 	<string>Color</string>
 	<string>Gradient</string>
 	<string>Texture</string>

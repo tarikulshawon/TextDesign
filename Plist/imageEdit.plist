@@ -3,9 +3,10 @@
 <plist version="1.0">
 <array>
 	<string>Image</string>
+	<string>Color</string>
+	<string>Gradient</string>
+	<string>Texture</string>
 	<string>Border</string>
-	<string>Shadow</string>
-	<string>Rotation</string>
-	<string>Overlay</string>
+	<string>Opacity</string>
 </array>
 </plist>
