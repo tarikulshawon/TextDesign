@@ -125,7 +125,7 @@ class DBmanager: NSObject {
     }
     
     func updateTextData(fileNAME: String, fileObj: TextInfoData) {
-        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',center='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)' WHERE file='\(fileNAME)'"
+        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)' WHERE file='\(fileNAME)'"
         
         if sqlite3_open(DBpath, &db) == SQLITE_OK {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
