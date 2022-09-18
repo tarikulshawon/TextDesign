@@ -243,8 +243,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
         if type1.contains("TEXT") {
-            
-            var textObj = DBmanager.shared.getTextInfo(fileName: obj.fileName)
+            let textObj = DBmanager.shared.getTextInfo(fileName: obj.fileName)
             let frame = CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height))
             let sticker = TextStickerContainerView(frame: frame)
             sticker.center = center
@@ -823,7 +822,8 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameInt.Texts.rawValue
-                    self.addText(text: "ADD TEXT TO EDIT", font: UIFont.systemFont(ofSize: 15.0))
+                    let font = currentTextStickerView?.textView?.font ?? .systemFont(ofSize: 15.0)
+                    self.addText(text: "ADD TEXT TO EDIT", font: font)
                 } else {
                     currentlyActiveIndex = -1
                 }
@@ -917,11 +917,11 @@ extension EditVc: AddTextDelegate {
     }
     
     func addText() {
-        self.addText(text: "Add Text to Edit", font: UIFont.systemFont(ofSize: 15.0))
+        self.addText(text: "Add Text", font: .systemFont(ofSize: 30.0))
     }
     
     func sendTextureIndex(index: Int) {
-        var value =  "Texture" + String(index) + ".png"
+        let value =  "Texture" + String(index) + ".png"
         currentTextStickerView?.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
         currentTextStickerView?.currentColorSting = ""
         currentTextStickerView?.currentGradientIndex = -1
@@ -929,13 +929,13 @@ extension EditVc: AddTextDelegate {
     }
     
     func sendFonrIndex(index: Int) {
-        
-        currentTextStickerView?.textStickerView.font =  UIFont(name: arrayForFont[index] as! String, size: (currentTextStickerView?.textStickerView?.fontSize)!)
+        let fontSize = currentTextStickerView?.textStickerView?.fontSize
+        currentTextStickerView?.textStickerView.font =  UIFont(
+            name: arrayForFont[index] as! String,
+            size: fontSize!
+        )
         currentTextStickerView?.currentFontIndex = index
-        
-        
     }
-    
     
     func gradientValue(index: Int) {
         
@@ -1007,7 +1007,6 @@ extension EditVc: TextStickerContainerViewDelegate {
                 v.textStickerView.isUserInteractionEnabled = true
                 v.textStickerView.isEditable = true
                 v.textStickerView.becomeFirstResponder()
-                
             }
         }
     }

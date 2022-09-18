@@ -26,6 +26,7 @@ class PanControllerImageView: UIImageView, UIGestureRecognizerDelegate {
     var deltaAngle: CGFloat!
     var panControllerSize: CGFloat = 25
     var pController: PanControllerImageView!
+    var delegate: UpdateTextFontSize!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +38,16 @@ class PanControllerImageView: UIImageView, UIGestureRecognizerDelegate {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addDelegate(delegate: UpdateTextFontSize) {
+        self.delegate = delegate
+    }
+}
+
+extension PanControllerImageView: UpdateTextFontSize {
+    func updateFontSize(to: CGFloat) {
+        print("[UPDATE FONT DELEGATE CALLED]")
     }
 }
 
@@ -113,10 +124,14 @@ extension PanControllerImageView {
                     zoomScale: UIScreen.main.scale
                 )
             //self.frame.origin = CGPoint(x: containerFrame.width - 44, y: 0)
+            textView.fontSize = textView.font?.pointSize
             
             break
         case .ended:
             //            gesture.view?.superview?.frame.size = CGSize(width: self.initialFrame.width + translation.x, height: self.initialFrame.height + translation.y)
+            
+            
+            delegate.updateFontSize(to: textView.fontSize)
             print("End")
             break
         default:
