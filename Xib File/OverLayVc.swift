@@ -105,11 +105,8 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         
-        let screenSize = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let mainViewWidth = screenWidth;
-        let ViewWidth=(mainViewWidth-5*10)/4;
-        return CGSize(width: ViewWidth, height: ViewWidth)
+       
+        return CGSize(width: 70, height: 70)
         
     }
     
@@ -127,7 +124,7 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
             
             cell.gradietImv.image =  UIImage(named: "OverlayThumb" + "\(indexPath.row - 1)"  + ".jpg")
         }
-       // cell.gradietImv.layer.cornerRadius  = 15.0
+        cell.gradietImv.layer.cornerRadius  = cell.frame.size.height/2.0
         return cell
         
        

@@ -456,10 +456,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWX-UP-x1l">
-                                        <rect key="frame" x="0.0" y="1656" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="1706" width="414" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="SNR-jE-3Tn"/>
+                                            <constraint firstAttribute="height" constant="100" id="SNR-jE-3Tn"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-Ej-Fl2">
@@ -484,10 +484,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb8-9q-9Yc">
-                                        <rect key="frame" x="0.0" y="1616" width="414" height="190"/>
+                                        <rect key="frame" x="0.0" y="1646" width="414" height="160"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdr-b3-ue8">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                                <rect key="frame" x="0.0" y="10" width="414" height="40"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JUZ-xi-sbg" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
                                                         <rect key="frame" x="32.5" y="5" width="349" height="31"/>
@@ -508,9 +508,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="190" id="9WD-0q-oEw"/>
+                                            <constraint firstAttribute="height" constant="160" id="9WD-0q-oEw"/>
                                             <constraint firstAttribute="trailing" secondItem="wdr-b3-ue8" secondAttribute="trailing" id="RRZ-9H-Pvp"/>
-                                            <constraint firstItem="wdr-b3-ue8" firstAttribute="top" secondItem="Rb8-9q-9Yc" secondAttribute="top" id="pCM-X6-DZ5"/>
+                                            <constraint firstItem="wdr-b3-ue8" firstAttribute="top" secondItem="Rb8-9q-9Yc" secondAttribute="top" constant="10" id="pCM-X6-DZ5"/>
                                             <constraint firstItem="wdr-b3-ue8" firstAttribute="leading" secondItem="Rb8-9q-9Yc" secondAttribute="leading" id="vfx-I3-kTn"/>
                                         </constraints>
                                     </view>

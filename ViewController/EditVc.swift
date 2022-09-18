@@ -594,7 +594,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         drawVc.frame = CGRect(x: 0,y: 0,width: drawHolderView.frame.width,height: drawHolderView.frame.height)
         drawHolderView.addSubview(drawVc)
         
-        overLayVc.frame = CGRect(x: 0,y: 40,width: overLayVcHolder.frame.width,height: overLayVcHolder.frame.height)
+        overLayVc.frame = CGRect(x: 0,y: 50,width: overLayVcHolder.frame.width,height: overLayVcHolder.frame.height-50)
         overLayVc.delegateForOverlay = self
         
         overLayVcHolder.addSubview(overLayVc)
