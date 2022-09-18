@@ -301,7 +301,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             sticker.transform = sticker.transform.rotated(by: radians)
             
             sticker.initilizeTextStickerData(mainTextView: sticker.textStickerView)
-            
+            sticker.tag = Int(id)
             screenSortView.addSubview(sticker)
             screenSortView.clipsToBounds = true
         } else {
@@ -450,14 +450,35 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centerx = "\(ma.center.x)"
                     obj.centery = "\(ma.center.y)"
                     
-                    print("Sticker info: \(obj)")
+                    
+                    let objV = TextInfoData()
+                    objV.color = ma.currentColorSting
+                    objV.file = obj.fileName
+                    objV.text =  ma.textStickerView.text
+                    objV.font = "\(ma.currentFontIndex)"
+                    objV.texture = "\(ma.currentTextureIndex)"
+                    objV.gradient = "\(ma.currentGradientIndex)"
+                    objV.opacity = "\(ma.opacity)"
+                    objV.shadow = "\(ma.shadow)"
+                    objV.align = "\(ma.align)"
+                    objV.rotate = "\(ma.rotate)"
+                    
+                    if let fontSize = ma.textStickerView?.fontSize {
+                        objV.fontSize = "\(fontSize)"
+
+                    }
+                    
+                    
+                    print("Sticker info: \(ma.tag)")
                     
                     
                     if ma.tag > 0 {
                         DBmanager.shared.updateStickerData(id: "\(ma.tag)", fileObj: obj)
+                        DBmanager.shared.updateTextData(fileNAME: obj.fileName, fileObj: objV)
                     }
                     else {
                         DBmanager.shared.insertStickerile(fileObj: obj)
+                        DBmanager.shared.insertTextFile(fileObj: objV)
                     }
                 default:
                     return
@@ -1037,7 +1058,7 @@ extension EditVc: AddTextDelegate {
         
         screenSortView.addSubview(sticker)
         screenSortView.clipsToBounds = true
-        tagValue = tagValue + 1
+        tagValue = -1
         currentTextStickerView = sticker
     }
 }
