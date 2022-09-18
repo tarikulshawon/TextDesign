@@ -248,7 +248,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
         if type1.contains("TEXT") {
-            let textObj = DBmanager.shared.getTextInfo(fileName: obj.fileName)
+            let textObj = DBmanager.shared.getTextInfo(id: obj.id)
             let frame = CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height))
             let sticker = TextStickerContainerView(frame: frame)
             sticker.center = center
@@ -270,9 +270,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     size: CGFloat(fontSize)
                 )
             }
+            sticker.fontSize = fontSize
+            sticker.currentFontIndex = fontIndex
             
             if textObj.color.count > 1 {
                 sticker.textStickerView.textColor = getColor(colorString: textObj.color)
+                sticker.currentColorSting = textObj.color
+                sticker.currentGradientIndex = -1
+                sticker.currentTextureIndex = -1
             }
             let textureIndex = Int(textObj.texture)!
             let gradientIndex = Int(textObj.gradient)!
@@ -280,6 +285,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             if textureIndex >= 0 {
                 var value =  "Texture" + String(textureIndex) + ".png"
                 sticker.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
+                sticker.currentColorSting = ""
+                sticker.currentGradientIndex = -1
+                sticker.currentTextureIndex = textureIndex
             }
             
             if gradientIndex >= 0 {
@@ -293,6 +301,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
                     sticker.textStickerView.textColor = UIColor(patternImage: uimage)
                 }
+                sticker.currentColorSting = ""
+                sticker.currentGradientIndex = gradientIndex
+                sticker.currentTextureIndex = -1
             }
             
             
@@ -474,10 +485,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                     if ma.tag > 0 {
                         DBmanager.shared.updateStickerData(id: "\(ma.tag)", fileObj: obj)
-                        DBmanager.shared.updateTextData(fileNAME: obj.fileName, fileObj: objV)
+                        DBmanager.shared.updateTextData(fileNAME: obj.id, fileObj: objV)
                     }
                     else {
                         DBmanager.shared.insertStickerile(fileObj: obj)
+                        var getMax = DBmanager.shared.getMaxIdForSticker()
+                        objV.id = "\(getMax)"
                         DBmanager.shared.insertTextFile(fileObj: objV)
                     }
                 default:
@@ -541,6 +554,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     let objV = TextInfoData()
                     objV.color = ma.currentColorSting
                     objV.file = obj.fileName
+                    objV.id = "\(getMax)"
                     objV.text =  ma.textStickerView.text
                     objV.font = "\(ma.currentFontIndex)"
                     objV.texture = "\(ma.currentTextureIndex)"

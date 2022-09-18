@@ -125,7 +125,7 @@ class DBmanager: NSObject {
     }
     
     func updateTextData(fileNAME: String, fileObj: TextInfoData) {
-        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)' WHERE file='\(fileNAME)'"
+        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)' WHERE id='\(fileNAME)'"
         
         if sqlite3_open(DBpath, &db) == SQLITE_OK {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -149,7 +149,7 @@ class DBmanager: NSObject {
     
     
     func insertTextFile(fileObj: TextInfoData) {
-        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)')"
+        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -210,11 +210,11 @@ class DBmanager: NSObject {
         }
     }
     
-    func getTextInfo(fileName: String) -> TextInfoData {
+    func getTextInfo(id: String) -> TextInfoData {
         var mutableArray = [TextInfoData]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize FROM TextInfo where file = \(fileName)"
+        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize FROM TextInfo where id = \(id)"
         if (sqlite3_open(DBpath, &db) == SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
