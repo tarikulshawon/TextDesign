@@ -300,8 +300,15 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         else if currentOption.rawValue == TextEditingOption.Color.rawValue{
             
             cell.gradietImv.isHidden = true
-            if let colorString = plistArray[indexPath.row] as? String {
+            
+            if indexPath.row == 0 {
+                cell.gradietImv.image = UIImage(named: "ColorPicker")
+                cell.gradietImv.isHidden = false
+                cell.holderView.backgroundColor = UIColor.clear
+            }
+            else if let colorString = plistArray[indexPath.row] as? String {
                 cell.holderView.backgroundColor = getColor(colorString: colorString)
+                cell.gradietImv.isHidden = true
             }
             
         }
