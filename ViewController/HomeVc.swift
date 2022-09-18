@@ -28,8 +28,20 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.perform(#selector(self.targetMethod1), with: self, afterDelay:0.1)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @objc
+    fileprivate func didReceiveNotification(notification: Notification) {
+        
+        self.selectedUnselectedColor(m1: true, m2: false, m3: false)
+        self.gotoIndex(width: 0, index: 0)
+        
+         
     }
     
     
@@ -43,6 +55,11 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         dismiss(animated: true) {
             
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
 
