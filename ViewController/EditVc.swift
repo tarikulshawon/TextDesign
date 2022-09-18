@@ -805,6 +805,32 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         didSelectItemAt indexPath: IndexPath
     ) {
         
+        if collectionView == collectionViewForBackGround {
+            
+            if currentBackGroundIndex == 0 {
+                
+                if let colorString = plistArray[indexPath.row] as? String {
+                    currentTextStickerView?.backgroundColor = getColor(colorString: colorString)
+                }
+                
+            }
+            if currentBackGroundIndex == 1 {
+                
+                if let objArray = plistArray1[indexPath.row] as? NSArray {
+                    var allcolors: [CGColor] = []
+                    for item in objArray {
+                        let color = getColor(colorString: item as? String ?? "")
+                        allcolors.append(color.cgColor)
+                    }
+                    
+                    let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                    currentTextStickerView?.backgroundColor = UIColor(patternImage: uimage)
+                    
+                }
+                
+            }
+            return
+        }
         let cell = collectionView.cellForItem(at: indexPath) as? RatioCell
         
         if collectionView != collectionViewForBackGround {
