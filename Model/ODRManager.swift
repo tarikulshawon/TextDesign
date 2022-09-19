@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ODRManagerDelegate: class {
+protocol ODRManagerDelegate: AnyObject {
 	func doneLoading(tag: String, successfully: Bool)
 }
 

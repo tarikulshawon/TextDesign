@@ -1,10 +1,3 @@
-//
-//  EditVc.swift
-//  TextArt
-//
-//  Created by Sadiqul Amin on 11/8/22.
-//
-
 import UIKit
 import AVFoundation
 import CoreImage
@@ -100,25 +93,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     
     @IBAction func segmentValueHasChanged(_ sender: UISegmentedControl) {
-        
         currentBackGroundIndex = sender.selectedSegmentIndex
         collectionViewForBackGround.reloadData()
-        
     }
     
     @IBAction func hideBackgorundView(_ sender: Any) {
-        
         UIView.animate(withDuration: 0.2, animations: {
             self.bottomSpaceForBackGroundView.constant = -1000
             self.view.layoutIfNeeded()
-        }, completion: {_ in
         })
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        self.hideALL()
+        hideALL()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -201,8 +189,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         print(HolderView.frame.height)
         print(mainImage.size)
         
-        
-        var size = AVMakeRect(aspectRatio: mainImage!.size, insideRect: HolderView.frame)
+        let size = AVMakeRect(aspectRatio: mainImage!.size, insideRect: HolderView.frame)
         
         widthForImv.constant = size.width
         heightForImv.constant = size.height
@@ -235,7 +222,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let width = obj.width.floatValue
         let height = obj.height.floatValue
         let inset = obj.inset.floatValue
-        var pathName = obj.pathName
+        let pathName = obj.pathName
         let centerx = obj.centerx
         let centery = obj.centery
         let radians = atan2(CGFloat(y), CGFloat(x))
@@ -248,8 +235,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         testImage.image = UIImage(named: pathName)
         
         if type1.contains("Image") {
-            var lol  = getFileUrlWithName(fileName: pathName)
-            if let data = try? Data(contentsOf: lol as URL) {
+            let content = getFileUrlWithName(fileName: pathName)
+            if let data = try? Data(contentsOf: content as URL) {
                 if let image = UIImage(data: data) {
                     testImage.image = image
                 }
@@ -292,7 +279,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             let gradientIndex = Int(textObj.gradient)!
             
             if textureIndex >= 0 {
-                var value =  "Texture" + String(textureIndex) + ".png"
+                let value = "Texture" + String(textureIndex) + ".png"
                 sticker.textStickerView.textColor = UIColor(patternImage: UIImage(named: value)!)
                 sticker.currentColorSting = ""
                 sticker.currentGradientIndex = -1
@@ -346,7 +333,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
-    func  DoAdjustMent (inputImage:UIImage) {
+    func DoAdjustMent (inputImage:UIImage) {
         var tempImage = inputImage
         
         if currentFilterIndex > 0 {
@@ -355,7 +342,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         } else {
             tempImage = inputImage
         }
-        
         
         // var lol = CIImage(cgImage: inputImage.cgImage)
         
@@ -420,7 +406,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     @IBAction func gotoSave(_ sender: Any) {
-        DBmanager.shared.initDB()
+        _ = DBmanager.shared.initDB()
         hideALL()
         imageInfoObj.Bri = "\(Brightness)"
         imageInfoObj.Sat = "\(Saturation)"
@@ -506,7 +492,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     }
                     else {
                         DBmanager.shared.insertStickerile(fileObj: obj)
-                        var getMax = DBmanager.shared.getMaxIdForSticker()
+                        let getMax = DBmanager.shared.getMaxIdForSticker()
                         objV.id = "\(getMax)"
                         DBmanager.shared.insertTextFile(fileObj: objV)
                     }
@@ -612,9 +598,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
-        guard let selectedImage = info[.originalImage] as? UIImage else {
+        guard info[.originalImage] is UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-            
         }
         
         guard var selectedImage = info[.originalImage] as? UIImage else {
@@ -644,9 +629,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let totalSpacingWidth = cellGap * CGFloat((plistArray2.count - 1))
         
         let leftInset = (btnCollectionView.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-        let rightInset = leftInset
-        
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         layout.minimumInteritemSpacing = cellGap
@@ -1225,7 +1207,6 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
         for (index,view) in (screenSortView.subviews.filter{($0 is StickerView) || ($0 is TextStickerContainerView)}).enumerated(){
             switch view {
             case is StickerView:
-                //guard let ma = view as? StickerView else { return }
                 let ma = view as! StickerView
                 ma.showEditingHandlers = false
             case is TextStickerContainerView:

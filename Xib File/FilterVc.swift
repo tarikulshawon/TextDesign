@@ -132,12 +132,12 @@ class FilterVc: UIView, ODRManagerDelegate {
         
         
         for i in 0..<self.plistArray.count{
-            var btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
+            let btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
             btn?.setTitleColor(unselectedColor, for: .normal)
         }
         
         UIView.animate(withDuration: 0.2, animations: {
-            var value = CGFloat (sender.tag)
+            // var value = CGFloat (sender.tag)
             sender?.setTitleColor(UIColor.white, for: .normal)
             var frame = self.selectedIndexView.frame
             frame.origin.x = sender.frame.origin.x
@@ -147,7 +147,7 @@ class FilterVc: UIView, ODRManagerDelegate {
         }, completion: {_ in
             
             
-            var btn = self.btnScrollView.viewWithTag(sender.tag) as? UIButton
+            let btn = self.btnScrollView.viewWithTag(sender.tag) as? UIButton
             btn?.setTitleColor(UIColor.white, for: .normal)
             
             DispatchQueue.main.async {

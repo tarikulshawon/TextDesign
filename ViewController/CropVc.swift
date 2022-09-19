@@ -125,7 +125,7 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         cell.iconImv.image = UIImage(named: "Ratio" + "\(indexPath.row)")
         cell.iconImv.contentMode = .scaleAspectFit
         cell.iconLabel.textColor = unselectedColor
-        var obj = plistArray[indexPath.row] as? Dictionary<String, Any>
+        let obj = plistArray[indexPath.row] as? Dictionary<String, Any>
         
         if let value = obj?["Name"] as? String  {
             cell.iconLabel.text = value
@@ -172,7 +172,7 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             
         } else {
             
-            var obj = plistArray[indexPath.row] as? Dictionary<String, Any>
+            let obj = plistArray[indexPath.row] as? Dictionary<String, Any>
             
             guard  let value = obj?["Width"] as? CGFloat,let value1 = obj?["Height"] as? CGFloat  else {
                 return
@@ -182,7 +182,7 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             var newWidth:CGFloat = 0
             var newHeight:CGFloat = 0
             
-            var ratio:CGFloat = (holderView.frame.size.width*CGFloat(value1))/CGFloat(value)
+            let ratio: CGFloat = (holderView.frame.size.width*CGFloat(value1))/CGFloat(value)
             
             if ratio > holderView.frame.size.height {
                 

@@ -356,6 +356,7 @@ extension TextStickerContainerView {
                         menu.setMenuVisible(true, animated: true)
                     } else {
                         // Fallback on earlier versions
+                        menu.showMenu(from: view.subviews[0], rect: view.subviews[0].frame)
                     }
                     view.subviews[0].becomeFirstResponder()
                 }

@@ -95,28 +95,6 @@ class AddTextViewController: UIViewController {
     
 }
 
-extension AddTextViewController {
-    
-    //Get all Data
-    func getInfo() {
-        
-        guard let sticker = self.sticker else { return }
-        
-        //get frame
-        let frame = sticker.frame
-        
-        //get rotation angle
-        let radians = atan2(sticker.transform.b, sticker.transform.a)
-        let degrees = radians * 180 / .pi
-        
-        //Get all Text related info from sticker.textStickerView, like as text color, font, alignment etc
-        let textView = sticker.textStickerView
-        
-        
-    }
-}
-
-
 extension AddTextViewController: TextStickerContainerViewDelegate {
     func moveViewPosition(textStickerContainerView: TextStickerContainerView) {
         // TODO
