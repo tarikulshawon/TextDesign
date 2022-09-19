@@ -181,6 +181,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             overLayVc.setOverLay(index: currentOverlayIndex)
             transParentView.alpha = CGFloat(ov)
         }
+        hideALL()
     }
     
     override func viewDidLayoutSubviews() {
@@ -412,7 +413,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     @IBAction func gotoSave(_ sender: Any) {
         DBmanager.shared.initDB()
-        
+        hideALL()
         imageInfoObj.Bri = "\(Brightness)"
         imageInfoObj.Sat = "\(Saturation)"
         imageInfoObj.Cont = "\(Contrast)"
@@ -484,7 +485,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
-
+                        
                     }
                     
                     
@@ -557,8 +558,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     DBmanager.shared.insertStickerile(fileObj: obj)
                     
                     var getMax = DBmanager.shared.getMaxIdForSticker()
-                  
-
+                    
+                    
                     let objV = TextInfoData()
                     objV.color = ma.currentColorSting
                     objV.file = obj.fileName
@@ -574,7 +575,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
-
+                        
                     }
                     
                     DBmanager.shared.insertTextFile(fileObj: objV)
@@ -1098,16 +1099,10 @@ extension EditVc: TextStickerContainerViewDelegate {
     }
     
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {
-        // TODO
-        for view in screenSortView.subviews where view is TextStickerContainerView {
-            if view.tag == textStickerContainerView.tag {
-                print("[EditVC] Edit text delegate called")
-                let v = view as! TextStickerContainerView
-                v.textStickerView.isUserInteractionEnabled = true
-                v.textStickerView.isEditable = true
-                v.textStickerView.becomeFirstResponder()
-            }
-        }
+        currentTextStickerView?.textStickerView.isUserInteractionEnabled = true
+        currentTextStickerView?.textStickerView.isEditable = true
+        currentTextStickerView?.textStickerView.becomeFirstResponder()
+        
     }
     
     func deleteTextStickerView(textStickerContainerView: TextStickerContainerView) {
@@ -1172,6 +1167,28 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
         stickerView3.showEditingHandlers = true
         
         tagValue = tagValue + 1
+        
+        hideALL()
+        
+        stickerView3.showEditingHandlers = true
+        
+        
+        
+    }
+    
+    func hideALL() {
+        for (index,view) in (screenSortView.subviews.filter{($0 is StickerView) || ($0 is TextStickerContainerView)}).enumerated(){
+            switch view {
+            case is StickerView:
+                //guard let ma = view as? StickerView else { return }
+                let ma = view as! StickerView
+                ma.showEditingHandlers = false
+                
+            default:
+                 break
+            }
+            
+        }
     }
     
     func colorIndex(tag: Int, colorV: UIColor) {
@@ -1223,6 +1240,9 @@ extension EditVc: StickerViewDelegate {
     }
     
     func stickerViewDidTap(_ stickerView: StickerView) {
+        hideALL()
+        stickerView.showEditingHandlers = true
+        
         
     }
     
