@@ -27,8 +27,9 @@ class TextStickerContainerView: UIView {
     var align = 1
     var rotate = -1
     var fontSize: CGFloat = 0.0
-    var deleteController:DeleteImageView!
-    var scaleController:PanControllerImageView!
+    var deleteController: DeleteImageView!
+    var scaleController: PanControllerImageView!
+    var extendBarView: UIView!
     
     
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {
@@ -135,14 +136,21 @@ extension TextStickerContainerView {
         self.addSubview(breakWordController!)
         
 /// NOTE: Red mark on the boundary is removed. Uncomment if you need this is future
-
-//        let BWShowV = UIView(frame: CGRect(x: self.panControllerSize * 0.5 - 4, y: self.panControllerSize * 0.25, width: 4, height: self.panControllerSize * 1.5))
-//        BWShowV.backgroundColor = UIColor.red
-//        BWShowV.layer.name = "hide"
-//        BWShowV.layer.cornerRadius = 2
-//        BWShowV.isUserInteractionEnabled = false
-//        breakWordController?.addSubview(BWShowV)
-//        breakWordController?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
+        extendBarView = UIView(
+            frame: CGRect(
+                x: panControllerSize * 0.5 - 4,
+                y: panControllerSize * 0.25,
+                width: 4,
+                height: panControllerSize * 1.5
+            )
+        )
+        
+        extendBarView.backgroundColor = UIColor.red
+        extendBarView.layer.name = "hide"
+        extendBarView.layer.cornerRadius = 2
+        extendBarView.isUserInteractionEnabled = false
+        breakWordController?.addSubview(extendBarView)
+        breakWordController?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
         
         self.addSubview(scaleController)
         
@@ -151,7 +159,6 @@ extension TextStickerContainerView {
         deleteController.delegateDelete = self
         deleteController.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin]
         self.addSubview(deleteController)
-        
     }
     
     func initilizeTextStickerData(mainTextView: TextStickerView){

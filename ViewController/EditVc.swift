@@ -1111,8 +1111,15 @@ extension EditVc: AddTextDelegate {
         screenSortView.clipsToBounds = true
         tagValue = -1
         currentTextStickerView = sticker
-        currentTextStickerView?.deleteController.isHidden = false
-        currentTextStickerView?.scaleController.isHidden = false
+        
+        guard let textStickerView = currentTextStickerView else {
+            print("[EditVC] currentTextStickerView is nill")
+            return
+        }
+        
+        textStickerView.deleteController.isHidden = false
+        textStickerView.scaleController.isHidden = false
+        textStickerView.extendBarView.isHidden = false
     }
 }
 
@@ -1124,9 +1131,14 @@ extension EditVc: TextStickerContainerViewDelegate {
     func setCurrentTextStickerView(textStickerContainerView: TextStickerContainerView) {
         hideALL()
         currentTextStickerView = textStickerContainerView
-        currentTextStickerView?.deleteController.isHidden = false
-        currentTextStickerView?.scaleController.isHidden = false
+        guard let textStickerView = currentTextStickerView else {
+            print("[EditVC] currentTextStickerView is nill")
+            return
+        }
         
+        textStickerView.deleteController.isHidden = false
+        textStickerView.scaleController.isHidden = false
+        textStickerView.extendBarView.isHidden = false
     }
     
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {
@@ -1218,6 +1230,7 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
                 let ma = view as! TextStickerContainerView
                 ma.deleteController.isHidden = true
                 ma.scaleController.isHidden = true
+                ma.extendBarView?.isHidden = true
                 
             default:
                  break
