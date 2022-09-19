@@ -15,8 +15,12 @@ target 'TextArt' do
   target 'TextArtUITests' do
     # Pods for testing
   end
-pod 'MetalPetal/Swift'
+  
 pod 'SwiftHSVColorPicker'
-pod 'IGRPhotoTweaks'
+pod 'IGRPhotoTweaks', '~> 1.0.0'
+pod 'HorizontalDial'
+pod 'ImageActionSheet'
+pod 'AMColorPicker'
+pod 'MetalPetal/Swift'
 
 end

@@ -4,40 +4,68 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MetalPetal.xcscheme</key>
+		<key>AMColorPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-TextArt-TextArtUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Pods-TextArt.xcscheme</key>
+		<key>HorizontalDial.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-TextArtTests.xcscheme</key>
+		<key>IGRPhotoTweaks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ImageActionSheet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>SwiftHSVColorPicker.xcscheme</key>
+		<key>MetalPetal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>Pods-TextArt-TextArtUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-TextArt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-TextArtTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>SwiftHSVColorPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

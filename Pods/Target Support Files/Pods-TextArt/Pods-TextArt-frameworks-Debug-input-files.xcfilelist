@@ -1,3 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-TextArt/Pods-TextArt-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AMColorPicker/AMColorPicker.framework
+${BUILT_PRODUCTS_DIR}/HorizontalDial/HorizontalDial.framework
+${BUILT_PRODUCTS_DIR}/IGRPhotoTweaks/IGRPhotoTweaks.framework
 ${BUILT_PRODUCTS_DIR}/MetalPetal/MetalPetal.framework
 ${BUILT_PRODUCTS_DIR}/SwiftHSVColorPicker/SwiftHSVColorPicker.framework
