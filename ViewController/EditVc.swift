@@ -887,6 +887,19 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         
         if collectionView == collectionViewForBackGround {
             
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            UIView.animate(withDuration: 0.5, animations:
+                            {
+                cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                //cell?.backgroundColor = UIColor.lightGray
+            }) { (true) in
+                UIView.animate(withDuration: 0.5, animations:
+                                {
+                    cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0);                //cell?.backgroundColor = UIColor.clear
+                })
+            }
+        
             if currentBackGroundIndex == 0 {
                 
                 if let colorString = plistArray[indexPath.row] as? String {
