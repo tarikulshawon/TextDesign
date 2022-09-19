@@ -45,6 +45,16 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
     }
     
     
+    func gotoCropView (image:UIImage) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: CropVc = storyboard.instantiateViewController(withIdentifier: "CropVc") as! CropVc
+        vc.modalPresentationStyle = .fullScreen
+        vc.mainImage = image
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[.originalImage] as? UIImage else {
@@ -53,7 +63,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         }
         
         dismiss(animated: true) {
-            
+            self.gotoCropView(image: selectedImage)
         }
         
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -220,6 +221,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -759,6 +761,7 @@
 		39F8225528A3510E008925EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0105428328D860040004A516 /* CropVc.swift */,
 				39F8225628A35133008925EF /* HomeVc.swift */,
 				39CC0E0128A4A5B000DF1C64 /* EditVc.swift */,
 			);
@@ -1317,6 +1320,7 @@
 				39CC0E0928A4A82C00DF1C64 /* RatioCell.swift in Sources */,
 				39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */,
 				01FD5AD028AE52AE00CBF70F /* DeleteImageView.swift in Sources */,
+				0105428428D860040004A516 /* CropVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
