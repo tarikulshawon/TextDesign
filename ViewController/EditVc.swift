@@ -402,6 +402,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         transParentView.alpha = CGFloat(sender.value)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        for view in screenSortView.subviews{
+            view.removeFromSuperview()
+        }
+        
+    }
+    
     @IBAction func gotoSave(_ sender: Any) {
         DBmanager.shared.initDB()
         
