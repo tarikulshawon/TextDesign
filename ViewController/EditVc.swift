@@ -114,8 +114,16 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }, completion: {_ in
         })
     }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.hideALL()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        screenSortView.addGestureRecognizer(tap)
         
         mainImv.image = mainImage
         mainImv.contentMode = .scaleAspectFit
@@ -900,6 +908,10 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                     
                 }
                 
+            }
+            if currentBackGroundIndex == 2 {
+                var value = UIImage(named: "Texture" + "\(indexPath.row)")
+                currentTextStickerView?.backgroundColor = UIColor(patternImage: value!)
             }
             return
         }
