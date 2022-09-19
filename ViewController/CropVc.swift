@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import IGRPhotoTweaks
 
 
-class CropVc: UIViewController {
+class CropVc: UIViewController, IGRPhotoTweakViewControllerDelegate {
+    func photoTweaksController(_ controller: IGRPhotoTweakViewController, didFinishWithCroppedImage croppedImage: UIImage) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     
+    func photoTweaksControllerDidCancel(_ controller: IGRPhotoTweakViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     
     
     @IBOutlet weak var widthImv: NSLayoutConstraint!
@@ -138,7 +145,16 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         selectedIndex = indexPath.row
         if indexPath.row == 1 {
             
-           
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc: IGRPhotoTweakViewController = storyboard.instantiateViewController(withIdentifier: "ExampleCropViewController") as! ExampleCropViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.image = mainImage
+            vc.delegate = self
+            
+
+            self.present(vc, animated: true, completion: nil)
+            return
+            
         }
         if indexPath.row <= 1 {
             
@@ -210,9 +226,6 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         return aspectFillSize
     }
     
-}
-
-extension UIView {
 }
 
 extension UIView {
