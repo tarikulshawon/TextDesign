@@ -15,8 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cs-8X-ug6">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Zkh-ti-Kys"/>
+                    </constraints>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aG-xhc">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <rect key="frame" x="0.0" y="40" width="414" height="50"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OJP-0S-twx">
                         <size key="itemSize" width="128" height="128"/>
@@ -33,16 +40,20 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="IKp-aG-xhc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7dM-P0-mrt"/>
+                <constraint firstItem="8cs-8X-ug6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="384-cy-YXP"/>
                 <constraint firstAttribute="bottom" secondItem="IKp-aG-xhc" secondAttribute="bottom" id="DB6-mG-Xxe"/>
                 <constraint firstAttribute="trailing" secondItem="IKp-aG-xhc" secondAttribute="trailing" id="LuM-ru-R52"/>
+                <constraint firstItem="8cs-8X-ug6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Stz-fq-S3r"/>
                 <constraint firstItem="IKp-aG-xhc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TaI-O4-GDA"/>
+                <constraint firstItem="IKp-aG-xhc" firstAttribute="top" secondItem="8cs-8X-ug6" secondAttribute="bottom" id="dpx-EA-f1p"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8cs-8X-ug6" secondAttribute="trailing" id="sK3-Vi-awf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionViewForFilter" destination="IKp-aG-xhc" id="dNz-S4-jgD"/>
+                <outlet property="optionView" destination="8cs-8X-ug6" id="Ez9-Cq-NIb"/>
             </connections>
-            <point key="canvasLocation" x="133" y="107"/>
+            <point key="canvasLocation" x="131.8840579710145" y="106.47321428571428"/>
         </view>
     </objects>
     <resources>

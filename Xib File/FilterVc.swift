@@ -14,6 +14,7 @@ protocol filterIndexDelegate: AnyObject {
 class FilterVc: UIView, ODRManagerDelegate {
     
     
+    @IBOutlet weak var optionView: UIView!
     lazy var odrManager: ODRManager = {
         let odr = ODRManager()
         odr.delegate = self
@@ -22,6 +23,9 @@ class FilterVc: UIView, ODRManagerDelegate {
     
     
     weak var delegateForFilter: filterIndexDelegate?
+    var btnScrollView: UIScrollView!
+    var tempViww:UIView!
+
 
     
     func doneLoading(tag: String, successfully: Bool) {
@@ -34,6 +38,14 @@ class FilterVc: UIView, ODRManagerDelegate {
     
     @IBOutlet weak var collectionViewForFilter: UICollectionView!
     var noOfFilter  = 27
+    let buttonWidth:CGFloat = 70.0
+    var selectedIndexView:UIView!
+    var plistArray:NSArray!
+    let gapBetweenButtons: CGFloat = 7
+
+
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -43,12 +55,111 @@ class FilterVc: UIView, ODRManagerDelegate {
         collectionViewForFilter.dataSource = self
         collectionViewForFilter.showsVerticalScrollIndicator = false
         collectionViewForFilter.showsHorizontalScrollIndicator = false
+        let path = Bundle.main.path(forResource: "FilterGroup", ofType: "plist")
+        plistArray = NSArray(contentsOfFile: path!)
+        stickersScrollContents()
+
         
     }
     
-    
+    func stickersScrollContents() {
+        
+        print("mammamamama")
+        var xCoord: CGFloat = 5
+        let yCoord: CGFloat = 0
+        let buttonHeight: CGFloat = 45.0
+        let tempBtn:CGFloat = 25.0
+        btnScrollView = UIScrollView(frame: CGRect(x: 8, y: 0, width: optionView.frame.width, height: optionView.frame.height))
+        //btnScrollView.backgroundColor = UIColor.red
+        
+        optionView.addSubview(btnScrollView)
+        tempViww = UIView(frame: CGRect(x: 0, y: (buttonHeight - tempBtn)/2.0, width: buttonWidth, height: tempBtn))
+        selectedIndexView = UIView(frame: CGRect(x: xCoord, y: 0, width: buttonWidth, height: buttonHeight))
+        selectedIndexView.addSubview(tempViww)
+        tempViww.backgroundColor = tintColor
+        tempViww.layer.cornerRadius = tempViww.frame.size.height / 2.0
+        //selectedIndexView.backgroundColor = UIColor.clear
+        
+        
+        btnScrollView.addSubview(selectedIndexView)
+        btnScrollView.showsHorizontalScrollIndicator = false
+        btnScrollView.showsVerticalScrollIndicator = false
+        
+        
+        for i in 0..<plistArray.count{
+            let filterButton = UIButton(type: .custom)
+            filterButton.frame = CGRect(x: xCoord, y: yCoord, width: buttonWidth, height: buttonHeight)
+            filterButton.tag = 800 + i
+            filterButton.backgroundColor = UIColor.clear
+            
+            if i == 0 {
+                tempViww.backgroundColor = titleColor
+            }
+            
+            if let value = plistArray[i] as? Dictionary<String, Any>{
+                
+                
+                 filterButton.setTitle(value["group-name"] as? String, for: .normal)
+                filterButton.setTitleColor(unselectedColor, for: .normal)
+            }
+            
+            filterButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13.0)
+            filterButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            filterButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            
+            if i == 0 {
+                filterButton.setTitleColor(UIColor.white, for: .normal)
+            }
+            //filterButton.setTitleColor(tintColor, for: .normal)
+            filterButton.clipsToBounds = true
+            filterButton.backgroundColor = UIColor.clear
+            xCoord +=  buttonWidth + gapBetweenButtons
+            filterButton.titleLabel?.textAlignment = .center
+            btnScrollView.addSubview(filterButton)
+            
+        }
+        
+        
+        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray.count) + gapBetweenButtons * CGFloat((plistArray.count*2 + 1)), height: yCoord)
 
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        
+        
+        self.tempViww.backgroundColor = titleColor
+            
+        
+        
+        for i in 0..<self.plistArray.count{
+            var btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
+            btn?.setTitleColor(unselectedColor, for: .normal)
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            var value = CGFloat (sender.tag)
+            sender?.setTitleColor(UIColor.white, for: .normal)
+            var frame = self.selectedIndexView.frame
+            frame.origin.x = sender.frame.origin.x
+            self.selectedIndexView.frame = frame
+            self.layoutIfNeeded()
+            
+        }, completion: {_ in
+            
+            
+            var btn = self.btnScrollView.viewWithTag(sender.tag) as? UIButton
+            btn?.setTitleColor(UIColor.white, for: .normal)
+            
+            DispatchQueue.main.async {
+                //self.collectionViewForTextControls.reloadData()
+            }
+            
+            
+        })
+    }
+    
 }
+    
 
 extension FilterVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
 {

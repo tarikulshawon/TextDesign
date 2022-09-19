@@ -547,5 +547,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12765C3B-F9FA-405C-9629-08E7CD6D0601"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AddText/Extensions/BorderExtenstion.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "drawBorder(frame:zoomScale:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3865537A-03BE-4661-8029-EBCA99B06848"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xib File/FilterVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "stickersScrollContents()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3865537A-03BE-4661-8029-EBCA99B06848 - 14bb3ac839672eea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.FilterVc.stickersScrollContents() -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/Xib%20File/FilterVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "4044">
+               </Location>
+               <Location
+                  uuid = "3865537A-03BE-4661-8029-EBCA99B06848 - 14bb3ac839672eea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.FilterVc.stickersScrollContents() -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/Xib%20File/FilterVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "4340">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

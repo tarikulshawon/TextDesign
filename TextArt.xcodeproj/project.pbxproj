@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
+		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -224,6 +225,7 @@
 /* Begin PBXFileReference section */
 		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
+		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -809,6 +811,7 @@
 		39F8227228A3652F008925EF /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				0127AAD328D8B71000EE45BC /* FilterGroup.plist */,
 				39F8227328A3652F008925EF /* category.plist */,
 				39F8227428A3652F008925EF /* textEditOption.plist */,
 				39F8227528A3652F008925EF /* style.plist */,
@@ -1095,6 +1098,7 @@
 				3949335028AB33EF003E8D67 /* FilterThumb26.jpg in Resources */,
 				394933E528AB34B9003E8D67 /* OverlayThumb17.jpg in Resources */,
 				394933E728AB34B9003E8D67 /* OverlayThumb29.jpg in Resources */,
+				0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */,
 				39CC0E2028A4AB2600DF1C64 /* ImageEditView.xib in Resources */,
 				394933D428AB34B9003E8D67 /* OverlayThumb36.jpg in Resources */,
 				394933EC28AB34B9003E8D67 /* OverlayThumb11.jpg in Resources */,
