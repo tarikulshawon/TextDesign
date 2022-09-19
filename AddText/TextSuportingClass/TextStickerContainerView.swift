@@ -27,6 +27,8 @@ class TextStickerContainerView: UIView {
     var align = 1
     var rotate = -1
     var fontSize: CGFloat = 0.0
+    var deleteController:DeleteImageView!
+    var scaleController:PanControllerImageView!
     
     
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {
@@ -123,7 +125,7 @@ extension TextStickerContainerView: UpdateTextFontSize {
 extension TextStickerContainerView {
 
     func addStickerViewSubViews() {
-        let scaleController = PanControllerImageView(frame: CGRect(x: self.self.textStickerView.bounds.width +  panControllerSize, y: self.textStickerView.bounds.height + panControllerSize, width: panControllerSize, height: panControllerSize))
+    scaleController = PanControllerImageView(frame: CGRect(x: self.self.textStickerView.bounds.width +  panControllerSize, y: self.textStickerView.bounds.height + panControllerSize, width: panControllerSize, height: panControllerSize))
         scaleController.layer.name = "hide"
         scaleController.autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin]
         scaleController.addDelegate(delegate: self)
@@ -144,7 +146,7 @@ extension TextStickerContainerView {
         
         self.addSubview(scaleController)
         
-        let deleteController = DeleteImageView(frame: CGRect(x: self.textStickerView.bounds.width +  panControllerSize, y: 0, width: panControllerSize, height: panControllerSize))
+        deleteController = DeleteImageView(frame: CGRect(x: self.textStickerView.bounds.width +  panControllerSize, y: 0, width: panControllerSize, height: panControllerSize))
         deleteController.layer.name = "hide"
         deleteController.delegateDelete = self
         deleteController.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin]
