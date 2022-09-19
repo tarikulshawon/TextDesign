@@ -565,7 +565,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     print("Sticker info: \(obj)")
                     DBmanager.shared.insertStickerile(fileObj: obj)
                     
-                    var getMax = DBmanager.shared.getMaxIdForSticker()
+                    let getMax = DBmanager.shared.getMaxIdForSticker()
                     
                     
                     let objV = TextInfoData()
@@ -923,7 +923,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
             }
             if currentBackGroundIndex == 2 {
-                var value = UIImage(named: "Texture" + "\(indexPath.row)")
+                let value = UIImage(named: "Texture" + "\(indexPath.row)")
                 currentTextStickerView?.backgroundColor = UIColor(patternImage: value!)
             }
             return
@@ -1120,6 +1120,7 @@ extension EditVc: AddTextDelegate {
         textStickerView.deleteController.isHidden = false
         textStickerView.scaleController.isHidden = false
         textStickerView.extendBarView.isHidden = false
+        textStickerView.hideTextBorder(isHide: false)
     }
 }
 
@@ -1139,6 +1140,7 @@ extension EditVc: TextStickerContainerViewDelegate {
         textStickerView.deleteController.isHidden = false
         textStickerView.scaleController.isHidden = false
         textStickerView.extendBarView.isHidden = false
+        textStickerView.hideTextBorder(isHide: false)
     }
     
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {
@@ -1162,7 +1164,7 @@ extension EditVc: TextStickerContainerViewDelegate {
 extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShape {
     func imageNameWithIndex(tag: String, image: UIImage) {
         
-        var imagF = image
+        _ = image
         currentOverlayIndex = Int(tag) ?? 0
         
         
@@ -1186,7 +1188,7 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     }
     
     func sendSticker(sticker: String) {
-        guard var image = UIImage(named: sticker) else { return }
+        guard let image = UIImage(named: sticker) else { return }
         addSticker(test: image, type: "STICKER", pathName: sticker)
     }
     
@@ -1231,7 +1233,7 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
                 ma.deleteController.isHidden = true
                 ma.scaleController.isHidden = true
                 ma.extendBarView?.isHidden = true
-                
+                ma.hideTextBorder(isHide: true)
             default:
                  break
             }
@@ -1245,7 +1247,6 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     
     func filterNameWithIndex(tag: String, image: UIImage) {
         currentFilterIndex = Int(tag) ?? 0
-        var tempImage:UIImage!
         DoAdjustMent(inputImage: mainImage)
         
     }

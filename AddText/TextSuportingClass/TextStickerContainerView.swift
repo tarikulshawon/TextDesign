@@ -124,7 +124,27 @@ extension TextStickerContainerView: UpdateTextFontSize {
 
 // MARK: Initialize TextSticker Data
 extension TextStickerContainerView {
-
+    func hideTextBorder(isHide: Bool) {
+        if isHide {
+            if self.layer.sublayers?.count ?? 0 > 0 {
+                for temp in self.layer.sublayers! {
+                    if temp.name == "BorderLine"{
+                        temp.removeFromSuperlayer()
+                    }
+                }
+            }
+        } else {
+            drawBorder(
+                frame: CGRect(
+                    x: panControllerSize * 0.5,
+                    y: panControllerSize * 0.5,
+                    width: bounds.width - 1 * panControllerSize,
+                    height: bounds.height - 1 * panControllerSize),
+                zoomScale: UIScreen.main.scale
+            )
+        }
+    }
+    
     func addStickerViewSubViews() {
     scaleController = PanControllerImageView(frame: CGRect(x: self.self.textStickerView.bounds.width +  panControllerSize, y: self.textStickerView.bounds.height + panControllerSize, width: panControllerSize, height: panControllerSize))
         scaleController.layer.name = "hide"

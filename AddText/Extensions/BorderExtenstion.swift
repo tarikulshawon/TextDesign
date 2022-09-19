@@ -13,7 +13,7 @@ class BorderExtenstion: NSObject {
 
 extension UIView {
     //MARK: Draw Border On View
-    func drawBorder(frame: CGRect, zoomScale: CGFloat){
+    func drawBorder(frame: CGRect, zoomScale: CGFloat, isHidden: Bool? = false){
         if self.layer.sublayers?.count ?? 0 > 0 {
             for temp in self.layer.sublayers! {
                 if temp.name == "BorderLine"{
@@ -26,7 +26,10 @@ extension UIView {
         layer.name = "BorderLine"
         let path = UIBezierPath(roundedRect: frame, cornerRadius: 5)
         layer.path = path.cgPath
-        layer.strokeColor = UIColor.white.cgColor
+        
+        layer.strokeColor = isHidden ?? false ?
+                            UIColor.clear.cgColor
+                            : UIColor.white.cgColor
        // layer.lineDashPattern = [2,1]
         layer.backgroundColor = UIColor.clear.cgColor
         layer.fillColor = UIColor.clear.cgColor
