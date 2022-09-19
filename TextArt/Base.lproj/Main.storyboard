@@ -160,6 +160,9 @@
                                                 <color key="tintColor" red="0.96078431369999995" green="0.0" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="."/>
+                                                <connections>
+                                                    <action selector="gotoDeelte:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rWQ-3n-Hbe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -246,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62.318840579710148" y="-7.3660714285714279"/>
+            <point key="canvasLocation" x="-371" y="18"/>
         </scene>
         <!--Edit Vc-->
         <scene sceneID="F0H-nj-j51">
@@ -758,7 +761,7 @@
         <!--Crop Vc-->
         <scene sceneID="wO3-EQ-e2k">
             <objects>
-                <viewController storyboardIdentifier="CropVc" id="Ajo-ba-6g4" customClass="CropVc" customModule="PosterMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CropVc" id="Ajo-ba-6g4" customClass="CropVc" customModule="TextArt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cez-AJ-5nA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -950,6 +953,139 @@
             </objects>
             <point key="canvasLocation" x="-1828" y="433"/>
         </scene>
+        <!--Example Crop View Controller-->
+        <scene sceneID="dIv-wb-WFj">
+            <objects>
+                <viewController storyboardIdentifier="ExampleCropViewController" id="eva-xu-Mff" customClass="ExampleCropViewController" customModule="TextArt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cZj-Z7-aIb"/>
+                        <viewControllerLayoutGuide type="bottom" id="cCc-Ck-nE8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G7d-uD-ddx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMB-cR-6m1">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="uOR-3b-dua">
+                                        <connections>
+                                            <action selector="onTouchCancelButton:" destination="eva-xu-Mff" id="ai0-MP-mSb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Reset" id="MsK-nk-xmD">
+                                        <connections>
+                                            <action selector="onTouchResetButton:" destination="eva-xu-Mff" id="7Gx-OE-0kz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="F3w-2P-op7"/>
+                                    <barButtonItem title="Aspect" id="QNW-eV-Len">
+                                        <connections>
+                                            <action selector="onTouchAspectButton:" destination="eva-xu-Mff" id="88n-vy-3Ee"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Crop" id="BB9-hy-QnV">
+                                        <color key="tintColor" systemColor="tintColor"/>
+                                        <connections>
+                                            <action selector="onTouchCropButton:" destination="eva-xu-Mff" id="qaJ-iL-JTi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oXf-NW-V7g">
+                                <rect key="frame" x="14" y="48" width="313" height="31"/>
+                                <connections>
+                                    <action selector="onChandeAngleSliderValue:" destination="eva-xu-Mff" eventType="valueChanged" id="92t-KV-9sQ"/>
+                                    <action selector="onEndTouchAngleControl:" destination="eva-xu-Mff" eventType="touchUpInside" id="Aqa-Jl-YTQ"/>
+                                </connections>
+                            </slider>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H06-OI-Ch1">
+                                <rect key="frame" x="333" y="57" width="61" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="A7Z-zU-ExR"/>
+                                    <constraint firstAttribute="width" constant="61" id="xAi-GU-pk3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-KW-7dt" customClass="HorizontalDial" customModule="HorizontalDial">
+                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5QA-EQ-bar"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="-80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tick">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="centerMarkColor">
+                                        <color key="value" systemColor="tintColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="centerMarkWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="centerMarkRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="markColor">
+                                        <color key="value" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="markWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="markCount">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRange" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="verticalAlign" value="center"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="centerMarkHeightRatio">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="eva-xu-Mff" id="bo0-hT-vd6"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zxh-9u-F85"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fMB-cR-6m1" firstAttribute="leading" secondItem="G7d-uD-ddx" secondAttribute="leading" id="5Ks-MW-MRI"/>
+                            <constraint firstItem="cCc-Ck-nE8" firstAttribute="top" secondItem="fMB-cR-6m1" secondAttribute="bottom" id="6pF-pg-cuQ"/>
+                            <constraint firstAttribute="trailing" secondItem="vUM-KW-7dt" secondAttribute="trailing" id="DWv-O4-jzA"/>
+                            <constraint firstAttribute="trailing" secondItem="fMB-cR-6m1" secondAttribute="trailing" id="H2a-An-xiu"/>
+                            <constraint firstItem="H06-OI-Ch1" firstAttribute="top" secondItem="cZj-Z7-aIb" secondAttribute="bottom" constant="9" id="HY4-RG-lLb"/>
+                            <constraint firstItem="oXf-NW-V7g" firstAttribute="top" secondItem="cZj-Z7-aIb" secondAttribute="bottom" id="RbT-cP-jBT"/>
+                            <constraint firstItem="vUM-KW-7dt" firstAttribute="leading" secondItem="G7d-uD-ddx" secondAttribute="leading" id="WiQ-5o-2ca"/>
+                            <constraint firstItem="H06-OI-Ch1" firstAttribute="trailing" secondItem="G7d-uD-ddx" secondAttribute="trailingMargin" id="XgN-hw-KIF"/>
+                            <constraint firstItem="H06-OI-Ch1" firstAttribute="leading" secondItem="oXf-NW-V7g" secondAttribute="trailing" constant="8" id="aBx-8O-KgU"/>
+                            <constraint firstItem="fMB-cR-6m1" firstAttribute="top" secondItem="vUM-KW-7dt" secondAttribute="bottom" id="cZP-FU-IF8"/>
+                            <constraint firstItem="oXf-NW-V7g" firstAttribute="leading" secondItem="G7d-uD-ddx" secondAttribute="leading" constant="16" id="gf8-Pd-PMh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="angleLabel" destination="H06-OI-Ch1" id="QMZ-hx-mSe"/>
+                        <outlet property="angleSlider" destination="oXf-NW-V7g" id="Pyl-9w-jpC"/>
+                        <outlet property="horizontalDial" destination="vUM-KW-7dt" id="qRb-l0-Bva"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Nt-5U-Xjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087.1999999999998" y="127.28635682158921"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Back2ndPage" width="33.333332061767578" height="33.333332061767578"/>
@@ -960,6 +1096,9 @@
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

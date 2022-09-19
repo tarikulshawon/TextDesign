@@ -54,6 +54,12 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
     }
     
     
+    @IBAction func gotoDeelte(_ sender: Any) {
+        
+        DBmanager.shared.initDB()
+        firstVc.deleteBtnPressed = !firstVc.deleteBtnPressed
+        firstVc.reloadDataF()
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.

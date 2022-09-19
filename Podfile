@@ -17,5 +17,6 @@ target 'TextArt' do
   end
 pod 'MetalPetal/Swift'
 pod 'SwiftHSVColorPicker'
+pod 'IGRPhotoTweaks'
 
 end
