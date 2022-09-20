@@ -1152,12 +1152,7 @@ extension EditVc: TextStickerContainerViewDelegate {
     
     func deleteTextStickerView(textStickerContainerView: TextStickerContainerView) {
         //screenSortView.subviews
-        for view in screenSortView.subviews where view is TextStickerContainerView {
-            if view.tag == textStickerContainerView.tag {
-                print("[EditVC] add text deleted ")
-                view.removeFromSuperview()
-            }
-        }
+        currentTextStickerView?.removeFromSuperview()
     }
 }
 

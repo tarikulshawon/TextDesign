@@ -559,7 +559,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "drawBorder(frame:zoomScale:)"
+            landmarkName = "drawBorder(frame:zoomScale:isHidden:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
