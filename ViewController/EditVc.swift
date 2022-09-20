@@ -904,11 +904,13 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
                 if let colorString = plistArray[indexPath.row] as? String {
                     currentTextStickerView?.backgroundColor = getColor(colorString: colorString)
+                    currentTextStickerView?.hideTextBorder(isHide: true)
                 }
                 
             }
             if currentBackGroundIndex == 1 {
                 
+                currentTextStickerView?.hideTextBorder(isHide: true)
                 if let objArray = plistArray1[indexPath.row] as? NSArray {
                     var allcolors: [CGColor] = []
                     for item in objArray {
@@ -923,6 +925,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
             }
             if currentBackGroundIndex == 2 {
+                currentTextStickerView?.hideTextBorder(isHide: true)
                 let value = UIImage(named: "Texture" + "\(indexPath.row)")
                 currentTextStickerView?.backgroundColor = UIColor(patternImage: value!)
             }

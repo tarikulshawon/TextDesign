@@ -41,7 +41,7 @@ class OverLayVc: UIView, ODRManagerDelegate {
     }()
     
     @IBOutlet weak var collectionViewForFilter: UICollectionView!
-    var noOfFilter  = 50
+    var noOfFilter  = 25
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -56,11 +56,8 @@ class OverLayVc: UIView, ODRManagerDelegate {
 
     func setOverLay(index:Int) {
         
-        if index == 0 {
-            delegateForOverlay?.imageNameWithIndex(tag: "\(index)", image: UIImage(named: "nofilter") ?? UIImage())
-
-        }
-        else if let image = UIImage(named: "OverLay" + "\(index)") {
+       
+         if let image = UIImage(named: "Overlay" + "\(index)") {
             delegateForOverlay?.imageNameWithIndex(tag: "\(index)", image: image)
 
             print(image.size.width)
@@ -122,7 +119,7 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
         else
         {
             
-            cell.gradietImv.image =  UIImage(named: "OverlayThumb" + "\(indexPath.row - 1)"  + ".jpg")
+            cell.gradietImv.image =  UIImage(named: "OverlayThumb" + "\(indexPath.row - 1)")
         }
         cell.gradietImv.layer.cornerRadius  = cell.frame.size.height/2.0
         return cell
