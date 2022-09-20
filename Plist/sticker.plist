@@ -3,7 +3,10 @@
 <plist version="1.0">
 <array>
 	<string>Bubbles</string>
+	<string>Nature</string>
+	<string>Fruits</string>
 	<string>Paper</string>
+	<string>Vegetables</string>
 	<string>FastFood</string>
 	<string>Marketing</string>
 	<string>Sale</string>

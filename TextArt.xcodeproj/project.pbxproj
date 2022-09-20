@@ -10,6 +10,9 @@
 		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
+		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
+		012FA0BA28DA02B200E44786 /* Vegetables in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0B928DA02B200E44786 /* Vegetables */; };
+		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -226,6 +229,9 @@
 		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
+		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
+		012FA0B928DA02B200E44786 /* Vegetables */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vegetables; path = "../../../../../Downloads/Nature, Vegegtables, Fruits 2/Vegetables"; sourceTree = "<group>"; };
+		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -684,6 +690,9 @@
 		39CC0E2C28A4AF3F00DF1C64 /* Sticker */ = {
 			isa = PBXGroup;
 			children = (
+				012FA0BB28DA02C000E44786 /* Fruits */,
+				012FA0B928DA02B200E44786 /* Vegetables */,
+				012FA0A728DA028F00E44786 /* Nature */,
 				01B0DFD928D650FF00081369 /* Marketing */,
 				01B0DFD728D650A900081369 /* Transport */,
 				01B0DFD528D650A000081369 /* Sale */,
@@ -1054,10 +1063,12 @@
 				394933D628AB34B9003E8D67 /* OverlayThumb34.jpg in Resources */,
 				39F8228628A36596008925EF /* ColorCell.xib in Resources */,
 				3949335A28AB33EF003E8D67 /* FilterThumb23.jpg in Resources */,
+				012FA0A828DA029000E44786 /* Nature in Resources */,
 				394933DA28AB34B9003E8D67 /* OverlayThumb19.jpg in Resources */,
 				01B0DFD628D650A000081369 /* Sale in Resources */,
 				394933BF28AB34B9003E8D67 /* OverlayThumb0.jpg in Resources */,
 				3949338028AB347F003E8D67 /* Texture4.png in Resources */,
+				012FA0BC28DA02C000E44786 /* Fruits in Resources */,
 				01B0DFD228D6506B00081369 /* Paper in Resources */,
 				3949335B28AB33EF003E8D67 /* FilterThumb22.jpg in Resources */,
 				39CC0E3728A4AF6600DF1C64 /* Cute in Resources */,
@@ -1071,6 +1082,7 @@
 				394933CA28AB34B9003E8D67 /* OverlayThumb47.jpg in Resources */,
 				394933C928AB34B9003E8D67 /* OverlayThumb46.jpg in Resources */,
 				3949337A28AB347F003E8D67 /* Texture15.png in Resources */,
+				012FA0BA28DA02B200E44786 /* Vegetables in Resources */,
 				394933C528AB34B9003E8D67 /* OverlayThumb42.jpg in Resources */,
 				39F8227F28A3652F008925EF /* gradient.plist in Resources */,
 				39F8227D28A3652F008925EF /* style.plist in Resources */,
