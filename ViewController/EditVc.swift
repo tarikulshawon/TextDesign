@@ -268,6 +268,21 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             sticker.textStickerView.font = UIFont(name: pathName, size: 15)
             
             let fontIndex = Int(textObj.font)!
+            let align = Int(textObj.align)!
+            
+            if align == 0 {
+                sticker.textStickerView.textAlignment = .left
+            }
+            if align == 1 {
+                sticker.textStickerView.textAlignment = .center
+            }
+            if align == 2 {
+                sticker.textStickerView.textAlignment = .right
+            }
+            if align == 0 {
+                sticker.textStickerView.textAlignment = .justified
+            }
+
             
             let fontSize = Double(textObj.fontSize)!
             if fontIndex < 0 {
@@ -1035,6 +1050,27 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func setAlighnMent(index: Int) {
+        if index == 0 {
+            currentTextStickerView?.textStickerView.textAlignment = .left
+            currentTextStickerView?.align = 0
+        }
+        if index == 1 {
+            currentTextStickerView?.textStickerView.textAlignment = .center
+            currentTextStickerView?.align = 1
+        }
+        if index == 2 {
+            currentTextStickerView?.textStickerView.textAlignment = .right
+            currentTextStickerView?.align = 2
+        }
+        if index == 3 {
+            currentTextStickerView?.textStickerView.textAlignment = .justified
+            currentTextStickerView?.align = 3
+        }
+     
+         
+    }
+    
     func showBackground() {
         UIView.animate(withDuration: 0.2, animations: {
             self.bottomSpaceForBackGroundView.constant = 0
@@ -1129,7 +1165,8 @@ extension EditVc: AddTextDelegate {
 
 extension EditVc: TextStickerContainerViewDelegate {
     func moveViewPosition(textStickerContainerView: TextStickerContainerView) {
-        // TODO
+        
+         print("mamamma")
     }
     
     func setCurrentTextStickerView(textStickerContainerView: TextStickerContainerView) {

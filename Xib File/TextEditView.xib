@@ -70,11 +70,23 @@
                                                         <constraint firstAttribute="width" secondItem="RrI-R0-mUA" secondAttribute="height" multiplier="1:1" id="bhN-YK-hjK"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNh-04-she">
+                                                    <rect key="frame" x="22.5" y="20" width="35" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="gotoLeft:" destination="iN0-l3-epB" eventType="touchUpInside" id="eRK-hO-eYo"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="RrI-R0-mUA" firstAttribute="centerX" secondItem="KNT-1a-jhU" secondAttribute="centerX" id="QU1-2L-FMY"/>
+                                                <constraint firstItem="UNh-04-she" firstAttribute="centerX" secondItem="RrI-R0-mUA" secondAttribute="centerX" id="Szc-ee-Pre"/>
+                                                <constraint firstItem="UNh-04-she" firstAttribute="width" secondItem="RrI-R0-mUA" secondAttribute="width" id="YAj-pa-X7f"/>
                                                 <constraint firstItem="RrI-R0-mUA" firstAttribute="centerY" secondItem="KNT-1a-jhU" secondAttribute="centerY" id="oEq-qs-p8C"/>
+                                                <constraint firstItem="UNh-04-she" firstAttribute="height" secondItem="RrI-R0-mUA" secondAttribute="height" id="rQF-HQ-V17"/>
+                                                <constraint firstItem="UNh-04-she" firstAttribute="centerY" secondItem="RrI-R0-mUA" secondAttribute="centerY" id="wbP-JN-f6T"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epu-Bn-r8G">
@@ -87,11 +99,23 @@
                                                         <constraint firstAttribute="width" constant="35" id="bUP-AI-PBZ"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nta-T5-FqY">
+                                                    <rect key="frame" x="22.5" y="20" width="35" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="gotocenter:" destination="iN0-l3-epB" eventType="touchUpInside" id="chH-II-Jva"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="nta-T5-FqY" firstAttribute="centerY" secondItem="2UI-Qs-odz" secondAttribute="centerY" id="0l8-ZX-cg8"/>
                                                 <constraint firstItem="2UI-Qs-odz" firstAttribute="centerY" secondItem="Epu-Bn-r8G" secondAttribute="centerY" id="9Dx-2O-6kT"/>
                                                 <constraint firstItem="2UI-Qs-odz" firstAttribute="centerX" secondItem="Epu-Bn-r8G" secondAttribute="centerX" id="DSE-Qd-LBT"/>
+                                                <constraint firstItem="nta-T5-FqY" firstAttribute="centerX" secondItem="2UI-Qs-odz" secondAttribute="centerX" id="a1U-NS-u1U"/>
+                                                <constraint firstItem="nta-T5-FqY" firstAttribute="height" secondItem="2UI-Qs-odz" secondAttribute="height" id="t9W-UB-iMc"/>
+                                                <constraint firstItem="nta-T5-FqY" firstAttribute="width" secondItem="2UI-Qs-odz" secondAttribute="width" id="ukA-QB-ur1"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tx0-y4-5oa">
@@ -104,11 +128,24 @@
                                                         <constraint firstAttribute="width" constant="35" id="fq0-af-nA7"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XF7-JM-lfk">
+                                                    <rect key="frame" x="22.5" y="20" width="35" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="gotoRight:" destination="iN0-l3-epB" eventType="touchUpInside" id="erc-UH-OcX"/>
+                                                        <action selector="gotocenter:" destination="iN0-l3-epB" eventType="touchUpInside" id="rXH-6j-a0Q"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="ofI-To-I01" firstAttribute="centerX" secondItem="tx0-y4-5oa" secondAttribute="centerX" id="1SE-ls-pOU"/>
+                                                <constraint firstItem="XF7-JM-lfk" firstAttribute="height" secondItem="ofI-To-I01" secondAttribute="height" id="Kl9-UR-0fO"/>
+                                                <constraint firstItem="XF7-JM-lfk" firstAttribute="centerY" secondItem="ofI-To-I01" secondAttribute="centerY" id="cpT-WB-k6I"/>
                                                 <constraint firstItem="ofI-To-I01" firstAttribute="centerY" secondItem="tx0-y4-5oa" secondAttribute="centerY" id="hju-Ts-LME"/>
+                                                <constraint firstItem="XF7-JM-lfk" firstAttribute="width" secondItem="ofI-To-I01" secondAttribute="width" id="uKi-MP-Y8y"/>
+                                                <constraint firstItem="XF7-JM-lfk" firstAttribute="centerX" secondItem="ofI-To-I01" secondAttribute="centerX" id="wj8-0k-YYy"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-QU-tRf">
@@ -121,10 +158,24 @@
                                                         <constraint firstAttribute="width" constant="35" id="Fy7-9D-jUw"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW9-Qq-4mR">
+                                                    <rect key="frame" x="22.5" y="20" width="35" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="gotoJustified:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nc9-EC-tMu"/>
+                                                        <action selector="gotoRight:" destination="iN0-l3-epB" eventType="touchUpInside" id="CHA-x9-Rqx"/>
+                                                        <action selector="gotocenter:" destination="iN0-l3-epB" eventType="touchUpInside" id="5yK-eB-mdu"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="zeV-gY-Xwm" firstAttribute="centerY" secondItem="E8d-QU-tRf" secondAttribute="centerY" id="BCB-zn-wSO"/>
+                                                <constraint firstItem="aW9-Qq-4mR" firstAttribute="width" secondItem="zeV-gY-Xwm" secondAttribute="width" id="E32-OA-FXx"/>
+                                                <constraint firstItem="aW9-Qq-4mR" firstAttribute="centerX" secondItem="zeV-gY-Xwm" secondAttribute="centerX" id="HSa-Kg-nrA"/>
+                                                <constraint firstItem="aW9-Qq-4mR" firstAttribute="height" secondItem="zeV-gY-Xwm" secondAttribute="height" id="K8p-ca-S3C"/>
+                                                <constraint firstItem="aW9-Qq-4mR" firstAttribute="centerY" secondItem="zeV-gY-Xwm" secondAttribute="centerY" id="f8v-uP-shY"/>
                                                 <constraint firstItem="zeV-gY-Xwm" firstAttribute="centerX" secondItem="E8d-QU-tRf" secondAttribute="centerX" id="fiC-Jd-8pO"/>
                                             </constraints>
                                         </view>

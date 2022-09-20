@@ -30,6 +30,7 @@ class TextStickerContainerView: UIView {
     var deleteController: DeleteImageView!
     var scaleController: PanControllerImageView!
     var extendBarView: UIView!
+    var shoulShowBorder = true
     
     
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {

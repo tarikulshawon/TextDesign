@@ -15,6 +15,7 @@ protocol AddTextDelegate: AnyObject {
     func sendTextureIndex(index: Int)
     func addText()
     func showBackground()
+    func setAlighnMent(index:Int)
 }
 
 class TextEditView: UIView {
@@ -84,6 +85,27 @@ class TextEditView: UIView {
 
     }
     
+    
+    @IBAction func gotoLeft(_ sender: Any) {
+        delegateForText?.setAlighnMent(index: 0)
+    }
+    
+    
+    @IBAction func gotocenter(_ sender: Any) {
+        delegateForText?.setAlighnMent(index: 1)
+    }
+    
+    
+    @IBAction func gotoRight(_ sender: Any) {
+        delegateForText?.setAlighnMent(index: 2)
+    }
+    
+    
+    @IBAction func gotoJustified(_ sender: Any) {
+        
+        delegateForText?.setAlighnMent(index: 3)
+        
+    }
     @objc
     func buttonAction(sender: UIButton!) {
        
