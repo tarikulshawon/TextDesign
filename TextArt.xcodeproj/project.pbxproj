@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
+		01219B0128DE7B1500133E56 /* Vegetables in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0028DE7B1500133E56 /* Vegetables */; };
+		01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0228DE7DAA00133E56 /* AlphaSlider.swift */; };
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
-		012FA0BA28DA02B200E44786 /* Vegetables in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0B928DA02B200E44786 /* Vegetables */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
 		012FA0D728DA221F00E44786 /* OverlayThumb0.png in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BE28DA221F00E44786 /* OverlayThumb0.png */; };
 		012FA0D828DA221F00E44786 /* OverlayThumb1.png in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BF28DA221F00E44786 /* OverlayThumb1.png */; };
@@ -200,9 +201,10 @@
 /* Begin PBXFileReference section */
 		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
+		01219B0028DE7B1500133E56 /* Vegetables */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vegetables; path = "../../../../../Downloads/Nature, Vegegtables, Fruits/Vegetables"; sourceTree = "<group>"; };
+		01219B0228DE7DAA00133E56 /* AlphaSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaSlider.swift; sourceTree = "<group>"; };
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
-		012FA0B928DA02B200E44786 /* Vegetables */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vegetables; path = "../../../../../Downloads/Nature, Vegegtables, Fruits 2/Vegetables"; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
 		012FA0BE28DA221F00E44786 /* OverlayThumb0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OverlayThumb0.png; sourceTree = "<group>"; };
 		012FA0BF28DA221F00E44786 /* OverlayThumb1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OverlayThumb1.png; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 		39CC0E0328A4A6DB00DF1C64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01219B0228DE7DAA00133E56 /* AlphaSlider.swift */,
 				01E9232C28D7231700F21554 /* ImageDetails.swift */,
 				3992EF2F28AC721300F783FB /* UICustomCollectionViewLayout.swift */,
 				01FD5ADC28AED4BD00CBF70F /* TextInfoData.swift */,
@@ -606,8 +609,8 @@
 		39CC0E2C28A4AF3F00DF1C64 /* Sticker */ = {
 			isa = PBXGroup;
 			children = (
+				01219B0028DE7B1500133E56 /* Vegetables */,
 				012FA0BB28DA02C000E44786 /* Fruits */,
-				012FA0B928DA02B200E44786 /* Vegetables */,
 				012FA0A728DA028F00E44786 /* Nature */,
 				01B0DFD928D650FF00081369 /* Marketing */,
 				01B0DFD728D650A900081369 /* Transport */,
@@ -990,7 +993,6 @@
 				3949337D28AB347F003E8D67 /* Texture5.png in Resources */,
 				39CC0E3828A4AF6600DF1C64 /* Floral in Resources */,
 				3949337A28AB347F003E8D67 /* Texture15.png in Resources */,
-				012FA0BA28DA02B200E44786 /* Vegetables in Resources */,
 				39F8227F28A3652F008925EF /* gradient.plist in Resources */,
 				39F8227D28A3652F008925EF /* style.plist in Resources */,
 				3949334228AB33EF003E8D67 /* FilterThumb12.jpg in Resources */,
@@ -1000,6 +1002,7 @@
 				012FA0EE28DA221F00E44786 /* OverlayThumb9.png in Resources */,
 				012FA0EA28DA221F00E44786 /* OverlayThumb10.png in Resources */,
 				012FA0D828DA221F00E44786 /* OverlayThumb1.png in Resources */,
+				01219B0128DE7B1500133E56 /* Vegetables in Resources */,
 				39CC0DFE28A4A3B900DF1C64 /* Flower.png in Resources */,
 				3949337E28AB347F003E8D67 /* Texture16.png in Resources */,
 				3949337C28AB347F003E8D67 /* Texture7.png in Resources */,
@@ -1221,6 +1224,7 @@
 				01FD5AD228AE52AE00CBF70F /* PanControllerImageView.swift in Sources */,
 				3949331728AB2D0E003E8D67 /* StickerView.swift in Sources */,
 				39CC0E1828A4AAC500DF1C64 /* ShapeVc.swift in Sources */,
+				01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */,
 				39CC0DF228A4A33C00DF1C64 /* CategoryCell.swift in Sources */,
 				39CC0E2428A4AB5900DF1C64 /* DrawVc.swift in Sources */,
 				01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */,
