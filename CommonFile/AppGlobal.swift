@@ -28,6 +28,7 @@ var dataArrRoot:NSArray? = nil
 var dataDicRoot:NSDictionary? = nil
 var imageDetailsArray = NSMutableArray()
 var shouldRemove =  true
+var minimum_width = 150.0
 
 
 
