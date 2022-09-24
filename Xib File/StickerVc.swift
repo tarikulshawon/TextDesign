@@ -19,7 +19,7 @@ class StickerVc: UIView {
     var btnScrollView: UIScrollView!
     var tempViww:UIView!
     var selectedIndexView:UIView!
-    let buttonWidth:CGFloat = 60.0
+    let buttonWidth:CGFloat = 80.0
     let gapBetweenButtons: CGFloat = 7
     var resourcePath2:String?
     var currentSelectedSticker = 0

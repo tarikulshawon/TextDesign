@@ -17,7 +17,7 @@ class Adjust: UIView {
     var btnScrollView: UIScrollView!
     var tempViww:UIView!
     var selectedIndexView:UIView!
-    let buttonWidth:CGFloat = 60.0
+    let buttonWidth:CGFloat = 85.0
     let gapBetweenButtons: CGFloat = 7
     var resourcePath2:String?
     var currentSelectedSticker = 0
@@ -126,7 +126,7 @@ class Adjust: UIView {
         }
         
         
-        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray4.count) + gapBetweenButtons * CGFloat((plistArray.count*2 + 1)), height: yCoord)
+        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray4.count) + gapBetweenButtons * CGFloat((plistArray4.count*2 + 1)), height: yCoord)
 
     }
     

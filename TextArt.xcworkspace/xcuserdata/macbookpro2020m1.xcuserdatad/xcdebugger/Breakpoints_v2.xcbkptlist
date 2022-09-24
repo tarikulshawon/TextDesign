@@ -707,7 +707,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "313AE662-0DC9-468E-8940-EDAE124F3436 - c337ca1531ea0b5a"
+                  uuid = "313AE662-0DC9-468E-8940-EDAE124F3436 - c337ca1531ea094b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -717,12 +717,12 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/Xib%20File/Adjust.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "132">
                </Location>
                <Location
-                  uuid = "313AE662-0DC9-468E-8940-EDAE124F3436 - c337ca1531ea0b5a"
+                  uuid = "313AE662-0DC9-468E-8940-EDAE124F3436 - c337ca1531ea094b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -732,11 +732,27 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/Xib%20File/Adjust.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "368">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7787F46B-C740-4B1B-BBB5-4AA6E2C47AAB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Xib File/Adjust.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "stickersScrollContents()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
