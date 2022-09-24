@@ -360,17 +360,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vC-pb-dnW">
-                                        <rect key="frame" x="0.0" y="1656" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="1686" width="414" height="120"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="4bX-5R-sin"/>
+                                            <constraint firstAttribute="height" constant="120" id="4bX-5R-sin"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWX-UP-x1l">
-                                        <rect key="frame" x="0.0" y="1656" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="1676" width="414" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="SNR-jE-3Tn"/>
+                                            <constraint firstAttribute="height" constant="130" id="SNR-jE-3Tn"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-Ej-Fl2">

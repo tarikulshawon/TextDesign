@@ -10,6 +10,7 @@ import UIKit
 class ColorCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var textColorView: UIView!
     @IBOutlet weak var deleteImv: UIImageView!
     @IBOutlet weak var deleteBtn: UIButton!
     
