@@ -17,44 +17,10 @@ protocol callDelegate: AnyObject {
 }
 
 class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue {
-    
-    
-    func sendText(text: String, font: UIFont, textContaier: CGSize) {
-        
-        currentTextStickerView?.removeFromSuperview()
-        
-        
-        
-        let frame = CGRect(x: 0, y: 0, width: textContaier.width, height: textContaier.height)
-        let sticker = TextStickerContainerView(frame: frame)
-        sticker.tag = -1// TODO: implement in alternative way
-        sticker.delegate = self
-        sticker.currentFontIndex = -1
-        
-        sticker.pathName = font.fontName //
-        sticker.pathType = "TEXT"
-        
-        //sticker.textStickerView.delegate = self
-        sticker.textStickerView.text = text
-        sticker.textStickerView.font = font
-        
-        sticker.textStickerView.updateTextFont()
-        sticker.initilizeTextStickerData(mainTextView: sticker.textStickerView)
-        
-        screenSortView.addSubview(sticker)
-        screenSortView.clipsToBounds = true
-        tagValue = -1
-        currentTextStickerView = sticker
-        
-        guard let textStickerView = currentTextStickerView else {
-            print("[EditVC] currentTextStickerView is nill")
-            return
+    func sendText(text: String) {
+        if text.count > 1 {
+            currentTextStickerView?.textStickerView.text = text
         }
-        
-        textStickerView.deleteController.isHidden = false
-        textStickerView.scaleController.isHidden = false
-        textStickerView.extendBarView.isHidden = false
-        textStickerView.hideTextBorder(isHide: false)
     }
     
     func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
@@ -1236,12 +1202,7 @@ extension EditVc: AddTextDelegate {
     
     func addText(text: String, font: UIFont) {
         print("[AddText] delegate called")
-        
-        
-        
         self.showKeyBoard()
-        
-        
         let frame = CGRect(x: 0, y: 0, width: 250, height: 200)
         let sticker = TextStickerContainerView(frame: frame)
         sticker.tag = -1// TODO: implement in alternative way

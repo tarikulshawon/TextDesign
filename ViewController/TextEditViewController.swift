@@ -9,62 +9,31 @@ import UIKit
 
 
 public protocol sendTextValue {
-    func sendText(text: String,font:UIFont,textContaier:CGSize)
+    func sendText(text: String)
 }
 
 
-class TextEditViewController: UIViewController,UITextViewDelegate {
-    
-    @IBOutlet weak var bottomSpaceText: NSLayoutConstraint!
-    
+class TextEditViewController: UIViewController {
+
     @IBOutlet weak var textStickerTextView: UITextView!
     public var delegate: sendTextValue!
-    var textContainerSize:CGSize!
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
-    }
-    
-    @objc func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            bottomSpaceText.constant = keyboardHeight
-            
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        textStickerTextView.delegate = self
+        
         textStickerTextView.becomeFirstResponder()
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        delegate.sendText(text: textStickerTextView.text, font: UIFont.systemFont(ofSize: 20.0), textContaier: textContainerSize)
+        delegate.sendText(text: textStickerTextView.text)
         super.viewDidDisappear(animated)
         textStickerTextView.resignFirstResponder()
     }
     
-    
-    
-    func textViewDidChange(_ textView: UITextView) {
-        let fixedWidth = textView.frame.size.width
-        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        textContainerSize = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-
-        textContainerSize = newSize
-        print(textContainerSize.width)
-        print(textContainerSize.height)
- 
-        
-    }
     
     
     @IBAction func gotoMainView(_ sender: Any) {

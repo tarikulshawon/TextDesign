@@ -1126,7 +1126,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomSpaceText" destination="fgb-bk-cdK" id="yKE-vU-5Aq"/>
                         <outlet property="textStickerTextView" destination="zd4-M4-2xq" id="gzW-q6-3of"/>
                     </connections>
                 </viewController>
