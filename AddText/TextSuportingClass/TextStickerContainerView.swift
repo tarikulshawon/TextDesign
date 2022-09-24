@@ -344,21 +344,7 @@ extension TextStickerContainerView {
          print("Tapped")
         // MARK: Add Edit And Delete Menu Bar
                 if let view = recognizer.view as? TextStickerContainerView {
-                    let editeItem = UIMenuItem(title: "Edit Text", action: #selector(editTextView))
-                    let deleteItem = UIMenuItem(title: "Delete", action: #selector(deleteTextView))
-                    // MARK: View Hierarchy
-                    let bringToFront = UIMenuItem(title: "Bring Front", action: #selector(moveViewPosition))
-                    
-                    let menu = UIMenuController.shared
-                    menu.menuItems = [editeItem, deleteItem, bringToFront]
-                    if #available(iOS 12.0, *) {
-                        //menu.showMenu(from: view, rect: view.frame)
-                        menu.setTargetRect(view.subviews[0].frame, in: view.subviews[0])
-                        menu.setMenuVisible(true, animated: true)
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                    view.subviews[0].becomeFirstResponder()
+                    print("halarpo")
                 }
         
         self.delegate?.setCurrentTextStickerView(textStickerContainerView: self)
