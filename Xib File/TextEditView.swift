@@ -324,9 +324,11 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             var fontName = UIFont(name: arrayForFont[indexPath.row] as! String, size: 15.0)
             cell.fontLabel.font = fontName
             cell.fontLabel.text =  arrayForFont[indexPath.row] as! String
-            cell.textColorView.backgroundColor = UIColor.init(red: 128.0/255.0, green: 92.0/255.0, blue: 242.0/255.0, alpha: 0.1)
-            cell.textColorView.layer.cornerRadius = 5.0
+            cell.textColorView.backgroundColor = UIColor.init(red: 128.0/255.0, green: 92.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+            cell.textColorView.layer.cornerRadius = 4.0
             cell.layer.cornerRadius = 0.0
+            cell.fontLabel.textColor = UIColor.white
+            cell.fontLabel.textAlignment = .center
         }
         
         else if currentOption.rawValue == TextEditingOption.Color.rawValue{
