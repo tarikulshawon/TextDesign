@@ -17,7 +17,7 @@ class TextInfoData {
     var shadow = "-1"
     var align = "2"
     var rotate = "-1"
-    var text = "Add Text To Edit"
+    var text = "Double tap to edit"
     var fontSize = "15"
     var id = ""
 }

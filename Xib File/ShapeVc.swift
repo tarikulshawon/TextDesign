@@ -87,7 +87,20 @@ extension ShapeVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+
+        UIView.animate(withDuration: 0.5, animations:
+                        {
+            cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            //cell?.backgroundColor = UIColor.lightGray
+        }) { (true) in
+            UIView.animate(withDuration: 0.5, animations:
+                            {
+                cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0);                //cell?.backgroundColor = UIColor.clear
+            })
+        }
         
+
         var name = "Shapes"+"\(indexPath.row + 1)"
         delegateForShape?.sendShape(sticker: name)
         

@@ -1023,7 +1023,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 if p == 0 {
                     currentlyActiveIndex = BtnNameInt.Texts.rawValue
                     let font = currentTextStickerView?.textView?.font ?? .systemFont(ofSize: 15.0)
-                    self.addText(text: "ADD TEXT TO EDIT", font: font)
+                    self.addText(text: "Double tap to edit", font: font)
                 } else {
                     currentlyActiveIndex = -1
                 }
@@ -1188,7 +1188,7 @@ extension EditVc: AddTextDelegate {
     
     func addText(text: String, font: UIFont) {
         print("[AddText] delegate called")
-        let frame = CGRect(x: 0, y: 0, width: 160, height: 200)
+        let frame = CGRect(x: 0, y: 0, width: 250, height: 200)
         let sticker = TextStickerContainerView(frame: frame)
         sticker.tag = -1// TODO: implement in alternative way
         sticker.delegate = self

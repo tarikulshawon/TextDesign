@@ -433,10 +433,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOD-cq-at6">
-                                        <rect key="frame" x="0.0" y="1656" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="1706" width="414" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="e3d-Cg-2ze"/>
+                                            <constraint firstAttribute="height" constant="100" id="e3d-Cg-2ze"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRW-YN-1HA">
