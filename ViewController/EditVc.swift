@@ -37,6 +37,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var imageViewHolder: UIView!
     @IBOutlet weak var shapeHolderView: UIView!
     
+    
+    @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
+    
     @IBOutlet weak var ajustVcHolder: UIView!
     @IBOutlet weak var collectionViewForBackGround: UICollectionView!
     @IBOutlet weak var bottomSpaceForDrawer: NSLayoutConstraint!
@@ -207,21 +211,26 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        self.updateHeight(heightNeedToBeRemoved: 0)
+    }
+    
+    func updateHeight (heightNeedToBeRemoved: CGFloat) {
+        
+        
         widthForImv.constant = HolderView.frame.width
-        heightForImv.constant = HolderView.frame.height
+        heightForImv.constant = HolderView.frame.height - heightNeedToBeRemoved
         
         print(HolderView.frame.width)
         print(HolderView.frame.height)
         print(mainImage.size)
         
         
-        var size = AVMakeRect(aspectRatio: mainImage!.size, insideRect: HolderView.frame)
+        var size = AVMakeRect(aspectRatio: mainImage!.size, insideRect: CGRect(x: 0, y: 0, width:  widthForImv.constant, height:   heightForImv.constant))
         
         widthForImv.constant = size.width
         heightForImv.constant = size.height
         
-        print(size.width)
-        print(size.height)
+        
     }
     
     func getFileUrlWithName(fileName: String) -> NSURL {
@@ -415,6 +424,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         UIView.animate(withDuration: 0.2, animations: {
     
             self.bottomSpaceForColorPicker.constant = -10000
+            self.bottomSpceOfMainView.constant = 0
+            self.updateHeight(heightNeedToBeRemoved: 0)
             self.view.layoutIfNeeded()
             
         }, completion: {_ in
@@ -948,12 +959,14 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             }
         
             if currentBackGroundIndex == 0 {
-                
                 if indexPath.row == 0 {
                     
+                    self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
+
                     UIView.animate(withDuration: 0.2, animations: {
                 
                         self.bottomSpaceForColorPicker.constant = 0
+                        self.bottomSpceOfMainView.constant = self.heightForColorPickerView.constant
                         self.view.layoutIfNeeded()
                         
                     }, completion: {_ in
