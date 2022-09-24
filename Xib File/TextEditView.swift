@@ -311,6 +311,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         cell.fontLabel.isHidden = true
         
         if currentOption.rawValue == TextEditingOption.Texture.rawValue {
+            cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.isHidden = false
             cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row)")
         }
@@ -323,10 +324,13 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             var fontName = UIFont(name: arrayForFont[indexPath.row] as! String, size: 15.0)
             cell.fontLabel.font = fontName
             cell.fontLabel.text =  arrayForFont[indexPath.row] as! String
+            cell.textColorView.backgroundColor = UIColor.init(red: 128.0/255.0, green: 92.0/255.0, blue: 242.0/255.0, alpha: 0.1)
+            cell.textColorView.layer.cornerRadius = 5.0
+            cell.layer.cornerRadius = 0.0
         }
         
         else if currentOption.rawValue == TextEditingOption.Color.rawValue{
-            
+            cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.isHidden = true
             
             if indexPath.row == 0 {
@@ -343,7 +347,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         else {
             
             if currentOption.rawValue == TextEditingOption.Gradient.rawValue {
-                
+                cell.layer.cornerRadius = cell.frame.size.height/2.0
                 cell.gradietImv.image = nil
                 cell.gradietImv.isHidden = false
                 if let objArray = plistArray1[indexPath.row] as? NSArray {
@@ -362,7 +366,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             }
         }
         
-        cell.layer.cornerRadius = cell.frame.size.height/2.0
+        
         
         print(cell.contentView.frame.size)
         

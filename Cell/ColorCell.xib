@@ -24,6 +24,10 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fju-yT-pUb">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cI-60-kaO">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiM-Ku-TOp">
                         <rect key="frame" x="4" y="25" width="42" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -55,11 +59,15 @@
                 <constraint firstItem="Fju-yT-pUb" firstAttribute="height" secondItem="2ka-lh-RzH" secondAttribute="height" id="43X-Eo-bLi"/>
                 <constraint firstItem="2ka-lh-RzH" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="5Uo-bP-XRQ"/>
                 <constraint firstItem="QiM-Ku-TOp" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="77S-jD-iO9"/>
+                <constraint firstItem="9cI-60-kaO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="7sP-YG-PIo"/>
                 <constraint firstItem="aTD-MX-KUO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="All-HX-zCE"/>
                 <constraint firstItem="2ka-lh-RzH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="FsA-lo-pqg"/>
                 <constraint firstItem="2ka-lh-RzH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Hxf-VR-DaU"/>
                 <constraint firstItem="fK9-Nj-4Bt" firstAttribute="height" secondItem="aTD-MX-KUO" secondAttribute="height" id="TiG-7t-BmF"/>
                 <constraint firstItem="Fju-yT-pUb" firstAttribute="centerX" secondItem="2ka-lh-RzH" secondAttribute="centerX" id="Tsx-cH-SUO"/>
+                <constraint firstItem="9cI-60-kaO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="URS-w2-Z1h"/>
+                <constraint firstItem="9cI-60-kaO" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="Uii-J5-umk"/>
+                <constraint firstItem="9cI-60-kaO" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="WJb-0q-zun"/>
                 <constraint firstItem="QiM-Ku-TOp" firstAttribute="width" secondItem="Fju-yT-pUb" secondAttribute="width" multiplier="0.84" id="iRo-7B-bDs"/>
                 <constraint firstItem="Fju-yT-pUb" firstAttribute="centerY" secondItem="2ka-lh-RzH" secondAttribute="centerY" id="oP7-uw-4fd"/>
                 <constraint firstItem="fK9-Nj-4Bt" firstAttribute="centerX" secondItem="aTD-MX-KUO" secondAttribute="centerX" id="pBB-dA-arO"/>
@@ -71,6 +79,7 @@
                 <outlet property="fontLabel" destination="QiM-Ku-TOp" id="U5N-ph-MO5"/>
                 <outlet property="gradietImv" destination="Fju-yT-pUb" id="bms-0V-7pb"/>
                 <outlet property="holderView" destination="2ka-lh-RzH" id="PXi-ZR-cT1"/>
+                <outlet property="textColorView" destination="9cI-60-kaO" id="J0m-Sm-bfR"/>
             </connections>
             <point key="canvasLocation" x="139" y="31"/>
         </collectionViewCell>

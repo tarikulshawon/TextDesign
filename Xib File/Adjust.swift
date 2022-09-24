@@ -21,6 +21,30 @@ class Adjust: UIView {
     let gapBetweenButtons: CGFloat = 7
     var resourcePath2:String?
     var currentSelectedSticker = 0
+    
+    
+    let brigthness = 0
+    let max_brightness = 0.7
+    let min_brightness = -0.7
+
+
+    let contrast = 1.0
+    let max_contrast = 1.5
+    let min_contrast = 0.5
+
+    let saturation = 1.0
+    let max_saturation = 3.0
+    let min_saturation = -1.0
+
+    let hue = 0.0
+    let max_hue = 1.0
+    let min_hue = 0.0
+
+    let sharpen = 0
+    let max_sharpen = 4.0
+    let min_sharpen = -4.0
+
+    
 
     
     
@@ -28,6 +52,9 @@ class Adjust: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        
         
 
         let path = Bundle.main.path(forResource: "AdjustV", ofType: "plist")

@@ -41,7 +41,7 @@ class OverLayVc: UIView, ODRManagerDelegate {
     }()
     
     @IBOutlet weak var collectionViewForFilter: UICollectionView!
-    var noOfFilter  = 25
+    var noOfFilter  = 49
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -60,10 +60,9 @@ class OverLayVc: UIView, ODRManagerDelegate {
          if let image = UIImage(named: "Overlay" + "\(index)") {
             delegateForOverlay?.imageNameWithIndex(tag: "\(index)", image: image)
 
-            print(image.size.width)
             
         } else {
-            odrManager.load(tag: "\(index)")
+           
         }
         
         
@@ -128,8 +127,19 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        setOverLay(index: indexPath.row)
+        let cell = collectionView.cellForItem(at: indexPath)
+        UIView.animate(withDuration: 0.5, animations:
+                        {
+            cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            //cell?.backgroundColor = UIColor.lightGray
+        }) { (true) in
+            UIView.animate(withDuration: 0.5, animations:
+                            {
+                cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0);                //cell?.backgroundColor = UIColor.clear
+            })
+        }
+
+        setOverLay(index: indexPath.row - 1)
     }
 }
     

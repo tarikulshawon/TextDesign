@@ -202,7 +202,7 @@ extension FilterVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollec
             cell.gradietImv.image =  UIImage(named: "nofilter")
         }
         else {
-            cell.gradietImv.image =  UIImage(named: "FilterThumb" + "\(indexPath.row)" + ".jpg")
+            cell.gradietImv.image =  UIImage(named: "filterg")
         }
         cell.layer.cornerRadius = cell.frame.size.height/2.0
          return cell

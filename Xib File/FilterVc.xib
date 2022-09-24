@@ -23,7 +23,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IKp-aG-xhc">
-                    <rect key="frame" x="0.0" y="40" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="40" width="414" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OJP-0S-twx">
                         <size key="itemSize" width="128" height="128"/>
@@ -41,7 +41,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="8cs-8X-ug6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="384-cy-YXP"/>
-                <constraint firstAttribute="bottom" secondItem="IKp-aG-xhc" secondAttribute="bottom" id="DB6-mG-Xxe"/>
+                <constraint firstAttribute="bottom" secondItem="IKp-aG-xhc" secondAttribute="bottom" constant="10" id="DB6-mG-Xxe"/>
                 <constraint firstAttribute="trailing" secondItem="IKp-aG-xhc" secondAttribute="trailing" id="LuM-ru-R52"/>
                 <constraint firstItem="8cs-8X-ug6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Stz-fq-S3r"/>
                 <constraint firstItem="IKp-aG-xhc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TaI-O4-GDA"/>
