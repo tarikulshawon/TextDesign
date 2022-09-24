@@ -25,6 +25,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
          
     }
     
+    @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
     @IBOutlet weak var drawHolderView: UIView!
@@ -93,7 +94,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var tagValue = 1000000
     
     
-    @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
     @IBOutlet weak var btnCollectionView: UICollectionView!
     @IBOutlet weak var mainImv: UIImageView!
@@ -109,7 +109,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
     let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
     let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
-    
+    let controller = DefaultColorPickerViewController()
     
     @IBAction func segmentValueHasChanged(_ sender: UISegmentedControl) {
         
@@ -132,14 +132,19 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        controller.view.frame = colorPickerHolder.bounds
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let controller = DefaultColorPickerViewController()
+       
         controller.useRadialPalette = false
+        controller.colorPreview.isHidden = false
+        controller.brightnessSlider.isHidden  = false
         controller.delegate = self
-        controller.view.frame = colorPickerHolder.bounds
         controller.rectangularPaletteBorderOn = true
         colorPickerHolder.addSubview(controller.view)
         controller.selectedColor = UIColor.red

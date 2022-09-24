@@ -574,11 +574,11 @@
                                             <constraint firstAttribute="trailing" secondItem="AIA-xs-jf5" secondAttribute="trailing" id="zaM-Jd-U5b"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coU-TK-ABy">
-                                        <rect key="frame" x="0.0" y="456" width="414" height="350"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6T-5e-2BJ">
+                                        <rect key="frame" x="0.0" y="406" width="414" height="400"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="350" id="Rgs-9x-I4i"/>
+                                            <constraint firstAttribute="height" constant="400" id="qgH-IJ-bCz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -602,21 +602,21 @@
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="3bK-BU-Yhw" secondAttribute="bottom" constant="-1000" id="O38-oP-9gx"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="8hc-eU-4HA" secondAttribute="bottom" constant="-1000" id="OWS-Wt-6wj"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="jXP-Ej-Fl2" secondAttribute="bottom" constant="-1000" id="Qbf-d1-RYp"/>
+                                    <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="W6T-5e-2BJ" secondAttribute="bottom" id="TDl-kJ-eK1"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="TNL-gu-Bzy"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="uWX-UP-x1l" secondAttribute="bottom" constant="-1000" id="Ucy-Ch-s3F"/>
-                                    <constraint firstItem="coU-TK-ABy" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="XmI-ZC-Pn5"/>
                                     <constraint firstAttribute="trailing" secondItem="aRW-YN-1HA" secondAttribute="trailing" id="Y01-F7-KnB"/>
-                                    <constraint firstAttribute="trailing" secondItem="coU-TK-ABy" secondAttribute="trailing" id="Y3C-pQ-UEI"/>
-                                    <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="coU-TK-ABy" secondAttribute="bottom" id="Y7g-vC-jBl"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="top" secondItem="gEv-ba-ATW" secondAttribute="top" id="aT0-63-ofp"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="Bi9-1m-YSW" secondAttribute="bottom" constant="10" id="c2p-5g-HGt"/>
                                     <constraint firstAttribute="trailing" secondItem="Cms-g2-JiK" secondAttribute="trailing" id="cew-ZG-RHk"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="Cms-g2-JiK" secondAttribute="bottom" constant="-10000" id="csD-M5-ltP"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="7vC-pb-dnW" secondAttribute="bottom" constant="-1000" id="del-Al-iMB"/>
+                                    <constraint firstItem="W6T-5e-2BJ" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="em8-lh-jA1"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="f9v-OT-7Ne"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="Rb8-9q-9Yc" secondAttribute="bottom" constant="-1000" id="gbu-DV-kfK"/>
                                     <constraint firstItem="3bK-BU-Yhw" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="iR1-H2-aAX"/>
                                     <constraint firstAttribute="trailing" secondItem="Rb8-9q-9Yc" secondAttribute="trailing" id="k1f-dZ-pE2"/>
+                                    <constraint firstAttribute="trailing" secondItem="W6T-5e-2BJ" secondAttribute="trailing" id="mXy-ME-ptr"/>
                                     <constraint firstItem="GOD-cq-at6" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="mdH-Wh-lTq"/>
                                     <constraint firstItem="7vC-pb-dnW" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="myD-Dg-BQt"/>
                                     <constraint firstAttribute="trailing" secondItem="jXP-Ej-Fl2" secondAttribute="trailing" id="myl-9J-Ymh"/>
@@ -650,7 +650,7 @@
                         <outlet property="bottomSpaceOfFontLoaderView" destination="Qbf-d1-RYp" id="ghK-c2-eRv"/>
                         <outlet property="btnCollectionView" destination="Rqm-ni-Tkg" id="QsT-ya-UHv"/>
                         <outlet property="collectionViewForBackGround" destination="9Ec-Za-idp" id="dTN-cz-xGH"/>
-                        <outlet property="colorPickerHolder" destination="coU-TK-ABy" id="BAf-jv-uGE"/>
+                        <outlet property="colorPickerHolder" destination="W6T-5e-2BJ" id="SAa-N5-Hyw"/>
                         <outlet property="drawHolderView" destination="3bK-BU-Yhw" id="Vzj-oo-fxj"/>
                         <outlet property="filterViewHolder" destination="uWX-UP-x1l" id="57w-CT-tn2"/>
                         <outlet property="heightForImv" destination="2Vw-tH-DoV" id="JPS-VE-XZq"/>
@@ -1010,9 +1010,6 @@
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
