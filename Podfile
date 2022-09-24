@@ -23,5 +23,5 @@ pod 'ImageActionSheet'
 pod 'AMColorPicker'
 pod 'MetalPetal/Swift'
 pod 'FlexColorPicker'
-
+pod 'SDWebImage', '~> 5.0'
 end

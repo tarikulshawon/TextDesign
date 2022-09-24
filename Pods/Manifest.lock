@@ -7,6 +7,9 @@ PODS:
   - MetalPetal/Core (1.24.2)
   - MetalPetal/Swift (1.24.2):
     - MetalPetal/Core
+  - SDWebImage (5.13.3):
+    - SDWebImage/Core (= 5.13.3)
+  - SDWebImage/Core (5.13.3)
   - SwiftHSVColorPicker (1.1.1)
 
 DEPENDENCIES:
@@ -16,6 +19,7 @@ DEPENDENCIES:
   - IGRPhotoTweaks (~> 1.0.0)
   - ImageActionSheet
   - MetalPetal/Swift
+  - SDWebImage (~> 5.0)
   - SwiftHSVColorPicker
 
 SPEC REPOS:
@@ -26,6 +30,7 @@ SPEC REPOS:
     - IGRPhotoTweaks
     - ImageActionSheet
     - MetalPetal
+    - SDWebImage
     - SwiftHSVColorPicker
 
 SPEC CHECKSUMS:
@@ -35,8 +40,9 @@ SPEC CHECKSUMS:
   IGRPhotoTweaks: e348cec1dfc7afc36ff0f10115637bc3b03836fa
   ImageActionSheet: fb9053b45af2761f0b85d7c23bd7782efc4dca7a
   MetalPetal: 063cb7f12c011a22fd311a355a4bd05302fc0de4
+  SDWebImage: af5bbffef2cde09f148d826f9733dcde1a9414cd
   SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
 
-PODFILE CHECKSUM: d762fc45165427b564f50adca849f9aa3f209910
+PODFILE CHECKSUM: 343983ca12b7c373b319d6e02cc898d91fa31f90
 
 COCOAPODS: 1.11.3
