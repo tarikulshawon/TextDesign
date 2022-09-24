@@ -1191,7 +1191,7 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
         currentOverlayIndex = Int(tag) ?? 0
         
         
-        if currentOverlayIndex  == 0 {
+        if currentOverlayIndex  == -1 {
             transParentView.isHidden = true
         }
         
