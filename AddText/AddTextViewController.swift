@@ -118,6 +118,10 @@ extension AddTextViewController {
 
 
 extension AddTextViewController: TextStickerContainerViewDelegate {
+    func showKeyBoard() {
+         
+    }
+    
     func moveViewPosition(textStickerContainerView: TextStickerContainerView) {
         // TODO
     }

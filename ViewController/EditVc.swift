@@ -16,7 +16,13 @@ protocol callDelegate: AnyObject {
     func reloadAllData()
 }
 
-class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate {
+class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue {
+    func sendText(text: String) {
+        if text.count > 1 {
+            currentTextStickerView?.textStickerView.text = text
+        }
+    }
+    
     func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
          
     }
@@ -139,7 +145,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height)
+       // controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height)
     }
     
     override func viewDidLoad() {
@@ -229,6 +235,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         widthForImv.constant = size.width
         heightForImv.constant = size.height
+        
         
         
     }
@@ -466,9 +473,15 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        
+        if !shouldRemove {
+            return
+        }
         for view in screenSortView.subviews{
             view.removeFromSuperview()
         }
+        
+        shouldRemove = true
         
     }
     
@@ -1139,7 +1152,8 @@ extension EditVc: AddTextDelegate {
     
     func addText() {
         self.hideALL()
-        self.addText(text: "Add Text", font: .systemFont(ofSize: 30.0))
+        self.showKeyBoard()
+        self.addText(text: "Double Tap to edit", font: .systemFont(ofSize: 20.0))
     }
     
     func sendTextureIndex(index: Int) {
@@ -1188,6 +1202,7 @@ extension EditVc: AddTextDelegate {
     
     func addText(text: String, font: UIFont) {
         print("[AddText] delegate called")
+        self.showKeyBoard()
         let frame = CGRect(x: 0, y: 0, width: 250, height: 200)
         let sticker = TextStickerContainerView(frame: frame)
         sticker.tag = -1// TODO: implement in alternative way
@@ -1222,6 +1237,16 @@ extension EditVc: AddTextDelegate {
 }
 
 extension EditVc: TextStickerContainerViewDelegate {
+    func showKeyBoard() {
+        shouldRemove = false
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: TextEditViewController = storyboard.instantiateViewController(withIdentifier: "TextEditViewController") as! TextEditViewController
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+         
+    }
+    
     func moveViewPosition(textStickerContainerView: TextStickerContainerView) {
         
          print("mamamma")

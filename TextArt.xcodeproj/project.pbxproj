@@ -65,6 +65,7 @@
 		01219B7328DEBC6B00133E56 /* OverlayThumb8.png in Resources */ = {isa = PBXBuildFile; fileRef = 01219B4028DEBC6B00133E56 /* OverlayThumb8.png */; };
 		01219B7428DEBC6B00133E56 /* OverlayThumb48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01219B4128DEBC6B00133E56 /* OverlayThumb48.png */; };
 		01219B7C28DEFD8A00133E56 /* Vegetables in Resources */ = {isa = PBXBuildFile; fileRef = 01219B7B28DEFD8A00133E56 /* Vegetables */; };
+		01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B7D28DF39EE00133E56 /* TextEditViewController.swift */; };
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
@@ -257,6 +258,7 @@
 		01219B4028DEBC6B00133E56 /* OverlayThumb8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OverlayThumb8.png; sourceTree = "<group>"; };
 		01219B4128DEBC6B00133E56 /* OverlayThumb48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OverlayThumb48.png; sourceTree = "<group>"; };
 		01219B7B28DEFD8A00133E56 /* Vegetables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vegetables; sourceTree = "<group>"; };
+		01219B7D28DF39EE00133E56 /* TextEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditViewController.swift; sourceTree = "<group>"; };
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 		39F8225528A3510E008925EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				01219B7D28DF39EE00133E56 /* TextEditViewController.swift */,
 				0105428528D86CA30004A516 /* ExampleCropViewController.swift */,
 				0105428328D860040004A516 /* CropVc.swift */,
 				39F8225628A35133008925EF /* HomeVc.swift */,
@@ -1189,6 +1192,7 @@
 				01FD5AD128AE52AE00CBF70F /* BreakWordControllerView.swift in Sources */,
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
+				01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */,
 				39CC0E0C28A4AA0500DF1C64 /* TextEditView.swift in Sources */,
 				39F8225F28A35E7A008925EF /* FirstVc.swift in Sources */,
 				39F8228728A36596008925EF /* ColorCell.swift in Sources */,

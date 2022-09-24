@@ -27,6 +27,7 @@ var dataArr:NSArray? = nil
 var dataArrRoot:NSArray? = nil
 var dataDicRoot:NSDictionary? = nil
 var imageDetailsArray = NSMutableArray()
+var shouldRemove =  true
 
 
 
