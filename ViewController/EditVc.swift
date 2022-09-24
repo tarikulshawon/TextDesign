@@ -334,6 +334,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             }
             let textureIndex = Int(textObj.texture)!
             let gradientIndex = Int(textObj.gradient)!
+            var opacityValue = Double(textObj.opacity)
+            
+            if opacityValue != -1 {
+                sticker.textStickerView.alpha = opacityValue ?? 1.0
+            }
             
             if textureIndex >= 0 {
                 var value =  "Texture" + String(textureIndex) + ".png"
@@ -1121,6 +1126,11 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func sendOpacityValue(value: Double) {
+        currentTextStickerView?.textStickerView.alpha = value
+        currentTextStickerView?.opacity =  value
+    }
+    
     func setAlighnMent(index: Int) {
         if index == 0 {
             currentTextStickerView?.textStickerView.textAlignment = .left

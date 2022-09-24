@@ -16,6 +16,7 @@ protocol AddTextDelegate: AnyObject {
     func addText()
     func showBackground()
     func setAlighnMent(index:Int)
+    func sendOpacityValue(value: Double)
 }
 
 class TextEditView: UIView {
@@ -71,6 +72,12 @@ class TextEditView: UIView {
         collectionViewForTextControls.dataSource = self
         collectionViewForTextControls.showsVerticalScrollIndicator = false
         collectionViewForTextControls.showsHorizontalScrollIndicator = false
+    }
+    
+    
+    @IBAction func opacityValuChanges(_ sender: CustomSlider) {
+        
+        delegateForText?.sendOpacityValue(value: Double(sender.value))
     }
     
     @objc

@@ -23,7 +23,7 @@ class TextStickerContainerView: UIView {
     var currentColorSting = ""
     var currentGradientIndex = -1
     var currentTextureIndex = -1
-    var opacity = -1
+    var opacity:Double = -1
     var shadow = -1
     var align = 1
     var rotate = -1
