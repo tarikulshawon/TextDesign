@@ -24,6 +24,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, confirmedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
          
     }
+    @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
     
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
@@ -134,7 +135,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        controller.view.frame = colorPickerHolder.bounds
+        controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height)
     }
     
     override func viewDidLoad() {
@@ -405,6 +406,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             
         }
         
+        
+    }
+    
+    
+    
+    @IBAction func dismissColorPicker(_ sender: Any) {
+        UIView.animate(withDuration: 0.2, animations: {
+    
+            self.bottomSpaceForColorPicker.constant = -10000
+            self.view.layoutIfNeeded()
+            
+        }, completion: {_ in
+            
+        })
         
     }
     
@@ -845,7 +860,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                     cell.gradietImv.isHidden = false
                     cell.holderView.backgroundColor = UIColor.clear
                 }
-                else if let colorString = plistArray[indexPath.row] as? String {
+                else if let colorString = plistArray[indexPath.row - 1] as? String {
                     cell.holderView.backgroundColor = getColor(colorString: colorString)
                     cell.gradietImv.isHidden = true
                 }
@@ -934,7 +949,20 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         
             if currentBackGroundIndex == 0 {
                 
-                if let colorString = plistArray[indexPath.row] as? String {
+                if indexPath.row == 0 {
+                    
+                    UIView.animate(withDuration: 0.2, animations: {
+                
+                        self.bottomSpaceForColorPicker.constant = 0
+                        self.view.layoutIfNeeded()
+                        
+                    }, completion: {_ in
+                        
+                    })
+                    
+                }
+                
+                else if let colorString = plistArray[indexPath.row - 1] as? String {
                     currentTextStickerView?.backgroundColor = getColor(colorString: colorString)
                     currentTextStickerView?.hideTextBorder(isHide: true)
                 }
