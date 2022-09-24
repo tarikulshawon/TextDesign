@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
-		01219B0128DE7B1500133E56 /* Vegetables in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0028DE7B1500133E56 /* Vegetables */; };
 		01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0228DE7DAA00133E56 /* AlphaSlider.swift */; };
 		01219B0528DE7F1400133E56 /* Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0428DE7F1400133E56 /* Adjust.swift */; };
 		01219B0728DE7F2A00133E56 /* Adjust.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0628DE7F2A00133E56 /* Adjust.xib */; };
@@ -204,7 +203,6 @@
 /* Begin PBXFileReference section */
 		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
-		01219B0028DE7B1500133E56 /* Vegetables */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vegetables; path = "../../../../../Downloads/Nature, Vegegtables, Fruits/Vegetables"; sourceTree = "<group>"; };
 		01219B0228DE7DAA00133E56 /* AlphaSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaSlider.swift; sourceTree = "<group>"; };
 		01219B0428DE7F1400133E56 /* Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjust.swift; sourceTree = "<group>"; };
 		01219B0628DE7F2A00133E56 /* Adjust.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Adjust.xib; sourceTree = "<group>"; };
@@ -615,7 +613,6 @@
 		39CC0E2C28A4AF3F00DF1C64 /* Sticker */ = {
 			isa = PBXGroup;
 			children = (
-				01219B0028DE7B1500133E56 /* Vegetables */,
 				012FA0BB28DA02C000E44786 /* Fruits */,
 				012FA0A728DA028F00E44786 /* Nature */,
 				01B0DFD928D650FF00081369 /* Marketing */,
@@ -1012,7 +1009,6 @@
 				01219B0728DE7F2A00133E56 /* Adjust.xib in Resources */,
 				012FA0EA28DA221F00E44786 /* OverlayThumb10.png in Resources */,
 				012FA0D828DA221F00E44786 /* OverlayThumb1.png in Resources */,
-				01219B0128DE7B1500133E56 /* Vegetables in Resources */,
 				39CC0DFE28A4A3B900DF1C64 /* Flower.png in Resources */,
 				3949337E28AB347F003E8D67 /* Texture16.png in Resources */,
 				3949337C28AB347F003E8D67 /* Texture7.png in Resources */,
