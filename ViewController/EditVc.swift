@@ -1243,7 +1243,7 @@ extension EditVc: TextStickerContainerViewDelegate {
     
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {
         currentTextStickerView?.textStickerView.isUserInteractionEnabled = true
-        currentTextStickerView?.textStickerView.isEditable = true
+        currentTextStickerView?.textStickerView.isEditable = false
         currentTextStickerView?.textStickerView.becomeFirstResponder()
         
     }

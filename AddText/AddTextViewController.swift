@@ -130,7 +130,6 @@ extension AddTextViewController: TextStickerContainerViewDelegate {
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {
         print("Edit Text")
         sticker?.textStickerView.isUserInteractionEnabled = true
-        sticker?.textStickerView.isEditable = true
         sticker?.textStickerView.becomeFirstResponder()
     }
     
