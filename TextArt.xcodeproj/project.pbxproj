@@ -11,6 +11,9 @@
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
 		01219B0128DE7B1500133E56 /* Vegetables in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0028DE7B1500133E56 /* Vegetables */; };
 		01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0228DE7DAA00133E56 /* AlphaSlider.swift */; };
+		01219B0528DE7F1400133E56 /* Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0428DE7F1400133E56 /* Adjust.swift */; };
+		01219B0728DE7F2A00133E56 /* Adjust.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0628DE7F2A00133E56 /* Adjust.xib */; };
+		01219B0B28DE837C00133E56 /* AdjustV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0A28DE837C00133E56 /* AdjustV.plist */; };
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
@@ -203,6 +206,9 @@
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
 		01219B0028DE7B1500133E56 /* Vegetables */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vegetables; path = "../../../../../Downloads/Nature, Vegegtables, Fruits/Vegetables"; sourceTree = "<group>"; };
 		01219B0228DE7DAA00133E56 /* AlphaSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaSlider.swift; sourceTree = "<group>"; };
+		01219B0428DE7F1400133E56 /* Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjust.swift; sourceTree = "<group>"; };
+		01219B0628DE7F2A00133E56 /* Adjust.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Adjust.xib; sourceTree = "<group>"; };
+		01219B0A28DE837C00133E56 /* AdjustV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AdjustV.plist; sourceTree = "<group>"; };
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
@@ -732,6 +738,8 @@
 				39F8226C28A36115008925EF /* SecondVc.xib */,
 				39F8226E28A3616A008925EF /* ThirdVc.swift */,
 				39F8227028A36174008925EF /* ThirdVc.xib */,
+				01219B0428DE7F1400133E56 /* Adjust.swift */,
+				01219B0628DE7F2A00133E56 /* Adjust.xib */,
 			);
 			path = "Xib File";
 			sourceTree = "<group>";
@@ -739,6 +747,7 @@
 		39F8227228A3652F008925EF /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				01219B0A28DE837C00133E56 /* AdjustV.plist */,
 				0127AAD328D8B71000EE45BC /* FilterGroup.plist */,
 				39F8227328A3652F008925EF /* category.plist */,
 				39F8227428A3652F008925EF /* textEditOption.plist */,
@@ -1000,6 +1009,7 @@
 				012FA0DA28DA221F00E44786 /* OverlayThumb2.png in Resources */,
 				3949335628AB33EF003E8D67 /* FilterThumb24.jpg in Resources */,
 				012FA0EE28DA221F00E44786 /* OverlayThumb9.png in Resources */,
+				01219B0728DE7F2A00133E56 /* Adjust.xib in Resources */,
 				012FA0EA28DA221F00E44786 /* OverlayThumb10.png in Resources */,
 				012FA0D828DA221F00E44786 /* OverlayThumb1.png in Resources */,
 				01219B0128DE7B1500133E56 /* Vegetables in Resources */,
@@ -1033,6 +1043,7 @@
 				3949335128AB33EF003E8D67 /* FilterThumb27.jpg in Resources */,
 				3949337328AB347F003E8D67 /* Texture20.png in Resources */,
 				3949337F28AB347F003E8D67 /* Texture17.png in Resources */,
+				01219B0B28DE837C00133E56 /* AdjustV.plist in Resources */,
 				3949338428AB347F003E8D67 /* Texture12.png in Resources */,
 				012FA0DB28DA221F00E44786 /* OverlayThumb6.png in Resources */,
 				01B0DFD828D650A900081369 /* Transport in Resources */,
@@ -1230,6 +1241,7 @@
 				01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */,
 				01FD5ADB28AE52C700CBF70F /* StringExtension.swift in Sources */,
 				39CC0E0928A4A82C00DF1C64 /* RatioCell.swift in Sources */,
+				01219B0528DE7F1400133E56 /* Adjust.swift in Sources */,
 				39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */,
 				01FD5AD028AE52AE00CBF70F /* DeleteImageView.swift in Sources */,
 				0105428428D860040004A516 /* CropVc.swift in Sources */,

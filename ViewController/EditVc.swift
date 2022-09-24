@@ -26,6 +26,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var imageViewHolder: UIView!
     @IBOutlet weak var shapeHolderView: UIView!
     
+    @IBOutlet weak var ajustVcHolder: UIView!
     @IBOutlet weak var collectionViewForBackGround: UICollectionView!
     @IBOutlet weak var bottomSpaceForDrawer: NSLayoutConstraint!
     @IBOutlet weak var bottomSpaceForOverlay: NSLayoutConstraint!
@@ -95,6 +96,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let overLayVc = Bundle.main.loadNibNamed("OverLayVc", owner: nil, options: nil)![0] as! OverLayVc
     let shapeVc = Bundle.main.loadNibNamed("ShapeVc", owner: nil, options: nil)![0] as! ShapeVc
     let stickerVc = Bundle.main.loadNibNamed("StickerVc", owner: nil, options: nil)![0] as! StickerVc
+    let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
     let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
     let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
     
@@ -134,15 +136,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             saveBtn.setTitle("Save", for: .normal)
         }
         saveBtn.setTitleColor(titleColor, for: .normal)
-        slider1.maximumTrackTintColor = unselectedColor
-        slider1.minimumTrackTintColor = titleColor
-        slider2.maximumTrackTintColor = unselectedColor
-        slider2.minimumTrackTintColor = titleColor
-        slider3.maximumTrackTintColor = unselectedColor
-        slider3.minimumTrackTintColor = titleColor
-        lbl1.textColor = unselectedColor
-        lbl2.textColor = unselectedColor
-        lbl3.textColor = unselectedColor
         
         DoAdjustMent(inputImage: mainImage)
         
@@ -161,17 +154,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             ov = imageInfoObj.ov.floatValue
         }
         
-        slider1.maximumValue = max_brightness
-        slider1.minimumValue = min_brightness;
-        slider1.value = Brightness
-        
-        slider2.maximumValue = max_saturation
-        slider2.minimumValue = min_saturation
-        slider2.value = Saturation
-        
-        slider3.maximumValue = max_contrast
-        slider3.maximumValue = min_contrast
-        slider3.value = Contrast
+       
         
         let emptyAutomationsCell = RatioCell.nib
         btnCollectionView?.register(emptyAutomationsCell, forCellWithReuseIdentifier: RatioCell.reusableID)
@@ -682,9 +665,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         filterViewHolder.addSubview(filterVc)
         
         
+        adjustVc.frame = CGRect(x: 0,y: 0,width: ajustVcHolder.frame.width,height: ajustVcHolder.frame.height)
+        ajustVcHolder.addSubview(adjustVc)
+    
+        
         stickerVc.frame = CGRect(x: 0,y: 0,width: stickerViewHolder.frame.width,height: stickerViewHolder.frame.height)
         stickerVc.delegateForSticker = self
         stickerViewHolder.addSubview(stickerVc)
+        
         
         drawVc.frame = CGRect(x: 0,y: 0,width: drawHolderView.frame.width,height: drawHolderView.frame.height)
         drawHolderView.addSubview(drawVc)
