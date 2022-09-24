@@ -1,5 +1,6 @@
 PODS:
   - AMColorPicker (3.0.1)
+  - FlexColorPicker (1.4.4)
   - HorizontalDial (4.0)
   - IGRPhotoTweaks (1.0.8)
   - ImageActionSheet (1.0.1)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - AMColorPicker
+  - FlexColorPicker
   - HorizontalDial
   - IGRPhotoTweaks (~> 1.0.0)
   - ImageActionSheet
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AMColorPicker
+    - FlexColorPicker
     - HorizontalDial
     - IGRPhotoTweaks
     - ImageActionSheet
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AMColorPicker: 8532f0cb7e0c6e498858368d61089008ee102bd4
+  FlexColorPicker: ce72e0a9e0870815a0beba419ac3e09913401624
   HorizontalDial: 50b43d3d12b9024688c40633ccab46066911846f
   IGRPhotoTweaks: e348cec1dfc7afc36ff0f10115637bc3b03836fa
   ImageActionSheet: fb9053b45af2761f0b85d7c23bd7782efc4dca7a
   MetalPetal: 063cb7f12c011a22fd311a355a4bd05302fc0de4
   SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
 
-PODFILE CHECKSUM: 0ed317f5068a1caeb7709f3d80b8225e42f8db46
+PODFILE CHECKSUM: d762fc45165427b564f50adca849f9aa3f209910
 
 COCOAPODS: 1.11.3

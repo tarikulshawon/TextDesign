@@ -22,5 +22,6 @@ pod 'HorizontalDial'
 pod 'ImageActionSheet'
 pod 'AMColorPicker'
 pod 'MetalPetal/Swift'
+pod 'FlexColorPicker'
 
 end
