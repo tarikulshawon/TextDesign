@@ -574,6 +574,13 @@
                                             <constraint firstAttribute="trailing" secondItem="AIA-xs-jf5" secondAttribute="trailing" id="zaM-Jd-U5b"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coU-TK-ABy">
+                                        <rect key="frame" x="0.0" y="456" width="414" height="350"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="Rgs-9x-I4i"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -597,7 +604,10 @@
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="jXP-Ej-Fl2" secondAttribute="bottom" constant="-1000" id="Qbf-d1-RYp"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="TNL-gu-Bzy"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="uWX-UP-x1l" secondAttribute="bottom" constant="-1000" id="Ucy-Ch-s3F"/>
+                                    <constraint firstItem="coU-TK-ABy" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="XmI-ZC-Pn5"/>
                                     <constraint firstAttribute="trailing" secondItem="aRW-YN-1HA" secondAttribute="trailing" id="Y01-F7-KnB"/>
+                                    <constraint firstAttribute="trailing" secondItem="coU-TK-ABy" secondAttribute="trailing" id="Y3C-pQ-UEI"/>
+                                    <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="coU-TK-ABy" secondAttribute="bottom" id="Y7g-vC-jBl"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="top" secondItem="gEv-ba-ATW" secondAttribute="top" id="aT0-63-ofp"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="Bi9-1m-YSW" secondAttribute="bottom" constant="10" id="c2p-5g-HGt"/>
                                     <constraint firstAttribute="trailing" secondItem="Cms-g2-JiK" secondAttribute="trailing" id="cew-ZG-RHk"/>
@@ -640,6 +650,7 @@
                         <outlet property="bottomSpaceOfFontLoaderView" destination="Qbf-d1-RYp" id="ghK-c2-eRv"/>
                         <outlet property="btnCollectionView" destination="Rqm-ni-Tkg" id="QsT-ya-UHv"/>
                         <outlet property="collectionViewForBackGround" destination="9Ec-Za-idp" id="dTN-cz-xGH"/>
+                        <outlet property="colorPickerHolder" destination="coU-TK-ABy" id="BAf-jv-uGE"/>
                         <outlet property="drawHolderView" destination="3bK-BU-Yhw" id="Vzj-oo-fxj"/>
                         <outlet property="filterViewHolder" destination="uWX-UP-x1l" id="57w-CT-tn2"/>
                         <outlet property="heightForImv" destination="2Vw-tH-DoV" id="JPS-VE-XZq"/>
@@ -999,6 +1010,9 @@
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,12 +10,21 @@ import AVFoundation
 import CoreImage
 import MetalPetal
 import Photos
+import FlexColorPicker
 
 protocol callDelegate: AnyObject {
     func reloadAllData()
 }
 
-class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate {
+    func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
+         
+    }
+    
+    func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, confirmedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
+         
+    }
+    
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
     @IBOutlet weak var drawHolderView: UIView!
@@ -84,6 +93,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var tagValue = 1000000
     
     
+    @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
     @IBOutlet weak var btnCollectionView: UICollectionView!
     @IBOutlet weak var mainImv: UIImageView!
@@ -122,8 +132,22 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let controller = DefaultColorPickerViewController()
+        controller.useRadialPalette = false
+        controller.delegate = self
+        controller.view.frame = colorPickerHolder.bounds
+        controller.rectangularPaletteBorderOn = true
+        colorPickerHolder.addSubview(controller.view)
+        controller.selectedColor = UIColor.red
+        self.addChild(controller)
+        controller.didMove(toParent: self)
+        
+        
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         screenSortView.addGestureRecognizer(tap)
         
