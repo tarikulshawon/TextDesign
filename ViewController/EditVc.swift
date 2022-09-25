@@ -16,7 +16,31 @@ protocol callDelegate: AnyObject {
     func reloadAllData()
 }
 
-class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames {
+class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust {
+   
+    
+    func sendAdjustValue(value: Float, index: Int) {
+        print(value)
+        print(index)
+
+        if index == 0 {
+            Brightness = value
+        }else if index == 1 {
+            Saturation = value
+        }
+        else if index == 2 {
+            hue = value
+        }
+        else if index == 3 {
+            sharpen = value
+        }
+        else if index == 4 {
+            hue = value
+        }
+        
+        self.DoAdjustMent(inputImage: mainImage)
+    }
+    
     func sendFramesIndex(frames: String) {
         self.addSticker(test: UIImage(named: frames)!, type: "Image", pathName: frames)
     }
@@ -109,9 +133,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var max_contrast:Float = 1.5
     var min_contrast:Float = 0.5
     
-    var sharpen = 0
-    var max_sharpen = 4.0
-    var min_sharpen = -4.0
+    var sharpen:Float = 0
+    var max_sharpen:Float = 4.0
+    var min_sharpen:Float = -4.0
     
     var currentOverlayIndex = 0
     var tagValue = 1000000
@@ -411,7 +435,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     func  DoAdjustMent (inputImage:UIImage) {
         
-        
+        print(Brightness)
         var outputImage: CIImage?
         var colorControlsFilter = CIFilter(name: "CIColorControls")
         colorControlsFilter?.setDefaults()
@@ -423,20 +447,25 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 value: Contrast),
             forKey: kCIInputContrastKey)
         
-        if let ciimage = colorControlsFilter!.outputImage {
+        if let ciimage = colorControlsFilter!.outputImage, let value = ciimage.cgImage  {
+            
+            var image = UIImage(cgImage: value)
+            
             let CISharpenLuminance = CIFilter(name: "CISharpenLuminance")
             CISharpenLuminance?.setDefaults()
-            CISharpenLuminance?.setValue(ciimage, forKey: kCIInputImageKey)
+            CISharpenLuminance?.setValue(image, forKey: kCIInputImageKey)
             CISharpenLuminance?.setValue(NSNumber(value: sharpen), forKey: kCIInputSharpnessKey)
-            if let outputImage = CISharpenLuminance!.outputImage {
+            if let outputImage = CISharpenLuminance!.outputImage,let value = outputImage.cgImage {
+                var image = UIImage(cgImage: value)
                 var hueAdjust = CIFilter(name: "CIHueAdjust")
                 hueAdjust?.setDefaults()
-                hueAdjust?.setValue(outputImage, forKey: kCIInputImageKey)
+                hueAdjust?.setValue(image, forKey: kCIInputImageKey)
                 hueAdjust?.setValue(NSNumber(value: hue), forKey: kCIInputAngleKey)
                 
                 if let lastImage =  hueAdjust!.outputImage, let value = lastImage.cgImage {
                     
                     var image = UIImage(cgImage: value)
+                    
                     
                     
                 }
@@ -762,6 +791,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         
         adjustVc.frame = CGRect(x: 0,y: 0,width: ajustVcHolder.frame.width,height: ajustVcHolder.frame.height)
+        adjustVc.delegate = self
         ajustVcHolder.addSubview(adjustVc)
         
         

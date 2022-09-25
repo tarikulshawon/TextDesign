@@ -7,7 +7,9 @@
 
 import UIKit
 
-
+protocol sendValueForAdjust: AnyObject {
+    func sendAdjustValue(value:Float ,index: Int)
+}
 
 
 class Adjust: UIView {
@@ -21,6 +23,7 @@ class Adjust: UIView {
     let gapBetweenButtons: CGFloat = 7
     var resourcePath2:String?
     var currentSelectedSticker = 0
+    weak var delegate: sendValueForAdjust?
     
     
     let brigthness = 0
@@ -47,7 +50,13 @@ class Adjust: UIView {
     var currentIndex = 0
 
     
-
+    @IBOutlet weak var horizontalSlider: UISlider!
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        
+        delegate?.sendAdjustValue(value: sender.value, index: currentIndex)
+        
+    }
     
     
 
@@ -69,7 +78,38 @@ class Adjust: UIView {
     @objc func buttonAction(sender: UIButton!) {
         
         let tag = sender.tag - 800
-        currentSelectedSticker = tag
+        currentIndex = tag
+        
+        if currentIndex == 0 {
+            horizontalSlider.maximumValue = Float(max_brightness)
+            horizontalSlider.minimumValue =
+            Float(min_brightness)
+            horizontalSlider.value = Float(brigthness)
+        }
+        if currentIndex == 1 {
+            horizontalSlider.maximumValue = Float(max_saturation)
+            horizontalSlider.minimumValue =
+            Float(min_saturation)
+            horizontalSlider.value = Float(saturation)
+        }
+        if currentIndex == 2 {
+            horizontalSlider.maximumValue = Float(max_hue)
+            horizontalSlider.minimumValue =
+            Float(min_hue)
+            horizontalSlider.value = Float(hue)
+        }
+        if currentIndex == 3 {
+            horizontalSlider.maximumValue = Float(max_sharpen)
+            horizontalSlider.minimumValue =
+            Float(min_sharpen)
+            horizontalSlider.value = Float(sharpen)
+        }
+        if currentIndex == 4 {
+            horizontalSlider.maximumValue = Float(max_contrast)
+            horizontalSlider.minimumValue =
+            Float(min_contrast)
+            horizontalSlider.value = Float(contrast)
+        }
         
         for i in 0..<self.plistArray4.count{
             var btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
