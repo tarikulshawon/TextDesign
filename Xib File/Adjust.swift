@@ -43,6 +43,8 @@ class Adjust: UIView {
     let sharpen = 0
     let max_sharpen = 4.0
     let min_sharpen = -4.0
+    
+    var currentIndex = 0
 
     
 

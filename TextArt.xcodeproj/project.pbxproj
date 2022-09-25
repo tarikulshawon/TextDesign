@@ -438,7 +438,7 @@
 		39CC0DF728A4A3B900DF1C64 /* Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pattern.png; sourceTree = "<group>"; };
 		39CC0DF828A4A3B900DF1C64 /* Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flower.png; sourceTree = "<group>"; };
 		39CC0DF928A4A3B900DF1C64 /* Premium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Premium.png; sourceTree = "<group>"; };
-		39CC0E0128A4A5B000DF1C64 /* EditVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVc.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		39CC0E0128A4A5B000DF1C64 /* EditVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVc.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		39CC0E0428A4A6FE00DF1C64 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		39CC0E0628A4A82C00DF1C64 /* RatioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatioCell.xib; sourceTree = "<group>"; };
 		39CC0E0728A4A82C00DF1C64 /* RatioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatioCell.swift; sourceTree = "<group>"; };
