@@ -318,6 +318,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         cell.holderView.isHidden = false
         cell.gradietImv.isHidden = false
         cell.fontLabel.isHidden = true
+        cell.textColorView.isHidden = true
         
         if currentOption.rawValue == TextEditingOption.Texture.rawValue {
             cell.layer.cornerRadius = cell.frame.size.height/2.0
@@ -330,6 +331,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             
             cell.holderView.isHidden = true
             cell.gradietImv.isHidden = true
+            cell.textColorView.isHidden = false
             cell.fontLabel.isHidden = false
             var fontName = UIFont(name: arrayForFont[indexPath.row] as! String, size: 15.0)
             cell.fontLabel.font = fontName
