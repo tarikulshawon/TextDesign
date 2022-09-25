@@ -575,7 +575,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6T-5e-2BJ">
-                                        <rect key="frame" x="0.0" y="10406" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="1106" width="414" height="400"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right" translatesAutoresizingMaskIntoConstraints="NO" id="9wo-sG-Aks">
                                                 <rect key="frame" x="379" y="0.0" width="35" height="35"/>
@@ -642,7 +642,7 @@
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="8hc-eU-4HA" secondAttribute="bottom" constant="-1000" id="OWS-Wt-6wj"/>
                                     <constraint firstAttribute="trailing" secondItem="aQa-WA-Okg" secondAttribute="trailing" id="Q0e-0z-GG7"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="jXP-Ej-Fl2" secondAttribute="bottom" constant="-1000" id="Qbf-d1-RYp"/>
-                                    <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="W6T-5e-2BJ" secondAttribute="bottom" constant="-10000" id="TDl-kJ-eK1"/>
+                                    <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="W6T-5e-2BJ" secondAttribute="bottom" constant="-700" id="TDl-kJ-eK1"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="TNL-gu-Bzy"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="uWX-UP-x1l" secondAttribute="bottom" constant="-1000" id="Ucy-Ch-s3F"/>
                                     <constraint firstAttribute="trailing" secondItem="aRW-YN-1HA" secondAttribute="trailing" id="Y01-F7-KnB"/>

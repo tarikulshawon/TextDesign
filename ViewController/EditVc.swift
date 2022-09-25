@@ -154,7 +154,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-       // controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height)
+        controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
     }
     
     override func viewDidLoad() {
@@ -168,6 +168,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         controller.rectangularPaletteBorderOn = true
         colorPickerHolder.addSubview(controller.view)
         controller.selectedColor = UIColor.red
+        controller.view.backgroundColor = UIColor.white
         self.addChild(controller)
         controller.didMove(toParent: self)
         
