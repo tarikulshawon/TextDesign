@@ -1359,6 +1359,14 @@ extension EditVc: TextStickerContainerViewDelegate {
 }
 
 extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShape {
+    func filterNameWithIndex(dic: Dictionary<String, Any>?) {
+        if let value =  dic {
+            
+            mainImv.image = getFilteredImage(withInfo: value, for: mainImage)
+        }
+       
+    }
+    
     func imageNameWithIndex(tag: String, image: UIImage) {
         
         _ = image
@@ -1441,13 +1449,6 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     func colorIndex(tag: Int, colorV: UIColor) {
         
     }
-    
-    func filterNameWithIndex(tag: String, image: UIImage) {
-        currentFilterIndex = Int(tag) ?? 0
-        DoAdjustMent(inputImage: mainImage)
-        
-    }
-    
     func sendShape(sticker: String) {
         self.addSticker(test: UIImage(named: sticker) ?? UIImage(), type: "shape", pathName: sticker)
     }

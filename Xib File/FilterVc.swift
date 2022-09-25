@@ -8,10 +8,14 @@
 import UIKit
 
 protocol filterIndexDelegate: AnyObject {
-    func filterNameWithIndex(tag:String ,image: UIImage)
+    func filterNameWithIndex(dic: Dictionary<String, Any>?)
 }
 
 class FilterVc: UIView, ODRManagerDelegate {
+    func doneLoading(tag: String, successfully: Bool) {
+        
+    }
+    
     
     var currentIndex = 0
     var tempArray:NSArray!
@@ -28,14 +32,7 @@ class FilterVc: UIView, ODRManagerDelegate {
     var tempViww:UIView!
 
 
-    
-    func doneLoading(tag: String, successfully: Bool) {
-        if successfully {
-            guard let image = UIImage(named: "Filter" + "\(tag)") else { return  }
-            delegateForFilter?.filterNameWithIndex(tag: tag, image: image)
-            
-        }
-    }
+
     
     @IBOutlet weak var collectionViewForFilter: UICollectionView!
     var noOfFilter  = 27
@@ -244,20 +241,12 @@ extension FilterVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollec
         }
         
         if indexPath.row == 0 {
-            delegateForFilter?.filterNameWithIndex(tag:"\(indexPath.row)", image: UIImage())
+            delegateForFilter?.filterNameWithIndex(dic: nil)
         }
-        
-        else if let image = UIImage(named: "Filter" + "\(indexPath.row)") {
-            
-            
-            delegateForFilter?.filterNameWithIndex(tag:"\(indexPath.row)", image: image)
-            print(image.size.width)
-            
-        } else {
-            odrManager.load(tag: "\(indexPath.row)")
+        else  {
+            var dic = tempArray[indexPath.row]
+            delegateForFilter?.filterNameWithIndex(dic: dic as! Dictionary<String, Any>)
         }
-        
-        
     }
 }
     

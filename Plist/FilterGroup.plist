@@ -138,62 +138,6 @@
 	</dict>
 	<dict>
 		<key>group-icon</key>
-		<string>group-icon-1</string>
-		<key>group-name</key>
-		<string>BlackWhite</string>
-		<key>isFree</key>
-		<true/>
-		<key>items</key>
-		<array>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_no</string>
-				<key>filter</key>
-				<string>-</string>
-				<key>name</key>
-				<string>Orignial</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_1</string>
-				<key>filter</key>
-				<string>CIMaximumComponent</string>
-				<key>name</key>
-				<string>Fade</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_6</string>
-				<key>filter</key>
-				<string>CIPhotoEffectMono</string>
-				<key>name</key>
-				<string>Mono</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_9</string>
-				<key>filter</key>
-				<string>CIPhotoEffectTonal</string>
-				<key>name</key>
-				<string>Chrome</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_91</string>
-				<key>color</key>
-				<string>180,180,180</string>
-				<key>filter</key>
-				<string>CIColorMonochrome</string>
-				<key>inputIntensity</key>
-				<string>0.4</string>
-				<key>name</key>
-				<string>Equinox
-</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>group-icon</key>
 		<string>group-icon-2</string>
 		<key>group-name</key>
 		<string>ColorFul</string>
@@ -346,6 +290,62 @@ Breeze</string>
 				<string>0.5</string>
 				<key>name</key>
 				<string>Horine
+</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>group-icon</key>
+		<string>group-icon-1</string>
+		<key>group-name</key>
+		<string>BlackWhite</string>
+		<key>isFree</key>
+		<true/>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_no</string>
+				<key>filter</key>
+				<string>-</string>
+				<key>name</key>
+				<string>Orignial</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_1</string>
+				<key>filter</key>
+				<string>CIMaximumComponent</string>
+				<key>name</key>
+				<string>Fade</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_6</string>
+				<key>filter</key>
+				<string>CIPhotoEffectMono</string>
+				<key>name</key>
+				<string>Mono</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_9</string>
+				<key>filter</key>
+				<string>CIPhotoEffectTonal</string>
+				<key>name</key>
+				<string>Chrome</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_91</string>
+				<key>color</key>
+				<string>180,180,180</string>
+				<key>filter</key>
+				<string>CIColorMonochrome</string>
+				<key>inputIntensity</key>
+				<string>0.4</string>
+				<key>name</key>
+				<string>Equinox
 </string>
 			</dict>
 		</array>
@@ -1180,7 +1180,7 @@ Breeze</string>
 				<key>filter</key>
 				<string>CIColorPosterize</string>
 				<key>inputLevels</key>
-				<string>8.0</string>
+				<string>6.0</string>
 				<key>name</key>
 				<string>Americana
 </string>
@@ -1191,18 +1191,18 @@ Breeze</string>
 				<key>filter</key>
 				<string>CIPhotoEffectChrome</string>
 				<key>name</key>
-				<string>Max
+				<string>Min
 </string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
 				<string>filter_59</string>
 				<key>color</key>
-				<string>124,255,239</string>
+				<string>180,180,180</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.3</string>
+				<string>0.5</string>
 				<key>name</key>
 				<string>Posterize
 </string>
@@ -1222,7 +1222,7 @@ Breeze</string>
 				<key>filter</key>
 				<string>CIColorPosterize</string>
 				<key>inputLevels</key>
-				<string>30.0</string>
+				<string>10.0</string>
 				<key>name</key>
 				<string>Alpine
 </string>
@@ -1233,7 +1233,7 @@ Breeze</string>
 				<key>filter</key>
 				<string>CISepiaTone</string>
 				<key>inputIntensity</key>
-				<string>0.5</string>
+				<string>0.1</string>
 				<key>name</key>
 				<string>Hulk
 </string>
@@ -1244,7 +1244,7 @@ Breeze</string>
 				<key>filter</key>
 				<string>CIGammaAdjust</string>
 				<key>inputPower</key>
-				<string>2.5</string>
+				<string>1.0</string>
 				<key>name</key>
 				<string>Olympia
 </string>
@@ -1255,7 +1255,7 @@ Breeze</string>
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-0.5</string>
+				<string>-0.1</string>
 				<key>name</key>
 				<string>Vignette
 </string>
@@ -1279,7 +1279,7 @@ Breeze</string>
 				<key>inputIntensity</key>
 				<string>1</string>
 				<key>inputRadius</key>
-				<string>0</string>
+				<string>1</string>
 				<key>name</key>
 				<string>Journey
 </string>
@@ -1288,27 +1288,25 @@ Breeze</string>
 				<key>ImageName</key>
 				<string>filter_75</string>
 				<key>color</key>
-				<string>255,133,153</string>
+				<string>133,133,133</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
 				<string>0.5</string>
 				<key>name</key>
-				<string>Juno
-</string>
+				<string>Souvenir</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
 				<string>filter_83</string>
 				<key>color</key>
-				<string>244,255,204</string>
+				<string>120,120,120</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
 				<string>0.3</string>
 				<key>name</key>
-				<string>Idaho
-</string>
+				<string>Souvenir</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -1333,7 +1331,7 @@ Breeze</string>
 				<key>inputIntensity</key>
 				<string>0.7</string>
 				<key>name</key>
-				<string>Grove
+				<string>Souvenir
 </string>
 			</dict>
 		</array>
