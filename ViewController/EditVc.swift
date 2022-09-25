@@ -17,12 +17,112 @@ protocol callDelegate: AnyObject {
 }
 
 class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust {
-   
+    
+    @IBOutlet weak var colorPickerHolder: UIView!
+    @IBOutlet weak var screenSortView: UIView!
+    @IBOutlet weak var overLayVcHolder: UIView!
+    @IBOutlet weak var drawHolderView: UIView!
+    @IBOutlet weak var filterViewHolder: UIView!
+    @IBOutlet weak var stickerViewHolder: UIView!
+    @IBOutlet weak var HolderView: UIView!
+    @IBOutlet weak var textViewHolderView: UIView!
+    @IBOutlet weak var imageViewHolder: UIView!
+    @IBOutlet weak var shapeHolderView: UIView!
+    @IBOutlet weak var ajustVcHolder: UIView!
+    @IBOutlet weak var frameVcHolder: UIView!
+    @IBOutlet weak var transParentView: UIImageView!
+    
+    
+    @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForFrame: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewForBackGround: UICollectionView!
+    @IBOutlet weak var bottomSpaceForDrawer: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForOverlay: NSLayoutConstraint!
+    @IBOutlet weak var bottomSapceForShape: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForImageViewHolder: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForFilter: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceFoSticker: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceOfFontLoaderView: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForAdjust: NSLayoutConstraint!
+    @IBOutlet weak var widthForImv: NSLayoutConstraint!
+    @IBOutlet weak var heightForImv: NSLayoutConstraint!
+    @IBOutlet weak var heightForShapeVc: NSLayoutConstraint!
+    
+    @IBOutlet weak var slider1: UISlider!
+    @IBOutlet weak var slider2: UISlider!
+    @IBOutlet weak var slider3: UISlider!
+    
+    @IBOutlet weak var lbl1: UILabel!
+    @IBOutlet weak var lbl2: UILabel!
+    @IBOutlet weak var lbl3: UILabel!
+    
+    var currentTextStickerView: TextStickerContainerView?
+    var imageInfoObj = ImageInfoData()
+    weak var delegateFor: callDelegate?
+    var stickerObjList = [StickerValueObj]()
+    
+    var isfromUpdate = false
+    var currentlyActiveIndex = -1
+    var currentFilterDic:Dictionary<String, Any>?
+    var cellWidth:CGFloat = 60
+    var cellGap:CGFloat =  0
+    var ov:Float =  0.3
+    var currentLookUpindex = 0
+    var plistArray2:NSArray!
+    var mainImage:UIImage!
+    
+    var Brightness: Float = 0.0
+    var max_brightness:Float = 0.7
+    var min_brightness:Float = -0.7
+    
+    var Saturation: Float = 1.0
+    var max_saturation:Float = 3
+    var min_saturation:Float = -1
+    
+    var hue: Float = 0.0
+    var max_hue:Float = 1.0
+    var min_hue:Float = -1.0
+    
+    var Contrast: Float = 1.0
+    var max_contrast:Float = 1.5
+    var min_contrast:Float = 0.5
+    
+    var sharpen:Float = 0
+    var max_sharpen:Float = 4.0
+    var min_sharpen:Float = -4.0
+    
+    var currentOverlayIndex = 0
+    var currentBackGroundIndex  = 0
+    var tagValue = 1000000
+    
+    
+    @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
+    @IBOutlet weak var btnCollectionView: UICollectionView!
+    @IBOutlet weak var mainImv: UIImageView!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var overLaySlider: CustomSlider!
+    
+    let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
+    let overLayVc = Bundle.main.loadNibNamed("OverLayVc", owner: nil, options: nil)![0] as! OverLayVc
+    let shapeVc = Bundle.main.loadNibNamed("ShapeVc", owner: nil, options: nil)![0] as! ShapeVc
+    let stickerVc = Bundle.main.loadNibNamed("StickerVc", owner: nil, options: nil)![0] as! StickerVc
+    let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
+    let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
+    let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
+    let frameVc =  Bundle.main.loadNibNamed("FrameVc", owner: nil, options: nil)![0] as! FrameVc
+    
+    
+    let TextEditVc: TextEditView = TextEditView.loadFromXib()
+    let controller = DefaultColorPickerViewController()
+    
+    
     
     func sendAdjustValue(value: Float, index: Int) {
         print(value)
         print(index)
-
+        
         if index == 0 {
             Brightness = value
         }else if index == 1 {
@@ -58,106 +158,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, confirmedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
         
     }
-    @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
     
     
-    
-    @IBOutlet weak var bottomSpaceForFrame: NSLayoutConstraint!
-    @IBOutlet weak var colorPickerHolder: UIView!
-    @IBOutlet weak var screenSortView: UIView!
-    @IBOutlet weak var overLayVcHolder: UIView!
-    @IBOutlet weak var drawHolderView: UIView!
-    @IBOutlet weak var filterViewHolder: UIView!
-    @IBOutlet weak var stickerViewHolder: UIView!
-    @IBOutlet weak var HolderView: UIView!
-    @IBOutlet weak var textViewHolderView: UIView!
-    @IBOutlet weak var imageViewHolder: UIView!
-    @IBOutlet weak var shapeHolderView: UIView!
-    
-    @IBOutlet weak var frameVcHolder: UIView!
-    
-    @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
-    
-    @IBOutlet weak var ajustVcHolder: UIView!
-    @IBOutlet weak var collectionViewForBackGround: UICollectionView!
-    @IBOutlet weak var bottomSpaceForDrawer: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpaceForOverlay: NSLayoutConstraint!
-    @IBOutlet weak var bottomSapceForShape: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpaceForImageViewHolder: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpaceForFilter: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpaceFoSticker: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpaceOfFontLoaderView: NSLayoutConstraint!
-    @IBOutlet weak var bottomSpaceForAdjust: NSLayoutConstraint!
-    @IBOutlet weak var widthForImv: NSLayoutConstraint!
-    @IBOutlet weak var heightForImv: NSLayoutConstraint!
-    @IBOutlet weak var heightForShapeVc: NSLayoutConstraint!
-    
-    @IBOutlet weak var slider1: UISlider!
-    @IBOutlet weak var slider2: UISlider!
-    @IBOutlet weak var slider3: UISlider!
-    
-    @IBOutlet weak var lbl1: UILabel!
-    @IBOutlet weak var lbl2: UILabel!
-    @IBOutlet weak var lbl3: UILabel!
-    
-    @IBOutlet weak var transParentView: UIImageView!
-    var currentTextStickerView: TextStickerContainerView?
-    var imageInfoObj = ImageInfoData()
-    weak var delegateFor: callDelegate?
-    var stickerObjList = [StickerValueObj]()
-    
-    var isfromUpdate = false
-    var currentlyActiveIndex = -1
-    var currentFilterIndex = 0
-    var cellWidth:CGFloat = 60
-    var cellGap:CGFloat =  0
-    var ov:Float =  0.3
-    var currentLookUpindex = 0
-    var plistArray2:NSArray!
-    var mainImage:UIImage!
-    
-    var Brightness: Float = 0.0
-    var max_brightness:Float = 0.7
-    var min_brightness:Float = -0.7
-    
-    var Saturation: Float = 1.0
-    var max_saturation:Float = 3
-    var min_saturation:Float = -1
-    
-    var hue: Float = 0.0
-    var max_hue:Float = 1.0
-    var min_hue:Float = -1.0
-    
-    var Contrast: Float = 1.0
-    var max_contrast:Float = 1.5
-    var min_contrast:Float = 0.5
-    
-    var sharpen:Float = 0
-    var max_sharpen:Float = 4.0
-    var min_sharpen:Float = -4.0
-    
-    var currentOverlayIndex = 0
-    var tagValue = 1000000
-    
-    
-    @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
-    @IBOutlet weak var btnCollectionView: UICollectionView!
-    @IBOutlet weak var mainImv: UIImageView!
-    @IBOutlet weak var saveBtn: UIButton!
-    @IBOutlet weak var overLaySlider: CustomSlider!
-    var currentBackGroundIndex  = 0
-    
-    let TextEditVc: TextEditView = TextEditView.loadFromXib()
-    let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
-    let overLayVc = Bundle.main.loadNibNamed("OverLayVc", owner: nil, options: nil)![0] as! OverLayVc
-    let shapeVc = Bundle.main.loadNibNamed("ShapeVc", owner: nil, options: nil)![0] as! ShapeVc
-    let stickerVc = Bundle.main.loadNibNamed("StickerVc", owner: nil, options: nil)![0] as! StickerVc
-    let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
-    let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
-    let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
-    let controller = DefaultColorPickerViewController()
-    let frameVc =  Bundle.main.loadNibNamed("FrameVc", owner: nil, options: nil)![0] as! FrameVc
     
     @IBAction func segmentValueHasChanged(_ sender: UISegmentedControl) {
         
@@ -218,7 +220,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         DoAdjustMent(inputImage: mainImage)
         
         if isfromUpdate {
+            
+            
             stickerObjList = DBmanager.shared.getStickerInfo(fileName: imageInfoObj.id)
+            let defaults = UserDefaults.standard
+            if let data2 = defaults.object(forKey: imageInfoObj.id) as? NSData {
+                
+                do {
+                    
+                }
+                catch let error {
+                     
+                }
+                
+            }
             
             for item in stickerObjList {
                 updateSticker(obj: item)
@@ -230,7 +245,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             hue = imageInfoObj.Hue.floatValue
             sharpen = imageInfoObj.sh.floatValue
             print(sharpen)
-            currentFilterIndex = Int(imageInfoObj.filter) ?? 0
             currentOverlayIndex = Int(imageInfoObj.OverLay) ?? 0
             ov = imageInfoObj.ov.floatValue
         }
@@ -499,8 +513,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 if let cgimg = context.createCGImage(output, from: output.extent) {
                     let processedImage = UIImage(cgImage: cgimg)
                     
-                    DispatchQueue.main.async {
-                        self.mainImv.image = processedImage
+                    DispatchQueue.main.async { [self] in
+                        
+                        if let value = self.currentFilterDic {
+                            self.mainImv.image = getFilteredImage(withInfo: currentFilterDic, for: processedImage)
+                        } else {
+                            self.mainImv.image = processedImage
+                        }
+                        
                         
                     }
                     
@@ -577,7 +597,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         imageInfoObj.Cont = "\(Contrast)"
         imageInfoObj.sh = "\(sharpen)"
         imageInfoObj.Hue =  "\(hue)"
-        imageInfoObj.filter = "\(currentFilterIndex)"
+        imageInfoObj.filter = "\(0)"
         imageInfoObj.ov = "\(ov)"
         imageInfoObj.OverLay = "\(currentOverlayIndex)"
         
@@ -671,6 +691,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         else {
             DBmanager.shared.insertmergeFile(fileObj: imageInfoObj)
             let ma1 = DBmanager.shared.getMaxIdForMerge()
+            
+            let data = NSKeyedArchiver.archivedData(withRootObject: currentFilterDic ?? nil)
+            let defaults = UserDefaults.standard
+            defaults.set(data, forKey: "\(ma1)")
             
             createFile(fileName: "FileName" + "\(ma1)" + ".jpg", cropImage: mainImage)
             let images = screenSortView.takeScreenshot()
@@ -1439,8 +1463,10 @@ extension EditVc: TextStickerContainerViewDelegate {
 extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShape {
     func filterNameWithIndex(dic: Dictionary<String, Any>?) {
         if let value =  dic {
-            DispatchQueue.main.async {
-                self.mainImv.image = getFilteredImage(withInfo: value, for: self.mainImage)
+            DispatchQueue.main.async { [self] in
+                
+                currentFilterDic = value
+                self.DoAdjustMent(inputImage: mainImage)
             }
         }
         
