@@ -1361,8 +1361,9 @@ extension EditVc: TextStickerContainerViewDelegate {
 extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShape {
     func filterNameWithIndex(dic: Dictionary<String, Any>?) {
         if let value =  dic {
-            
-            mainImv.image = getFilteredImage(withInfo: value, for: mainImage)
+            DispatchQueue.main.async {
+                self.mainImv.image = getFilteredImage(withInfo: value, for: self.mainImage)
+            }
         }
        
     }
