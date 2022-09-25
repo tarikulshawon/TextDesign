@@ -18,5 +18,6 @@ class ImageInfoData {
    var Sat = "1"
    var Cont = "1"
    var ov = "1"
+   var sh = "0"
 
 }

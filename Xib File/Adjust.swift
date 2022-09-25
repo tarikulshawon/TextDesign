@@ -26,29 +26,29 @@ class Adjust: UIView {
     weak var delegate: sendValueForAdjust?
     
     
-    let brigthness = 0
+    var brigthness:Float = 0
     let max_brightness = 0.7
     let min_brightness = -0.7
-
-
-    let contrast = 1.0
+    
+    
+    var contrast:Float = 1.0
     let max_contrast = 1.5
     let min_contrast = 0.5
-
-    let saturation = 1.0
+    
+    var saturation:Float = 1.0
     let max_saturation = 3.0
     let min_saturation = -1.0
-
-    let hue = 0.0
+    
+    var hue:Float = 0.0
     let max_hue = 1.0
     let min_hue = 0.0
-
-    let sharpen = 0
+    
+    var sharpen:Float = 0
     let max_sharpen = 4.0
     let min_sharpen = -4.0
     
     var currentIndex = 0
-
+    
     
     @IBOutlet weak var horizontalSlider: UISlider!
     
@@ -59,7 +59,7 @@ class Adjust: UIView {
     }
     
     
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,19 +67,16 @@ class Adjust: UIView {
         
         
         
-
+        
         let path = Bundle.main.path(forResource: "AdjustV", ofType: "plist")
         plistArray4 = NSArray(contentsOfFile: path!)
         stickersScrollContents()
+        updateSlider()
         
         
     }
     
-    @objc func buttonAction(sender: UIButton!) {
-        
-        let tag = sender.tag - 800
-        currentIndex = tag
-        
+    func updateSlider() {
         if currentIndex == 0 {
             horizontalSlider.maximumValue = Float(max_brightness)
             horizontalSlider.minimumValue =
@@ -111,11 +108,19 @@ class Adjust: UIView {
             horizontalSlider.value = Float(contrast)
         }
         
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        
+        let tag = sender.tag - 800
+        currentIndex = tag
+        
+        self.updateSlider()
         for i in 0..<self.plistArray4.count{
             var btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
             btn?.setTitleColor(unselectedColor, for: .normal)
         }
-       
+        
         
         
         UIView.animate(withDuration: 0.2, animations: {
@@ -138,7 +143,7 @@ class Adjust: UIView {
         })
         
     }
-
+    
     func stickersScrollContents() {
         
         print("mammamamama")
@@ -196,11 +201,11 @@ class Adjust: UIView {
         
         
         btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray4.count) + gapBetweenButtons * CGFloat((plistArray4.count*2 + 1)), height: yCoord)
-
+        
     }
     
     
 }
 
 
- 
+

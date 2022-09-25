@@ -227,6 +227,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             Brightness = imageInfoObj.Bri.floatValue
             Saturation = imageInfoObj.Sat.floatValue
             Contrast = imageInfoObj.Cont.floatValue
+            hue = imageInfoObj.Hue.floatValue
+            sharpen = imageInfoObj.sh.floatValue
+            print(sharpen)
             currentFilterIndex = Int(imageInfoObj.filter) ?? 0
             currentOverlayIndex = Int(imageInfoObj.OverLay) ?? 0
             ov = imageInfoObj.ov.floatValue
@@ -572,6 +575,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         imageInfoObj.Bri = "\(Brightness)"
         imageInfoObj.Sat = "\(Saturation)"
         imageInfoObj.Cont = "\(Contrast)"
+        imageInfoObj.sh = "\(sharpen)"
+        imageInfoObj.Hue =  "\(hue)"
         imageInfoObj.filter = "\(currentFilterIndex)"
         imageInfoObj.ov = "\(ov)"
         imageInfoObj.OverLay = "\(currentOverlayIndex)"
@@ -1157,6 +1162,12 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             }
             
             if btnValue == BtnName.Adjust.rawValue {
+                
+                adjustVc.brigthness = Brightness
+                adjustVc.saturation = Saturation
+                adjustVc.contrast = Contrast
+                adjustVc.sharpen = sharpen
+                adjustVc.hue = hue
                 let p = self.bottomSpaceForAdjust.constant < 0 ? 0 : -1000
                 
                 if p == 0 {
