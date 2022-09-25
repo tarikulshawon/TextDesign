@@ -1179,6 +1179,22 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func showColorPickerView() {
+        
+        self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
+
+        UIView.animate(withDuration: 0.2, animations: {
+    
+            self.bottomSpaceForColorPicker.constant = 0
+            self.bottomSpceOfMainView.constant = self.heightForColorPickerView.constant
+            self.view.layoutIfNeeded()
+            
+        }, completion: {_ in
+            
+        })
+        
+    }
+    
     func sendOpacityValue(value: Double) {
         currentTextStickerView?.textStickerView.alpha = value
         currentTextStickerView?.opacity =  value

@@ -17,6 +17,7 @@ protocol AddTextDelegate: AnyObject {
     func showBackground()
     func setAlighnMent(index:Int)
     func sendOpacityValue(value: Double)
+    func showColorPickerView()
 }
 
 class TextEditView: UIView {
@@ -77,7 +78,9 @@ class TextEditView: UIView {
     
     @IBAction func opacityValuChanges(_ sender: CustomSlider) {
         
-        delegateForText?.sendOpacityValue(value: Double(sender.value))
+        if currentOption.rawValue == TextEditingOption.Color.rawValue {
+            delegateForText?.sendOpacityValue(value: Double(sender.value))
+        }
     }
     
     @objc
@@ -296,7 +299,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if currentOption.rawValue == TextEditingOption.Color.rawValue{
-            return plistArray.count
+            return plistArray.count + 1
         }
         else if currentOption.rawValue == TextEditingOption.Fonts.rawValue {
             return arrayForFont.count
@@ -352,7 +355,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
                 cell.gradietImv.isHidden = false
                 cell.holderView.backgroundColor = UIColor.clear
             }
-            else if let colorString = plistArray[indexPath.row] as? String {
+            else if let colorString = plistArray[indexPath.row - 1] as? String {
                 cell.holderView.backgroundColor = getColor(colorString: colorString)
                 cell.gradietImv.isHidden = true
             }
@@ -395,7 +398,12 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         }
     
         if currentOption.rawValue == TextEditingOption.Color.rawValue {
-            if let colorString = plistArray[indexPath.row] as? String {
+            
+            
+            if indexPath.row == 0 {
+                self.delegateForText?.showColorPickerView()
+            }
+            else if let colorString = plistArray[indexPath.row - 1] as? String {
                 delegateForText?.colorValue(color: colorString)
             }
         }
