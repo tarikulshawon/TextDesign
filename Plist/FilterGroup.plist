@@ -6,7 +6,7 @@
 		<key>group-icon</key>
 		<string>group-icon-0</string>
 		<key>group-name</key>
-		<string>Classic</string>
+		<string>Old Days</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -140,7 +140,7 @@
 		<key>group-icon</key>
 		<string>group-icon-1</string>
 		<key>group-name</key>
-		<string>B &amp; W</string>
+		<string>BlackWhite</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -217,7 +217,7 @@
 		<key>group-icon</key>
 		<string>group-icon-2</string>
 		<key>group-name</key>
-		<string>Pop</string>
+		<string>ColorFul</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -560,7 +560,7 @@
 		<key>group-icon</key>
 		<string>group-icon-4</string>
 		<key>group-name</key>
-		<string>Beauty</string>
+		<string>Nice</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -761,7 +761,7 @@
 		<key>group-icon</key>
 		<string>group-icon-5</string>
 		<key>group-name</key>
-		<string>X-Pro</string>
+		<string>New</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -974,7 +974,7 @@
 		<key>group-icon</key>
 		<string>group-icon-6</string>
 		<key>group-name</key>
-		<string>Nature</string>
+		<string>Scenary</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -1182,7 +1182,7 @@
 		<key>group-icon</key>
 		<string>group-icon-7</string>
 		<key>group-name</key>
-		<string>Western</string>
+		<string>Foriegn</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
