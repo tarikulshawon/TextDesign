@@ -69,6 +69,8 @@
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
+		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
+		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
 		018063F628DFDF1B0015E667 /* Motivational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018063F528DFDF1B0015E667 /* Motivational.plist */; };
 		019BC4E028E026F400B15323 /* FrameThumb20.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C428E026F400B15323 /* FrameThumb20.png */; };
 		019BC4E128E026F400B15323 /* FrameThumb0.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C528E026F400B15323 /* FrameThumb0.png */; };
@@ -322,6 +324,8 @@
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
+		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
+		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
 		018063F528DFDF1B0015E667 /* Motivational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Motivational.plist; sourceTree = "<group>"; };
 		019BC4C428E026F400B15323 /* FrameThumb20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb20.png; sourceTree = "<group>"; };
 		019BC4C528E026F400B15323 /* FrameThumb0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb0.png; sourceTree = "<group>"; };
@@ -882,6 +886,8 @@
 				0105428328D860040004A516 /* CropVc.swift */,
 				39F8225628A35133008925EF /* HomeVc.swift */,
 				39CC0E0128A4A5B000DF1C64 /* EditVc.swift */,
+				01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */,
+				01507E2F28E10D0E002E5535 /* UI+Extension.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1445,6 +1451,7 @@
 				0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */,
 				01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */,
 				01FD5AD128AE52AE00CBF70F /* BreakWordControllerView.swift in Sources */,
+				01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */,
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
 				01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */,
@@ -1469,6 +1476,7 @@
 				01FD5ADD28AED4BD00CBF70F /* TextInfoData.swift in Sources */,
 				01FD5AD828AE52C700CBF70F /* UIColor+ExtensionOfTextSticker.swift in Sources */,
 				39CC0E1D28A4AADE00DF1C64 /* StickerVc.swift in Sources */,
+				01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */,
 				39F8222828A3505C008925EF /* SceneDelegate.swift in Sources */,
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,
@@ -1662,6 +1670,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T4SDWZ6VK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TextArt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1691,6 +1700,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T4SDWZ6VK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TextArt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
