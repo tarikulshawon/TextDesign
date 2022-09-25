@@ -14,7 +14,7 @@ protocol sendSticker: AnyObject {
 
 class StickerVc: UIView {
     
-    var plistArray:NSArray!
+    var plistArray6:NSArray!
     @IBOutlet weak var optionView: UIView!
     var btnScrollView: UIScrollView!
     var tempViww:UIView!
@@ -37,7 +37,7 @@ class StickerVc: UIView {
         
         
         var tempArray:NSArray!
-        if let value  = plistArray[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
+        if let value  = plistArray6[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
             
             do {
                 try  tempArray =  FileManager.default.contentsOfDirectory(atPath: path) as NSArray
@@ -52,6 +52,7 @@ class StickerVc: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
         let nibName = UINib(nibName: RatioCell.reusableID, bundle: nil)
         collectionViewForSticker.register(nibName, forCellWithReuseIdentifier:  RatioCell.reusableID)
         collectionViewForSticker.delegate = self
@@ -63,7 +64,7 @@ class StickerVc: UIView {
         
         
         let path = Bundle.main.path(forResource: "sticker", ofType: "plist")
-        plistArray = NSArray(contentsOfFile: path!)
+        plistArray6 = NSArray(contentsOfFile: path!)
         stickersScrollContents()
         
         
@@ -75,7 +76,7 @@ class StickerVc: UIView {
         currentSelectedSticker = tag
         getStickerArray(index: currentSelectedSticker)
         
-        for i in 0..<self.plistArray.count{
+        for i in 0..<self.plistArray6.count{
             var btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
             btn?.setTitleColor(unselectedColor, for: .normal)
         }
@@ -130,7 +131,7 @@ class StickerVc: UIView {
         btnScrollView.showsVerticalScrollIndicator = false
         
         
-        for i in 0..<plistArray.count{
+        for i in 0..<plistArray6.count{
             let filterButton = UIButton(type: .custom)
             filterButton.frame = CGRect(x: xCoord, y: yCoord, width: buttonWidth, height: buttonHeight)
             filterButton.tag = 800 + i
@@ -140,7 +141,7 @@ class StickerVc: UIView {
                 tempViww.backgroundColor = titleColor
             }
             
-            if let value = plistArray[i] as? String{
+            if let value = plistArray6[i] as? String{
                 filterButton.setTitle(value, for: .normal)
                 filterButton.setTitleColor(unselectedColor, for: .normal)
             }
@@ -162,7 +163,7 @@ class StickerVc: UIView {
         }
         
         
-        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray.count) + gapBetweenButtons * CGFloat((plistArray.count*2 + 1)), height: yCoord)
+        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray6.count) + gapBetweenButtons * CGFloat((plistArray6.count*2 + 1)), height: yCoord)
 
     }
     
@@ -209,7 +210,7 @@ extension StickerVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
         var tempArray = self.getStickerArray(index: currentSelectedSticker)
         let filename = tempArray[indexPath.row]
         
-        if let value  = plistArray[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
+        if let value  = plistArray6[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
             let imagePath = "\(value)/\(filename)"
             var image = UIImage(named: imagePath)
             cell.iconImv.image = image

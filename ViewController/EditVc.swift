@@ -866,6 +866,13 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             if currentBackGroundIndex == 0 {
                 return plistArray.count + 2
             }
+            else if currentBackGroundIndex == 2 {
+                return 22
+            }
+            else if currentBackGroundIndex == 1 {
+                return plistArray1.count
+            }
+            
         }
         
         return plistArray2.count

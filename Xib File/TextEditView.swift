@@ -355,30 +355,22 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             }
             
         }
-        else {
-            
-            if currentOption.rawValue == TextEditingOption.Gradient.rawValue {
-                cell.layer.cornerRadius = cell.frame.size.height/2.0
-                cell.gradietImv.image = nil
-                cell.gradietImv.isHidden = false
-                if let objArray = plistArray1[indexPath.row] as? NSArray {
-                    var allcolors: [CGColor] = []
-                    for item in objArray {
-                        let color = getColor(colorString: item as? String ?? "")
-                        allcolors.append(color.cgColor)
-                    }
-                    
-                    let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
-                    cell.gradietImv.contentMode = .scaleAspectFill
-                    cell.gradietImv.image = uimage
-                    
-                    
+        else if currentOption.rawValue == TextEditingOption.Gradient.rawValue  {
+            cell.layer.cornerRadius = cell.frame.size.height/2.0
+            cell.gradietImv.image = nil
+            cell.gradietImv.isHidden = false
+            if let objArray = plistArray1[indexPath.row] as? NSArray {
+                var allcolors: [CGColor] = []
+                for item in objArray {
+                    let color = getColor(colorString: item as? String ?? "")
+                    allcolors.append(color.cgColor)
                 }
+                
+                let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                cell.gradietImv.contentMode = .scaleAspectFill
+                cell.gradietImv.image = uimage
             }
         }
-        
-        
-        
         print(cell.contentView.frame.size)
         
         return cell
