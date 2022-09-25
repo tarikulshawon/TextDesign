@@ -69,6 +69,8 @@
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
+		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
+		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -262,6 +264,8 @@
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
+		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
+		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -689,6 +693,8 @@
 				0105428328D860040004A516 /* CropVc.swift */,
 				39F8225628A35133008925EF /* HomeVc.swift */,
 				39CC0E0128A4A5B000DF1C64 /* EditVc.swift */,
+				01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */,
+				01507E2F28E10D0E002E5535 /* UI+Extension.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1190,6 +1196,7 @@
 				0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */,
 				01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */,
 				01FD5AD128AE52AE00CBF70F /* BreakWordControllerView.swift in Sources */,
+				01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */,
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
 				01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */,
@@ -1213,6 +1220,7 @@
 				01FD5ADD28AED4BD00CBF70F /* TextInfoData.swift in Sources */,
 				01FD5AD828AE52C700CBF70F /* UIColor+ExtensionOfTextSticker.swift in Sources */,
 				39CC0E1D28A4AADE00DF1C64 /* StickerVc.swift in Sources */,
+				01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */,
 				39F8222828A3505C008925EF /* SceneDelegate.swift in Sources */,
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,

@@ -227,13 +227,3 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
     }
     
 }
-
-extension UIView {
-
-  func screenshot() -> UIImage {
-    return UIGraphicsImageRenderer(size: bounds.size).image { _ in
-      drawHierarchy(in: CGRect(origin: .zero, size: bounds.size), afterScreenUpdates: true)
-    }
-  }
-
-}

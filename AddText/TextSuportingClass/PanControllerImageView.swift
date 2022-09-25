@@ -1,21 +1,4 @@
-//
-//  File.swift
-//  DemoTextSticker
-//
-//  Created by Mehedi on 3/5/22.
-//
-
 import UIKit
-
-//@inline(__always) func CGAffineTransformGetAngle(_ t:CGAffineTransform) -> CGFloat {
-//    return atan2(t.b, t.a)
-//}
-
-//@inline(__always) func CGPointGetDistance(point1:CGPoint, point2:CGPoint) -> CGFloat {
-//    let fx = point2.x - point1.x
-//    let fy = point2.y - point1.y
-//    return sqrt(fx * fx + fy * fy)
-//}
 
 class PanControllerImageView: UIImageView, UIGestureRecognizerDelegate {
     var textView: TextStickerView!
@@ -47,12 +30,6 @@ class PanControllerImageView: UIImageView, UIGestureRecognizerDelegate {
     }
 }
 
-extension PanControllerImageView: UpdateTextFontSize {
-    func updateFontSize(to: CGFloat) {
-        print("[UPDATE FONT DELEGATE CALLED]")
-    }
-}
-
 extension PanControllerImageView {
     //MARK: Add Gesture
     func addGesture() {
@@ -62,49 +39,49 @@ extension PanControllerImageView {
     }
     
     func updateFrame() {
+        /// initialization
+        guard let superview = superview else { return }
         
-        //init
+        let location = gesture.location(in: superview.superview)
+        let center = superview.center
         
-        let location = gesture.location(in: self.superview!.superview)
-        let center = self.superview!.center
-        
-        // begin
-        for sub in self.superview!.subviews  {
-            if sub.tag == 1000{
-                self.textView = (sub as! TextStickerView)
-            }
+        if let foundView = superview.viewWithTag(1000) {
+            textView = (foundView as! TextStickerView)
         }
-        //self.textView.text = self.
-        self.deltaAngle = CGFloat(atan2f(Float(location.y - center.y), Float(location.x - center.x))) - CGAffineTransformGetAngle(self.superview!.transform)
         
-        self.initialDist = CGPointGetDistance(point1: center, point2: location)
-        self.initialFontSize = self.textView.font!.pointSize
-        //
-
+        deltaAngle = CGFloat(atan2f(Float(location.y - center.y), Float(location.x - center.x))) - CGAffineTransformGetAngle(superview.transform)
         
-        if textView != nil{
-            let angle = atan2f(Float(location.y - center.y), Float(location.x - center.x))
-            let angleDiff = Float (self.deltaAngle) - angle
-            self.superview!.transform = CGAffineTransform(rotationAngle: CGFloat(-angleDiff))
-          
-           // let scale = (area2 / area1)
-            let scale = (CGPointGetDistance(point1: center, point2: location) / self.initialDist)
-            
-                //self.distance(center, location) / self.initialDist
-          //  print("Scale2  ; ", scale ,"  :  ")
-            self.textView.font = UIFont(name: textView.font!.fontName, size: self.initialFontSize * scale)
-            let newSize = textView.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
-            
-            let containerSize = CGSize(width: newSize.width + (self.panControllerSize * 2), height: newSize.height + (self.panControllerSize * 2))
-            let textviewSize = CGSize(width: newSize.width, height: newSize.height)
-            
-            self.textView.bounds.size = textviewSize
-            self.textView.frame.origin = CGPoint(x: (gesture.view?.superview!.bounds.origin)!.x + self.panControllerSize, y: (gesture.view?.superview!.bounds.origin)!.y + self.panControllerSize)
-            gesture.view?.superview!.bounds.size = containerSize
-            
-            gesture.view?.superview!.drawBorder(frame: CGRect(x: self.panControllerSize * 0.5, y: self.panControllerSize * 0.5, width: containerSize.width - (1 * self.panControllerSize), height: containerSize.height - (1 * self.panControllerSize)), zoomScale: UIScreen.main.scale)
-            //self.frame.origin = CGPoint(x: containerFrame.width - 44, y: 0)
-        }
+        initialDist = CGPointGetDistance(point1: center, point2: location)
+        initialFontSize = textView.font!.pointSize
+        
+        /// Update when textView is present
+        guard (textView != nil) else { return }
+        
+        let angle = atan2f(Float(location.y - center.y), Float(location.x - center.x))
+        let angleDiff = Float (deltaAngle) - angle
+        superview.transform = CGAffineTransform(rotationAngle: CGFloat(-angleDiff))
+        
+        let scale = (CGPointGetDistance(point1: center, point2: location) / initialDist)
+        
+        textView.font = UIFont(name: textView.font!.fontName, size: initialFontSize * scale)
+        let newSize = textView.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        
+        let containerSize = CGSize(width: newSize.width + (panControllerSize * 2), height: newSize.height + (panControllerSize * 2))
+        let textviewSize = CGSize(width: newSize.width, height: newSize.height)
+        
+        textView.bounds.size = textviewSize
+        textView.frame.origin = CGPoint(x: (gesture.view?.superview!.bounds.origin)!.x + panControllerSize, y: (gesture.view?.superview!.bounds.origin)!.y + panControllerSize)
+        gesture.view?.superview!.bounds.size = containerSize
+        
+        /// re-draw
+        gesture.view?.superview!.drawBorder(
+            frame: CGRect(
+                x: panControllerSize * 0.5,
+                y: panControllerSize * 0.5,
+                width: containerSize.width - panControllerSize,
+                height: containerSize.height - panControllerSize
+            ),
+            zoomScale: UIScreen.main.scale)
     }
     
     @objc
@@ -135,11 +112,8 @@ extension PanControllerImageView {
             let angleDiff = Float (self.deltaAngle) - angle
             self.superview!.transform = CGAffineTransform(rotationAngle: CGFloat(-angleDiff))
             
-            // let scale = (area2 / area1)
             let scale = (CGPointGetDistance(point1: center, point2: location) / self.initialDist)
             
-            //self.distance(center, location) / self.initialDist
-            //  print("Scale2  ; ", scale ,"  :  ")
             textView.font = UIFont(name: textView.font!.fontName, size: initialFontSize * scale)
             let newSize = textView.sizeThatFits(
                 CGSize(
@@ -172,20 +146,15 @@ extension PanControllerImageView {
                                   height: containerSize.height - (1 * panControllerSize)),
                     zoomScale: UIScreen.main.scale
                 )
-            //self.frame.origin = CGPoint(x: containerFrame.width - 44, y: 0)
-            textView.fontSize = textView.font?.pointSize
             
+            textView.fontSize = textView.font?.pointSize
             break
         case .ended:
-            //            gesture.view?.superview?.frame.size = CGSize(width: self.initialFrame.width + translation.x, height: self.initialFrame.height + translation.y)
-            
-            
             delegate.updateFontSize(to: textView.fontSize)
-            print("End")
+            print("[PanControllerImageView] PanGesture Ended")
             break
         default:
             print("Not Match")
         }
     }
-    
 }
