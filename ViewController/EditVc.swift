@@ -18,8 +18,17 @@ protocol callDelegate: AnyObject {
 
 class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue {
     func sendText(text: String) {
+        
         if text.count > 1 {
+            currentTextStickerView?.textView = currentTextStickerView?.textStickerView
             currentTextStickerView?.textStickerView.text = text
+            
+            currentTextStickerView?.UpdateTextStickerData(
+                currentContainerView: currentTextStickerView!,
+                currentTextView: currentTextStickerView!.textStickerView!,
+                mainTextView: currentTextStickerView!.textView
+            )
+            currentTextStickerView?.scaleController.updateFrame()
         }
     }
     
@@ -1181,7 +1190,8 @@ extension EditVc: AddTextDelegate {
             size: fontSize!
         )
         currentTextStickerView?.currentFontIndex = index
-        
+        // Update Frame
+        currentTextStickerView?.scaleController.updateFrame()
     }
     
     func gradientValue(index: Int) {
@@ -1277,6 +1287,7 @@ extension EditVc: TextStickerContainerViewDelegate {
     }
     
     func editTextStickerView(textStickerContainerView: TextStickerContainerView) {
+        print("EDIT TEXT DELEGATE")
         currentTextStickerView?.textStickerView.isUserInteractionEnabled = true
         currentTextStickerView?.textStickerView.isEditable = false
         currentTextStickerView?.textStickerView.becomeFirstResponder()

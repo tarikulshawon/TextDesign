@@ -27,10 +27,12 @@ class PanControllerImageView: UIImageView, UIGestureRecognizerDelegate {
     var panControllerSize: CGFloat = 25
     var pController: PanControllerImageView!
     var delegate: UpdateTextFontSize!
+    var gesture: UIPanGestureRecognizer!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(gesture:)))
+        gesture = panGesture
         self.image = UIImage(named: "Rotate")
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(panGesture)
@@ -55,7 +57,54 @@ extension PanControllerImageView {
     //MARK: Add Gesture
     func addGesture() {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
+        gesture = panGesture
         addGestureRecognizer(panGesture)
+    }
+    
+    func updateFrame() {
+        
+        //init
+        
+        let location = gesture.location(in: self.superview!.superview)
+        let center = self.superview!.center
+        
+        // begin
+        for sub in self.superview!.subviews  {
+            if sub.tag == 1000{
+                self.textView = (sub as! TextStickerView)
+            }
+        }
+        //self.textView.text = self.
+        self.deltaAngle = CGFloat(atan2f(Float(location.y - center.y), Float(location.x - center.x))) - CGAffineTransformGetAngle(self.superview!.transform)
+        
+        self.initialDist = CGPointGetDistance(point1: center, point2: location)
+        self.initialFontSize = self.textView.font!.pointSize
+        //
+
+        
+        if textView != nil{
+            let angle = atan2f(Float(location.y - center.y), Float(location.x - center.x))
+            let angleDiff = Float (self.deltaAngle) - angle
+            self.superview!.transform = CGAffineTransform(rotationAngle: CGFloat(-angleDiff))
+          
+           // let scale = (area2 / area1)
+            let scale = (CGPointGetDistance(point1: center, point2: location) / self.initialDist)
+            
+                //self.distance(center, location) / self.initialDist
+          //  print("Scale2  ; ", scale ,"  :  ")
+            self.textView.font = UIFont(name: textView.font!.fontName, size: self.initialFontSize * scale)
+            let newSize = textView.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+            
+            let containerSize = CGSize(width: newSize.width + (self.panControllerSize * 2), height: newSize.height + (self.panControllerSize * 2))
+            let textviewSize = CGSize(width: newSize.width, height: newSize.height)
+            
+            self.textView.bounds.size = textviewSize
+            self.textView.frame.origin = CGPoint(x: (gesture.view?.superview!.bounds.origin)!.x + self.panControllerSize, y: (gesture.view?.superview!.bounds.origin)!.y + self.panControllerSize)
+            gesture.view?.superview!.bounds.size = containerSize
+            
+            gesture.view?.superview!.drawBorder(frame: CGRect(x: self.panControllerSize * 0.5, y: self.panControllerSize * 0.5, width: containerSize.width - (1 * self.panControllerSize), height: containerSize.height - (1 * self.panControllerSize)), zoomScale: UIScreen.main.scale)
+            //self.frame.origin = CGPoint(x: containerFrame.width - 44, y: 0)
+        }
     }
     
     @objc

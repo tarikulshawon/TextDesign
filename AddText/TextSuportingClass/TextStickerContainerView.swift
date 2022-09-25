@@ -79,7 +79,7 @@ class TextStickerContainerView: UIView {
     var textView: TextStickerView!
     var pathName: String!
     var pathType: String!
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -204,7 +204,9 @@ extension TextStickerContainerView {
     }
     
     func UpdateTextStickerData(currentContainerView:  TextStickerContainerView, currentTextView: TextStickerView, mainTextView: TextStickerView){
-        currentTextView.text = prepareText(maintextView: mainTextView)
+        let currentText = prepareTextForUpdate(maintextView: mainTextView)
+        currentTextView.text = currentText
+        
         currentTextView.backgroundColor = mainTextView.backgroundColor
         currentTextView.textAlignment = mainTextView.textAlignment
         currentTextView.textColor = mainTextView.textColor
@@ -250,6 +252,34 @@ extension TextStickerContainerView {
         }
       //  print("result  ", result)
         return result
+        //  print("TFFF  ",result, "  ", self.textView.bounds.width)
+        //   self.textView.text = textF
+    }
+    
+    func prepareTextForUpdate(maintextView: TextStickerView) -> String {
+        
+        let text = maintextView.text
+
+        var result = ""
+
+            let characterRange = NSRange(location: 0, length: text!.count)
+            let line = (maintextView.text as NSString).substring(with: characterRange)
+            //print(":\(line) ")
+            var add = ""
+            for t in line {
+                if t != "\n"{
+                    add += String(t)
+                }else{
+                    print("oneee")
+                }
+            }
+            if result != ""{
+                result += "\n"
+            }
+            //print("add:\(add), result:\(result)")
+            result += add
+        
+        return line
         //  print("TFFF  ",result, "  ", self.textView.bounds.width)
         //   self.textView.text = textF
     }
