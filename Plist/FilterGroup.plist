@@ -163,14 +163,6 @@
 			</dict>
 			<dict>
 				<key>ImageName</key>
-				<string>filter_2</string>
-				<key>filter</key>
-				<string>CIMinimumComponent</string>
-				<key>name</key>
-				<string>Transfer</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
 				<string>filter_6</string>
 				<key>filter</key>
 				<string>CIPhotoEffectMono</string>
@@ -221,11 +213,11 @@
 				<key>ImageName</key>
 				<string>filter_55</string>
 				<key>color</key>
-				<string>255,166,107</string>
+				<string>255,166,180</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.7</string>
+				<string>0.5</string>
 				<key>name</key>
 				<string>Souvenir
 </string>
@@ -236,7 +228,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-3.14</string>
+				<string>-3.10</string>
 				<key>name</key>
 				<string>Vibrance
 </string>
@@ -247,7 +239,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-2.20</string>
+				<string>-2.10</string>
 				<key>name</key>
 				<string>Manhattan
 </string>
@@ -258,7 +250,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-1.5</string>
+				<string>-1.0</string>
 				<key>name</key>
 				<string>Intensity
 </string>
@@ -269,7 +261,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>1.3</string>
+				<string>1.2</string>
 				<key>name</key>
 				<string>Breeze
 </string>
@@ -280,10 +272,10 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>3.14</string>
+				<string>1.14</string>
 				<key>name</key>
-				<string>Cocktail
-</string>
+				<string>Breeze
+Breeze</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -300,7 +292,7 @@
 				<key>ImageName</key>
 				<string>filter_64</string>
 				<key>color</key>
-				<string>40,57,255</string>
+				<string>255,245,230</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -313,7 +305,7 @@
 				<key>ImageName</key>
 				<string>filter_112</string>
 				<key>color</key>
-				<string>255,186,175</string>
+				<string>255,186,140</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -334,7 +326,7 @@
 				<key>ImageName</key>
 				<string>filter_58</string>
 				<key>color</key>
-				<string>195,255,32</string>
+				<string>195,255,220</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -347,7 +339,7 @@
 				<key>ImageName</key>
 				<string>filter_78</string>
 				<key>color</key>
-				<string>223,166,255</string>
+				<string>223,166,187</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
