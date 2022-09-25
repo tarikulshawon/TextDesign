@@ -42,6 +42,7 @@ struct ServerFileName {
 enum BtnName:String {
     case Texts
     case Graphics
+    case Frames
     case Quotes
     case Adjust
     case Filter
@@ -53,6 +54,7 @@ enum BtnName:String {
 enum BtnNameInt:Int {
     case Texts
     case Graphics
+    case Frames
     case Quotes
     case Adjust
     case Filter
