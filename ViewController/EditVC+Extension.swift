@@ -150,6 +150,10 @@ extension EditVc {
 
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func showColorPickerView() {
+        
+    }
+    
     func sendOpacityValue(value: Double) {
         currentTextStickerView?.textStickerView.alpha = value
         currentTextStickerView?.opacity =  value

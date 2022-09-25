@@ -17,29 +17,6 @@ protocol callDelegate: AnyObject {
 }
 
 class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust {
-    func sendText(text: String) {
-        
-        if text.count > 1 {
-            currentTextStickerView?.textView = currentTextStickerView?.textStickerView
-            currentTextStickerView?.textStickerView.text = text
-            
-            currentTextStickerView?.UpdateTextStickerData(
-                currentContainerView: currentTextStickerView!,
-                currentTextView: currentTextStickerView!.textStickerView!,
-                mainTextView: currentTextStickerView!.textView
-            )
-            currentTextStickerView?.scaleController.updateFrame()
-        }
-    }
-    
-    func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
-         
-    }
-    
-    func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, confirmedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
-         
-    }
-    @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
@@ -169,9 +146,18 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     func sendText(text: String) {
         if text.count > 1 {
+            currentTextStickerView?.textView = currentTextStickerView?.textStickerView
             currentTextStickerView?.textStickerView.text = text
+            
+            currentTextStickerView?.UpdateTextStickerData(
+                currentContainerView: currentTextStickerView!,
+                currentTextView: currentTextStickerView!.textStickerView!,
+                mainTextView: currentTextStickerView!.textView
+            )
+            currentTextStickerView?.scaleController.updateFrame()
         }
     }
+    
     
     func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
         
