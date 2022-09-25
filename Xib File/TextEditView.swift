@@ -78,7 +78,7 @@ class TextEditView: UIView {
     
     @IBAction func opacityValuChanges(_ sender: CustomSlider) {
         
-        if currentOption.rawValue == TextEditingOption.Color.rawValue {
+        if currentOption.rawValue == TextEditingOption.Opacity.rawValue {
             delegateForText?.sendOpacityValue(value: Double(sender.value))
         }
     }
