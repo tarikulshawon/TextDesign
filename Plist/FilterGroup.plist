@@ -159,8 +159,7 @@
 				<key>filter</key>
 				<string>CIMaximumComponent</string>
 				<key>name</key>
-				<string>Noir
-</string>
+				<string>Fade</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -168,8 +167,7 @@
 				<key>filter</key>
 				<string>CIMinimumComponent</string>
 				<key>name</key>
-				<string>Process
-</string>
+				<string>Transfer</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -177,17 +175,7 @@
 				<key>filter</key>
 				<string>CIPhotoEffectMono</string>
 				<key>name</key>
-				<string>Tonal
-</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_7</string>
-				<key>filter</key>
-				<string>CIPhotoEffectNoir</string>
-				<key>name</key>
-				<string>Transfer
-</string>
+				<string>Mono</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -195,8 +183,7 @@
 				<key>filter</key>
 				<string>CIPhotoEffectTonal</string>
 				<key>name</key>
-				<string>Laika
-</string>
+				<string>Chrome</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
