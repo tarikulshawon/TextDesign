@@ -23,6 +23,7 @@ var galleryAccessMessge = "To make Live Photos from videos the app needs to acce
 var arrayForFont: NSArray!
 var plistArray1: NSArray!
 var plistArray: NSArray!
+var fliterArray:NSArray!
 var dataArr:NSArray? = nil
 var dataArrRoot:NSArray? = nil
 var dataDicRoot:NSDictionary? = nil
@@ -78,6 +79,56 @@ enum TextEditingOption:String {
     case Texture
 }
 
+func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIImage? {
+    let filterName = dict?["filter"] as? String
+    
+    let context = CIContext(options: nil)
+    var currentFilter = CIFilter(name: filterName ?? "")
+    currentFilter?.setDefaults()
+    
+    var sourceCIImage: CIImage? = nil
+    if let img {
+        sourceCIImage = CIImage(image: img)
+    }
+    
+    currentFilter?.setValue(
+        sourceCIImage,
+        forKey: kCIInputImageKey)
+    let keys = dict?.keys
+    keys?.forEach { key in
+        let value = dict?[key ?? ""] as? String
+        if (key != "name") && (key != "filter") && (key != "color") && (key != "ImageName") {
+            currentFilter?.setValue(
+                NSNumber(value: Double(value ?? "") ?? 0.0),
+                forKey: key ?? "")
+        }
+        if key == "color" {
+            let colorValue = value?.components(separatedBy: ",")
+            var r: Float
+            var g: Float
+            var b: Float
+            r = Float(colorValue?[0] ?? "") ?? 0.0
+            g = Float(colorValue?[1] ?? "") ?? 0.0
+            b = Float(colorValue?[2] ?? "") ?? 0.0
+            
+            let color = CIColor(red: CGFloat(r / 255.0), green: CGFloat(g / 255.0), blue: CGFloat(b / 255.0))
+            
+            currentFilter?.setValue(color, forKey: "inputColor")
+        }
+        
+    }
+    let adjustedImage = currentFilter?.value(forKey: kCIOutputImageKey) as? CIImage
+    var cgimg: CGImage? = nil
+    if let adjustedImage {
+        cgimg = context.createCGImage(adjustedImage, from: adjustedImage.extent ?? CGRect.zero)
+    }
+    var newImg: UIImage? = nil
+    if let cgimg {
+        newImg = UIImage(cgImage: cgimg)
+    }
+    return newImg
+}
+
 func getFileUrlWithName(fileName:String) -> URL {
     let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     let path = documentsDirectoryURL?.appendingPathComponent(fileName)
@@ -118,7 +169,7 @@ func isFileAvailable(fileName:String) -> Bool {
     guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return false }
     let path = documentsDirectoryURL.appendingPathComponent(fileName).path
     if FileManager.default.fileExists(atPath: path) {
-       return true
+        return true
     }else {
         return false
     }
@@ -307,7 +358,7 @@ extension MTIImage {
 
 
 extension UIColor {
-
+    
     func rgb() -> (red:Int, green:Int, blue:Int, alpha:Int)? {
         var fRed : CGFloat = 0
         var fGreen : CGFloat = 0
@@ -318,7 +369,7 @@ extension UIColor {
             let iGreen = Int(fGreen * 255.0)
             let iBlue = Int(fBlue * 255.0)
             let iAlpha = Int(fAlpha * 255.0)
-
+            
             return (red:iRed, green:iGreen, blue:iBlue, alpha:iAlpha)
         } else {
             // Could not extract RGBA components:
