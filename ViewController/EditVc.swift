@@ -433,49 +433,78 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
-    func  DoAdjustMent (inputImage:UIImage) {
-        
-        print(Brightness)
-        var outputImage: CIImage?
-        var colorControlsFilter = CIFilter(name: "CIColorControls")
-        colorControlsFilter?.setDefaults()
-        colorControlsFilter?.setValue(inputImage, forKey: kCIInputImageKey)
-        colorControlsFilter?.setValue(NSNumber(value: Saturation), forKey: kCIInputSaturationKey)
-        colorControlsFilter?.setValue(NSNumber(value: Brightness), forKey: kCIInputBrightnessKey)
-        colorControlsFilter?.setValue(
-            NSNumber(
-                value: Contrast),
-            forKey: kCIInputContrastKey)
-        
-        if let ciimage = colorControlsFilter!.outputImage, let value = ciimage.cgImage  {
+    
+    func  DoAdjustMent (inputImage:UIImage)
+    {
+        let context = CIContext(options: nil)
+        if let currentFilter = CIFilter(name:"CIColorControls") {
+            let beginImage = CIImage(image: inputImage)
             
-            var image = UIImage(cgImage: value)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(Brightness, forKey: kCIInputBrightnessKey)
+            currentFilter.setValue(Saturation, forKey:kCIInputSaturationKey)
+            currentFilter.setValue(Contrast, forKey: kCIInputContrastKey)
             
-            let CISharpenLuminance = CIFilter(name: "CISharpenLuminance")
-            CISharpenLuminance?.setDefaults()
-            CISharpenLuminance?.setValue(image, forKey: kCIInputImageKey)
-            CISharpenLuminance?.setValue(NSNumber(value: sharpen), forKey: kCIInputSharpnessKey)
-            if let outputImage = CISharpenLuminance!.outputImage,let value = outputImage.cgImage {
-                var image = UIImage(cgImage: value)
-                var hueAdjust = CIFilter(name: "CIHueAdjust")
-                hueAdjust?.setDefaults()
-                hueAdjust?.setValue(image, forKey: kCIInputImageKey)
-                hueAdjust?.setValue(NSNumber(value: hue), forKey: kCIInputAngleKey)
-                
-                if let lastImage =  hueAdjust!.outputImage, let value = lastImage.cgImage {
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
+                    self.sharpenValue(inputImage: processedImage)
+                }
+            }
+        }
+        
+    }
+    func  sharpenValue (inputImage:UIImage)
+    {
+        
+        
+        
+        let context = CIContext(options: nil)
+        
+        if let currentFilter = CIFilter(name:"CISharpenLuminance") {
+            
+            let beginImage = CIImage(image: inputImage)
+            
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(sharpen, forKey: "inputSharpness")
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
+                    self.hueAdjust(inputImage: processedImage)
+                }
+            }
+        }
+    }
+    
+    
+    func  hueAdjust (inputImage:UIImage)
+    {
+        
+        
+        
+        let context = CIContext(options: nil)
+        
+        if let currentFilter = CIFilter(name:"CIHueAdjust") {
+            let beginImage = CIImage(image: inputImage)
+            
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(hue, forKey: "inputAngle")
+            
+            
+            
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
                     
-                    var image = UIImage(cgImage: value)
-                    
+                    DispatchQueue.main.async {
+                        self.mainImv.image = processedImage
+                        
+                    }
                     
                     
                 }
             }
-
-            
         }
-        
-        
-        
         
     }
     
