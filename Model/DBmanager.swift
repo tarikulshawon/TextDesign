@@ -112,7 +112,7 @@ class DBmanager: NSObject {
     }
 
     func updateTableData(id: String,fileObj: ImageInfoData) {
-        let createTable = "UPDATE ImageInfo SET OverLay='\(fileObj.OverLay)', ov='\(fileObj.ov)', Bri='\(fileObj.Bri)',Sat='\(fileObj.Sat)',Cont='\(fileObj.Cont)',filter='\(fileObj.filter)' WHERE id='\(id)'"
+        let createTable = "UPDATE ImageInfo SET OverLay='\(fileObj.OverLay)', ov='\(fileObj.ov)', Bri='\(fileObj.Bri)',Sat='\(fileObj.Sat)',Cont='\(fileObj.Cont)',filter='\(fileObj.filter)',sh='\(fileObj.sh)',Hue='\(fileObj.Hue)' WHERE id='\(id)'"
     
         
         if (sqlite3_open(DBpath, &db)==SQLITE_OK) {
@@ -192,7 +192,7 @@ class DBmanager: NSObject {
     
     
     func insertmergeFile(fileObj: ImageInfoData) {
-        let insertData = "INSERT INTO ImageInfo (OverLay,Filter,Sticker,Bri,Hue,Sat,Cont,ov) VALUES  ('\(fileObj.OverLay)','\(fileObj.filter)','\(fileObj.Sticker)','\(fileObj.Bri)','\(fileObj.Hue)','\(fileObj.Sat)','\(fileObj.Cont)','\(fileObj.ov)')"
+        let insertData = "INSERT INTO ImageInfo (OverLay,Filter,Sticker,Bri,Hue,Sat,Cont,ov,sh) VALUES  ('\(fileObj.OverLay)','\(fileObj.filter)','\(fileObj.Sticker)','\(fileObj.Bri)','\(fileObj.Hue)','\(fileObj.Sat)','\(fileObj.Cont)','\(fileObj.ov)','\(fileObj.sh)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -307,7 +307,7 @@ class DBmanager: NSObject {
         
         
         
-        let stmt =  "SELECT id,OverLay,Filter,Sticker,Bri,Hue,Sat,Cont,ov FROM ImageInfo order by id desc"
+        let stmt =  "SELECT id,OverLay,Filter,Sticker,Bri,Hue,Sat,Cont,ov,sh FROM ImageInfo order by id desc"
         if (sqlite3_open(DBpath, &db)==SQLITE_OK)
         {
             
@@ -328,6 +328,7 @@ class DBmanager: NSObject {
                     let Sat =  sqlite3_column_text(queryStatement, 6)
                     let Cont =  sqlite3_column_text(queryStatement, 7)
                     let ov =  sqlite3_column_text(queryStatement, 8)
+                    let sh =  sqlite3_column_text(queryStatement, 9)
 
 
                     
@@ -341,6 +342,7 @@ class DBmanager: NSObject {
                     obj.Sat = String(cString: Sat!)
                     obj.Cont = String(cString: Cont!)
                     obj.ov = String(cString: ov!)
+                    obj.sh = String(cString: sh!)
                     
         
                     mutableArray .append(obj)

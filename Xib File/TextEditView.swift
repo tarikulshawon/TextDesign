@@ -17,6 +17,7 @@ protocol AddTextDelegate: AnyObject {
     func showBackground()
     func setAlighnMent(index:Int)
     func sendOpacityValue(value: Double)
+    func showColorPickerView()
 }
 
 class TextEditView: UIView {
@@ -77,7 +78,9 @@ class TextEditView: UIView {
     
     @IBAction func opacityValuChanges(_ sender: CustomSlider) {
         
-        delegateForText?.sendOpacityValue(value: Double(sender.value))
+        if currentOption.rawValue == TextEditingOption.Opacity.rawValue {
+            delegateForText?.sendOpacityValue(value: Double(sender.value))
+        }
     }
     
     @objc
@@ -89,6 +92,7 @@ class TextEditView: UIView {
         selectedIndexView.clipsToBounds = true
         tempViww.backgroundColor = titleColor
         collectionViewForTextControls.reloadData()
+        
 
     }
     
@@ -295,7 +299,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if currentOption.rawValue == TextEditingOption.Color.rawValue{
-            return plistArray.count
+            return plistArray.count + 1
         }
         else if currentOption.rawValue == TextEditingOption.Fonts.rawValue {
             return arrayForFont.count
@@ -311,22 +315,26 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("mammamama")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reusableID  , for: indexPath as IndexPath) as! ColorCell
         
         cell.holderView.isHidden = false
         cell.gradietImv.isHidden = false
         cell.fontLabel.isHidden = true
+        cell.textColorView.isHidden = true
         
         if currentOption.rawValue == TextEditingOption.Texture.rawValue {
             cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.isHidden = false
             cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row)")
+            cell.holderView.backgroundColor = UIColor.clear
         }
         
         else if currentOption.rawValue ==  TextEditingOption.Fonts.rawValue {
             
             cell.holderView.isHidden = true
             cell.gradietImv.isHidden = true
+            cell.textColorView.isHidden = false
             cell.fontLabel.isHidden = false
             var fontName = UIFont(name: arrayForFont[indexPath.row] as! String, size: 15.0)
             cell.fontLabel.font = fontName
@@ -347,36 +355,28 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
                 cell.gradietImv.isHidden = false
                 cell.holderView.backgroundColor = UIColor.clear
             }
-            else if let colorString = plistArray[indexPath.row] as? String {
+            else if let colorString = plistArray[indexPath.row - 1] as? String {
                 cell.holderView.backgroundColor = getColor(colorString: colorString)
                 cell.gradietImv.isHidden = true
             }
             
         }
-        else {
-            
-            if currentOption.rawValue == TextEditingOption.Gradient.rawValue {
-                cell.layer.cornerRadius = cell.frame.size.height/2.0
-                cell.gradietImv.image = nil
-                cell.gradietImv.isHidden = false
-                if let objArray = plistArray1[indexPath.row] as? NSArray {
-                    var allcolors: [CGColor] = []
-                    for item in objArray {
-                        let color = getColor(colorString: item as? String ?? "")
-                        allcolors.append(color.cgColor)
-                    }
-                    
-                    let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
-                    cell.gradietImv.contentMode = .scaleAspectFill
-                    cell.gradietImv.image = uimage
-                    
-                    
+        else if currentOption.rawValue == TextEditingOption.Gradient.rawValue  {
+            cell.layer.cornerRadius = cell.frame.size.height/2.0
+            cell.gradietImv.image = nil
+            cell.gradietImv.isHidden = false
+            if let objArray = plistArray1[indexPath.row] as? NSArray {
+                var allcolors: [CGColor] = []
+                for item in objArray {
+                    let color = getColor(colorString: item as? String ?? "")
+                    allcolors.append(color.cgColor)
                 }
+                
+                let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                cell.gradietImv.contentMode = .scaleAspectFill
+                cell.gradietImv.image = uimage
             }
         }
-        
-        
-        
         print(cell.contentView.frame.size)
         
         return cell
@@ -398,7 +398,12 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         }
     
         if currentOption.rawValue == TextEditingOption.Color.rawValue {
-            if let colorString = plistArray[indexPath.row] as? String {
+            
+            
+            if indexPath.row == 0 {
+                self.delegateForText?.showColorPickerView()
+            }
+            else if let colorString = plistArray[indexPath.row - 1] as? String {
                 delegateForText?.colorValue(color: colorString)
             }
         }

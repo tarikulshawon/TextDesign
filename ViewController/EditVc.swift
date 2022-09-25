@@ -16,7 +16,7 @@ protocol callDelegate: AnyObject {
     func reloadAllData()
 }
 
-class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue {
+class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust {
     func sendText(text: String) {
         
         if text.count > 1 {
@@ -40,7 +40,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
          
     }
     @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
-    
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
@@ -51,12 +50,15 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var textViewHolderView: UIView!
     @IBOutlet weak var imageViewHolder: UIView!
     @IBOutlet weak var shapeHolderView: UIView!
+    @IBOutlet weak var ajustVcHolder: UIView!
+    @IBOutlet weak var frameVcHolder: UIView!
+    @IBOutlet weak var transParentView: UIImageView!
     
     
     @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
-    
-    @IBOutlet weak var ajustVcHolder: UIView!
+    @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
+    @IBOutlet weak var bottomSpaceForFrame: NSLayoutConstraint!
     @IBOutlet weak var collectionViewForBackGround: UICollectionView!
     @IBOutlet weak var bottomSpaceForDrawer: NSLayoutConstraint!
     @IBOutlet weak var bottomSpaceForOverlay: NSLayoutConstraint!
@@ -78,7 +80,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var lbl2: UILabel!
     @IBOutlet weak var lbl3: UILabel!
     
-    @IBOutlet weak var transParentView: UIImageView!
     var currentTextStickerView: TextStickerContainerView?
     var imageInfoObj = ImageInfoData()
     weak var delegateFor: callDelegate?
@@ -86,7 +87,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     var isfromUpdate = false
     var currentlyActiveIndex = -1
-    var currentFilterIndex = 0
+    var currentFilterDic:Dictionary<String, Any>?
     var cellWidth:CGFloat = 60
     var cellGap:CGFloat =  0
     var ov:Float =  0.3
@@ -110,7 +111,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var max_contrast:Float = 1.5
     var min_contrast:Float = 0.5
     
+    var sharpen:Float = 0
+    var max_sharpen:Float = 4.0
+    var min_sharpen:Float = -4.0
+    
     var currentOverlayIndex = 0
+    var currentBackGroundIndex  = 0
     var tagValue = 1000000
     
     
@@ -119,9 +125,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var mainImv: UIImageView!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var overLaySlider: CustomSlider!
-    var currentBackGroundIndex  = 0
     
-    let TextEditVc: TextEditView = TextEditView.loadFromXib()
     let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
     let overLayVc = Bundle.main.loadNibNamed("OverLayVc", owner: nil, options: nil)![0] as! OverLayVc
     let shapeVc = Bundle.main.loadNibNamed("ShapeVc", owner: nil, options: nil)![0] as! ShapeVc
@@ -129,7 +133,55 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
     let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
     let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
+    let frameVc =  Bundle.main.loadNibNamed("FrameVc", owner: nil, options: nil)![0] as! FrameVc
+    
+    
+    let TextEditVc: TextEditView = TextEditView.loadFromXib()
     let controller = DefaultColorPickerViewController()
+    
+    
+    
+    func sendAdjustValue(value: Float, index: Int) {
+        print(value)
+        print(index)
+        
+        if index == 0 {
+            Brightness = value
+        }else if index == 1 {
+            Saturation = value
+        }
+        else if index == 2 {
+            hue = value
+        }
+        else if index == 3 {
+            sharpen = value
+        }
+        else if index == 4 {
+            hue = value
+        }
+        
+        self.DoAdjustMent(inputImage: mainImage)
+    }
+    
+    func sendFramesIndex(frames: String) {
+        self.addSticker(test: UIImage(named: frames)!, type: "Image", pathName: frames)
+    }
+    
+    func sendText(text: String) {
+        if text.count > 1 {
+            currentTextStickerView?.textStickerView.text = text
+        }
+    }
+    
+    func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
+        
+    }
+    
+    func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, confirmedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
+        
+    }
+    
+    
     
     @IBAction func segmentValueHasChanged(_ sender: UISegmentedControl) {
         
@@ -154,13 +206,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-       // controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height)
+        controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         controller.useRadialPalette = false
         controller.colorPreview.isHidden = false
         controller.brightnessSlider.isHidden  = false
@@ -168,6 +220,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         controller.rectangularPaletteBorderOn = true
         colorPickerHolder.addSubview(controller.view)
         controller.selectedColor = UIColor.red
+        controller.view.backgroundColor = UIColor.white
         self.addChild(controller)
         controller.didMove(toParent: self)
         
@@ -189,7 +242,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         DoAdjustMent(inputImage: mainImage)
         
         if isfromUpdate {
+            
+            
             stickerObjList = DBmanager.shared.getStickerInfo(fileName: imageInfoObj.id)
+            let defaults = UserDefaults.standard
+            if let data2 = defaults.object(forKey: imageInfoObj.id) as? NSData {
+                
+                do {
+                    
+                }
+                catch let error {
+                     
+                }
+                
+            }
             
             for item in stickerObjList {
                 updateSticker(obj: item)
@@ -198,12 +264,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             Brightness = imageInfoObj.Bri.floatValue
             Saturation = imageInfoObj.Sat.floatValue
             Contrast = imageInfoObj.Cont.floatValue
-            currentFilterIndex = Int(imageInfoObj.filter) ?? 0
+            hue = imageInfoObj.Hue.floatValue
+            sharpen = imageInfoObj.sh.floatValue
+            print(sharpen)
             currentOverlayIndex = Int(imageInfoObj.OverLay) ?? 0
             ov = imageInfoObj.ov.floatValue
         }
         
-       
+        
         
         let emptyAutomationsCell = RatioCell.nib
         btnCollectionView?.register(emptyAutomationsCell, forCellWithReuseIdentifier: RatioCell.reusableID)
@@ -264,46 +332,89 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         return  fileURL
     }
     
-    func  DoAdjustMent (inputImage:UIImage) {
-        var tempImage = inputImage
-        
-        if currentFilterIndex > 0 {
-            guard let image = UIImage(named: "Filter" + "\(currentFilterIndex)") else { return  }
-            tempImage = doFilter(mainImage: tempImage, lookupImage: image)
-        } else {
-            tempImage = inputImage
-        }
-        
-        
-        // var lol = CIImage(cgImage: inputImage.cgImage)
-        
-        if let value =  tempImage.cgImage {
+    func  DoAdjustMent (inputImage:UIImage)
+    {
+        let context = CIContext(options: nil)
+        if let currentFilter = CIFilter(name:"CIColorControls") {
+            let beginImage = CIImage(image: inputImage)
             
-            let imageFromCGImage = MTIImage(cgImage: value, isOpaque: true)
-            let outputImage = imageFromCGImage.adjusting(contrast: Contrast).adjusting(brightness: Brightness).adjusting(saturation: Saturation)
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(Brightness, forKey: kCIInputBrightnessKey)
+            currentFilter.setValue(Saturation, forKey:kCIInputSaturationKey)
+            currentFilter.setValue(Contrast, forKey: kCIInputContrastKey)
             
-            if let device = MTLCreateSystemDefaultDevice() {
-                do {
-                    let context = try MTIContext(device: device)
-                    let filteredImage = try context.makeCGImage(from: outputImage)
-                    mainImv.image = UIImage(cgImage: filteredImage)
-                    
-                } catch {
-                    print(error)
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
+                    self.sharpenValue(inputImage: processedImage)
                 }
-                
             }
-            
         }
         
+    }
+    func  sharpenValue (inputImage:UIImage)
+    {
         
+        
+        
+        let context = CIContext(options: nil)
+        
+        if let currentFilter = CIFilter(name:"CISharpenLuminance") {
+            
+            let beginImage = CIImage(image: inputImage)
+            
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(sharpen, forKey: "inputSharpness")
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
+                    self.hueAdjust(inputImage: processedImage)
+                }
+            }
+        }
     }
     
     
+    func  hueAdjust (inputImage:UIImage)
+    {
+        
+        
+        
+        let context = CIContext(options: nil)
+        
+        if let currentFilter = CIFilter(name:"CIHueAdjust") {
+            let beginImage = CIImage(image: inputImage)
+            
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(hue, forKey: "inputAngle")
+            
+            
+            
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
+                    
+                    DispatchQueue.main.async { [self] in
+                        
+                        if let value = self.currentFilterDic {
+                            self.mainImv.image = getFilteredImage(withInfo: currentFilterDic, for: processedImage)
+                        } else {
+                            self.mainImv.image = processedImage
+                        }
+                        
+                        
+                    }
+                    
+                    
+                }
+            }
+        }
+        
+    }
     
     @IBAction func dismissColorPicker(_ sender: Any) {
         UIView.animate(withDuration: 0.2, animations: {
-    
+            
             self.bottomSpaceForColorPicker.constant = -10000
             self.bottomSpceOfMainView.constant = 0
             self.updateHeight(heightNeedToBeRemoved: 0)
@@ -365,7 +476,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         imageInfoObj.Bri = "\(Brightness)"
         imageInfoObj.Sat = "\(Saturation)"
         imageInfoObj.Cont = "\(Contrast)"
-        imageInfoObj.filter = "\(currentFilterIndex)"
+        imageInfoObj.sh = "\(sharpen)"
+        imageInfoObj.Hue =  "\(hue)"
+        imageInfoObj.filter = "\(0)"
         imageInfoObj.ov = "\(ov)"
         imageInfoObj.OverLay = "\(currentOverlayIndex)"
         
@@ -456,9 +569,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             }
             
         }
+        
         else {
             DBmanager.shared.insertmergeFile(fileObj: imageInfoObj)
             let ma1 = DBmanager.shared.getMaxIdForMerge()
+            
+            let data = NSKeyedArchiver.archivedData(withRootObject: currentFilterDic ?? nil)
+            let defaults = UserDefaults.standard
+            defaults.set(data, forKey: "\(ma1)")
             
             createFile(fileName: "FileName" + "\(ma1)" + ".jpg", cropImage: mainImage)
             let images = screenSortView.takeScreenshot()
@@ -607,9 +725,15 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         filterViewHolder.addSubview(filterVc)
         
         
+        frameVc.frame = CGRect(x: 0,y: 0,width: frameVcHolder.frame.width,height: frameVcHolder.frame.height)
+        frameVc.delegateForFramesr = self
+        frameVcHolder.addSubview(frameVc)
+        
+        
         adjustVc.frame = CGRect(x: 0,y: 0,width: ajustVcHolder.frame.width,height: ajustVcHolder.frame.height)
+        adjustVc.delegate = self
         ajustVcHolder.addSubview(adjustVc)
-    
+        
         
         stickerVc.frame = CGRect(x: 0,y: 0,width: stickerViewHolder.frame.width,height: stickerViewHolder.frame.height)
         stickerVc.delegateForSticker = self
@@ -663,6 +787,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func updateValue () {
         UIView.animate(withDuration: 0.2, animations: { [self] in
             
+            if self.currentlyActiveIndex != BtnNameInt.Frames.rawValue {
+                self.bottomSpaceForFrame.constant = -1000
+            }
+            
             if self.currentlyActiveIndex != BtnNameInt.Texts.rawValue {
                 self.bottomSpaceOfFontLoaderView.constant = -1000
             }
@@ -709,13 +837,16 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 if self.currentlyActiveIndex == BtnNameInt.Shape.rawValue {
                     bottomSapceForShape.constant = 0
                 }
+                if self.currentlyActiveIndex == BtnNameInt.Frames.rawValue {
+                    bottomSpaceForFrame.constant = 0
+                }
             }
             self.view.layoutIfNeeded()
             
         }, completion: {_ in
             
         })
-    }
+    }    
 }
 
 extension EditVc: TextStickerContainerViewDelegate {
@@ -726,12 +857,12 @@ extension EditVc: TextStickerContainerViewDelegate {
         vc.delegate = self
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
-         
+        
     }
     
     func moveViewPosition(textStickerContainerView: TextStickerContainerView) {
         
-         print("mamamma")
+        print("mamamma")
     }
     
     func setCurrentTextStickerView(textStickerContainerView: TextStickerContainerView) {
@@ -763,6 +894,17 @@ extension EditVc: TextStickerContainerViewDelegate {
 }
 
 extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShape {
+    func filterNameWithIndex(dic: Dictionary<String, Any>?) {
+        if let value =  dic {
+            DispatchQueue.main.async { [self] in
+                
+                currentFilterDic = value
+                self.DoAdjustMent(inputImage: mainImage)
+            }
+        }
+        
+    }
+    
     func imageNameWithIndex(tag: String, image: UIImage) {
         
         _ = image
@@ -836,7 +978,7 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
                 ma.extendBarView?.isHidden = true
                 ma.hideTextBorder(isHide: true)
             default:
-                 break
+                break
             }
             
         }
@@ -845,13 +987,6 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     func colorIndex(tag: Int, colorV: UIColor) {
         
     }
-    
-    func filterNameWithIndex(tag: String, image: UIImage) {
-        currentFilterIndex = Int(tag) ?? 0
-        DoAdjustMent(inputImage: mainImage)
-        
-    }
-    
     func sendShape(sticker: String) {
         self.addSticker(test: UIImage(named: sticker) ?? UIImage(), type: "shape", pathName: sticker)
     }

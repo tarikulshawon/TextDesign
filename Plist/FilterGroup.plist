@@ -6,7 +6,7 @@
 		<key>group-icon</key>
 		<string>group-icon-0</string>
 		<key>group-name</key>
-		<string>Classic</string>
+		<string>Old Days</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -25,7 +25,7 @@
 				<key>filter</key>
 				<string>CIVignette</string>
 				<key>inputIntensity</key>
-				<string>1</string>
+				<string>3</string>
 				<key>inputRadius</key>
 				<string>2</string>
 				<key>name</key>
@@ -36,7 +36,7 @@
 				<key>ImageName</key>
 				<string>filter_50</string>
 				<key>color</key>
-				<string>255,245,98</string>
+				<string>255,255,98</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -49,11 +49,11 @@
 				<key>ImageName</key>
 				<string>filter_49</string>
 				<key>color</key>
-				<string>156,232,255</string>
+				<string>200,232,255</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.7</string>
+				<string>0.5</string>
 				<key>name</key>
 				<string>Mono
 </string>
@@ -62,11 +62,11 @@
 				<key>ImageName</key>
 				<string>filter_95</string>
 				<key>color</key>
-				<string>240,255,128</string>
+				<string>240,255,100</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.3</string>
+				<string>0.6</string>
 				<key>name</key>
 				<string>Restro
 </string>
@@ -75,11 +75,11 @@
 				<key>ImageName</key>
 				<string>filter_100</string>
 				<key>color</key>
-				<string>160,156,156</string>
+				<string>160,156,180</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.7</string>
+				<string>0.8</string>
 				<key>name</key>
 				<string>Cinerama
 </string>
@@ -88,11 +88,11 @@
 				<key>ImageName</key>
 				<string>filter_103</string>
 				<key>color</key>
-				<string>207,235,255</string>
+				<string>207,235,230</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.7</string>
+				<string>0.5</string>
 				<key>name</key>
 				<string>Exposure
 </string>
@@ -103,7 +103,7 @@
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.5</string>
+				<string>0.3</string>
 				<key>name</key>
 				<string>Candy
 </string>
@@ -112,11 +112,11 @@
 				<key>ImageName</key>
 				<string>filter_107</string>
 				<key>color</key>
-				<string>226,255,196</string>
+				<string>226,255,170</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.3</string>
+				<string>0.2</string>
 				<key>name</key>
 				<string>Gamma
 </string>
@@ -125,11 +125,11 @@
 				<key>ImageName</key>
 				<string>filter_80</string>
 				<key>color</key>
-				<string>183,240,255</string>
+				<string>240,240,230</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.3</string>
+				<string>0.1</string>
 				<key>name</key>
 				<string>Dallas
 </string>
@@ -138,86 +138,9 @@
 	</dict>
 	<dict>
 		<key>group-icon</key>
-		<string>group-icon-1</string>
-		<key>group-name</key>
-		<string>B &amp; W</string>
-		<key>isFree</key>
-		<true/>
-		<key>items</key>
-		<array>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_no</string>
-				<key>filter</key>
-				<string>-</string>
-				<key>name</key>
-				<string>Orignial</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_1</string>
-				<key>filter</key>
-				<string>CIMaximumComponent</string>
-				<key>name</key>
-				<string>Noir
-</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_2</string>
-				<key>filter</key>
-				<string>CIMinimumComponent</string>
-				<key>name</key>
-				<string>Process
-</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_6</string>
-				<key>filter</key>
-				<string>CIPhotoEffectMono</string>
-				<key>name</key>
-				<string>Tonal
-</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_7</string>
-				<key>filter</key>
-				<string>CIPhotoEffectNoir</string>
-				<key>name</key>
-				<string>Transfer
-</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_9</string>
-				<key>filter</key>
-				<string>CIPhotoEffectTonal</string>
-				<key>name</key>
-				<string>Laika
-</string>
-			</dict>
-			<dict>
-				<key>ImageName</key>
-				<string>filter_91</string>
-				<key>color</key>
-				<string>255,253,253</string>
-				<key>filter</key>
-				<string>CIColorMonochrome</string>
-				<key>inputIntensity</key>
-				<string>0.7</string>
-				<key>name</key>
-				<string>Equinox
-</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>group-icon</key>
 		<string>group-icon-2</string>
 		<key>group-name</key>
-		<string>Pop</string>
+		<string>ColorFul</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -234,11 +157,11 @@
 				<key>ImageName</key>
 				<string>filter_55</string>
 				<key>color</key>
-				<string>255,166,107</string>
+				<string>255,166,180</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.7</string>
+				<string>0.5</string>
 				<key>name</key>
 				<string>Souvenir
 </string>
@@ -249,7 +172,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-3.14</string>
+				<string>-3.10</string>
 				<key>name</key>
 				<string>Vibrance
 </string>
@@ -260,7 +183,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-2.20</string>
+				<string>-2.10</string>
 				<key>name</key>
 				<string>Manhattan
 </string>
@@ -271,7 +194,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-1.5</string>
+				<string>-1.0</string>
 				<key>name</key>
 				<string>Intensity
 </string>
@@ -282,7 +205,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>1.3</string>
+				<string>1.2</string>
 				<key>name</key>
 				<string>Breeze
 </string>
@@ -293,10 +216,10 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>3.14</string>
+				<string>1.14</string>
 				<key>name</key>
-				<string>Cocktail
-</string>
+				<string>Breeze
+Breeze</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -313,7 +236,7 @@
 				<key>ImageName</key>
 				<string>filter_64</string>
 				<key>color</key>
-				<string>40,57,255</string>
+				<string>255,245,230</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -326,7 +249,7 @@
 				<key>ImageName</key>
 				<string>filter_112</string>
 				<key>color</key>
-				<string>255,186,175</string>
+				<string>255,186,140</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -347,7 +270,7 @@
 				<key>ImageName</key>
 				<string>filter_58</string>
 				<key>color</key>
-				<string>195,255,32</string>
+				<string>195,255,220</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -360,13 +283,69 @@
 				<key>ImageName</key>
 				<string>filter_78</string>
 				<key>color</key>
-				<string>223,166,255</string>
+				<string>223,166,187</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
 				<string>0.5</string>
 				<key>name</key>
 				<string>Horine
+</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>group-icon</key>
+		<string>group-icon-1</string>
+		<key>group-name</key>
+		<string>BlackWhite</string>
+		<key>isFree</key>
+		<true/>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_no</string>
+				<key>filter</key>
+				<string>-</string>
+				<key>name</key>
+				<string>Orignial</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_1</string>
+				<key>filter</key>
+				<string>CIMaximumComponent</string>
+				<key>name</key>
+				<string>Fade</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_6</string>
+				<key>filter</key>
+				<string>CIPhotoEffectMono</string>
+				<key>name</key>
+				<string>Mono</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_9</string>
+				<key>filter</key>
+				<string>CIPhotoEffectTonal</string>
+				<key>name</key>
+				<string>Chrome</string>
+			</dict>
+			<dict>
+				<key>ImageName</key>
+				<string>filter_91</string>
+				<key>color</key>
+				<string>180,180,180</string>
+				<key>filter</key>
+				<string>CIColorMonochrome</string>
+				<key>inputIntensity</key>
+				<string>0.4</string>
+				<key>name</key>
+				<string>Equinox
 </string>
 			</dict>
 		</array>
@@ -560,7 +539,7 @@
 		<key>group-icon</key>
 		<string>group-icon-4</string>
 		<key>group-name</key>
-		<string>Beauty</string>
+		<string>Nice</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -761,7 +740,7 @@
 		<key>group-icon</key>
 		<string>group-icon-5</string>
 		<key>group-name</key>
-		<string>X-Pro</string>
+		<string>New</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -787,7 +766,7 @@
 				<key>ImageName</key>
 				<string>filter_49</string>
 				<key>color</key>
-				<string>156,232,255</string>
+				<string>130,145,250</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -800,7 +779,7 @@
 				<key>ImageName</key>
 				<string>filter_70</string>
 				<key>color</key>
-				<string>156,193,255</string>
+				<string>220,220,220</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -842,7 +821,7 @@
 				<key>ImageName</key>
 				<string>filter_47</string>
 				<key>color</key>
-				<string>156,232,255</string>
+				<string>145,150,167</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -855,7 +834,7 @@
 				<key>ImageName</key>
 				<string>filter_52</string>
 				<key>color</key>
-				<string>255,245,98</string>
+				<string>120,178,222</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -872,7 +851,7 @@
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.5</string>
+				<string>0.8</string>
 				<key>name</key>
 				<string>Ether
 </string>
@@ -881,7 +860,7 @@
 				<key>ImageName</key>
 				<string>filter_60</string>
 				<key>color</key>
-				<string>124,255,239</string>
+				<string>220,220,100</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -894,7 +873,7 @@
 				<key>ImageName</key>
 				<string>filter_63</string>
 				<key>color</key>
-				<string>40,57,255</string>
+				<string>40,57,187</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -907,7 +886,7 @@
 				<key>ImageName</key>
 				<string>filter_69</string>
 				<key>color</key>
-				<string>156,193,255</string>
+				<string>30,130,245</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -946,7 +925,7 @@
 				<key>ImageName</key>
 				<string>filter_82</string>
 				<key>color</key>
-				<string>183,240,255</string>
+				<string>223,180,190</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -959,7 +938,7 @@
 				<key>ImageName</key>
 				<string>filter_79</string>
 				<key>color</key>
-				<string>223,166,255</string>
+				<string>170,180,223</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
@@ -974,7 +953,7 @@
 		<key>group-icon</key>
 		<string>group-icon-6</string>
 		<key>group-name</key>
-		<string>Nature</string>
+		<string>Scenary</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -1182,7 +1161,7 @@
 		<key>group-icon</key>
 		<string>group-icon-7</string>
 		<key>group-name</key>
-		<string>Western</string>
+		<string>Foriegn</string>
 		<key>isFree</key>
 		<true/>
 		<key>items</key>
@@ -1201,7 +1180,7 @@
 				<key>filter</key>
 				<string>CIColorPosterize</string>
 				<key>inputLevels</key>
-				<string>8.0</string>
+				<string>6.0</string>
 				<key>name</key>
 				<string>Americana
 </string>
@@ -1212,18 +1191,18 @@
 				<key>filter</key>
 				<string>CIPhotoEffectChrome</string>
 				<key>name</key>
-				<string>Max
+				<string>Min
 </string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
 				<string>filter_59</string>
 				<key>color</key>
-				<string>124,255,239</string>
+				<string>180,180,180</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
-				<string>0.3</string>
+				<string>0.5</string>
 				<key>name</key>
 				<string>Posterize
 </string>
@@ -1243,7 +1222,7 @@
 				<key>filter</key>
 				<string>CIColorPosterize</string>
 				<key>inputLevels</key>
-				<string>30.0</string>
+				<string>10.0</string>
 				<key>name</key>
 				<string>Alpine
 </string>
@@ -1254,7 +1233,7 @@
 				<key>filter</key>
 				<string>CISepiaTone</string>
 				<key>inputIntensity</key>
-				<string>0.5</string>
+				<string>0.1</string>
 				<key>name</key>
 				<string>Hulk
 </string>
@@ -1265,7 +1244,7 @@
 				<key>filter</key>
 				<string>CIGammaAdjust</string>
 				<key>inputPower</key>
-				<string>2.5</string>
+				<string>1.0</string>
 				<key>name</key>
 				<string>Olympia
 </string>
@@ -1276,7 +1255,7 @@
 				<key>filter</key>
 				<string>CIHueAdjust</string>
 				<key>inputAngle</key>
-				<string>-0.5</string>
+				<string>-0.1</string>
 				<key>name</key>
 				<string>Vignette
 </string>
@@ -1300,7 +1279,7 @@
 				<key>inputIntensity</key>
 				<string>1</string>
 				<key>inputRadius</key>
-				<string>0</string>
+				<string>1</string>
 				<key>name</key>
 				<string>Journey
 </string>
@@ -1309,27 +1288,25 @@
 				<key>ImageName</key>
 				<string>filter_75</string>
 				<key>color</key>
-				<string>255,133,153</string>
+				<string>133,133,133</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
 				<string>0.5</string>
 				<key>name</key>
-				<string>Juno
-</string>
+				<string>Souvenir</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
 				<string>filter_83</string>
 				<key>color</key>
-				<string>244,255,204</string>
+				<string>120,120,120</string>
 				<key>filter</key>
 				<string>CIColorMonochrome</string>
 				<key>inputIntensity</key>
 				<string>0.3</string>
 				<key>name</key>
-				<string>Idaho
-</string>
+				<string>Souvenir</string>
 			</dict>
 			<dict>
 				<key>ImageName</key>
@@ -1354,7 +1331,7 @@
 				<key>inputIntensity</key>
 				<string>0.7</string>
 				<key>name</key>
-				<string>Grove
+				<string>Souvenir
 </string>
 			</dict>
 		</array>

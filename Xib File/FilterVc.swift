@@ -8,12 +8,17 @@
 import UIKit
 
 protocol filterIndexDelegate: AnyObject {
-    func filterNameWithIndex(tag:String ,image: UIImage)
+    func filterNameWithIndex(dic: Dictionary<String, Any>?)
 }
 
 class FilterVc: UIView, ODRManagerDelegate {
+    func doneLoading(tag: String, successfully: Bool) {
+        
+    }
     
     
+    var currentIndex = 0
+    var tempArray:NSArray!
     @IBOutlet weak var optionView: UIView!
     lazy var odrManager: ODRManager = {
         let odr = ODRManager()
@@ -27,14 +32,7 @@ class FilterVc: UIView, ODRManagerDelegate {
     var tempViww:UIView!
 
 
-    
-    func doneLoading(tag: String, successfully: Bool) {
-        if successfully {
-            guard let image = UIImage(named: "Filter" + "\(tag)") else { return  }
-            delegateForFilter?.filterNameWithIndex(tag: tag, image: image)
-            
-        }
-    }
+
     
     @IBOutlet weak var collectionViewForFilter: UICollectionView!
     var noOfFilter  = 27
@@ -56,7 +54,13 @@ class FilterVc: UIView, ODRManagerDelegate {
         collectionViewForFilter.showsVerticalScrollIndicator = false
         collectionViewForFilter.showsHorizontalScrollIndicator = false
         let path = Bundle.main.path(forResource: "FilterGroup", ofType: "plist")
-        plistArray = NSArray(contentsOfFile: path!)
+        fliterArray = NSArray(contentsOfFile: path!)
+        
+        if let value = fliterArray[currentIndex] as? Dictionary<String, Any>{
+            tempArray  = value["items"] as! NSArray
+            
+        }
+        
         stickersScrollContents()
 
         
@@ -86,7 +90,7 @@ class FilterVc: UIView, ODRManagerDelegate {
         btnScrollView.showsVerticalScrollIndicator = false
         
         
-        for i in 0..<plistArray.count{
+        for i in 0..<fliterArray.count{
             let filterButton = UIButton(type: .custom)
             filterButton.frame = CGRect(x: xCoord, y: yCoord, width: buttonWidth, height: buttonHeight)
             filterButton.tag = 800 + i
@@ -96,7 +100,7 @@ class FilterVc: UIView, ODRManagerDelegate {
                 tempViww.backgroundColor = titleColor
             }
             
-            if let value = plistArray[i] as? Dictionary<String, Any>{
+            if let value = fliterArray[i] as? Dictionary<String, Any>{
                 
                 
                  filterButton.setTitle(value["group-name"] as? String, for: .normal)
@@ -120,18 +124,27 @@ class FilterVc: UIView, ODRManagerDelegate {
         }
         
         
-        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(plistArray.count) + gapBetweenButtons * CGFloat((plistArray.count*2 + 1)), height: yCoord)
+        btnScrollView.contentSize = CGSize(width: buttonWidth * CGFloat(fliterArray.count) + gapBetweenButtons * CGFloat((fliterArray.count*2 + 1)), height: yCoord)
 
     }
     
     @objc func buttonAction(sender: UIButton!) {
         
+        currentIndex = sender.tag - 800
+        print(currentIndex)
         
+        if let value = fliterArray[currentIndex] as? Dictionary<String, Any>{
+            
+            print("hala")
+            tempArray  = value["items"] as! NSArray
+            
+        }
+        self.collectionViewForFilter.reloadData()
         self.tempViww.backgroundColor = titleColor
             
         
         
-        for i in 0..<self.plistArray.count{
+        for i in 0..<fliterArray.count{
             var btn = self.btnScrollView.viewWithTag(i+800) as? UIButton
             btn?.setTitleColor(unselectedColor, for: .normal)
         }
@@ -183,7 +196,7 @@ extension FilterVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         
-        return noOfFilter + 1
+        return tempArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
@@ -203,6 +216,9 @@ extension FilterVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollec
         }
         else {
             cell.gradietImv.image =  UIImage(named: "filterg")
+            var dic = tempArray[indexPath.row]
+            var image  = getFilteredImage(withInfo: dic as! [String : Any], for: UIImage(named: "filterg"))
+            cell.gradietImv.image  = image
         }
         cell.layer.cornerRadius = cell.frame.size.height/2.0
          return cell
@@ -225,20 +241,12 @@ extension FilterVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollec
         }
         
         if indexPath.row == 0 {
-            delegateForFilter?.filterNameWithIndex(tag:"\(indexPath.row)", image: UIImage())
+            delegateForFilter?.filterNameWithIndex(dic: nil)
         }
-        
-        else if let image = UIImage(named: "Filter" + "\(indexPath.row)") {
-            
-            
-            delegateForFilter?.filterNameWithIndex(tag:"\(indexPath.row)", image: image)
-            print(image.size.width)
-            
-        } else {
-            odrManager.load(tag: "\(indexPath.row)")
+        else  {
+            var dic = tempArray[indexPath.row]
+            delegateForFilter?.filterNameWithIndex(dic: dic as! Dictionary<String, Any>)
         }
-        
-        
     }
 }
     

@@ -27,6 +27,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="zOr-Q2-lSu"/>
                     </constraints>
+                    <connections>
+                        <action selector="sliderValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="i5u-IY-URS"/>
+                    </connections>
                 </slider>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -41,6 +44,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="horizontalSlider" destination="d4c-00-sJH" id="9us-uU-0uV"/>
                 <outlet property="optionView" destination="ctx-av-XPi" id="8RE-Nb-W0t"/>
             </connections>
             <point key="canvasLocation" x="-95.384615384615387" y="20.616113744075829"/>
