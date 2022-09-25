@@ -89,6 +89,7 @@ class TextEditView: UIView {
         selectedIndexView.clipsToBounds = true
         tempViww.backgroundColor = titleColor
         collectionViewForTextControls.reloadData()
+        
 
     }
     
@@ -321,6 +322,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.isHidden = false
             cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row)")
+            cell.holderView.backgroundColor = UIColor.clear
         }
         
         else if currentOption.rawValue ==  TextEditingOption.Fonts.rawValue {

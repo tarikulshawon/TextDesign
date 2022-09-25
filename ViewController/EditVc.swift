@@ -864,7 +864,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewForBackGround {
             if currentBackGroundIndex == 0 {
-                return plistArray.count + 1
+                return plistArray.count + 2
             }
         }
         
@@ -889,7 +889,12 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                     cell.gradietImv.isHidden = false
                     cell.holderView.backgroundColor = UIColor.clear
                 }
-                else if let colorString = plistArray[indexPath.row - 1] as? String {
+                else if indexPath.row == 1 {
+                    cell.gradietImv.image = UIImage(named: "no-color")
+                    cell.gradietImv.isHidden = false
+                    cell.holderView.backgroundColor = UIColor.clear
+                }
+                else if let colorString = plistArray[indexPath.row - 2] as? String {
                     cell.holderView.backgroundColor = getColor(colorString: colorString)
                     cell.gradietImv.isHidden = true
                 }
@@ -977,6 +982,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             }
         
             if currentBackGroundIndex == 0 {
+                currentTextStickerView?.shoulShowBorder = true
                 if indexPath.row == 0 {
                     
                     self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
@@ -992,8 +998,15 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                     })
                     
                 }
-                
-                else if let colorString = plistArray[indexPath.row - 1] as? String {
+                else if indexPath.row == 1 {
+                    
+                    currentTextStickerView?.backgroundColor = UIColor.clear
+                    currentTextStickerView?.hideTextBorder(isHide: false)
+                    currentTextStickerView?.shoulShowBorder = false
+                    
+                }
+                else if let colorString = plistArray[indexPath.row - 2] as? String {
+                    currentTextStickerView?.shoulShowBorder = true
                     currentTextStickerView?.backgroundColor = getColor(colorString: colorString)
                     currentTextStickerView?.hideTextBorder(isHide: true)
                 }
