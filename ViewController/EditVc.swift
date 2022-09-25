@@ -32,6 +32,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
     
+    
+    
+    @IBOutlet weak var bottomSpaceForFrame: NSLayoutConstraint!
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
@@ -43,6 +46,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var imageViewHolder: UIView!
     @IBOutlet weak var shapeHolderView: UIView!
     
+    @IBOutlet weak var frameVcHolder: UIView!
     
     @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
@@ -121,6 +125,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let imageEditView = Bundle.main.loadNibNamed("ImageEditView", owner: nil, options: nil)![0] as! ImageEditView
     let drawVc =  Bundle.main.loadNibNamed("DrawVc", owner: nil, options: nil)![0] as! DrawVc
     let controller = DefaultColorPickerViewController()
+    let frameVc =  Bundle.main.loadNibNamed("FrameVc", owner: nil, options: nil)![0] as! FrameVc
     
     @IBAction func segmentValueHasChanged(_ sender: UISegmentedControl) {
         
@@ -738,6 +743,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         filterViewHolder.addSubview(filterVc)
         
         
+        frameVc.frame = CGRect(x: 0,y: 0,width: frameVcHolder.frame.width,height: frameVcHolder.frame.height)
+        frameVcHolder.addSubview(frameVc)
+        
+        
         adjustVc.frame = CGRect(x: 0,y: 0,width: ajustVcHolder.frame.width,height: ajustVcHolder.frame.height)
         ajustVcHolder.addSubview(adjustVc)
     
@@ -794,6 +803,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     func updateValue () {
         UIView.animate(withDuration: 0.2, animations: { [self] in
             
+            if self.currentlyActiveIndex != BtnNameInt.Frames.rawValue {
+                self.bottomSpaceForFrame.constant = -1000
+            }
+            
             if self.currentlyActiveIndex != BtnNameInt.Texts.rawValue {
                 self.bottomSpaceOfFontLoaderView.constant = -1000
             }
@@ -839,6 +852,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 }
                 if self.currentlyActiveIndex == BtnNameInt.Shape.rawValue {
                     bottomSapceForShape.constant = 0
+                }
+                if self.currentlyActiveIndex == BtnNameInt.Frames.rawValue {
+                    bottomSpaceForFrame.constant = 0
                 }
             }
             self.view.layoutIfNeeded()
@@ -1103,6 +1119,17 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameInt.Quotes.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+                
+            }
+            
+            if btnValue == BtnName.Frames.rawValue {
+                let p = self.bottomSpaceForFrame.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameInt.Frames.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }
