@@ -16,7 +16,11 @@ protocol callDelegate: AnyObject {
     func reloadAllData()
 }
 
-class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue {
+class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames {
+    func sendFramesIndex(frames: String) {
+        self.addSticker(test: UIImage(named: frames)!, type: "Image", pathName: frames)
+    }
+    
     func sendText(text: String) {
         if text.count > 1 {
             currentTextStickerView?.textStickerView.text = text
@@ -744,6 +748,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         
         frameVc.frame = CGRect(x: 0,y: 0,width: frameVcHolder.frame.width,height: frameVcHolder.frame.height)
+        frameVc.delegateForFramesr = self
         frameVcHolder.addSubview(frameVc)
         
         

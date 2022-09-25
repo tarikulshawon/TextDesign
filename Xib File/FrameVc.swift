@@ -7,9 +7,14 @@
 
 import UIKit
 
+
+protocol sendFrames: AnyObject {
+    func sendFramesIndex(frames:String)
+}
+
 class FrameVc: UIView {
     
-    
+    weak var delegateForFramesr: sendFrames?
     @IBOutlet weak var collectionViewForFrame: UICollectionView!
     
     /*
@@ -68,7 +73,7 @@ extension FrameVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RatioCell.reusableID  , for: indexPath as IndexPath) as! RatioCell
         cell.heightForLabel.constant = 0
-        cell.iconImv.image =  UIImage(named: "F" + "\(indexPath.row)" + ".jpg")
+        cell.iconImv.image =  UIImage(named: "FrameThumb" + "\(indexPath.row)" + ".png")
         cell.iconImv.backgroundColor = UIColor.init(red: 128.0/255.0, green: 92.0/255.0, blue: 242.0/255.0, alpha: 0.1)
         
         return cell
@@ -90,6 +95,7 @@ extension FrameVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
                 cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0);                //cell?.backgroundColor = UIColor.clear
             })
         }
+        delegateForFramesr?.sendFramesIndex(frames: "F" + "\(indexPath.row)" + ".jpg")
         
     }
     
