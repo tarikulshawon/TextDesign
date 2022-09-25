@@ -312,6 +312,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("mammamama")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reusableID  , for: indexPath as IndexPath) as! ColorCell
         
         cell.holderView.isHidden = false

@@ -69,6 +69,7 @@
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
+		018063F628DFDF1B0015E667 /* Motivational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018063F528DFDF1B0015E667 /* Motivational.plist */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -262,6 +263,7 @@
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
+		018063F528DFDF1B0015E667 /* Motivational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Motivational.plist; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -733,6 +735,7 @@
 		39F8227228A3652F008925EF /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				018063F528DFDF1B0015E667 /* Motivational.plist */,
 				01219B0A28DE837C00133E56 /* AdjustV.plist */,
 				0127AAD328D8B71000EE45BC /* FilterGroup.plist */,
 				39F8227328A3652F008925EF /* category.plist */,
@@ -969,6 +972,7 @@
 				01219B6128DEBC6B00133E56 /* OverlayThumb32.png in Resources */,
 				01219B5128DEBC6B00133E56 /* OverlayThumb44.png in Resources */,
 				39CC0E1528A4AAB100DF1C64 /* OverLayVc.xib in Resources */,
+				018063F628DFDF1B0015E667 /* Motivational.plist in Resources */,
 				3949337728AB347F003E8D67 /* Texture19.png in Resources */,
 				01219B6928DEBC6B00133E56 /* OverlayThumb28.png in Resources */,
 				01219B4A28DEBC6B00133E56 /* OverlayThumb46.png in Resources */,
