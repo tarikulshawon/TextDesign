@@ -30,8 +30,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var ajustVcHolder: UIView!
     @IBOutlet weak var frameVcHolder: UIView!
     @IBOutlet weak var transParentView: UIImageView!
+    @IBOutlet weak var showingBubbleView: UIView!
     
-    
+
     @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
@@ -117,7 +118,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let controller = DefaultColorPickerViewController()
     
     
-    
     func sendAdjustValue(value: Float, index: Int) {
         print(value)
         print(index)
@@ -194,7 +194,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         super.viewWillLayoutSubviews()
         controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -453,7 +453,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
         shouldRemove = true
-        
     }
     
     @IBAction func gotoSave(_ sender: Any) {
@@ -638,16 +637,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 }
             }
         }
-        
+        //self.perform(#selector(self.targetMethod), with: self, afterDelay: 2.0)
         
         NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
         
-        self.view.window!.rootViewController?.dismiss(animated: true, completion: {
-            
-        })
         
-        //self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+       
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
+    }
+    
+    @objc fileprivate func targetMethod(){
+         self.view.window!.rootViewController?.dismiss(animated: true, completion: {
+       })
+         
     }
     
     @IBAction func gotoPreviousView(_ sender: Any) {
@@ -992,4 +995,3 @@ extension EditVc: StickerViewDelegate {
         stickerView.showEditingHandlers = true
     }
 }
-

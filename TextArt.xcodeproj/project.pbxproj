@@ -12,6 +12,7 @@
 		011F934028E356670090B44E /* Quotes in Resources */ = {isa = PBXBuildFile; fileRef = 011F933F28E356670090B44E /* Quotes */; };
 		011F934228E3567B0090B44E /* Education in Resources */ = {isa = PBXBuildFile; fileRef = 011F934128E3567B0090B44E /* Education */; };
 		011F934428E356880090B44E /* Comic in Resources */ = {isa = PBXBuildFile; fileRef = 011F934328E356880090B44E /* Comic */; };
+		011F93CB28E372390090B44E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F93CA28E372390090B44E /* UIColor+Extension.swift */; };
 		01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0228DE7DAA00133E56 /* AlphaSlider.swift */; };
 		01219B0528DE7F1400133E56 /* Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0428DE7F1400133E56 /* Adjust.swift */; };
 		01219B0728DE7F2A00133E56 /* Adjust.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0628DE7F2A00133E56 /* Adjust.xib */; };
@@ -269,6 +270,7 @@
 		011F933F28E356670090B44E /* Quotes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Quotes; sourceTree = "<group>"; };
 		011F934128E3567B0090B44E /* Education */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Education; sourceTree = "<group>"; };
 		011F934328E356880090B44E /* Comic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Comic; path = "../../../../../Downloads/Comic, Education, Quotes/Comic"; sourceTree = "<group>"; };
+		011F93CA28E372390090B44E /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		01219B0228DE7DAA00133E56 /* AlphaSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaSlider.swift; sourceTree = "<group>"; };
 		01219B0428DE7F1400133E56 /* Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjust.swift; sourceTree = "<group>"; };
 		01219B0628DE7F2A00133E56 /* Adjust.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Adjust.xib; sourceTree = "<group>"; };
@@ -541,6 +543,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011F93C928E372270090B44E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				011F93CA28E372390090B44E /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		01219B0E28DEBC6B00133E56 /* Thumb */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +835,7 @@
 		39F8221928A3505C008925EF = {
 			isa = PBXGroup;
 			children = (
+				011F93C928E372270090B44E /* Extensions */,
 				01FD5AC528AE51FD00CBF70F /* AddText */,
 				3949331828AB2E5B003E8D67 /* DB */,
 				39CC0E0328A4A6DB00DF1C64 /* Model */,
@@ -1489,6 +1500,7 @@
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,
 				01FD5AD228AE52AE00CBF70F /* PanControllerImageView.swift in Sources */,
+				011F93CB28E372390090B44E /* UIColor+Extension.swift in Sources */,
 				3949331728AB2D0E003E8D67 /* StickerView.swift in Sources */,
 				39CC0E1828A4AAC500DF1C64 /* ShapeVc.swift in Sources */,
 				01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */,
