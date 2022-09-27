@@ -1,0 +1,6 @@
+framework module FloatingBubbles {
+  umbrella header "FloatingBubbles-umbrella.h"
+
+  export *
+  module * { export * }
+}
