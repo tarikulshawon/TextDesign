@@ -74,7 +74,7 @@ class FirstVc: UIView, CustomLayoutDelegate, callDelegate {
     fileprivate func didReceiveNotification(notification: Notification) {
         self.setupUI()
         reloadDataF()
-        self.perform(#selector(self.targetMethod1), with: self, afterDelay: 3.0)
+        self.perform(#selector(self.targetMethod1), with: self, afterDelay: 1.0)
     }
 
     @objc fileprivate func targetMethod1(){
@@ -295,7 +295,7 @@ extension FirstVc{
         })
         
         let pathAnimation = CAKeyframeAnimation(keyPath: "position")
-        pathAnimation.duration = 3.5
+        pathAnimation.duration = 1.5
         pathAnimation.path = zigzagPath.cgPath
         
         pathAnimation.fillMode = CAMediaTimingFillMode.forwards
