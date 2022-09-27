@@ -539,6 +539,17 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
             }
             
+            if btnValue == BtnName.Frames.rawValue {
+                let p = self.bottomSpaceForFrame.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameInt.Frames.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+                
+            }
+            
             updateValue()
             
         }
