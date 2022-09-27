@@ -1,6 +1,7 @@
 PODS:
   - AMColorPicker (3.0.1)
   - FlexColorPicker (1.4.4)
+  - FloatingBubbles (1.0.6)
   - HorizontalDial (4.0)
   - IGRPhotoTweaks (1.0.8)
   - ImageActionSheet (1.0.1)
@@ -15,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - AMColorPicker
   - FlexColorPicker
+  - FloatingBubbles
   - HorizontalDial
   - IGRPhotoTweaks (~> 1.0.0)
   - ImageActionSheet
@@ -26,6 +28,7 @@ SPEC REPOS:
   trunk:
     - AMColorPicker
     - FlexColorPicker
+    - FloatingBubbles
     - HorizontalDial
     - IGRPhotoTweaks
     - ImageActionSheet
@@ -36,6 +39,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AMColorPicker: 8532f0cb7e0c6e498858368d61089008ee102bd4
   FlexColorPicker: ce72e0a9e0870815a0beba419ac3e09913401624
+  FloatingBubbles: 143182ffe608d5ea09a262d619ec7b9b1489b7e8
   HorizontalDial: 50b43d3d12b9024688c40633ccab46066911846f
   IGRPhotoTweaks: e348cec1dfc7afc36ff0f10115637bc3b03836fa
   ImageActionSheet: fb9053b45af2761f0b85d7c23bd7782efc4dca7a
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   SDWebImage: af5bbffef2cde09f148d826f9733dcde1a9414cd
   SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
 
-PODFILE CHECKSUM: 343983ca12b7c373b319d6e02cc898d91fa31f90
+PODFILE CHECKSUM: f806549934ee2dc5e9539ca5334785411fa570f0
 
 COCOAPODS: 1.11.3
