@@ -243,7 +243,7 @@ extension StickerVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
         let tempArray = self.getStickerArray(index: currentSelectedSticker)
         let filename = tempArray[indexPath.row]
         
-        if let value  = plistArray[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
+        if let value  = plistArray6[currentSelectedSticker] as? String, let path =  Bundle.main.path(forResource: value, ofType: nil) {
             let imagePath = "\(value)/\(filename)"
             self.delegateForSticker?.sendSticker(sticker: imagePath)
         }

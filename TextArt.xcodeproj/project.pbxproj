@@ -211,7 +211,6 @@
 		39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CC0E2628A4AD4100DF1C64 /* ODRManager.swift */; };
 		39CC0E3328A4AF6600DF1C64 /* Draw in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E2D28A4AF6500DF1C64 /* Draw */; };
 		39CC0E3428A4AF6600DF1C64 /* Summer in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E2E28A4AF6500DF1C64 /* Summer */; };
-		39CC0E3528A4AF6600DF1C64 /* Comic in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E2F28A4AF6500DF1C64 /* Comic */; };
 		39CC0E3628A4AF6600DF1C64 /* Arrows in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3028A4AF6500DF1C64 /* Arrows */; };
 		39CC0E3728A4AF6600DF1C64 /* Cute in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3128A4AF6500DF1C64 /* Cute */; };
 		39CC0E3828A4AF6600DF1C64 /* Floral in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3228A4AF6600DF1C64 /* Floral */; };
@@ -469,7 +468,6 @@
 		39CC0E2628A4AD4100DF1C64 /* ODRManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODRManager.swift; sourceTree = "<group>"; };
 		39CC0E2D28A4AF6500DF1C64 /* Draw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Draw; sourceTree = "<group>"; };
 		39CC0E2E28A4AF6500DF1C64 /* Summer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Summer; sourceTree = "<group>"; };
-		39CC0E2F28A4AF6500DF1C64 /* Comic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Comic; sourceTree = "<group>"; };
 		39CC0E3028A4AF6500DF1C64 /* Arrows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Arrows; sourceTree = "<group>"; };
 		39CC0E3128A4AF6500DF1C64 /* Cute */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cute; sourceTree = "<group>"; };
 		39CC0E3228A4AF6600DF1C64 /* Floral */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Floral; sourceTree = "<group>"; };
@@ -816,7 +814,6 @@
 				01B0DFD128D6506B00081369 /* Paper */,
 				01B0DFCF28D6506400081369 /* Bubbles */,
 				39CC0E3028A4AF6500DF1C64 /* Arrows */,
-				39CC0E2F28A4AF6500DF1C64 /* Comic */,
 				39CC0E3128A4AF6500DF1C64 /* Cute */,
 				39CC0E2D28A4AF6500DF1C64 /* Draw */,
 				39CC0E3228A4AF6600DF1C64 /* Floral */,
@@ -1148,7 +1145,6 @@
 			files = (
 				01219B4528DEBC6B00133E56 /* OverlayThumb41.png in Resources */,
 				019BC52928E0270A00B15323 /* F24.jpg in Resources */,
-				39CC0E3528A4AF6600DF1C64 /* Comic in Resources */,
 				01219B6B28DEBC6B00133E56 /* OverlayThumb38.png in Resources */,
 				019BC52728E0270A00B15323 /* F2.jpg in Resources */,
 				3949337428AB347F003E8D67 /* Texture21.png in Resources */,
