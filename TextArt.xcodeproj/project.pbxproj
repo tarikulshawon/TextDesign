@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
+		011F934028E356670090B44E /* Quotes in Resources */ = {isa = PBXBuildFile; fileRef = 011F933F28E356670090B44E /* Quotes */; };
+		011F934228E3567B0090B44E /* Education in Resources */ = {isa = PBXBuildFile; fileRef = 011F934128E3567B0090B44E /* Education */; };
+		011F934428E356880090B44E /* Comic in Resources */ = {isa = PBXBuildFile; fileRef = 011F934328E356880090B44E /* Comic */; };
 		01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0228DE7DAA00133E56 /* AlphaSlider.swift */; };
 		01219B0528DE7F1400133E56 /* Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01219B0428DE7F1400133E56 /* Adjust.swift */; };
 		01219B0728DE7F2A00133E56 /* Adjust.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01219B0628DE7F2A00133E56 /* Adjust.xib */; };
@@ -264,6 +267,9 @@
 /* Begin PBXFileReference section */
 		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
+		011F933F28E356670090B44E /* Quotes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Quotes; sourceTree = "<group>"; };
+		011F934128E3567B0090B44E /* Education */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Education; sourceTree = "<group>"; };
+		011F934328E356880090B44E /* Comic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Comic; path = "../../../../../Downloads/Comic, Education, Quotes/Comic"; sourceTree = "<group>"; };
 		01219B0228DE7DAA00133E56 /* AlphaSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaSlider.swift; sourceTree = "<group>"; };
 		01219B0428DE7F1400133E56 /* Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjust.swift; sourceTree = "<group>"; };
 		01219B0628DE7F2A00133E56 /* Adjust.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Adjust.xib; sourceTree = "<group>"; };
@@ -797,6 +803,9 @@
 		39CC0E2C28A4AF3F00DF1C64 /* Sticker */ = {
 			isa = PBXGroup;
 			children = (
+				011F934328E356880090B44E /* Comic */,
+				011F934128E3567B0090B44E /* Education */,
+				011F933F28E356670090B44E /* Quotes */,
 				01219B7B28DEFD8A00133E56 /* Vegetables */,
 				012FA0BB28DA02C000E44786 /* Fruits */,
 				012FA0A728DA028F00E44786 /* Nature */,
@@ -1152,6 +1161,7 @@
 				019BC51F28E0270A00B15323 /* F4.jpg in Resources */,
 				01219B5928DEBC6B00133E56 /* OverlayThumb35.png in Resources */,
 				3949331A28AB2E67003E8D67 /* ImageEditInfo.db in Resources */,
+				011F934028E356670090B44E /* Quotes in Resources */,
 				01219B6428DEBC6B00133E56 /* OverlayThumb33.png in Resources */,
 				3949338228AB347F003E8D67 /* Texture0.png in Resources */,
 				01219B4328DEBC6B00133E56 /* OverlayThumb0.png in Resources */,
@@ -1274,6 +1284,7 @@
 				01219B4928DEBC6B00133E56 /* OverlayThumb42.png in Resources */,
 				01219B4828DEBC6B00133E56 /* OverlayThumb2.png in Resources */,
 				39CC0E0D28A4AA0500DF1C64 /* TextEditView.xib in Resources */,
+				011F934428E356880090B44E /* Comic in Resources */,
 				39F8222F28A3505E008925EF /* Assets.xcassets in Resources */,
 				39CC0E3A28A4AF9500DF1C64 /* Fonts in Resources */,
 				019BC52B28E0270A00B15323 /* F18.jpg in Resources */,
@@ -1311,6 +1322,7 @@
 				019BC52F28E0270A00B15323 /* F16.jpg in Resources */,
 				019BC51D28E0270A00B15323 /* F21.jpg in Resources */,
 				019BC52E28E0270A00B15323 /* F14.jpg in Resources */,
+				011F934228E3567B0090B44E /* Education in Resources */,
 				019BC53228E0270A00B15323 /* F8.jpg in Resources */,
 				019BC4F428E026F400B15323 /* FrameThumb8.png in Resources */,
 				39CC0E3428A4AF6600DF1C64 /* Summer in Resources */,
