@@ -144,6 +144,7 @@
 		01E9232B28D7197500F21554 /* wallpapers.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E9232A28D7197500F21554 /* wallpapers.json */; };
 		01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9232C28D7231700F21554 /* ImageDetails.swift */; };
 		01EDA06828E929F90087D7E8 /* Comic in Resources */ = {isa = PBXBuildFile; fileRef = 01EDA06728E929F90087D7E8 /* Comic */; };
+		01EDA06A28E960850087D7E8 /* Blur1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EDA06928E960850087D7E8 /* Blur1.png */; };
 		01FD5AC728AE521800CBF70F /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5AC628AE521800CBF70F /* AddTextViewController.swift */; };
 		01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5AC928AE52AE00CBF70F /* TextStickerView.swift */; };
 		01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5ACA28AE52AE00CBF70F /* TextStickerContainerView.swift */; };
@@ -186,7 +187,6 @@
 		39CC0DF128A4A33C00DF1C64 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0DEF28A4A33C00DF1C64 /* CategoryCell.xib */; };
 		39CC0DF228A4A33C00DF1C64 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CC0DF028A4A33C00DF1C64 /* CategoryCell.swift */; };
 		39CC0DFA28A4A3B900DF1C64 /* Abstract.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0DF428A4A3B900DF1C64 /* Abstract.png */; };
-		39CC0DFB28A4A3B900DF1C64 /* Blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0DF528A4A3B900DF1C64 /* Blur.png */; };
 		39CC0DFC28A4A3B900DF1C64 /* Polygon.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0DF628A4A3B900DF1C64 /* Polygon.png */; };
 		39CC0DFD28A4A3B900DF1C64 /* Pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0DF728A4A3B900DF1C64 /* Pattern.png */; };
 		39CC0DFE28A4A3B900DF1C64 /* Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0DF828A4A3B900DF1C64 /* Flower.png */; };
@@ -401,6 +401,7 @@
 		01E9232A28D7197500F21554 /* wallpapers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wallpapers.json; sourceTree = "<group>"; };
 		01E9232C28D7231700F21554 /* ImageDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		01EDA06728E929F90087D7E8 /* Comic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Comic; sourceTree = "<group>"; };
+		01EDA06928E960850087D7E8 /* Blur1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blur1.png; sourceTree = "<group>"; };
 		01FD5AC628AE521800CBF70F /* AddTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextViewController.swift; sourceTree = "<group>"; };
 		01FD5AC928AE52AE00CBF70F /* TextStickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStickerView.swift; sourceTree = "<group>"; };
 		01FD5ACA28AE52AE00CBF70F /* TextStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStickerContainerView.swift; sourceTree = "<group>"; };
@@ -444,7 +445,6 @@
 		39CC0DEF28A4A33C00DF1C64 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		39CC0DF028A4A33C00DF1C64 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		39CC0DF428A4A3B900DF1C64 /* Abstract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abstract.png; sourceTree = "<group>"; };
-		39CC0DF528A4A3B900DF1C64 /* Blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blur.png; sourceTree = "<group>"; };
 		39CC0DF628A4A3B900DF1C64 /* Polygon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Polygon.png; sourceTree = "<group>"; };
 		39CC0DF728A4A3B900DF1C64 /* Pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pattern.png; sourceTree = "<group>"; };
 		39CC0DF828A4A3B900DF1C64 /* Flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flower.png; sourceTree = "<group>"; };
@@ -766,8 +766,8 @@
 		39CC0DF328A4A3B900DF1C64 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				01EDA06928E960850087D7E8 /* Blur1.png */,
 				39CC0DF428A4A3B900DF1C64 /* Abstract.png */,
-				39CC0DF528A4A3B900DF1C64 /* Blur.png */,
 				39CC0DF628A4A3B900DF1C64 /* Polygon.png */,
 				39CC0DF728A4A3B900DF1C64 /* Pattern.png */,
 				39CC0DF828A4A3B900DF1C64 /* Flower.png */,
@@ -1163,7 +1163,6 @@
 				019BC53328E0270A00B15323 /* F9.jpg in Resources */,
 				019BC4F928E026F400B15323 /* FrameThumb12.png in Resources */,
 				019BC4EF28E026F400B15323 /* FrameThumb4.png in Resources */,
-				39CC0DFB28A4A3B900DF1C64 /* Blur.png in Resources */,
 				39F8228128A3652F008925EF /* imageEdit.plist in Resources */,
 				019BC51F28E0270A00B15323 /* F4.jpg in Resources */,
 				01219B5928DEBC6B00133E56 /* OverlayThumb35.png in Resources */,
@@ -1237,6 +1236,7 @@
 				01219B5F28DEBC6B00133E56 /* OverlayThumb24.png in Resources */,
 				019BC4F728E026F400B15323 /* FrameThumb17.png in Resources */,
 				019BC51B28E0270A00B15323 /* F7.jpg in Resources */,
+				01EDA06A28E960850087D7E8 /* Blur1.png in Resources */,
 				019BC52A28E0270A00B15323 /* F3.jpg in Resources */,
 				39F8227F28A3652F008925EF /* gradient.plist in Resources */,
 				39F8227D28A3652F008925EF /* style.plist in Resources */,
