@@ -151,7 +151,16 @@ extension EditVc {
 // Delegate for AddText
 extension EditVc: AddTextDelegate {
     func showColorPickerView() {
-        
+        self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
+        UIView.animate(withDuration: 0.2, animations: {
+    
+            self.bottomSpaceForColorPicker.constant = 0
+            self.bottomSpceOfMainView.constant = self.heightForColorPickerView.constant
+            self.view.layoutIfNeeded()
+            
+        }, completion: {_ in
+            
+        })
     }
     
     func sendOpacityValue(value: Double) {
@@ -233,10 +242,17 @@ extension EditVc: AddTextDelegate {
     }
     
     func colorValue(color: String) {
-        currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
-        currentTextStickerView?.currentColorSting = color
-        currentTextStickerView?.currentGradientIndex = -1
-        currentTextStickerView?.currentTextureIndex = -1
+                
+        if isFromTextColor {
+            currentTextStickerView?.textStickerView.textColor =  getColor(colorString: color)
+            currentTextStickerView?.currentColorSting = color
+            currentTextStickerView?.currentGradientIndex = -1
+            currentTextStickerView?.currentTextureIndex = -1
+        }
+        else {
+            currentTextStickerView?.backgroundColor = getColor(colorString: color)
+            currentTextStickerView?.hideTextBorder(isHide: true)
+        }
     }
     
     func addText(text: String, font: UIFont) {
@@ -401,6 +417,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             if currentBackGroundIndex == 0 {
                 if indexPath.row == 0 {
                     
+                    isFromTextColor = false
                     self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
 
                     UIView.animate(withDuration: 0.2, animations: {

@@ -117,6 +117,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     let TextEditVc: TextEditView = TextEditView.loadFromXib()
     let controller = DefaultColorPickerViewController()
     
+    var isFromTextColor = true
+    
     
     func sendAdjustValue(value: Float, index: Int) {
         print(value)
@@ -158,8 +160,28 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
     }
     
+    func rgbComponents(color:UIColor)-> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        if color.getRed(&r, green: &g, blue: &b, alpha: &a) {
+            
+            let iRed = Int(r * 255.0)
+            let iGreen = Int(g * 255.0)
+            let iBlue = Int(b * 255.0)
+            let iAlpha = Int(a * 255.0)
+            return  "\(iRed),\(iGreen),\(iBlue)"
+        }
+        return "0,0,0,0"
+    }
     
     func colorPicker(_ colorPicker: FlexColorPicker.ColorPickerController, selectedColor: UIColor, usingControl: FlexColorPicker.ColorControl) {
+        
+        
+        var value =  rgbComponents(color: selectedColor)
+        colorValue(color: value)
+        print(value)
         
     }
     

@@ -404,6 +404,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
                 self.delegateForText?.showColorPickerView()
             }
             else if let colorString = plistArray[indexPath.row - 1] as? String {
+                
                 delegateForText?.colorValue(color: colorString)
             }
         }
