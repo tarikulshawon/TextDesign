@@ -20,4 +20,7 @@ class TextInfoData {
     var text = "Double tap to edit"
     var fontSize = "15"
     var id = ""
+    var bcColor = ""
+    var bcTexture = "-1"
+    var bcGradient = "-1"
 }

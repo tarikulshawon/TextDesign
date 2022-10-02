@@ -248,11 +248,7 @@ extension FirstVc{
         
         let intRandom = self.generateIntRandomNumber(min: 1, max: 6)
         
-        if intRandom % 2 == 0{
-            bubbleImageView.backgroundColor = UIColor.customOrangeColor
-        }else{
-            bubbleImageView.backgroundColor = UIColor.customBlueColor
-        }
+        bubbleImageView.backgroundColor = titleColor
         let size = self.randomFloatBetweenNumbers(firstNum: 9, secondNum: 40)
         
         let randomOriginX = self.randomFloatBetweenNumbers(firstNum: self.frame.minX, secondNum: self.frame.maxX)

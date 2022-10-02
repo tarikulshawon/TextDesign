@@ -149,7 +149,7 @@ class DBmanager: NSObject {
     
     
     func insertTextFile(fileObj: TextInfoData) {
-        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)')"
+        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id,bcTexture,bcColor,bcGradient) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)','\(fileObj.bcTexture)','\(fileObj.bcColor)','\(fileObj.bcGradient)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -214,7 +214,7 @@ class DBmanager: NSObject {
         var mutableArray = [TextInfoData]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize FROM TextInfo where id = \(id)"
+        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize,bcColor,bcTexture,bcGradient FROM TextInfo where id = \(id)"
         if (sqlite3_open(DBpath, &db) == SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -230,6 +230,9 @@ class DBmanager: NSObject {
                     let align =       sqlite3_column_text(queryStatement, 8)
                     let text =       sqlite3_column_text(queryStatement, 9)
                     let fontSize =       sqlite3_column_text(queryStatement, 10)
+                    let bcColor =       sqlite3_column_text(queryStatement, 11)
+                    let bcTexture =       sqlite3_column_text(queryStatement, 12)
+                    let bcGradient =       sqlite3_column_text(queryStatement, 13)
                    
                     obj.font = String(cString: font!)
                     obj.color = String(cString: color!)
@@ -241,9 +244,10 @@ class DBmanager: NSObject {
                     obj.align = String(cString: align!)
                     obj.text = String(cString: text!)
                     obj.fontSize = String(cString: fontSize!)
+                    obj.bcColor = String(cString: fontSize!)
+                    obj.bcTexture = String(cString: fontSize!)
+                    obj.bcGradient = String(cString: fontSize!)
 
-                    
-                    
                     mutableArray.append(obj)
                 }
             }
