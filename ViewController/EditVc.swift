@@ -96,8 +96,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var currentOverlayIndex = 0
     var currentBackGroundIndex  = 0
     var tagValue = 1000000
-    
-    
+
     @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
     @IBOutlet weak var btnCollectionView: UICollectionView!
     @IBOutlet weak var mainImv: UIImageView!
@@ -550,6 +549,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.shadow = "\(ma.shadow)"
                     objV.align = "\(ma.align)"
                     objV.rotate = "\(ma.rotate)"
+                    objV.bcColor = "\(ma.bcColor)"
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
@@ -645,6 +645,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.shadow = "\(ma.shadow)"
                     objV.align = "\(ma.align)"
                     objV.rotate = "\(ma.rotate)"
+                    objV.bcColor = "\(ma.bcColor)"
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"

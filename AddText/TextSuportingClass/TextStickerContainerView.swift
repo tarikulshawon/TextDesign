@@ -32,6 +32,7 @@ class TextStickerContainerView: UIView {
     var scaleController: PanControllerImageView!
     var extendBarView: UIView!
     var shoulShowBorder = true
+    var bcColor = ""
     
     
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {

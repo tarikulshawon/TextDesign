@@ -125,7 +125,7 @@ class DBmanager: NSObject {
     }
     
     func updateTextData(fileNAME: String, fileObj: TextInfoData) {
-        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)' WHERE id='\(fileNAME)'"
+        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)',bcColor='\(fileObj.bcColor)',bcTexture='\(fileObj.bcTexture)',bcGradient='\(fileObj.bcGradient)' WHERE id='\(fileNAME)'"
         
         if sqlite3_open(DBpath, &db) == SQLITE_OK {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -244,9 +244,9 @@ class DBmanager: NSObject {
                     obj.align = String(cString: align!)
                     obj.text = String(cString: text!)
                     obj.fontSize = String(cString: fontSize!)
-                    obj.bcColor = String(cString: fontSize!)
-                    obj.bcTexture = String(cString: fontSize!)
-                    obj.bcGradient = String(cString: fontSize!)
+                    obj.bcColor = String(cString: bcColor!)
+                    obj.bcTexture = String(cString: bcTexture!)
+                    obj.bcGradient = String(cString: bcGradient!)
 
                     mutableArray.append(obj)
                 }

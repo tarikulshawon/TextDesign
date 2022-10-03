@@ -67,6 +67,14 @@ extension EditVc {
 
             
             let fontSize = Double(textObj.fontSize)!
+            let bacground = textObj.bcColor
+            
+            if bacground.count > 1 {
+                
+                sticker.backgroundColor = getColor(colorString: bacground)
+                sticker.hideTextBorder(isHide: true)
+            }
+
             if fontIndex < 0 {
                 sticker.textStickerView.font = UIFont.systemFont(ofSize: CGFloat(fontSize))
             }
@@ -252,6 +260,7 @@ extension EditVc: AddTextDelegate {
         else {
             currentTextStickerView?.backgroundColor = getColor(colorString: color)
             currentTextStickerView?.hideTextBorder(isHide: true)
+            currentTextStickerView?.bcColor = color
         }
     }
     
@@ -327,7 +336,13 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                     cell.gradietImv.isHidden = false
                     cell.holderView.backgroundColor = UIColor.clear
                 }
-                else if let colorString = plistArray[indexPath.row - 1] as? String {
+                else if indexPath.row == 1 {
+                    cell.gradietImv.image = UIImage(named: "no-color")
+                    cell.gradietImv.isHidden = false
+                    cell.holderView.backgroundColor = UIColor.clear
+
+                }
+                else if let colorString = plistArray[indexPath.row - 2] as? String {
                     cell.holderView.backgroundColor = getColor(colorString: colorString)
                     cell.gradietImv.isHidden = true
                 }
@@ -431,10 +446,18 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                     })
                     
                 }
+                else if indexPath.row == 1 {
+                    
+                    currentTextStickerView?.bcColor = ""
+                    currentTextStickerView?.backgroundColor = UIColor.clear
+                    currentTextStickerView?.hideTextBorder(isHide: false)
+                    
+                }
                 
-                else if let colorString = plistArray[indexPath.row - 1] as? String {
+                else if let colorString = plistArray[indexPath.row - 2] as? String {
                     currentTextStickerView?.backgroundColor = getColor(colorString: colorString)
                     currentTextStickerView?.hideTextBorder(isHide: true)
+                    currentTextStickerView?.bcColor = colorString
                 }
                 
             }
