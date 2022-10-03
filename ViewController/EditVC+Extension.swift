@@ -68,6 +68,24 @@ extension EditVc {
             
             let fontSize = Double(textObj.fontSize)!
             let bacground = textObj.bcColor
+            let gradient = Int(textObj.bcGradient)!
+            
+            if gradient >= 0 {
+                
+                  if let objArray = plistArray1[gradient] as? NSArray {
+                    var allcolors: [CGColor] = []
+                    for item in objArray {
+                        let color = getColor(colorString: item as? String ?? "")
+                        allcolors.append(color.cgColor)
+                    }
+                    
+                    let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                    sticker.backgroundColor = UIColor(patternImage: uimage)
+                    sticker.bcGradient = gradient
+                    
+                    
+                }
+            }
             
             if bacground.count > 1 {
                 
@@ -312,6 +330,11 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
         if collectionView == collectionViewForBackGround {
             if currentBackGroundIndex == 0 {
                 return plistArray.count + 1
+            }else if currentBackGroundIndex == 1 {
+                return plistArray1.count + 1
+            }
+            else {
+                return 23
             }
         }
         
@@ -351,9 +374,17 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             
             if currentBackGroundIndex == 1 {
                 
+                   if indexPath.row == 0 {
+                    cell.gradietImv.image = UIImage(named: "no-color")
+                    cell.gradietImv.isHidden = false
+                    cell.holderView.backgroundColor = UIColor.clear
+                    return cell
+
+                }
+                
                 cell.gradietImv.image = nil
                 cell.gradietImv.isHidden = false
-                if let objArray = plistArray1[indexPath.row] as? NSArray {
+                if let objArray = plistArray1[indexPath.row - 1] as? NSArray {
                     var allcolors: [CGColor] = []
                     for item in objArray {
                         let color = getColor(colorString: item as? String ?? "")
@@ -430,8 +461,9 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             }
         
             if currentBackGroundIndex == 0 {
+                currentTextStickerView?.bcTexture = -1
+                currentTextStickerView?.bcGradient = -1
                 if indexPath.row == 0 {
-                    
                     isFromTextColor = false
                     self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
 
@@ -462,9 +494,18 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
             }
             if currentBackGroundIndex == 1 {
-                
+                currentTextStickerView?.currentColorSting = ""
+                currentTextStickerView?.bcTexture = -1
+                if indexPath.row == 0 {
+                    currentTextStickerView?.backgroundColor = UIColor.clear
+                    currentTextStickerView?.bcGradient = -1
+                    currentTextStickerView?.hideTextBorder(isHide: false)
+                    return
+                }
+ 
                 currentTextStickerView?.hideTextBorder(isHide: true)
-                if let objArray = plistArray1[indexPath.row] as? NSArray {
+                currentTextStickerView?.bcGradient = indexPath.row - 1
+                if let objArray = plistArray1[indexPath.row-1] as? NSArray {
                     var allcolors: [CGColor] = []
                     for item in objArray {
                         let color = getColor(colorString: item as? String ?? "")
@@ -478,6 +519,8 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
             }
             if currentBackGroundIndex == 2 {
+                currentTextStickerView?.bcGradient = -1
+                currentTextStickerView?.bcTexture = -1
                 currentTextStickerView?.hideTextBorder(isHide: true)
                 let value = UIImage(named: "Texture" + "\(indexPath.row)")
                 currentTextStickerView?.backgroundColor = UIColor(patternImage: value!)

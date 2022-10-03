@@ -550,6 +550,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.align = "\(ma.align)"
                     objV.rotate = "\(ma.rotate)"
                     objV.bcColor = "\(ma.bcColor)"
+                    objV.bcGradient = "\(ma.bcGradient)"
+                    objV.texture = "\(ma.bcTexture)"
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
@@ -646,6 +648,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.align = "\(ma.align)"
                     objV.rotate = "\(ma.rotate)"
                     objV.bcColor = "\(ma.bcColor)"
+                    objV.bcGradient = "\(ma.bcGradient)"
+                    objV.bcTexture = "\(ma.bcTexture)"
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
