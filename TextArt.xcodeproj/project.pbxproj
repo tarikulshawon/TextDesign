@@ -138,8 +138,9 @@
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
 		01B0DFD628D650A000081369 /* Sale in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD528D650A000081369 /* Sale */; };
-		01B0DFD828D650A900081369 /* Transport in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD728D650A900081369 /* Transport */; };
 		01B0DFDA28D650FF00081369 /* Marketing in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD928D650FF00081369 /* Marketing */; };
+		01BA624B28ED53B300B46931 /* Shopping in Resources */ = {isa = PBXBuildFile; fileRef = 01BA624A28ED53B300B46931 /* Shopping */; };
+		01BA624D28ED540000B46931 /* Transport in Resources */ = {isa = PBXBuildFile; fileRef = 01BA624C28ED540000B46931 /* Transport */; };
 		01BF245A69A207B6269021C1 /* Pods_TextArt_TextArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F47C02AFE36153731A9995 /* Pods_TextArt_TextArtUITests.framework */; };
 		01E9232B28D7197500F21554 /* wallpapers.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E9232A28D7197500F21554 /* wallpapers.json */; };
 		01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9232C28D7231700F21554 /* ImageDetails.swift */; };
@@ -396,8 +397,9 @@
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
 		01B0DFD528D650A000081369 /* Sale */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sale; sourceTree = "<group>"; };
-		01B0DFD728D650A900081369 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Transport; sourceTree = "<group>"; };
 		01B0DFD928D650FF00081369 /* Marketing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Marketing; sourceTree = "<group>"; };
+		01BA624A28ED53B300B46931 /* Shopping */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shopping; path = "../../../../../Downloads/Transport,Shopping/Shopping"; sourceTree = "<group>"; };
+		01BA624C28ED540000B46931 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Transport; path = "../../../../../Downloads/Transport,Shopping 4/Transport"; sourceTree = "<group>"; };
 		01E9232A28D7197500F21554 /* wallpapers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wallpapers.json; sourceTree = "<group>"; };
 		01E9232C28D7231700F21554 /* ImageDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		01EDA06728E929F90087D7E8 /* Comic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Comic; sourceTree = "<group>"; };
@@ -811,6 +813,8 @@
 		39CC0E2C28A4AF3F00DF1C64 /* Sticker */ = {
 			isa = PBXGroup;
 			children = (
+				01BA624C28ED540000B46931 /* Transport */,
+				01BA624A28ED53B300B46931 /* Shopping */,
 				01EDA06728E929F90087D7E8 /* Comic */,
 				011F934128E3567B0090B44E /* Education */,
 				011F933F28E356670090B44E /* Quotes */,
@@ -818,7 +822,6 @@
 				012FA0BB28DA02C000E44786 /* Fruits */,
 				012FA0A728DA028F00E44786 /* Nature */,
 				01B0DFD928D650FF00081369 /* Marketing */,
-				01B0DFD728D650A900081369 /* Transport */,
 				01B0DFD528D650A000081369 /* Sale */,
 				01B0DFD328D6508000081369 /* FastFood */,
 				01B0DFD128D6506B00081369 /* Paper */,
@@ -1186,6 +1189,7 @@
 				01219B4C28DEBC6B00133E56 /* OverlayThumb7.png in Resources */,
 				019BC4ED28E026F400B15323 /* FrameThumb25.png in Resources */,
 				019BC4FB28E026F400B15323 /* FrameThumb11.png in Resources */,
+				01BA624D28ED540000B46931 /* Transport in Resources */,
 				3949338628AB347F003E8D67 /* Texture3.png in Resources */,
 				019BC4F828E026F400B15323 /* FrameThumb13.png in Resources */,
 				01219B7128DEBC6B00133E56 /* OverlayThumb49.png in Resources */,
@@ -1254,6 +1258,7 @@
 				39CC0E3628A4AF6600DF1C64 /* Arrows in Resources */,
 				01B0DFD428D6508000081369 /* FastFood in Resources */,
 				019BC53A28E027FC00B15323 /* FrameVc.xib in Resources */,
+				01BA624B28ED53B300B46931 /* Shopping in Resources */,
 				01EDA06828E929F90087D7E8 /* Comic in Resources */,
 				39CC0DFC28A4A3B900DF1C64 /* Polygon.png in Resources */,
 				01219B6328DEBC6B00133E56 /* OverlayThumb27.png in Resources */,
@@ -1283,7 +1288,6 @@
 				019BC53428E0270A00B15323 /* F12.jpg in Resources */,
 				01219B4E28DEBC6B00133E56 /* OverlayThumb45.png in Resources */,
 				3949338428AB347F003E8D67 /* Texture12.png in Resources */,
-				01B0DFD828D650A900081369 /* Transport in Resources */,
 				39CC0E1C28A4AADE00DF1C64 /* StickerVc.xib in Resources */,
 				019BC4F628E026F400B15323 /* FrameThumb16.png in Resources */,
 				39CC0E1928A4AAC500DF1C64 /* ShapeVc.xib in Resources */,
