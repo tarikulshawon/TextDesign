@@ -390,6 +390,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                         if self.currentFilterDic != nil {
                             self.mainImv.image = getFilteredImage(withInfo: self.currentFilterDic, for: processedImage)
                         } else {
+                            // Memory warning
                             self.mainImv.image = processedImage
                         }
                     }
