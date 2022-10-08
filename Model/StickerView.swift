@@ -60,7 +60,7 @@ public class StickerView: UIView {
     var contrast =  1.0
     var saturation = 1.0
     var sharpen  = 0.0
-    var radius = 0.0
+    var border = 0.0
 
     
     public var delegate: StickerViewDelegate!

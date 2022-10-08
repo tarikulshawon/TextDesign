@@ -20,4 +20,9 @@ class StickerValueObj  {
     var centerx = "0"
     var centery = "0"
     var opacity = "1"
+    var brightness = "1"
+    var contrast =  "1"
+    var saturation = "1"
+    var sharpen  = "1"
+    var border = "1"
 }

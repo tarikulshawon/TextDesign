@@ -137,7 +137,7 @@ class DBmanager: NSObject {
     }
     
     func updateStickerData(id: String,fileObj: StickerValueObj) {
-        let createTable = "UPDATE StickerInfo SET x='\(fileObj.x)', y='\(fileObj.y)', width='\(fileObj.width)',height='\(fileObj.height)',inset='\(fileObj.inset)',centerx='\(fileObj.centerx)',centery='\(fileObj.centery)',opacity='\(fileObj.opacity)' WHERE id='\(id)'"
+        let createTable = "UPDATE StickerInfo SET x='\(fileObj.x)', y='\(fileObj.y)', width='\(fileObj.width)',height='\(fileObj.height)',inset='\(fileObj.inset)',centerx='\(fileObj.centerx)',centery='\(fileObj.centery)',opacity='\(fileObj.opacity)',brightness='\(fileObj.brightness)',saturation='\(fileObj.saturation)',sharpen='\(fileObj.sharpen)',contrast='\(fileObj.contrast)',border='\(fileObj.border)' WHERE id='\(id)'"
         
         if (sqlite3_open(DBpath, &db)==SQLITE_OK) {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -170,7 +170,7 @@ class DBmanager: NSObject {
     
     
     func insertStickerile(fileObj: StickerValueObj) {
-        let insertData = "INSERT INTO StickerInfo (FileName,x,y,width,height,inset,type,pathName,centerx,centery,opacity) VALUES  ('\(fileObj.fileName)','\(fileObj.x)','\(fileObj.y)','\(fileObj.width)','\(fileObj.height)','\(fileObj.inset)','\(fileObj.type)','\(fileObj.pathName)','\(fileObj.centerx)','\(fileObj.centery)','\(fileObj.opacity)')"
+        let insertData = "INSERT INTO StickerInfo (FileName,x,y,width,height,inset,type,pathName,centerx,centery,opacity,border,sharpen,contrast,brightness,saturation) VALUES  ('\(fileObj.fileName)','\(fileObj.x)','\(fileObj.y)','\(fileObj.width)','\(fileObj.height)','\(fileObj.inset)','\(fileObj.type)','\(fileObj.pathName)','\(fileObj.centerx)','\(fileObj.centery)','\(fileObj.opacity)','\(fileObj.border)','\(fileObj.sharpen)','\(fileObj.contrast)','\(fileObj.brightness)','\(fileObj.saturation)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -263,7 +263,7 @@ class DBmanager: NSObject {
         var mutableArray = [StickerValueObj]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT id,FileName,x,y,width,height,inset,type,pathName,centerx,centery,opacity FROM StickerInfo where FileName = \(fileName)"
+        let stmt =  "SELECT id,FileName,x,y,width,height,inset,type,pathName,centerx,centery,opacity,border,sharpen,contrast,brightness,saturation FROM StickerInfo where FileName = \(fileName)"
         if (sqlite3_open(DBpath, &db)==SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -281,6 +281,12 @@ class DBmanager: NSObject {
                     let ov1 =      sqlite3_column_text(queryStatement, 9)
                     let ov2 =      sqlite3_column_text(queryStatement, 10)
                     let op =      sqlite3_column_text(queryStatement, 11)
+                    
+                    let border =      sqlite3_column_text(queryStatement, 11)
+                    let sharpen =      sqlite3_column_text(queryStatement, 12)
+                    let contrast =      sqlite3_column_text(queryStatement, 13)
+                    let brightness =      sqlite3_column_text(queryStatement, 14)
+                    let saturation =      sqlite3_column_text(queryStatement, 15)
 
                     obj.id = String(cString: id!)
                     obj.fileName = String(cString: OverLay!)
@@ -294,6 +300,12 @@ class DBmanager: NSObject {
                     obj.centerx = String(cString: ov1!)
                     obj.centery =  String(cString: ov2!)
                     obj.opacity =  String(cString: op!)
+                    obj.border =  String(cString: border!)
+                    obj.sharpen =  String(cString: sharpen!)
+                    obj.contrast =  String(cString: contrast!)
+                    obj.brightness =  String(cString: brightness!)
+                    obj.saturation =  String(cString: saturation!)
+
                     
                     mutableArray.append(obj)
                 }

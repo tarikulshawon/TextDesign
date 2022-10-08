@@ -516,6 +516,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.fileName = "\(imageInfoObj.id)"
                     obj.centerx = "\(ma.center.x)"
                     obj.centery = "\(ma.center.y)"
+                    obj.saturation = "\(ma.saturation)"
+                    obj.contrast = "\(ma.contrast)"
+                    obj.sharpen = "\(ma.sharpen)"
+                    obj.border = "\(ma.border)"
+                    obj.border = "\(ma.brightness)"
+                    
+                    
                     print(obj)
                     if ma.tag > 0 {
                         DBmanager.shared.updateStickerData(id: "\(ma.tag)", fileObj: obj)
@@ -616,6 +623,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centery = "\(ma.center.y)"
                     print("Sticker info: \(obj)")
                     obj.opacity = "\(ma.opacity)"
+                    obj.saturation = "\(ma.saturation)"
+                    obj.contrast = "\(ma.contrast)"
+                    obj.sharpen = "\(ma.sharpen)"
+                    obj.border = "\(ma.border)"
+                    obj.border = "\(ma.brightness)"
                     DBmanager.shared.insertStickerile(fileObj: obj)
                     
                 case is TextStickerContainerView:
