@@ -310,7 +310,5 @@ extension FirstVc{
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
     
-    
-    
-    
 }
+

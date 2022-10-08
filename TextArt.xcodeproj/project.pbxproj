@@ -139,6 +139,9 @@
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
 		01B0DFD628D650A000081369 /* Sale in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD528D650A000081369 /* Sale */; };
 		01B0DFDA28D650FF00081369 /* Marketing in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD928D650FF00081369 /* Marketing */; };
+		01B73E9D28F15029008B8D7A /* SettingVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B73E9C28F15028008B8D7A /* SettingVc.swift */; };
+		01B73EA028F1504D008B8D7A /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B73E9E28F1504C008B8D7A /* SettingCell.swift */; };
+		01B73EA128F1504D008B8D7A /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B73E9F28F1504D008B8D7A /* SettingCell.xib */; };
 		01BA624F28ED61B100B46931 /* Transport in Resources */ = {isa = PBXBuildFile; fileRef = 01BA624E28ED61B000B46931 /* Transport */; };
 		01BA625728ED62E800B46931 /* Shopping in Resources */ = {isa = PBXBuildFile; fileRef = 01BA625628ED62E800B46931 /* Shopping */; };
 		01BF245A69A207B6269021C1 /* Pods_TextArt_TextArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F47C02AFE36153731A9995 /* Pods_TextArt_TextArtUITests.framework */; };
@@ -398,6 +401,9 @@
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
 		01B0DFD528D650A000081369 /* Sale */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sale; sourceTree = "<group>"; };
 		01B0DFD928D650FF00081369 /* Marketing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Marketing; sourceTree = "<group>"; };
+		01B73E9C28F15028008B8D7A /* SettingVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVc.swift; sourceTree = "<group>"; };
+		01B73E9E28F1504C008B8D7A /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		01B73E9F28F1504D008B8D7A /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		01BA624E28ED61B000B46931 /* Transport */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Transport; sourceTree = "<group>"; };
 		01BA625628ED62E800B46931 /* Shopping */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shopping; sourceTree = "<group>"; };
 		01E9232A28D7197500F21554 /* wallpapers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wallpapers.json; sourceTree = "<group>"; };
@@ -901,6 +907,7 @@
 		39F8225528A3510E008925EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				01B73E9C28F15028008B8D7A /* SettingVc.swift */,
 				01219B7D28DF39EE00133E56 /* TextEditViewController.swift */,
 				0105428528D86CA30004A516 /* ExampleCropViewController.swift */,
 				0105428328D860040004A516 /* CropVc.swift */,
@@ -972,6 +979,8 @@
 		39F8228328A36582008925EF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				01B73E9E28F1504C008B8D7A /* SettingCell.swift */,
+				01B73E9F28F1504D008B8D7A /* SettingCell.xib */,
 				39CC0E0728A4A82C00DF1C64 /* RatioCell.swift */,
 				39CC0E0628A4A82C00DF1C64 /* RatioCell.xib */,
 				39CC0DF028A4A33C00DF1C64 /* CategoryCell.swift */,
@@ -1302,6 +1311,7 @@
 				019BC4EA28E026F400B15323 /* FrameThumb7.png in Resources */,
 				01219B6A28DEBC6B00133E56 /* OverlayThumb14.png in Resources */,
 				019BC52428E0270A00B15323 /* F27.jpg in Resources */,
+				01B73EA128F1504D008B8D7A /* SettingCell.xib in Resources */,
 				01219B4728DEBC6B00133E56 /* OverlayThumb3.png in Resources */,
 				019BC4F228E026F400B15323 /* FrameThumb15.png in Resources */,
 				39CC0E0828A4A82C00DF1C64 /* RatioCell.xib in Resources */,
@@ -1495,6 +1505,7 @@
 				39F8226B28A36105008925EF /* SecondVc.swift in Sources */,
 				39F8226F28A3616A008925EF /* ThirdVc.swift in Sources */,
 				39CC0E0528A4A6FE00DF1C64 /* CustomSlider.swift in Sources */,
+				01B73EA028F1504D008B8D7A /* SettingCell.swift in Sources */,
 				39F8222628A3505C008925EF /* AppDelegate.swift in Sources */,
 				01FD5ADD28AED4BD00CBF70F /* TextInfoData.swift in Sources */,
 				01FD5AD828AE52C700CBF70F /* UIColor+ExtensionOfTextSticker.swift in Sources */,
@@ -1503,6 +1514,7 @@
 				39F8222828A3505C008925EF /* SceneDelegate.swift in Sources */,
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,
+				01B73E9D28F15029008B8D7A /* SettingVc.swift in Sources */,
 				01FD5AD228AE52AE00CBF70F /* PanControllerImageView.swift in Sources */,
 				011F93CB28E372390090B44E /* UIColor+Extension.swift in Sources */,
 				3949331728AB2D0E003E8D67 /* StickerView.swift in Sources */,

@@ -78,7 +78,15 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         super.viewWillAppear(animated)
         
     }
-
+    
+    
+    @IBAction func gotoSettings(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: SettingVc = storyboard.instantiateViewController(withIdentifier: "SettingVc") as! SettingVc
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     @objc private func targetMethod1() {
         
         lineView =  UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

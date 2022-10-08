@@ -491,7 +491,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         if isfromUpdate {
             DBmanager.shared.updateTableData(id: imageInfoObj.id, fileObj: imageInfoObj)
             let images = screenSortView.takeScreenshot()
-            createFile(fileName: "FileNameS" + "\(imageInfoObj.id)" + ".jpg",cropImage: images)
+            createFile(fileName: "FileNameS" + "\(imageInfoObj.id)" + ".jpg",cropImage: images.resizeImage(targetSize: CGSize(width: 300, height: 300)))
             
             for (index,view) in (screenSortView.subviews.filter{($0 is StickerView) || ($0 is TextStickerContainerView)}).enumerated(){
                 print(index)
