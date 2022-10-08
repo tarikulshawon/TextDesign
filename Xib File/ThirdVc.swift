@@ -1,17 +1,15 @@
-//
-//  ThirdVc.swift
-//  PosterMaker
-//
-//  Created by m-sagor-sikdar on 18/12/21.
-//
-
 import UIKit
 
+enum SegmentType: CaseIterable, Equatable {
+    case color
+    case gradient
+}
+
 class ThirdVc: UIView {
-    
-    var plistArray:NSArray!
-    var plistArray1:NSArray!
-    var selectedIndex = 0
+    var colorList: NSArray!
+    var gradientList: NSArray!
+    var selectedSegment = SegmentType.color
+    let segments = SegmentType.allCases
     
     @IBOutlet weak var collectionViewForColor: UICollectionView!
 
@@ -19,29 +17,26 @@ class ThirdVc: UIView {
         super.awakeFromNib()
         
         let path = Bundle.main.path(forResource: "colorp", ofType: "plist")
-        plistArray = NSArray(contentsOfFile: path!)
+        colorList = NSArray(contentsOfFile: path!)
         
         let path1 = Bundle.main.path(forResource: "gradient", ofType: "plist")
-        plistArray1 = NSArray(contentsOfFile: path1!)
-        print(plistArray1.count)
+        gradientList = NSArray(contentsOfFile: path1!)
+        print(gradientList.count)
         
         let nibName = UINib(nibName: ColorCell.reusableID, bundle: nil)
         collectionViewForColor.register(nibName, forCellWithReuseIdentifier:  ColorCell.reusableID)
         collectionViewForColor.delegate = self
         collectionViewForColor.dataSource = self
-        
     }
 
     @IBAction func segmentValueChange(_ sender: UISegmentedControl) {
-        selectedIndex = sender.selectedSegmentIndex
+        selectedSegment = segments[sender.selectedSegmentIndex]
         collectionViewForColor.reloadData()
-        
     }
 }
 
 
-extension ThirdVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
-{
+extension ThirdVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -53,68 +48,64 @@ extension ThirdVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if selectedIndex == 0 {
-            return  100
-        }
-        return plistArray1.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch selectedSegment {
+        case .color:
+            return colorList.count
+        case .gradient:
+            return gradientList.count
+        }
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        let mainViewWidth = UIScreen.main.bounds.width
+        let viewWidth = (mainViewWidth - 4 * 10) / 3
+        let height = (viewWidth * 2500) / 1500
         
-        let screenSize = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let mainViewWidth = screenWidth;
-        let ViewWidth=(mainViewWidth-4*10)/3;
-        let height = (ViewWidth*2500)/1500
-        return CGSize(width: ViewWidth, height: height)
-        
+        return CGSize(width: viewWidth, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reusableID  , for: indexPath as IndexPath) as! ColorCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reusableID, for: indexPath as IndexPath) as! ColorCell
         
-        if let colorString = plistArray[indexPath.row] as? String,selectedIndex == 0 {
-            
+        if let colorString = colorList[indexPath.row] as? String, selectedSegment == .color {
             cell.gradietImv.isHidden = true
             cell.holderView.backgroundColor = getColor(colorString: colorString)
-            
         }
         else {
-            
             cell.gradietImv.isHidden = false
-            if let objArray = plistArray1[indexPath.row] as? NSArray {
+            if let objArray = gradientList[indexPath.row] as? NSArray {
                 var allcolors: [CGColor] = []
                 for item in objArray {
                     let color = getColor(colorString: item as? String ?? "")
                     allcolors.append(color.cgColor)
                 }
                 
-                let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 800,height: 800), colors: allcolors)
+                let uimage = UIImage.gradientImageWithBounds(
+                    bounds: CGRect(x: 0, y: 0, width: 800, height: 800),
+                    colors: allcolors
+                )
+                
                 cell.gradietImv.contentMode = .scaleAspectFill
                 cell.gradietImv.image = uimage
-                
             }
         }
+        
         cell.layer.cornerRadius = 10.0
         return cell
-        
-        
-        
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         var mainImage:UIImage!
-        if selectedIndex != 0 {
-            if let objArray = plistArray1[indexPath.row] as? NSArray {
+        if selectedSegment != .color {
+            if let objArray = gradientList[indexPath.row] as? NSArray {
                 var allcolors: [CGColor] = []
                 for item in objArray {
                     let color = getColor(colorString: item as? String ?? "")
@@ -125,8 +116,7 @@ extension ThirdVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
                 
             }
         } else {
-            if let colorString = plistArray[indexPath.row] as? String,selectedIndex == 0 {
-                
+            if let colorString = colorList[indexPath.row] as? String, selectedSegment == .color {
                 let colorF  = getColor(colorString: colorString)
                 mainImage = colorF.image(CGSize(width: 1000, height: 1000))
             }

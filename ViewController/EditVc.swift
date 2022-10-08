@@ -237,6 +237,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         screenSortView.addGestureRecognizer(tap)
         
         mainImv.image = mainImage
+    
+        print("TEST: \(malloc_size(Unmanaged.passUnretained(mainImage).toOpaque()))")
         mainImv.contentMode = .scaleAspectFit
         
         if isfromUpdate {
@@ -249,8 +251,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         DoAdjustMent(inputImage: mainImage)
         
         if isfromUpdate {
-            
-            
             stickerObjList = DBmanager.shared.getStickerInfo(fileName: imageInfoObj.id)
             let defaults = UserDefaults.standard
             if let data2 = defaults.object(forKey: imageInfoObj.id) as? NSData {
@@ -305,23 +305,18 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     func updateHeight (heightNeedToBeRemoved: CGFloat) {
-        
-        
         widthForImv.constant = HolderView.frame.width
         heightForImv.constant = HolderView.frame.height - heightNeedToBeRemoved
         
         print(HolderView.frame.width)
         print(HolderView.frame.height)
         print(mainImage.size)
-        
+        print(malloc_size(Unmanaged.passUnretained(mainImage).toOpaque()))
         
         var size = AVMakeRect(aspectRatio: mainImage!.size, insideRect: CGRect(x: 0, y: 0, width:  widthForImv.constant, height:   heightForImv.constant))
         
         widthForImv.constant = size.width
         heightForImv.constant = size.height
-        
-        
-        
     }
     
     func getFileUrlWithName(fileName: String) -> NSURL {
@@ -339,15 +334,14 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         return  fileURL
     }
     
-    func  DoAdjustMent (inputImage:UIImage)
-    {
+    func DoAdjustMent(inputImage: UIImage) {
         let context = CIContext(options: nil)
         if let currentFilter = CIFilter(name:"CIColorControls") {
             let beginImage = CIImage(image: inputImage)
             
             currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
             currentFilter.setValue(Brightness, forKey: kCIInputBrightnessKey)
-            currentFilter.setValue(Saturation, forKey:kCIInputSaturationKey)
+            currentFilter.setValue(Saturation, forKey: kCIInputSaturationKey)
             currentFilter.setValue(Contrast, forKey: kCIInputContrastKey)
             
             if let output = currentFilter.outputImage {
@@ -359,11 +353,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
     }
-    func  sharpenValue (inputImage:UIImage)
-    {
-        
-        
-        
+    
+    func sharpenValue (inputImage:UIImage) {
         let context = CIContext(options: nil)
         
         if let currentFilter = CIFilter(name:"CISharpenLuminance") {
@@ -382,37 +373,27 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
-    func  hueAdjust (inputImage:UIImage)
-    {
-        
-        
-        
+    func hueAdjust(inputImage: UIImage) {
         let context = CIContext(options: nil)
         
-        if let currentFilter = CIFilter(name:"CIHueAdjust") {
+        if let currentFilter = CIFilter(name: "CIHueAdjust") {
             let beginImage = CIImage(image: inputImage)
             
             currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
             currentFilter.setValue(hue, forKey: "inputAngle")
             
-            
-            
             if let output = currentFilter.outputImage {
                 if let cgimg = context.createCGImage(output, from: output.extent) {
                     let processedImage = UIImage(cgImage: cgimg)
-                    
-                    DispatchQueue.main.async { [self] in
-                        
-                        if let value = self.currentFilterDic {
-                            self.mainImv.image = getFilteredImage(withInfo: currentFilterDic, for: processedImage)
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        if self.currentFilterDic != nil {
+                            self.mainImv.image = getFilteredImage(withInfo: self.currentFilterDic, for: processedImage)
                         } else {
+                            // Memory warning
                             self.mainImv.image = processedImage
                         }
-                        
-                        
                     }
-                    
-                    
                 }
             }
         }
