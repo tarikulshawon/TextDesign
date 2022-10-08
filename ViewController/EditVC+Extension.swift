@@ -69,6 +69,12 @@ extension EditVc {
             let fontSize = Double(textObj.fontSize)!
             let bacground = textObj.bcColor
             let gradient = Int(textObj.bcGradient)!
+            let texture = Int(textObj.bcTexture)!
+            
+            if texture >= 0 {
+                var value =  "Texture" + String(texture) + ".png"
+                sticker.backgroundColor = UIColor(patternImage: UIImage(named: value)!)
+            }
             
             if gradient >= 0 {
                 
@@ -400,8 +406,14 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             }
             
             if currentBackGroundIndex == 2 {
+                if indexPath.row == 0 {
+                    cell.gradietImv.image = UIImage(named: "no-color")
+                    cell.gradietImv.isHidden = false
+                    cell.holderView.backgroundColor = UIColor.clear
+                    return cell
+                }
                 cell.gradietImv.isHidden = false
-                cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row)")
+                cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row - 1)")
             }
             cell.layer.cornerRadius = cell.frame.height/2.0
             return cell
@@ -519,10 +531,20 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
             }
             if currentBackGroundIndex == 2 {
+                if indexPath.row == 0 {
+                    
+                    currentTextStickerView?.backgroundColor = UIColor.clear
+                    currentTextStickerView?.bcGradient = -1
+                    currentTextStickerView?.bcTexture = -1
+                    currentTextStickerView?.bcColor = ""
+                    currentTextStickerView?.hideTextBorder(isHide: false)
+                    return
+                }
+                
                 currentTextStickerView?.bcGradient = -1
-                currentTextStickerView?.bcTexture = -1
+                currentTextStickerView?.bcTexture = indexPath.row - 1
                 currentTextStickerView?.hideTextBorder(isHide: true)
-                let value = UIImage(named: "Texture" + "\(indexPath.row)")
+                let value = UIImage(named: "Texture" + "\(indexPath.row - 1)")
                 currentTextStickerView?.backgroundColor = UIColor(patternImage: value!)
             }
             return
