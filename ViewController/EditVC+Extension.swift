@@ -621,6 +621,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             if btnValue == BtnName.Overlay.rawValue {
                 let p = self.bottomSpaceForOverlay.constant < 0 ? 0 : -1000
                 
+                
                 if p == 0 {
                     currentlyActiveIndex = BtnNameInt.Overlay.rawValue
                 } else {
@@ -637,6 +638,9 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameInt.Image.rawValue
+                    var btn1 = imageEditView.btnScrollView.viewWithTag(701) as? UIButton
+                    imageEditView.buttonAction(sender: btn1)
+                    
                 } else {
                     currentlyActiveIndex = -1
                 }
