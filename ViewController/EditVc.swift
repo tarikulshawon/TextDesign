@@ -19,6 +19,8 @@ protocol callDelegate: AnyObject {
 class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust, sendImageDelegate {
     
     
+    
+    
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
@@ -124,6 +126,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     func sendImage() {
         self.processSnapShotPhotos()
+    }
+    
+    func chnageBrightness(value: Float) {
+        if currentStickerView?.pathType == "Image" {
+            
+        }
     }
     
     func changeImageOpacity(value: Float) {

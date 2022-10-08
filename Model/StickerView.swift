@@ -56,6 +56,12 @@ public class StickerView: UIView {
     var pathName:String!
     var pathType:String!
     var opacity  = 1.0
+    var brightness = 0.0
+    var contrast =  1.0
+    var saturation = 1.0
+    var sharpen  = 0.0
+    var radius = 0.0
+
     
     public var delegate: StickerViewDelegate!
     /// The contentView inside the sticker view.

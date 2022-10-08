@@ -10,6 +10,7 @@ import UIKit
 protocol sendImageDelegate: AnyObject {
     func  sendImage()
     func changeImageOpacity(value:Float)
+    func chnageBrightness(value:Float)
 }
 
 class ImageEditView: UIView{
