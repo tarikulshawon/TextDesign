@@ -810,6 +810,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             if self.currentlyActiveIndex != BtnNameInt.Shape.rawValue {
                 bottomSapceForShape.constant = -1000
             }
+            if self.currentlyActiveIndex != BtnNameInt.Image.rawValue {
+                bottomSpaceForImageViewHolder.constant = -1000
+            }
             
             
             if currentlyActiveIndex >= 0 {
@@ -836,6 +839,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 }
                 if self.currentlyActiveIndex == BtnNameInt.Frames.rawValue {
                     bottomSpaceForFrame.constant = 0
+                }
+                if self.currentlyActiveIndex == BtnNameInt.Image.rawValue {
+                    bottomSpaceForImageViewHolder.constant = 0
                 }
             }
             self.view.layoutIfNeeded()

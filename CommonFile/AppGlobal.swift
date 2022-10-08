@@ -47,6 +47,7 @@ enum BtnName:String {
     case Quotes
     case Adjust
     case Filter
+    case Blur
     case Overlay
     case Image
     case Shape
@@ -59,6 +60,7 @@ enum BtnNameInt:Int {
     case Quotes
     case Adjust
     case Filter
+    case Blur
     case Overlay
     case Image
     case Shape

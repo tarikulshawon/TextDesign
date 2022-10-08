@@ -2,7 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>Image</string>
+	<string>Add Image</string>
+	<string>Blur</string>
 	<string>Color</string>
 	<string>Gradient</string>
 	<string>Texture</string>

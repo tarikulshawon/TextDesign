@@ -429,10 +429,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-2t-hos">
-                                        <rect key="frame" x="0.0" y="1656" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="1666" width="414" height="140"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="0mk-Nl-LxV"/>
+                                            <constraint firstAttribute="height" constant="140" id="0mk-Nl-LxV"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOD-cq-at6">
@@ -938,7 +938,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMB-cR-6m1">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="uOR-3b-dua">
                                         <connections>
@@ -982,7 +982,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-KW-7dt" customClass="HorizontalDial" customModule="HorizontalDial">
-                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5QA-EQ-bar"/>
@@ -1160,7 +1160,7 @@
         <!--Setting Vc-->
         <scene sceneID="nY5-J3-DHQ">
             <objects>
-                <viewController storyboardIdentifier="SettingVc" id="SO7-GK-ZdA" customClass="SettingVc" customModule="PosterMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVc" id="SO7-GK-ZdA" customClass="SettingVc" customModule="TextArt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTJ-6y-vdY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -630,6 +630,14 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 currentlyActiveIndex = BtnNameInt.Image.rawValue
                 self.processSnapShotPhotos()
                 
+                let p = self.bottomSpaceForImageViewHolder.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameInt.Image.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+                
                 
             }
             
@@ -652,8 +660,8 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 } else {
                     currentlyActiveIndex = -1
                 }
-                
             }
+            
             
             updateValue()
             
