@@ -724,6 +724,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             currentStickerView?.removeFromSuperview()
             currentStickerView = stickerView3
             currentStickerView?.showEditingHandlers = true
+            currentStickerView?.pathName = value.pathName
+            currentStickerView?.pathType = value.pathType
+
             stickerView3.setImage(UIImage.init(named: "Close")!, forHandler: StickerViewHandler.close)
             stickerView3.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
             stickerView3.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)
