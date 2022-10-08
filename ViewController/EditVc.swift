@@ -690,7 +690,29 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         selectedImage = selectedImage.resizeImage(targetSize: CGSize(width: 400, height: 400))
         
         if let value = currentStickerView {
+            
+            let x = value.transform.a
+            let y = value.transform.b
+            let width = value.bounds.size.width
+            let height = value.bounds.size.height
+            let inset =  11
+            var pathName = value.pathName
+            let centerx = value.center.x
+            let centery = value.center.y
+            let radians = atan2(CGFloat(y), CGFloat(x))
+            _ = radians * 180 / .pi
+            let center = CGPoint(x: Double(centerx) ?? 0, y: Double(centery) ?? 0)
+            let size = CGSize(width: CGFloat(width), height: CGFloat(height))
+            let padding = CGFloat(CGFloat(inset)) * 2.0
+            let testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: size.width - padding, height: size.height - padding))
+            testImage.image = selectedImage
+            testImage.center = center
+            let stickerView3 = StickerView.init(contentView: testImage)
+            stickerView3.tag = currentStickerView!.tag
+            screenSortView.addSubview(stickerView3)
+            stickerView3.showEditingHandlers = true
             createFile(fileName: value.pathName, cropImage: selectedImage)
+            currentStickerView?.removeFromSuperview()
             dismiss(animated: true)
             return
         }
