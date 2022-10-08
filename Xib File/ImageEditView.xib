@@ -34,8 +34,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRf-TD-CFG">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="245"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blur" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-Uk-i0o">
-                                                    <rect key="frame" x="25.5" y="113" width="29" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-Uk-i0o">
+                                                    <rect key="frame" x="12" y="113" width="56.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -50,6 +50,9 @@
                                         </view>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3nl-cx-w4m" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
                                             <rect key="frame" x="78" y="107.5" width="318" height="31"/>
+                                            <connections>
+                                                <action selector="sliderValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="qfO-aM-bwo"/>
+                                            </connections>
                                         </slider>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

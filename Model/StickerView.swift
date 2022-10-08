@@ -55,6 +55,7 @@ public class StickerView: UIView {
     var initCenter: CGPoint = .zero
     var pathName:String!
     var pathType:String!
+    var opacity  = 1.0
     
     public var delegate: StickerViewDelegate!
     /// The contentView inside the sticker view.

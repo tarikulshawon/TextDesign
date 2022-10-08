@@ -126,6 +126,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.processSnapShotPhotos()
     }
     
+    func changeImageOpacity(value: Float) {
+        if let valueF = currentStickerView {
+            valueF.alpha = CGFloat(value)
+            valueF.opacity = Double(value)
+        }
+    }
+    
     func sendAdjustValue(value: Float, index: Int) {
         print(value)
         print(index)

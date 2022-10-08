@@ -9,6 +9,7 @@ import UIKit
 
 protocol sendImageDelegate: AnyObject {
     func  sendImage()
+    func changeImageOpacity(value:Float)
 }
 
 class ImageEditView: UIView{
@@ -45,6 +46,11 @@ class ImageEditView: UIView{
         stickersScrollContents()
     }
     
+    
+    @IBAction func sliderValueChanged(_ sender: CustomSlider) {
+        print(sender.value)
+        delegateForImage?.changeImageOpacity(value: sender.value)
+    }
     
     @objc func buttonAction(sender: UIButton!) {
         
