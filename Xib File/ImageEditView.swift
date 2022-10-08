@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ImageEditView: UIView {
+protocol sendImageDelegate: AnyObject {
+    func  sendImage()
+}
+
+class ImageEditView: UIView{
     
     
     @IBOutlet weak var optionView: UIView!
@@ -18,6 +22,7 @@ class ImageEditView: UIView {
     let buttonWidth:CGFloat = 80.0
     var selectedBtIndex = 0
     let gapBetweenButtons: CGFloat = 7
+    weak var delegateForImage: sendImageDelegate?
 
 
 
@@ -39,6 +44,7 @@ class ImageEditView: UIView {
         plistAttayForTextEditOption = NSArray(contentsOfFile: path2!)
         stickersScrollContents()
     }
+    
     
     @objc func buttonAction(sender: UIButton!) {
         
@@ -67,7 +73,14 @@ class ImageEditView: UIView {
             btn?.setTitleColor(UIColor.white, for: .normal)
             
             DispatchQueue.main.async {
-                //self.collectionViewForTextControls.reloadData()
+                if sender.tag == 700 {
+                    btn?.setTitleColor(unselectedColor, for: .normal)
+                    var btn1 = self.btnScrollView.viewWithTag(701) as? UIButton
+                    self.buttonAction(sender: btn1)
+                    self.delegateForImage?.sendImage()
+                }
+                
+                
             }
             
             

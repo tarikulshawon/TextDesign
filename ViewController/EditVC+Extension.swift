@@ -36,6 +36,7 @@ extension EditVc {
                     testImage.image = image
                 }
             }
+            
         }
         
         if type1.contains("TEXT") {
@@ -170,7 +171,7 @@ extension EditVc {
             stickerView3.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)
             stickerView3.showEditingHandlers = false
             stickerView3.tag = Int(id)
-            
+            stickerView3.pathName = pathName
             stickerView3.transform = stickerView3.transform.rotated(by: radians)
             stickerView3.clipsToBounds = true
             screenSortView.clipsToBounds  = true
@@ -628,6 +629,7 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             }
             if btnValue == BtnName.Image.rawValue {
                 currentlyActiveIndex = BtnNameInt.Image.rawValue
+                self.hideALL()
                 self.processSnapShotPhotos()
                 
                 let p = self.bottomSpaceForImageViewHolder.constant < 0 ? 0 : -1000

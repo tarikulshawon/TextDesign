@@ -16,7 +16,9 @@ protocol callDelegate: AnyObject {
     func reloadAllData()
 }
 
-class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust {
+class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust, sendImageDelegate {
+    
+    
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
@@ -50,6 +52,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var heightForImv: NSLayoutConstraint!
     @IBOutlet weak var heightForShapeVc: NSLayoutConstraint!
     
+    
     @IBOutlet weak var slider1: UISlider!
     @IBOutlet weak var slider2: UISlider!
     @IBOutlet weak var slider3: UISlider!
@@ -62,6 +65,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var imageInfoObj = ImageInfoData()
     weak var delegateFor: callDelegate?
     var stickerObjList = [StickerValueObj]()
+    var currentStickerView: StickerView?
     
     var isfromUpdate = false
     var currentlyActiveIndex = -1
@@ -118,6 +122,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     var isFromTextColor = true
     
+    func sendImage() {
+        self.processSnapShotPhotos()
+    }
     
     func sendAdjustValue(value: Float, index: Int) {
         print(value)
@@ -666,6 +673,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
@@ -679,6 +688,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         selectedImage = selectedImage.makeFixOrientation()
         selectedImage = selectedImage.resizeImage(targetSize: CGSize(width: 400, height: 400))
+        
+        if let value = currentStickerView {
+            createFile(fileName: value.pathName, cropImage: selectedImage)
+            dismiss(animated: true)
+            return
+        }
         
         var deletedMailsCount = UserDefaults.standard.integer(forKey: "Image")
         deletedMailsCount += 1;
@@ -746,6 +761,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         overLayVcHolder.addSubview(overLayVc)
         
         imageEditView.frame = CGRect(x: 0,y: 0,width: imageViewHolder.frame.width,height: imageViewHolder.frame.height)
+        imageEditView.delegateForImage = self
         imageViewHolder.addSubview(imageEditView)
         
         
@@ -968,6 +984,9 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     }
     
     func hideALL() {
+        
+        
+        currentStickerView = nil
         for (index,view) in (screenSortView.subviews.filter{($0 is StickerView) || ($0 is TextStickerContainerView)}).enumerated(){
             switch view {
             case is StickerView:
@@ -997,15 +1016,37 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
 }
 
 extension EditVc: StickerViewDelegate {
-    func stickerViewDidBeginMoving(_ stickerView: StickerView) { }
-    func stickerViewDidChangeMoving(_ stickerView: StickerView) { }
-    func stickerViewDidEndMoving(_ stickerView: StickerView) { }
-    func stickerViewDidBeginRotating(_ stickerView: StickerView) { }
-    func stickerViewDidChangeRotating(_ stickerView: StickerView) { }
-    func stickerViewDidEndRotating(_ stickerView: StickerView) { }
-    func stickerViewDidClose(_ stickerView: StickerView) { }
+    func stickerViewDidBeginMoving(_ stickerView: StickerView) {
+        currentStickerView = stickerView
+        stickerView.showEditingHandlers = true
+    }
+    func stickerViewDidChangeMoving(_ stickerView: StickerView) {
+        currentStickerView = stickerView
+        stickerView.showEditingHandlers = true
+
+    }
+    func stickerViewDidEndMoving(_ stickerView: StickerView) {
+        currentStickerView = stickerView
+        stickerView.showEditingHandlers = true
+    }
+    func stickerViewDidBeginRotating(_ stickerView: StickerView) {
+        currentStickerView = stickerView
+        stickerView.showEditingHandlers = true
+    }
+    func stickerViewDidChangeRotating(_ stickerView: StickerView) {
+        currentStickerView = stickerView
+        stickerView.showEditingHandlers = true
+    }
+    func stickerViewDidEndRotating(_ stickerView: StickerView) {
+        currentStickerView = stickerView
+        stickerView.showEditingHandlers = true
+    }
+    func stickerViewDidClose(_ stickerView: StickerView) {
+        
+    }
     func stickerViewDidTap(_ stickerView: StickerView) {
         hideALL()
+        currentStickerView = stickerView
         stickerView.showEditingHandlers = true
     }
 }
