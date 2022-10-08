@@ -166,6 +166,7 @@ extension EditVc {
             stickerView3.backgroundColor = UIColor.clear
             stickerView3.center = center
             stickerView3.delegate = self
+            stickerView3.alpha =  CGFloat(Float(obj.opacity) ?? 1.0)
             stickerView3.setImage(UIImage.init(named: "Close")!, forHandler: StickerViewHandler.close)
             stickerView3.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
             stickerView3.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)

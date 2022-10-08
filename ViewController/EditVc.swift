@@ -502,7 +502,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.x = "\(ma.transform.a)"
                     obj.y = "\(ma.transform.b)"
                     obj.inset = "\(ma.defaultInset)"
-                    
+                    obj.opacity = "\(ma.opacity)"
                     obj.width = "\(ma.bounds.size.width)"
                     obj.height = "\(ma.bounds.size.height)"
                     obj.fileName = "\(imageInfoObj.id)"
@@ -607,6 +607,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.centerx = "\(ma.center.x)"
                     obj.centery = "\(ma.center.y)"
                     print("Sticker info: \(obj)")
+                    obj.opacity = "\(ma.opacity)"
                     DBmanager.shared.insertStickerile(fileObj: obj)
                     
                 case is TextStickerContainerView:

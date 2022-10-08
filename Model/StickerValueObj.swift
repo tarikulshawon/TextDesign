@@ -19,4 +19,5 @@ class StickerValueObj  {
     var pathName = "Image"
     var centerx = "0"
     var centery = "0"
+    var opacity = "1"
 }

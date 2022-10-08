@@ -137,7 +137,7 @@ class DBmanager: NSObject {
     }
     
     func updateStickerData(id: String,fileObj: StickerValueObj) {
-        let createTable = "UPDATE StickerInfo SET x='\(fileObj.x)', y='\(fileObj.y)', width='\(fileObj.width)',height='\(fileObj.height)',inset='\(fileObj.inset)',centerx='\(fileObj.centerx)',centery='\(fileObj.centery)' WHERE id='\(id)'"
+        let createTable = "UPDATE StickerInfo SET x='\(fileObj.x)', y='\(fileObj.y)', width='\(fileObj.width)',height='\(fileObj.height)',inset='\(fileObj.inset)',centerx='\(fileObj.centerx)',centery='\(fileObj.centery)',opacity='\(fileObj.opacity)' WHERE id='\(id)'"
         
         if (sqlite3_open(DBpath, &db)==SQLITE_OK) {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -170,7 +170,7 @@ class DBmanager: NSObject {
     
     
     func insertStickerile(fileObj: StickerValueObj) {
-        let insertData = "INSERT INTO StickerInfo (FileName,x,y,width,height,inset,type,pathName,centerx,centery) VALUES  ('\(fileObj.fileName)','\(fileObj.x)','\(fileObj.y)','\(fileObj.width)','\(fileObj.height)','\(fileObj.inset)','\(fileObj.type)','\(fileObj.pathName)','\(fileObj.centerx)','\(fileObj.centery)')"
+        let insertData = "INSERT INTO StickerInfo (FileName,x,y,width,height,inset,type,pathName,centerx,centery,opacity) VALUES  ('\(fileObj.fileName)','\(fileObj.x)','\(fileObj.y)','\(fileObj.width)','\(fileObj.height)','\(fileObj.inset)','\(fileObj.type)','\(fileObj.pathName)','\(fileObj.centerx)','\(fileObj.centery)','\(fileObj.opacity)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -263,7 +263,7 @@ class DBmanager: NSObject {
         var mutableArray = [StickerValueObj]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT id,FileName,x,y,width,height,inset,type,pathName,centerx,centery FROM StickerInfo where FileName = \(fileName)"
+        let stmt =  "SELECT id,FileName,x,y,width,height,inset,type,pathName,centerx,centery,opacity FROM StickerInfo where FileName = \(fileName)"
         if (sqlite3_open(DBpath, &db)==SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -280,6 +280,7 @@ class DBmanager: NSObject {
                     let ov =       sqlite3_column_text(queryStatement, 8)
                     let ov1 =      sqlite3_column_text(queryStatement, 9)
                     let ov2 =      sqlite3_column_text(queryStatement, 10)
+                    let op =      sqlite3_column_text(queryStatement, 11)
 
                     obj.id = String(cString: id!)
                     obj.fileName = String(cString: OverLay!)
@@ -292,6 +293,7 @@ class DBmanager: NSObject {
                     obj.pathName = String(cString: ov!)
                     obj.centerx = String(cString: ov1!)
                     obj.centery =  String(cString: ov2!)
+                    obj.opacity =  String(cString: op!)
                     
                     mutableArray.append(obj)
                 }
