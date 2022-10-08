@@ -719,6 +719,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             stickerView3.tag = currentStickerView!.tag
             screenSortView.addSubview(stickerView3)
             stickerView3.showEditingHandlers = true
+            stickerView3.center = center
             stickerView3.transform = stickerView3.transform.rotated(by: radians)
             createFile(fileName: value.pathName, cropImage: selectedImage)
             currentStickerView?.removeFromSuperview()

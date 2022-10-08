@@ -198,22 +198,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F9F16D31-3A51-4697-875B-36ADE2189E29"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
-            landmarkName = "viewDidDisappear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5DD496CC-9203-4453-A769-D629D746B59D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -878,7 +862,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FBC6D839-8CCF-4F60-AB83-456674AA1E7C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewController/EditVC+Extension.swift"
@@ -886,38 +870,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "updateSticker(obj:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4130D0E9-EE31-422B-BC8C-9EAFEA2AF7C6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "updateSticker(obj:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D55824D1-D745-461B-B7D1-5DB4A57B5FD6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
             landmarkName = "updateSticker(obj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1398,7 +1350,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "522"
                   endingLineNumber = "522"
-                  offsetFromSymbolStart = "5425">
+                  offsetFromSymbolStart = "5428">
                </Location>
                <Location
                   uuid = "195F1DA2-1F44-46A8-AB94-101B65439365 - de03f6f14521e0a4"
@@ -1413,7 +1365,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "522"
                   endingLineNumber = "522"
-                  offsetFromSymbolStart = "5957">
+                  offsetFromSymbolStart = "5960">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1558,7 +1510,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "470"
                   endingLineNumber = "470"
-                  offsetFromSymbolStart = "1243">
+                  offsetFromSymbolStart = "1246">
                </Location>
                <Location
                   uuid = "DCF3D0C8-4355-404D-87D1-15FB5CBE867D - c2d8a83f16db076c"
@@ -1763,42 +1715,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1089"
-            endingLineNumber = "1089"
-            landmarkName = "stickerViewDidTap(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FC3129D3-0F17-4F47-9C54-32C1DDE3700F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "updateSticker(obj:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "63BED30B-18B0-443B-86FD-42B7B990A7BB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "updateSticker(obj:)"
-            landmarkType = "7">
+            startingLineNumber = "1097"
+            endingLineNumber = "1097">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1877,6 +1795,102 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37C88BD7-29E1-442F-AE50-0F4D5237E4B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F87DF650-B9AA-42C7-AD66-E07F44FBC992"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDE2F386-798D-4AA7-95E6-22CF66257357"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "069D58D2-A8DD-4ED7-9B64-6259BA433A20"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA943D8D-0278-474B-9E24-D56BAFE1752A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5CA3D81-5B43-480E-945A-454EA43A5BB4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "updateSticker(obj:)"
             landmarkType = "7">
          </BreakpointContent>
