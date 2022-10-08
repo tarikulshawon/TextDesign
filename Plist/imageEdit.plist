@@ -4,9 +4,10 @@
 <array>
 	<string>Image</string>
 	<string>Opacity</string>
-	<string>Color</string>
-	<string>Gradient</string>
-	<string>Texture</string>
 	<string>Border</string>
+	<string>Brightness</string>
+	<string>Saturation</string>
+	<string>Contrast</string>
+	<string>Sharpen</string>
 </array>
 </plist>

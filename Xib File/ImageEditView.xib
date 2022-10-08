@@ -101,6 +101,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="optionView" destination="RPQ-Xf-5qw" id="bX9-m5-9GG"/>
+                <outlet property="titleLabel" destination="GRh-Uk-i0o" id="LU2-OH-KMe"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </view>

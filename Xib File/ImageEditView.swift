@@ -15,6 +15,7 @@ protocol sendImageDelegate: AnyObject {
 class ImageEditView: UIView{
     
     
+    @IBOutlet weak var collectionViewForBackGround: UICollectionView!
     @IBOutlet weak var optionView: UIView!
     var btnScrollView: UIScrollView!
     var tempViww:UIView!
@@ -24,9 +25,11 @@ class ImageEditView: UIView{
     var selectedBtIndex = 0
     let gapBetweenButtons: CGFloat = 7
     weak var delegateForImage: sendImageDelegate?
+    var currentIndex = 1
 
 
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
 
 
 
@@ -84,6 +87,31 @@ class ImageEditView: UIView{
                     var btn1 = self.btnScrollView.viewWithTag(701) as? UIButton
                     self.buttonAction(sender: btn1)
                     self.delegateForImage?.sendImage()
+                }
+                
+                if sender.tag == 701 {
+                    self.titleLabel.text = "Opacity"
+                    self.currentIndex = 1
+                }
+                else if sender.tag == 702 {
+                    self.titleLabel.text = "Border"
+                    self.currentIndex = 2
+                }
+                else if sender.tag == 703 {
+                    self.titleLabel.text = "Brightness"
+                    self.currentIndex = 3
+                }
+                else if sender.tag == 704 {
+                    self.titleLabel.text = "Saturation"
+                    self.currentIndex = 4
+                }
+                else if sender.tag == 705 {
+                    self.titleLabel.text = "Contrast"
+                    self.currentIndex = 5
+                }
+                else if sender.tag == 706 {
+                    self.titleLabel.text = "Sharpen"
+                    self.currentIndex = 6
                 }
                 
                 
@@ -152,3 +180,4 @@ class ImageEditView: UIView{
     }
 
 }
+
