@@ -165,7 +165,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     func chnageValue(value: Float, index:Int) {
         if currentStickerView?.pathType == "Image" {
-            var lol = getFileUrlWithName(fileName: currentStickerView?.pathName ?? "")
+            var lol  = getFileUrlWithName(fileName: currentStickerView?.pathName ?? "")
             
             guard let data = try? Data(contentsOf: lol as URL),let image = UIImage(data: data) else {
                 return
@@ -297,14 +297,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
-        
-        watermarkView.backgroundColor = .red // remove later
-        watermarkView.rotate(duration: 7.0, axis: .y)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
+        
+        
         controller.useRadialPalette = false
         controller.colorPreview.isHidden = false
         controller.brightnessSlider.isHidden  = false
@@ -382,8 +381,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             transParentView.alpha = CGFloat(ov)
         }
         hideALL()
-                
-    
     }
     
     override func viewDidLayoutSubviews() {
