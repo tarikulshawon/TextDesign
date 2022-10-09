@@ -11,6 +11,7 @@ import CoreImage
 import MetalPetal
 import Photos
 import FlexColorPicker
+import SwiftUI
 
 protocol callDelegate: AnyObject {
     func reloadAllData()
@@ -297,12 +298,17 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
+        
+        let childView = UIHostingController(rootView: SwiftUIView())
+        addChild(childView)
+        childView.view.frame = watermarkView.bounds
+        watermarkView.addSubview(childView.view)
+        childView.view.backgroundColor = .clear
+        childView.didMove(toParent: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         controller.useRadialPalette = false
         controller.colorPreview.isHidden = false
@@ -953,6 +959,34 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }, completion: {_ in
             
         })
+    }
+}
+
+extension EditVc {
+    struct SwiftUIView : View {
+        @State private var isAnimating = false
+        @State private var showProgress = false
+        var foreverAnimation: Animation {
+            Animation.linear(duration: 5.0)
+                .repeatForever(autoreverses: false)
+        }
+
+        var body: some View {
+            Button(action: { self.showProgress.toggle() }, label: {
+                if showProgress {
+                    Image("watermark")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .rotation3DEffect(Angle.degrees(isAnimating ? 360 : 0), axis: (x: 1, y: 0, z: 0))
+                        .animation(self.isAnimating ? foreverAnimation : .default)
+                        .onAppear { self.isAnimating = true }
+                        .onDisappear { self.isAnimating = false }
+                } else {
+                    Image("watermark")
+                }
+            })
+            .onAppear { self.showProgress = true }
+        }
     }
 }
 
