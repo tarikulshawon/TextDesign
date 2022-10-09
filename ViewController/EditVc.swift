@@ -179,42 +179,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     func updateStickerF(sticker:StickerView,selectedImage:UIImage) {
         if let value = currentStickerView {
-            let x = value.transform.a
-            let y = value.transform.b
-            let width = value.bounds.size.width
-            let height = value.bounds.size.height
-            let inset =  11
-            var pathName = value.pathName
-            let centerx = value.center.x
-            let centery = value.center.y
-            let radians = atan2(CGFloat(y), CGFloat(x))
-            _ = radians * 180 / .pi
-            let center = CGPoint(x: Double(centerx) ?? 0, y: Double(centery) ?? 0)
-            let size = CGSize(width: CGFloat(width), height: CGFloat(height))
-            let padding = CGFloat(CGFloat(inset)) * 2.0
-            let testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: size.width - padding, height: size.height - padding))
-            testImage.image = selectedImage
-            testImage.center = center
-            let stickerView3 = StickerView.init(contentView: testImage)
-            stickerView3.tag = currentStickerView!.tag
-            screenSortView.addSubview(stickerView3)
-            stickerView3.showEditingHandlers = true
-            stickerView3.transform = stickerView3.transform.rotated(by: radians)
-            stickerView3.brightness = currentStickerView!.brightness
-            stickerView3.sharpen = currentStickerView!.sharpen
-            stickerView3.contrast = currentStickerView!.contrast
-            stickerView3.border = currentStickerView!.border
-            stickerView3.pathName = currentStickerView?.pathName
-            stickerView3.pathType = "Image"
-            stickerView3.setImage(UIImage.init(named: "Close")!, forHandler: StickerViewHandler.close)
-            stickerView3.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
-            stickerView3.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)
-            stickerView3.delegate = self
-            currentStickerView?.removeFromSuperview()
-            currentStickerView = stickerView3
-            currentStickerView?.showEditingHandlers = true
-            currentStickerView?.center = center
-          
+            currentStickerView?.contentView.image = selectedImage
         }
     }
     

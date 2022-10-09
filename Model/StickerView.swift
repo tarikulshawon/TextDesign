@@ -65,7 +65,7 @@ public class StickerView: UIView {
     
     public var delegate: StickerViewDelegate!
     /// The contentView inside the sticker view.
-    public var contentView:UIView!
+    public var contentView:UIImageView!
     /// Enable the close handler or not. Default value is YES.
     public var enableClose:Bool = true {
         didSet {
@@ -134,7 +134,7 @@ public class StickerView: UIView {
      *
      *  @return The sticker view.
      */
-    public  init(contentView: UIView) {
+    public  init(contentView: UIImageView) {
         self.defaultInset = 11
         self.defaultMinimumSize = 4 * self.defaultInset
         
