@@ -207,8 +207,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "529"
             endingLineNumber = "529"
-            landmarkName = "EditVc"
-            landmarkType = "3">
+            landmarkName = "sliderValueChnaged(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -612,10 +612,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "EditVc"
-            landmarkType = "3">
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "colorPicker(_:selectedColor:usingControl:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -628,8 +628,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "colorPicker(_:confirmedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -644,8 +644,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -654,22 +654,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "36331390-19A2-4D44-9608-0FE58879B74A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "rgbComponents(color:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D58FEA45-02E7-4A79-9117-0EB7CF9F84C2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -685,6 +669,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D58FEA45-02E7-4A79-9117-0EB7CF9F84C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "rgbComponents(color:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "8B7F8D07-34D8-41C9-BE16-B9D59187E2DB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -692,8 +692,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -702,6 +702,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C8C37D4E-4834-4A7F-945A-553A93F437A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "rgbComponents(color:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9107B5A-0D7F-4336-BCF6-2D07088B15B8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -717,22 +733,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A9107B5A-0D7F-4336-BCF6-2D07088B15B8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "colorPicker(_:selectedColor:usingControl:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B8E383C5-8E76-4383-8E49-C2309E86C72A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -740,8 +740,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -886,8 +886,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "755"
             endingLineNumber = "755"
-            landmarkName = "EditVc"
-            landmarkType = "3">
+            landmarkName = "gotoSave(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1714,8 +1714,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1730,8 +1730,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1746,8 +1746,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
             <Locations>
@@ -1809,8 +1809,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
             <Locations>

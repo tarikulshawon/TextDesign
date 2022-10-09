@@ -19,8 +19,7 @@ protocol callDelegate: AnyObject {
 class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ColorPickerDelegate, sendTextValue, sendFrames, sendValueForAdjust, sendImageDelegate {
     
     
-    
-    
+    @IBOutlet weak var watermarkView: UIImageView!
     @IBOutlet weak var colorPickerHolder: UIView!
     @IBOutlet weak var screenSortView: UIView!
     @IBOutlet weak var overLayVcHolder: UIView!
@@ -302,6 +301,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         controller.useRadialPalette = false
@@ -1138,3 +1138,5 @@ extension EditVc: StickerViewDelegate {
         stickerView.showEditingHandlers = true
     }
 }
+
+
