@@ -12,7 +12,9 @@ public protocol sendTextValue {
     func sendText(text: String)
 }
 
+
 class TextEditViewController: UIViewController {
+
     @IBOutlet weak var textStickerTextView: UITextView!
     public var delegate: sendTextValue!
     override func viewDidLoad() {
@@ -33,6 +35,8 @@ class TextEditViewController: UIViewController {
         textStickerTextView.resignFirstResponder()
     }
     
+    
+    
     @IBAction func gotoMainView(_ sender: Any) {
         shouldRemove = true
         self.dismiss(animated: true)
@@ -47,4 +51,5 @@ class TextEditViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }
