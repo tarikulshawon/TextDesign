@@ -163,6 +163,10 @@ extension EditVc {
             
             let stickerView3 = StickerView.init(contentView: testImage)
             
+            if type1.contains("Image") {
+                stickerView3.pathType = "Image"
+            }
+            
             stickerView3.backgroundColor = UIColor.clear
             stickerView3.center = center
             stickerView3.delegate = self

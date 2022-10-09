@@ -66,5 +66,25 @@
 </string>
 		<string>228, 229, 230</string>
 	</array>
+	<array>
+		<string>31,28,44</string>
+		<string>146, 141, 171</string>
+	</array>
+	<array>
+		<string>0, 242, 96</string>
+		<string>5, 117, 230</string>
+	</array>
+	<array>
+		<string>84, 74, 125</string>
+		<string>255, 212, 82</string>
+	</array>
+	<array>
+		<string>133,255,189</string>
+		<string>255,251,125</string>
+	</array>
+	<array>
+		<string>169,201,255</string>
+		<string>255,287,236</string>
+	</array>
 </array>
 </plist>

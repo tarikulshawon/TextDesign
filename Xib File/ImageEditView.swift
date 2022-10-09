@@ -10,7 +10,7 @@ import UIKit
 protocol sendImageDelegate: AnyObject {
     func  sendImage()
     func changeImageOpacity(value:Float)
-    func chnageBrightness(value:Float)
+    func chnageValue(value: Float, index:Int)
 }
 
 class ImageEditView: UIView{
@@ -53,7 +53,19 @@ class ImageEditView: UIView{
     
     @IBAction func sliderValueChanged(_ sender: CustomSlider) {
         print(sender.value)
-        delegateForImage?.changeImageOpacity(value: sender.value)
+        if titleLabel.text == "Brightness" {
+            delegateForImage?.chnageValue(value: sender.value, index: 0)
+        }else if titleLabel.text == "Saturation" {
+            delegateForImage?.chnageValue(value: sender.value, index: 1)
+        }else if titleLabel.text == "Contrast" {
+            delegateForImage?.chnageValue(value: sender.value, index: 2)
+        }
+        else if titleLabel.text == "Sharpen" {
+            delegateForImage?.chnageValue(value: sender.value, index: 3)
+        }
+        else {
+            delegateForImage?.changeImageOpacity(value: sender.value)
+        }
     }
     
     @objc func buttonAction(sender: UIButton!) {

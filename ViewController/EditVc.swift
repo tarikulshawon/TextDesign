@@ -36,7 +36,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var transParentView: UIImageView!
     @IBOutlet weak var showingBubbleView: UIView!
     
-
+    
     @IBOutlet weak var heightForColorPickerView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpceOfMainView: NSLayoutConstraint!
     @IBOutlet weak var bottomSpaceForColorPicker: NSLayoutConstraint!
@@ -102,7 +102,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var currentOverlayIndex = 0
     var currentBackGroundIndex  = 0
     var tagValue = 1000000
-
+    
     @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
     @IBOutlet weak var btnCollectionView: UICollectionView!
     @IBOutlet weak var mainImv: UIImageView!
@@ -128,9 +128,86 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.processSnapShotPhotos()
     }
     
-    func chnageBrightness(value: Float) {
+    func chnageValue(value: Float, index:Int) {
         if currentStickerView?.pathType == "Image" {
+            var lol  = getFileUrlWithName(fileName: currentStickerView?.pathName ?? "")
             
+            guard let data = try? Data(contentsOf: lol as URL),let image = UIImage(data: data) else {
+                return
+            }
+            
+            let context = CIContext(options: nil)
+            if let currentFilter = CIFilter(name:"CIColorControls") {
+                let beginImage = CIImage(image: image)
+                
+                currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+                currentFilter.setValue(index == 0 ? value:currentStickerView?.brightness, forKey: kCIInputBrightnessKey)
+                currentFilter.setValue(index == 1 ? value:currentStickerView?.saturation, forKey: kCIInputSaturationKey)
+                currentFilter.setValue(index == 2 ? value:currentStickerView?.contrast, forKey: kCIInputContrastKey)
+                
+                if let output = currentFilter.outputImage {
+                    if let cgimg = context.createCGImage(output, from: output.extent) {
+                        let processedImage = UIImage(cgImage: cgimg)
+                        
+                        let context = CIContext(options: nil)
+                        if let currentFilter = CIFilter(name:"CISharpenLuminance") {
+                            
+                            let beginImage = CIImage(image: processedImage)
+                            
+                            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+                            currentFilter.setValue(index == 3 ? value:currentStickerView?.sharpen, forKey: "inputSharpness")
+                            if let output = currentFilter.outputImage {
+                                if let cgimg = context.createCGImage(output, from: output.extent) {
+                                    let processedImage = UIImage(cgImage: cgimg)
+                                    updateStickerF(sticker: currentStickerView!, selectedImage: processedImage)
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateStickerF(sticker:StickerView,selectedImage:UIImage) {
+        if let value = currentStickerView {
+            let x = value.transform.a
+            let y = value.transform.b
+            let width = value.bounds.size.width
+            let height = value.bounds.size.height
+            let inset =  11
+            var pathName = value.pathName
+            let centerx = value.center.x
+            let centery = value.center.y
+            let radians = atan2(CGFloat(y), CGFloat(x))
+            _ = radians * 180 / .pi
+            let center = CGPoint(x: Double(centerx) ?? 0, y: Double(centery) ?? 0)
+            let size = CGSize(width: CGFloat(width), height: CGFloat(height))
+            let padding = CGFloat(CGFloat(inset)) * 2.0
+            let testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: size.width - padding, height: size.height - padding))
+            testImage.image = selectedImage
+            testImage.center = center
+            let stickerView3 = StickerView.init(contentView: testImage)
+            stickerView3.tag = currentStickerView!.tag
+            screenSortView.addSubview(stickerView3)
+            stickerView3.showEditingHandlers = true
+            stickerView3.transform = stickerView3.transform.rotated(by: radians)
+            stickerView3.brightness = currentStickerView!.brightness
+            stickerView3.sharpen = currentStickerView!.sharpen
+            stickerView3.contrast = currentStickerView!.contrast
+            stickerView3.border = currentStickerView!.border
+            stickerView3.pathName = currentStickerView?.pathName
+            stickerView3.pathType = "Image"
+            stickerView3.setImage(UIImage.init(named: "Close")!, forHandler: StickerViewHandler.close)
+            stickerView3.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
+            stickerView3.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)
+            stickerView3.delegate = self
+            currentStickerView?.removeFromSuperview()
+            currentStickerView = stickerView3
+            currentStickerView?.showEditingHandlers = true
+            currentStickerView?.center = center
+          
         }
     }
     
@@ -237,7 +314,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         super.viewWillLayoutSubviews()
         controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -259,7 +336,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         screenSortView.addGestureRecognizer(tap)
         
         mainImv.image = mainImage
-    
+        
         print("TEST: \(malloc_size(Unmanaged.passUnretained(mainImage).toOpaque()))")
         mainImv.contentMode = .scaleAspectFit
         
@@ -281,7 +358,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     
                 }
                 catch let error {
-                     
+                    
                 }
                 
             }
@@ -472,10 +549,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         if !shouldRemove {
             return
         }
-        for view in screenSortView.subviews{
-            view.removeFromSuperview()
+        DispatchQueue.main.async {
+            for view in self.screenSortView.subviews{
+                view.removeFromSuperview()
+            }
+            
         }
-        
         shouldRemove = true
     }
     
@@ -685,15 +764,15 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: nil)
         
         
-       
+        
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
     
     @objc fileprivate func targetMethod(){
-         self.view.window!.rootViewController?.dismiss(animated: true, completion: {
-       })
-         
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: {
+        })
+        
     }
     
     @IBAction func gotoPreviousView(_ sender: Any) {
@@ -717,7 +796,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         selectedImage = selectedImage.makeFixOrientation()
         selectedImage = selectedImage.resizeImage(targetSize: CGSize(width: 400, height: 400))
         
-         
+        
         
         var deletedMailsCount = UserDefaults.standard.integer(forKey: "Image")
         deletedMailsCount += 1;
@@ -889,7 +968,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }, completion: {_ in
             
         })
-    }    
+    }
 }
 
 extension EditVc: TextStickerContainerViewDelegate {
@@ -1047,7 +1126,7 @@ extension EditVc: StickerViewDelegate {
     func stickerViewDidChangeMoving(_ stickerView: StickerView) {
         currentStickerView = stickerView
         stickerView.showEditingHandlers = true
-
+        
     }
     func stickerViewDidEndMoving(_ stickerView: StickerView) {
         currentStickerView = stickerView
