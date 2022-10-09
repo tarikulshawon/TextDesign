@@ -32,10 +32,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRf-TD-CFG">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="245"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="245"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-Uk-i0o">
-                                                    <rect key="frame" x="12" y="113" width="56.5" height="19.5"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-Uk-i0o">
+                                                    <rect key="frame" x="-28.5" y="113" width="57" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -45,11 +45,11 @@
                                             <constraints>
                                                 <constraint firstItem="GRh-Uk-i0o" firstAttribute="centerX" secondItem="TRf-TD-CFG" secondAttribute="centerX" id="aQj-Sw-atQ"/>
                                                 <constraint firstItem="GRh-Uk-i0o" firstAttribute="centerY" secondItem="TRf-TD-CFG" secondAttribute="centerY" id="fEO-N3-DTC"/>
-                                                <constraint firstAttribute="width" constant="80" id="vPr-4j-xSJ"/>
+                                                <constraint firstAttribute="width" id="vPr-4j-xSJ"/>
                                             </constraints>
                                         </view>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3nl-cx-w4m" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                            <rect key="frame" x="78" y="107.5" width="318" height="31"/>
+                                            <rect key="frame" x="18" y="107.5" width="378" height="31"/>
                                             <connections>
                                                 <action selector="sliderValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="qfO-aM-bwo"/>
                                             </connections>
@@ -58,7 +58,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="TRf-TD-CFG" secondAttribute="bottom" id="248-AK-g3r"/>
-                                        <constraint firstItem="3nl-cx-w4m" firstAttribute="leading" secondItem="TRf-TD-CFG" secondAttribute="trailing" id="BX4-Sx-a82"/>
+                                        <constraint firstItem="3nl-cx-w4m" firstAttribute="leading" secondItem="TRf-TD-CFG" secondAttribute="trailing" constant="20" id="BX4-Sx-a82"/>
                                         <constraint firstAttribute="trailing" secondItem="3nl-cx-w4m" secondAttribute="trailing" constant="20" id="POp-b3-eFP"/>
                                         <constraint firstItem="3nl-cx-w4m" firstAttribute="centerY" secondItem="Ecs-nb-rHN" secondAttribute="centerY" id="aiI-AR-BJC"/>
                                         <constraint firstItem="TRf-TD-CFG" firstAttribute="top" secondItem="Ecs-nb-rHN" secondAttribute="top" id="ukn-82-MBG"/>

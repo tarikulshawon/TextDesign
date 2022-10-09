@@ -141,9 +141,16 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 let beginImage = CIImage(image: image)
                 
                 currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-                currentFilter.setValue(index == 0 ? value:currentStickerView?.brightness, forKey: kCIInputBrightnessKey)
-                currentFilter.setValue(index == 1 ? value:currentStickerView?.saturation, forKey: kCIInputSaturationKey)
-                currentFilter.setValue(index == 2 ? value:currentStickerView?.contrast, forKey: kCIInputContrastKey)
+                currentStickerView?.brightness = index == 0 ? value: 0.0
+                currentStickerView?.saturation = index == 1 ? value: 1.0
+                currentStickerView?.contrast = index == 2 ? value: 1.0
+                currentStickerView?.sharpen = index == 3 ? value: 0.0
+                
+                
+                
+                currentFilter.setValue(currentStickerView?.brightness, forKey: kCIInputBrightnessKey)
+                currentFilter.setValue(currentStickerView?.saturation, forKey: kCIInputSaturationKey)
+                currentFilter.setValue(currentStickerView?.contrast, forKey: kCIInputContrastKey)
                 
                 if let output = currentFilter.outputImage {
                     if let cgimg = context.createCGImage(output, from: output.extent) {
@@ -155,7 +162,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                             let beginImage = CIImage(image: processedImage)
                             
                             currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-                            currentFilter.setValue(index == 3 ? value:currentStickerView?.sharpen, forKey: "inputSharpness")
+                            currentFilter.setValue(currentStickerView?.sharpen, forKey: "inputSharpness")
                             if let output = currentFilter.outputImage {
                                 if let cgimg = context.createCGImage(output, from: output.extent) {
                                     let processedImage = UIImage(cgImage: cgimg)
@@ -599,7 +606,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.contrast = "\(ma.contrast)"
                     obj.sharpen = "\(ma.sharpen)"
                     obj.border = "\(ma.border)"
-                    obj.border = "\(ma.brightness)"
+                    obj.brightness = "\(ma.brightness)"
                     
                     
                     print(obj)
@@ -706,7 +713,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     obj.contrast = "\(ma.contrast)"
                     obj.sharpen = "\(ma.sharpen)"
                     obj.border = "\(ma.border)"
-                    obj.border = "\(ma.brightness)"
+                    obj.brightness = "\(ma.brightness)"
                     DBmanager.shared.insertStickerile(fileObj: obj)
                     
                 case is TextStickerContainerView:

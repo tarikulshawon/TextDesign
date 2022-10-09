@@ -29,6 +29,10 @@ extension EditVc {
         testImage.center = center
         testImage.image = UIImage(named: pathName)
         
+        let brightnes = Float(obj.brightness)
+        let staturation = Float(obj.saturation)
+        let contrast = Float(obj.contrast)
+        let sharpen = Float(obj.sharpen)
         if type1.contains("Image") {
             var lol  = getFileUrlWithName(fileName: pathName)
             if let data = try? Data(contentsOf: lol as URL) {

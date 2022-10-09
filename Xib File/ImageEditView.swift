@@ -107,22 +107,18 @@ class ImageEditView: UIView{
                     self.currentIndex = 1
                 }
                 else if sender.tag == 702 {
-                    self.titleLabel.text = "Border"
-                    self.currentIndex = 2
-                }
-                else if sender.tag == 703 {
                     self.titleLabel.text = "Brightness"
                     self.currentIndex = 3
                 }
-                else if sender.tag == 704 {
+                else if sender.tag == 703 {
                     self.titleLabel.text = "Saturation"
                     self.currentIndex = 4
                 }
-                else if sender.tag == 705 {
+                else if sender.tag == 704 {
                     self.titleLabel.text = "Contrast"
                     self.currentIndex = 5
                 }
-                else if sender.tag == 706 {
+                else if sender.tag == 705 {
                     self.titleLabel.text = "Sharpen"
                     self.currentIndex = 6
                 }
