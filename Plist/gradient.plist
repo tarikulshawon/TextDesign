@@ -3,6 +3,10 @@
 <plist version="1.0">
 <array>
 	<array>
+		<string>169,201,255</string>
+		<string>255,287,236</string>
+	</array>
+	<array>
 		<string>18, 194, 233	
 </string>
 		<string>196, 113, 237	
@@ -26,10 +30,6 @@
 	<array>
 		<string>255, 154, 158	</string>
 		<string>254, 207, 239</string>
-	</array>
-	<array>
-		<string>161,196,253</string>
-		<string>194, 233, 251</string>
 	</array>
 	<array>
 		<string>207, 217, 223	
@@ -81,10 +81,6 @@
 	<array>
 		<string>133,255,189</string>
 		<string>255,251,125</string>
-	</array>
-	<array>
-		<string>169,201,255</string>
-		<string>255,287,236</string>
 	</array>
 </array>
 </plist>

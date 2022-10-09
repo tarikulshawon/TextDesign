@@ -128,6 +128,42 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.processSnapShotPhotos()
     }
     
+    func getImgae(br:Float,sat:Float,sha:Float,contr:Float,image:UIImage)->UIImage {
+        
+        
+        if let currentFilter = CIFilter(name:"CIColorControls") {
+            let beginImage = CIImage(image: image)
+            let context = CIContext(options: nil)
+            
+            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+            currentFilter.setValue(br, forKey: kCIInputBrightnessKey)
+            currentFilter.setValue(sat, forKey: kCIInputSaturationKey)
+            currentFilter.setValue(contr, forKey: kCIInputContrastKey)
+            
+            if let output = currentFilter.outputImage {
+                if let cgimg = context.createCGImage(output, from: output.extent) {
+                    let processedImage = UIImage(cgImage: cgimg)
+                    
+                    let context = CIContext(options: nil)
+                    if let currentFilter = CIFilter(name:"CISharpenLuminance") {
+                        
+                        let beginImage = CIImage(image: processedImage)
+                        
+                        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+                        currentFilter.setValue(sha, forKey: "inputSharpness")
+                        if let output = currentFilter.outputImage {
+                            if let cgimg = context.createCGImage(output, from: output.extent) {
+                                let processedImage = UIImage(cgImage: cgimg)
+                                 return processedImage
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        return UIImage()
+    }
     func chnageValue(value: Float, index:Int) {
         if currentStickerView?.pathType == "Image" {
             var lol  = getFileUrlWithName(fileName: currentStickerView?.pathName ?? "")
@@ -136,44 +172,21 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 return
             }
             
-            let context = CIContext(options: nil)
-            if let currentFilter = CIFilter(name:"CIColorControls") {
-                let beginImage = CIImage(image: image)
-                
-                currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-                currentStickerView?.brightness = index == 0 ? value: 0.0
-                currentStickerView?.saturation = index == 1 ? value: 1.0
-                currentStickerView?.contrast = index == 2 ? value: 1.0
-                currentStickerView?.sharpen = index == 3 ? value: 0.0
-                
-                
-                
-                currentFilter.setValue(currentStickerView?.brightness, forKey: kCIInputBrightnessKey)
-                currentFilter.setValue(currentStickerView?.saturation, forKey: kCIInputSaturationKey)
-                currentFilter.setValue(currentStickerView?.contrast, forKey: kCIInputContrastKey)
-                
-                if let output = currentFilter.outputImage {
-                    if let cgimg = context.createCGImage(output, from: output.extent) {
-                        let processedImage = UIImage(cgImage: cgimg)
-                        
-                        let context = CIContext(options: nil)
-                        if let currentFilter = CIFilter(name:"CISharpenLuminance") {
-                            
-                            let beginImage = CIImage(image: processedImage)
-                            
-                            currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
-                            currentFilter.setValue(currentStickerView?.sharpen, forKey: "inputSharpness")
-                            if let output = currentFilter.outputImage {
-                                if let cgimg = context.createCGImage(output, from: output.extent) {
-                                    let processedImage = UIImage(cgImage: cgimg)
-                                    updateStickerF(sticker: currentStickerView!, selectedImage: processedImage)
-                                }
-                            }
-                        }
-                        
-                    }
-                }
+            
+            if index == 0 {
+                currentStickerView?.brightness = value
+            } else if index == 1 {
+                currentStickerView?.saturation = value
             }
+            else if index == 2 {
+                currentStickerView?.contrast = value
+            }
+            else if index == 3 {
+                currentStickerView?.sharpen = value
+            }
+            
+            currentStickerView?.contentView.image = self.getImgae(br: currentStickerView?.brightness ?? 0.0, sat: currentStickerView?.saturation ?? 1.0, sha: currentStickerView!.sharpen, contr:  currentStickerView?.contrast ?? 1.0, image: image)
+            
         }
     }
     

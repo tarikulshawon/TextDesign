@@ -205,10 +205,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
-            landmarkName = "sliderValueChnaged(_:)"
-            landmarkType = "7">
+            startingLineNumber = "529"
+            endingLineNumber = "529"
+            landmarkName = "EditVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -612,10 +612,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "colorPicker(_:selectedColor:usingControl:)"
-            landmarkType = "7">
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "EditVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -628,8 +628,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "colorPicker(_:confirmedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -644,8 +644,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -660,8 +660,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -676,8 +676,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -692,8 +692,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -708,10 +708,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
-            landmarkName = "rgbComponents(color:)"
-            landmarkType = "7">
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "EditVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -724,10 +724,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "EditVc"
-            landmarkType = "3">
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "colorPicker(_:selectedColor:usingControl:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -740,8 +740,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -756,8 +756,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "624"
-            endingLineNumber = "624"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -772,42 +772,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "635"
+            endingLineNumber = "635"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6B7A7E04-1D58-4863-8BB0-5022815D0FAC - 7bae2f551d55c5da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.gotoSave(Any) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "658"
-                  endingLineNumber = "658"
-                  offsetFromSymbolStart = "19791">
-               </Location>
-               <Location
-                  uuid = "6B7A7E04-1D58-4863-8BB0-5022815D0FAC - 7bae2f551d55c5da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.gotoSave(Any) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "658"
-                  endingLineNumber = "658"
-                  offsetFromSymbolStart = "19990">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -820,8 +788,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "617"
-            endingLineNumber = "617"
+            startingLineNumber = "630"
+            endingLineNumber = "630"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -836,8 +804,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "614"
-            endingLineNumber = "614"
+            startingLineNumber = "627"
+            endingLineNumber = "627"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -852,8 +820,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "612"
-            endingLineNumber = "612"
+            startingLineNumber = "625"
+            endingLineNumber = "625"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -884,8 +852,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "addText(text:font:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -900,8 +868,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "745"
-            endingLineNumber = "745"
+            startingLineNumber = "758"
+            endingLineNumber = "758"
             landmarkName = "targetMethod()"
             landmarkType = "7">
          </BreakpointContent>
@@ -916,10 +884,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "742"
-            endingLineNumber = "742"
-            landmarkName = "gotoSave(_:)"
-            landmarkType = "7">
+            startingLineNumber = "755"
+            endingLineNumber = "755"
+            landmarkName = "EditVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -932,8 +900,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "741"
-            endingLineNumber = "741"
+            startingLineNumber = "754"
+            endingLineNumber = "754"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -948,8 +916,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "737"
-            endingLineNumber = "737"
+            startingLineNumber = "750"
+            endingLineNumber = "750"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1092,42 +1060,10 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "536"
-            endingLineNumber = "536"
+            startingLineNumber = "540"
+            endingLineNumber = "540"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "195F1DA2-1F44-46A8-AB94-101B65439365 - de03f6f14521e69a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVC+Extension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "536"
-                  endingLineNumber = "536"
-                  offsetFromSymbolStart = "5428">
-               </Location>
-               <Location
-                  uuid = "195F1DA2-1F44-46A8-AB94-101B65439365 - de03f6f14521e69a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVC+Extension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "536"
-                  endingLineNumber = "536"
-                  offsetFromSymbolStart = "5960">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1140,8 +1076,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "535"
-            endingLineNumber = "535"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1156,8 +1092,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "529"
-            endingLineNumber = "529"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1172,8 +1108,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "526"
-            endingLineNumber = "526"
+            startingLineNumber = "530"
+            endingLineNumber = "530"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1188,8 +1124,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "524"
-            endingLineNumber = "524"
+            startingLineNumber = "528"
+            endingLineNumber = "528"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1204,8 +1140,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
+            startingLineNumber = "564"
+            endingLineNumber = "564"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1220,8 +1156,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "548"
-            endingLineNumber = "548"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1236,8 +1172,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "545"
-            endingLineNumber = "545"
+            startingLineNumber = "549"
+            endingLineNumber = "549"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1252,57 +1188,10 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DCF3D0C8-4355-404D-87D1-15FB5CBE867D - de03f6f145211c4e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVC+Extension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "484"
-                  endingLineNumber = "484"
-                  offsetFromSymbolStart = "1246">
-               </Location>
-               <Location
-                  uuid = "DCF3D0C8-4355-404D-87D1-15FB5CBE867D - c2d8a83f16db053a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in TextArt.EditVc.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVC+Extension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "484"
-                  endingLineNumber = "484"
-                  offsetFromSymbolStart = "210">
-               </Location>
-               <Location
-                  uuid = "DCF3D0C8-4355-404D-87D1-15FB5CBE867D - 7a807cf05ed5cd8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Bool) -&gt; () in TextArt.EditVc.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVC+Extension.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "485"
-                  endingLineNumber = "485"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1315,8 +1204,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651"
+            startingLineNumber = "664"
+            endingLineNumber = "664"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1331,8 +1220,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "649"
-            endingLineNumber = "649"
+            startingLineNumber = "662"
+            endingLineNumber = "662"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1347,8 +1236,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "647"
-            endingLineNumber = "647"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1363,8 +1252,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "644"
-            endingLineNumber = "644"
+            startingLineNumber = "657"
+            endingLineNumber = "657"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1379,8 +1268,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "643"
-            endingLineNumber = "643"
+            startingLineNumber = "656"
+            endingLineNumber = "656"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1389,6 +1278,38 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E6D098CF-D398-408F-B19E-F6E01E9BD351"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "097B1AA4-643A-4921-BBC8-76714B39EED8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "558"
+            endingLineNumber = "558"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6F31BBC-B87B-42F7-9058-8B2A215389F9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1404,38 +1325,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "097B1AA4-643A-4921-BBC8-76714B39EED8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "554"
-            endingLineNumber = "554"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B6F31BBC-B87B-42F7-9058-8B2A215389F9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "553"
-            endingLineNumber = "553"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7E73A7F9-320D-44CB-B53D-1F067B0A8B75"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1443,8 +1332,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "552"
-            endingLineNumber = "552"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1537,8 +1426,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "567"
-            endingLineNumber = "567"
+            startingLineNumber = "580"
+            endingLineNumber = "580"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1553,8 +1442,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "564"
-            endingLineNumber = "564"
+            startingLineNumber = "577"
+            endingLineNumber = "577"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1569,8 +1458,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "570"
-            endingLineNumber = "570"
+            startingLineNumber = "583"
+            endingLineNumber = "583"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1713,8 +1602,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "EditVc"
             landmarkType = "21">
          </BreakpointContent>
@@ -1761,8 +1650,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "updateSticker(obj:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1793,8 +1682,8 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "EditVc"
             landmarkType = "21">
          </BreakpointContent>
@@ -1809,41 +1698,9 @@
             filePath = "ViewController/EditVC+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "updateSticker(obj:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62DA2116-5909-46FE-A567-2F7A058AE045"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "chnageValue(value:index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F6AF3C4D-542F-465B-AB65-51DC0B2F1E08"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1857,8 +1714,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1873,8 +1730,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1889,13 +1746,13 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed356"
+                  uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed82a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1905,12 +1762,12 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1361">
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "1229">
                </Location>
                <Location
-                  uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed356"
+                  uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed82a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1920,12 +1777,12 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1641">
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "1509">
                </Location>
                <Location
-                  uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed356"
+                  uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed82a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1935,9 +1792,9 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1788">
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "1649">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1952,13 +1809,13 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "chnageValue(value:index:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2A0254ED-D840-49A1-B48B-9B5115765B4C - b0b697f801aed356"
+                  uuid = "2A0254ED-D840-49A1-B48B-9B5115765B4C - b0b697f801aed82a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1968,12 +1825,12 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1361">
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "1229">
                </Location>
                <Location
-                  uuid = "2A0254ED-D840-49A1-B48B-9B5115765B4C - b0b697f801aed356"
+                  uuid = "2A0254ED-D840-49A1-B48B-9B5115765B4C - b0b697f801aed82a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1983,12 +1840,12 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1641">
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "1509">
                </Location>
                <Location
-                  uuid = "2A0254ED-D840-49A1-B48B-9B5115765B4C - b0b697f801aed356"
+                  uuid = "2A0254ED-D840-49A1-B48B-9B5115765B4C - b0b697f801aed82a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1998,11 +1855,59 @@
                   urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1788">
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "1649">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12532C44-19A5-4662-AE7D-BA65DB15B40C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FAC6C45-9E8B-4525-B2F5-3E135C7973F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED84EC0D-185B-4BEB-B902-1BB65339308C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVC+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "updateSticker(obj:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

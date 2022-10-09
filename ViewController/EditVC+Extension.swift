@@ -37,7 +37,7 @@ extension EditVc {
             var lol  = getFileUrlWithName(fileName: pathName)
             if let data = try? Data(contentsOf: lol as URL) {
                 if let image = UIImage(data: data) {
-                    testImage.image = image
+                    testImage.image = self.getImgae(br: brightnes ?? 0.0, sat: staturation ?? 1.0, sha: sharpen ?? 0.0, contr: contrast ?? 1.0, image: image)
                 }
             }
             
@@ -186,6 +186,10 @@ extension EditVc {
             screenSortView.clipsToBounds  = true
             screenSortView.addSubview(stickerView3)
             stickerView3.showEditingHandlers = true
+            stickerView3.brightness = brightnes ?? 0.0
+            stickerView3.saturation = staturation ?? 1.0
+            stickerView3.contrast = contrast ?? 1.0
+            stickerView3.sharpen = sharpen ?? 0.0
         }
     }
 }
