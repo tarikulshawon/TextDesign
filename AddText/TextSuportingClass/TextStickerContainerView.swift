@@ -209,6 +209,7 @@ extension TextStickerContainerView {
     func UpdateTextStickerData(currentContainerView:  TextStickerContainerView, currentTextView: TextStickerView, mainTextView: TextStickerView){
         let currentText = prepareTextForUpdate(maintextView: mainTextView)
         currentTextView.text = currentText
+        currentTextView.textAlignment = .center
         
         currentTextView.backgroundColor = mainTextView.backgroundColor
         currentTextView.textAlignment = mainTextView.textAlignment
@@ -226,14 +227,9 @@ extension TextStickerContainerView {
         currentTextView.frame.origin = CGPoint(x: currentContainerView.bounds.origin.x + self.panControllerSize, y: currentContainerView.bounds.origin.y + self.panControllerSize)
     }
     
-//    //MARK: Copy Text Sticker
-//    func copyTextSticker(){
-//
-//    }
     
     //MARK: Prepare Text For Make Sticker
     func prepareText(maintextView: TextStickerView) -> String {
-        
         let text = maintextView.text
         var result = ""
         maintextView.layoutManager.enumerateLineFragments(forGlyphRange: NSRange(location: 0, length: text!.count)) {  (rect, usedRect, textContainer, glyphRange, stop) in
@@ -253,38 +249,16 @@ extension TextStickerContainerView {
             }
             result += add
         }
-      //  print("result  ", result)
+        print("result  ", result)
         return result
-        //  print("TFFF  ",result, "  ", self.textView.bounds.width)
-        //   self.textView.text = textF
     }
     
     func prepareTextForUpdate(maintextView: TextStickerView) -> String {
-        
         let text = maintextView.text
-
-        var result = ""
-
-            let characterRange = NSRange(location: 0, length: text!.count)
-            let line = (maintextView.text as NSString).substring(with: characterRange)
-            //print(":\(line) ")
-            var add = ""
-            for t in line {
-                if t != "\n"{
-                    add += String(t)
-                }else{
-                    print("oneee")
-                }
-            }
-            if result != ""{
-                result += "\n"
-            }
-            //print("add:\(add), result:\(result)")
-            result += add
-        
+        let characterRange = NSRange(location: 0, length: text!.count)
+        let line = (maintextView.text as NSString).substring(with: characterRange)
+ 
         return line
-        //  print("TFFF  ",result, "  ", self.textView.bounds.width)
-        //   self.textView.text = textF
     }
 }
 

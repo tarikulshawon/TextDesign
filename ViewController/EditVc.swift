@@ -298,13 +298,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
-        
-        let childView = UIHostingController(rootView: SwiftUIView())
-        addChild(childView)
-        childView.view.frame = watermarkView.bounds
-        watermarkView.addSubview(childView.view)
-        childView.view.backgroundColor = .clear
-        childView.didMove(toParent: self)
     }
     
     override func viewDidLoad() {
@@ -321,14 +314,18 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.addChild(controller)
         controller.didMove(toParent: self)
         
-        
+//        let childView = UIHostingController(rootView: SwiftUIView())
+//        addChild(childView)
+//        childView.view.frame = watermarkView.bounds
+//        watermarkView.addSubview(childView.view)
+//        childView.view.backgroundColor = .clear
+//        childView.didMove(toParent: self)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         screenSortView.addGestureRecognizer(tap)
         
         mainImv.image = mainImage
         
-        print("TEST: \(malloc_size(Unmanaged.passUnretained(mainImage).toOpaque()))")
         mainImv.contentMode = .scaleAspectFit
         
         if isfromUpdate {
