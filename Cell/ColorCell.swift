@@ -54,5 +54,22 @@ class ColorCell: UICollectionViewCell {
         let layer: CALayer = self.layer
         layer.removeAnimation(forKey: "shaking")
     }
-
+    
+    func toZoom() {
+        UIView.animate(withDuration: 0.2) {
+            self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self.layer.borderColor = UIColor.white.cgColor
+            self.layer.borderWidth = 1.3
+        }
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+    
+    func toOriginal() {
+        UIView.animate(withDuration: 0.2) {
+            self.layer.borderWidth = 0
+            self.transform = .identity
+        }
+    }
 }

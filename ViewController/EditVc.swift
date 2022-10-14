@@ -805,8 +805,6 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let totalSpacingWidth = cellGap * CGFloat((plistArray2.count - 1))
         
         let leftInset = (btnCollectionView.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-        let rightInset = leftInset
-        
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)

@@ -13,26 +13,18 @@ protocol imageIndexDelegate: AnyObject {
 
 class OverLayVc: UIView, ODRManagerDelegate {
     
-   public weak var delegateForOverlay: imageIndexDelegate?
+    public weak var delegateForOverlay: imageIndexDelegate?
+    @IBOutlet weak var collectionViewForFilter: UICollectionView!
+    private let customFlowLayout = CustomCollectionViewFlowLayout()
     
-
-    
-    
-    
+    var centerCell: ColorCell?
     
     func doneLoading(tag: String, successfully: Bool) {
-        
         if successfully {
-            
-            
             guard let image = UIImage(named: "OverLay" + "\(tag)") else { return  }
             delegateForOverlay?.imageNameWithIndex(tag: tag, image: image)
-            
         }
-        
     }
-    
-    
     
     lazy var odrManager: ODRManager = {
         let odr = ODRManager()
@@ -40,7 +32,6 @@ class OverLayVc: UIView, ODRManagerDelegate {
         return odr
     }()
     
-    @IBOutlet weak var collectionViewForFilter: UICollectionView!
     var noOfFilter  = 49
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,26 +42,25 @@ class OverLayVc: UIView, ODRManagerDelegate {
         collectionViewForFilter.dataSource = self
         collectionViewForFilter.showsVerticalScrollIndicator = false
         collectionViewForFilter.showsHorizontalScrollIndicator = false
+        collectionViewForFilter.collectionViewLayout = customFlowLayout
+        
+        let layoutMargins = collectionViewForFilter.layoutMargins.left +
+                            collectionViewForFilter.layoutMargins.right
+        let sideInset = frame.width / 2 - layoutMargins
+        collectionViewForFilter.contentInset = UIEdgeInsets(
+            top: 0,
+            left: sideInset,
+            bottom: 0,
+            right: sideInset
+        )
         
     }
-
+    
     func setOverLay(index:Int) {
-        
-       
-         if let image = UIImage(named: "Overlay" + "\(index)") {
+        if let image = UIImage(named: "Overlay" + "\(index)") {
             delegateForOverlay?.imageNameWithIndex(tag: "\(index)", image: image)
-
-            
-        } else {
-           
         }
-        
-        
-        
     }
-    
-    
-
 }
 
 extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
@@ -101,8 +91,8 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         
-       
-        return CGSize(width: 70, height: 70)
+        
+        return CGSize(width: 60, height: 60)
         
     }
     
@@ -120,26 +110,70 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
             
             cell.gradietImv.image =  UIImage(named: "OverlayThumb" + "\(indexPath.row - 1)")
         }
-        cell.gradietImv.layer.cornerRadius  = cell.frame.size.height/2.0
+        cell.gradietImv.layer.cornerRadius  = cell.frame.size.height / 2
         return cell
         
-       
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        UIView.animate(withDuration: 0.5, animations:
-                        {
-            cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            //cell?.backgroundColor = UIColor.lightGray
-        }) { (true) in
-            UIView.animate(withDuration: 0.5, animations:
-                            {
-                cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0);                //cell?.backgroundColor = UIColor.clear
-            })
-        }
-
+        UIView.animate(
+            withDuration: 0.5,
+            animations: {
+                cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                
+            }) { (true) in
+                UIView.animate(withDuration: 0.5) {
+                    cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0)
+                }
+            }
+        
         setOverLay(index: indexPath.row - 1)
     }
-}
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else { return }
+        
+        let centerPoint = CGPoint(
+            x: collectionViewForFilter.frame.size.width / 2 +  scrollView.contentOffset.x,
+            y: collectionViewForFilter.frame.size.height / 2 + scrollView.contentOffset.y
+        )
+        
+        if let indexPath = collectionViewForFilter.indexPathForItem(at: centerPoint) {
+            centerCell = collectionViewForFilter.cellForItem(at: indexPath) as? ColorCell
+            centerCell?.toZoom()
+            
+            setOverLay(index: indexPath.row - 1)
+        }
+        
+        if let cell = centerCell {
+            let offsetX = centerPoint.x - cell.center.x
+            
+            if offsetX < -15 || offsetX > 15 {
+                cell.toOriginal()
+                centerCell = nil
+            }
+        }
+    }
+}
+
+final class CustomCollectionViewFlowLayout: UICollectionViewFlowLayout {
+    override func prepare() {
+        super.prepare()
+        scrollDirection = .horizontal
+    }
+    
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        var offsetAdjustment = CGFloat.greatestFiniteMagnitude
+        let horizontalOffset = proposedContentOffset.x + collectionView!.contentInset.left
+        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView!.bounds.size.width, height: collectionView!.bounds.size.height)
+        let layoutAttributesArray = super.layoutAttributesForElements(in: targetRect)
+        layoutAttributesArray?.forEach({ (layoutAttributes) in
+            let itemOffset = layoutAttributes.frame.origin.x
+            if fabsf(Float(itemOffset - horizontalOffset)) < fabsf(Float(offsetAdjustment)) {
+                offsetAdjustment = itemOffset - horizontalOffset
+            }
+        })
+        return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
+    }
+}
