@@ -149,15 +149,17 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
                 } catch {
                 }
             }
-            cell.gradietImv.image = im
+            cell.gradietImv.image = im?.resizeImage(targetSize: CGSize(width: 200, height: 200))
         }else {
             cell.gradietImv.image = UIImage.init(named: "bg")
         }
         
+        self.startDownload(imageValue)
+        
         cell.gradietImv.contentMode = .scaleAspectFill
         cell.holderView.backgroundColor = UIColor.clear
         cell.layer.cornerRadius = 10.0
-        self.startDownload(imageValue)
+       
         return cell
     }
     
