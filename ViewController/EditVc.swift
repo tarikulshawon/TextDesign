@@ -540,10 +540,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         UIView.animate(withDuration: 0.2, animations: {
             
             self.bottomSpaceForColorPicker.constant = -10000
+            self.bottomSpceOfMainView.constant = 0
             self.view.layoutIfNeeded()
             
         }, completion: {_ in
-            self.bottomSpceOfMainView.constant = 0
+            
             self.perform(#selector(self.updateHeightF), with: self, afterDelay: 0.2)
 
            
