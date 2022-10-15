@@ -10,11 +10,6 @@ import UIKit
 
 extension EditVc {
     func updateSticker(obj: StickerValueObj) {
-        
-        
-        
-            
-            
             let id = obj.id.floatValue
             let type1 = obj.type
             let x = obj.x.floatValue
