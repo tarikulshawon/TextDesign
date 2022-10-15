@@ -172,7 +172,17 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        var imageValue = imageDetailArrayF[indexPath.row]
+        if (isFileAvailable(fileName: imageValue.name!)) {
+            let im = UIImage.init(contentsOfFile: getFilePathWithName(fileName: imageValue.name!))
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc: EditVc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
+            vc.modalPresentationStyle = .fullScreen
+            vc.mainImage = im
+            present(vc, animated: true, completion: nil)
+            
+        }
+            
         
     }
 }
