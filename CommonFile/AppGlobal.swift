@@ -31,6 +31,11 @@ var imageDetailsArray = NSMutableArray()
 var shouldRemove =  true
 
 var imageDetailArrayFilter = [ImageType]()
+var activeDownloads = [String: DownloadManager]()
+let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+var dataTask: URLSessionDataTask?
+
+
 
 struct AppURL {
     static let baseUrl = "http://www.blivestudio.com/OnlyWallpapers/"

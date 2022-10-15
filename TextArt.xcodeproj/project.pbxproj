@@ -77,6 +77,8 @@
 		013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6FA28FAE36300DBE800 /* QuotesCell.swift */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
+		016DA3FA28FB18EF004F4673 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DA3F928FB18EE004F4673 /* DownloadManager.swift */; };
+		016DA3FC28FB19B1004F4673 /* ImageShownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DA3FB28FB19B1004F4673 /* ImageShownViewController.swift */; };
 		018063F628DFDF1B0015E667 /* Motivational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018063F528DFDF1B0015E667 /* Motivational.plist */; };
 		019BC4E028E026F400B15323 /* FrameThumb20.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C428E026F400B15323 /* FrameThumb20.png */; };
 		019BC4E128E026F400B15323 /* FrameThumb0.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C528E026F400B15323 /* FrameThumb0.png */; };
@@ -342,6 +344,8 @@
 		013AA6FA28FAE36300DBE800 /* QuotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCell.swift; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
+		016DA3F928FB18EE004F4673 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		016DA3FB28FB19B1004F4673 /* ImageShownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShownViewController.swift; sourceTree = "<group>"; };
 		018063F528DFDF1B0015E667 /* Motivational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Motivational.plist; sourceTree = "<group>"; };
 		019BC4C428E026F400B15323 /* FrameThumb20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb20.png; sourceTree = "<group>"; };
 		019BC4C528E026F400B15323 /* FrameThumb0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb0.png; sourceTree = "<group>"; };
@@ -809,6 +813,7 @@
 		39CC0E0328A4A6DB00DF1C64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				016DA3F928FB18EE004F4673 /* DownloadManager.swift */,
 				01219B0228DE7DAA00133E56 /* AlphaSlider.swift */,
 				01E9232C28D7231700F21554 /* ImageDetails.swift */,
 				3992EF2F28AC721300F783FB /* UICustomCollectionViewLayout.swift */,
@@ -923,6 +928,7 @@
 				01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */,
 				013AA6F828FAE01F00DBE800 /* QuotesVc.swift */,
 				01507E2F28E10D0E002E5535 /* UI+Extension.swift */,
+				016DA3FB28FB19B1004F4673 /* ImageShownViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1491,6 +1497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3949331C28AB2E93003E8D67 /* DBmanager.swift in Sources */,
+				016DA3FC28FB19B1004F4673 /* ImageShownViewController.swift in Sources */,
 				0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */,
 				01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */,
 				01FD5AD128AE52AE00CBF70F /* BreakWordControllerView.swift in Sources */,
@@ -1505,6 +1512,7 @@
 				01FD5ADA28AE52C700CBF70F /* TextViewInof+Structure.swift in Sources */,
 				019BC53828E027E400B15323 /* FrameVc.swift in Sources */,
 				013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */,
+				016DA3FA28FB18EF004F4673 /* DownloadManager.swift in Sources */,
 				39CC0E1428A4AAB100DF1C64 /* OverLayVc.swift in Sources */,
 				3992EF3028AC721400F783FB /* UICustomCollectionViewLayout.swift in Sources */,
 				3949332028AB2F20003E8D67 /* StickerValueObj.swift in Sources */,

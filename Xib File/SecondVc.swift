@@ -12,7 +12,7 @@ import UIKit
 class SecondVc: UIView {
     @IBOutlet weak var categoryTableview: UITableView!
     var plistArrayImage:NSArray!
-
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
     }
@@ -20,7 +20,7 @@ class SecondVc: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,7 +32,7 @@ class SecondVc: UIView {
         let path = Bundle.main.path(forResource: "category", ofType: "plist")
         plistArrayImage = NSArray(contentsOfFile: path!)
         
-
+        
         
         for item in plistArrayImage {
             print(item)
@@ -76,7 +76,7 @@ class SecondVc: UIView {
                     for item1 in plistArrayImage {
                         
                         var valuem = item1 as? String
-                    
+                        
                         if item1 as! String == "Blur1" {
                             valuem = "Blur"
                         }
@@ -139,6 +139,9 @@ extension SecondVc: UITableViewDelegate,UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
     }
     
 }
