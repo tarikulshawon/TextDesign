@@ -211,18 +211,25 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         if index == 0 {
             Brightness = value
+            adjustVc.brigthness = Brightness
         }else if index == 1 {
             Saturation = value
+            adjustVc.saturation = Saturation
         }
         else if index == 2 {
             hue = value
+            adjustVc.hue = hue
         }
         else if index == 3 {
             sharpen = value
+            adjustVc.sharpen = sharpen
         }
         else if index == 4 {
-            hue = value
+            Contrast = value
+            adjustVc.contrast = Contrast
         }
+        
+        
         
         self.DoAdjustMent(inputImage: mainImage)
     }
@@ -371,6 +378,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             print(sharpen)
             currentOverlayIndex = Int(imageInfoObj.OverLay) ?? 0
             ov = imageInfoObj.ov.floatValue
+            adjustVc.brigthness = Brightness
+            adjustVc.saturation = Saturation
+            adjustVc.contrast = Contrast
+            adjustVc.hue = hue
+            adjustVc.sharpen = sharpen
+            adjustVc.updateSlider()
         }
         
         
