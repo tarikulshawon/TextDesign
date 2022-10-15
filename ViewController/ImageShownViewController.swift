@@ -65,6 +65,13 @@ class ImageShownViewController: UIViewController,URLSessionDelegate, URLSessionD
             activeDownloads[url] = nil
             
             
+            
+            DispatchQueue.main.async { [self] in
+                collectionViewForImage.reloadData()
+            }
+            
+            
+            
         }
     }
     
@@ -159,13 +166,23 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
         cell.gradietImv.contentMode = .scaleAspectFill
         cell.holderView.backgroundColor = UIColor.clear
         cell.layer.cornerRadius = 10.0
-       
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        var imageValue = imageDetailArrayF[indexPath.row]
+        if (isFileAvailable(fileName: imageValue.name!)) {
+            let im = UIImage.init(contentsOfFile: getFilePathWithName(fileName: imageValue.name!))
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc: EditVc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
+            vc.modalPresentationStyle = .fullScreen
+            vc.mainImage = im
+            present(vc, animated: true, completion: nil)
+            
+        }
+            
         
     }
 }
