@@ -137,7 +137,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                     <connections>
                                                         <action selector="gotoRight:" destination="iN0-l3-epB" eventType="touchUpInside" id="erc-UH-OcX"/>
-                                                        <action selector="gotocenter:" destination="iN0-l3-epB" eventType="touchUpInside" id="rXH-6j-a0Q"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -167,8 +166,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                     <connections>
                                                         <action selector="gotoJustified:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nc9-EC-tMu"/>
-                                                        <action selector="gotoRight:" destination="iN0-l3-epB" eventType="touchUpInside" id="CHA-x9-Rqx"/>
-                                                        <action selector="gotocenter:" destination="iN0-l3-epB" eventType="touchUpInside" id="5yK-eB-mdu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
