@@ -274,7 +274,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         case .Color:   return plistArray.count + 1
         case .Fonts:   return arrayForFont.count
         case .Texture: return 22 // TODO: Fix
-        default:       return plistArray1.count + 1
+        default:       return plistArray1.count
         }
     }
     
