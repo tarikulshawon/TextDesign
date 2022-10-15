@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DBmanager.shared.initDB()
         
+       
+        
+    
+        
         let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let fileUrl = documentDirectoryUrl?.appendingPathComponent("wallpapers.json")
         
