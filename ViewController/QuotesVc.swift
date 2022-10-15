@@ -12,12 +12,10 @@ protocol quotesDelegate: AnyObject {
 }
 
 class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
-     
-    
     weak var delegateForQuotes: quotesDelegate?
     var quotesArray:NSArray!
     var headerName = [String]()
-
+    
     @IBAction func gotoPreviousvIEW(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -35,32 +33,32 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
             
             
         }
-
+        
         // Do any additional setup after loading the view.
     }
     
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.lightGray.withAlphaComponent(1.0)
-        let headerLabel = UILabel(frame: CGRect(x: 30, y: 0, width:
-        tableView.bounds.size.width, height: tableView.bounds.size.height))
-        headerLabel.font = UIFont.systemFont(ofSize: 20)
-        headerLabel.textColor = UIColor.white
-        headerLabel.text = headerName[section]
-        headerLabel.sizeToFit()
-        headerView.addSubview(headerLabel)
-        return headerView
+    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //
+    //        let headerView = UIView()
+    //        headerView.backgroundColor = UIColor.lightGray.withAlphaComponent(1.0)
+    //        let headerLabel = UILabel(frame: CGRect(x: 30, y: 0, width:
+    //        tableView.bounds.size.width, height: tableView.bounds.size.height))
+    //        headerLabel.font = UIFont.systemFont(ofSize: 20)
+    //        headerLabel.textColor = UIColor.white
+    //        headerLabel.text = headerName[section]
+    //        headerLabel.sizeToFit()
+    //        headerView.addSubview(headerLabel)
+    //        return headerView
+    //    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return  quotesArray.count
     }
     
-    
-     func numberOfSections(in tableView: UITableView) -> Int {
-         return  quotesArray.count
-   }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-       return 40
+        return 40
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,29 +87,36 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        headerName[section]
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        30
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt
-     indexPath: IndexPath){
+                   indexPath: IndexPath){
         
         var lol = quotesArray[indexPath.section]
         if let a = lol as? Dictionary<String, Any> ,let b = a["items"] as? NSArray{
             
             self.delegateForQuotes?.sendText1(text: b[indexPath.row] as? String ?? "")
         }
-         //you
+        //you
         
         self.dismiss(animated: true)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
