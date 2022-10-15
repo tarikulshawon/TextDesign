@@ -133,26 +133,60 @@ extension OverLayVc: UICollectionViewDataSource,UICollectionViewDelegate,UIColle
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView is UICollectionView else { return }
-        
+
         let centerPoint = CGPoint(
             x: collectionViewForFilter.frame.size.width / 2 +  scrollView.contentOffset.x,
             y: collectionViewForFilter.frame.size.height / 2 + scrollView.contentOffset.y
         )
-        
+
         if let indexPath = collectionViewForFilter.indexPathForItem(at: centerPoint) {
             centerCell = collectionViewForFilter.cellForItem(at: indexPath) as? ColorCell
             centerCell?.toZoom()
-            
+
             setOverLay(index: indexPath.row - 1)
         }
-        
+
         if let cell = centerCell {
             let offsetX = centerPoint.x - cell.center.x
-            
-            if offsetX < -15 || offsetX > 15 {
+
+            if offsetX < -10 || offsetX > 10 {
                 cell.toOriginal()
                 centerCell = nil
             }
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.collectionViewForFilter.scrollToNearestVisibleCollectionViewCell()
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.collectionViewForFilter.scrollToNearestVisibleCollectionViewCell()
+        }
+    }
+}
+
+extension UICollectionView {
+    func scrollToNearestVisibleCollectionViewCell() {
+        self.decelerationRate = UIScrollView.DecelerationRate.fast
+        let visibleCenterPositionOfScrollView = Float(self.contentOffset.x + (self.bounds.size.width / 2))
+        var closestCellIndex = -1
+        var closestDistance: Float = .greatestFiniteMagnitude
+        for i in 0..<self.visibleCells.count {
+            let cell = self.visibleCells[i]
+            let cellWidth = cell.bounds.size.width
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+
+            // Now calculate closest cell
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = self.indexPath(for: cell)!.row
+            }
+        }
+        if closestCellIndex != -1 {
+            self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         }
     }
 }
@@ -163,17 +197,17 @@ final class CustomCollectionViewFlowLayout: UICollectionViewFlowLayout {
         scrollDirection = .horizontal
     }
     
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-        var offsetAdjustment = CGFloat.greatestFiniteMagnitude
-        let horizontalOffset = proposedContentOffset.x + collectionView!.contentInset.left
-        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView!.bounds.size.width, height: collectionView!.bounds.size.height)
-        let layoutAttributesArray = super.layoutAttributesForElements(in: targetRect)
-        layoutAttributesArray?.forEach({ (layoutAttributes) in
-            let itemOffset = layoutAttributes.frame.origin.x
-            if fabsf(Float(itemOffset - horizontalOffset)) < fabsf(Float(offsetAdjustment)) {
-                offsetAdjustment = itemOffset - horizontalOffset
-            }
-        })
-        return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
-    }
+//    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+//        var offsetAdjustment = CGFloat.greatestFiniteMagnitude
+//        let horizontalOffset = proposedContentOffset.x + collectionView!.contentInset.left
+//        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView!.bounds.size.width, height: collectionView!.bounds.size.height)
+//        let layoutAttributesArray = super.layoutAttributesForElements(in: targetRect)
+//        layoutAttributesArray?.forEach({ (layoutAttributes) in
+//            let itemOffset = layoutAttributes.frame.origin.x
+//            if fabsf(Float(itemOffset - horizontalOffset)) < fabsf(Float(offsetAdjustment)) {
+//                offsetAdjustment = itemOffset - horizontalOffset
+//            }
+//        })
+//        return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
+//    }
 }
