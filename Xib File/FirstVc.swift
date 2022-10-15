@@ -44,7 +44,6 @@ class FirstVc: UIView, CustomLayoutDelegate, callDelegate {
         collectionViewForImage.register(nibName, forCellWithReuseIdentifier:  ColorCell.reusableID)
         collectionViewForImage.delegate = self
         collectionViewForImage.dataSource = self
-        
         self.customCollectionViewLayout?.delegate = self
         self.customCollectionViewLayout?.numberOfColumns = 3
         

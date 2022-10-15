@@ -157,6 +157,7 @@ extension SecondVc: UITableViewDelegate,UITableViewDataSource {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc: ImageShownViewController = storyboard.instantiateViewController(withIdentifier: "ImageShownViewController") as! ImageShownViewController
             vc.imageDetailArrayF = selectedArray
+            vc.modalPresentationStyle = .fullScreen
             
             let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 
