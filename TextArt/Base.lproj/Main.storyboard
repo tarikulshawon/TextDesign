@@ -711,7 +711,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nYD-Bn-3PF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gEv-ba-ATW" firstAttribute="top" secondItem="fiN-jo-6gA" secondAttribute="top" id="0Ac-ve-4d8"/>
                             <constraint firstItem="gEv-ba-ATW" firstAttribute="leading" secondItem="fiN-jo-6gA" secondAttribute="leading" id="Hsf-9E-q0m"/>
@@ -938,7 +938,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VSg-X6-vNt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="HLV-Or-ke5" secondAttribute="bottom" id="Oot-ff-PkZ"/>
                             <constraint firstItem="HLV-Or-ke5" firstAttribute="top" secondItem="Cez-AJ-5nA" secondAttribute="top" id="XGA-T0-r1r"/>
@@ -1198,7 +1198,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7o1-Yf-X1X"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7o1-Yf-X1X" firstAttribute="trailing" secondItem="y2m-pq-rDa" secondAttribute="trailing" id="8ll-pH-N0U"/>
                             <constraint firstItem="fKe-4C-riS" firstAttribute="top" secondItem="y2m-pq-rDa" secondAttribute="bottom" id="Ghf-KE-vCP"/>
@@ -1294,7 +1294,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBf-OZ-xCz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xL6-hX-Cux" secondAttribute="trailing" id="HpA-tj-JvY"/>
                             <constraint firstItem="JBf-OZ-xCz" firstAttribute="trailing" secondItem="zd4-M4-2xq" secondAttribute="trailing" id="JNl-GV-8Ln"/>
