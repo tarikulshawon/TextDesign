@@ -1,5 +1,5 @@
 //
-//  SecondVc.swift
+//  SecondVc.gswift
 //  PosterMaker
 //
 //  Created by m-sagor-sikdar on 18/12/21.
@@ -7,10 +7,12 @@
 
 import UIKit
 
+
+
 class SecondVc: UIView {
     @IBOutlet weak var categoryTableview: UITableView!
-    var plistArray:NSArray!
-
+    var plistArrayImage:NSArray!
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
     }
@@ -18,7 +20,7 @@ class SecondVc: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,11 +30,11 @@ class SecondVc: UIView {
         self.categoryTableview.rowHeight = value
         
         let path = Bundle.main.path(forResource: "category", ofType: "plist")
-        plistArray = NSArray(contentsOfFile: path!)
+        plistArrayImage = NSArray(contentsOfFile: path!)
         
-
         
-        for item in plistArray {
+        
+        for item in plistArrayImage {
             print(item)
         }
         
@@ -53,6 +55,7 @@ class SecondVc: UIView {
         if let items = dataDicRoot?.value(forKey: "headerItem") as? NSArray {
             for item in items {
                 var currentCategory = ((item as! NSDictionary).object(forKey: "itemName") as? String)!
+                var ish = currentCategory
                 //print("i: \(i) \(item)")
                 i = i + 1
                 var j = 0
@@ -66,13 +69,34 @@ class SecondVc: UIView {
                         let name = ((imageOb as AnyObject).object(forKey: "imageName") as? String)!
                         let imageName = "\(name)"
                         let url = "\(AppURL.baseUrl)\(currentCategory)/\(imageName)"
-                        print(url);
                         tmpImgDetailsArray.append(ImageDetails(name: imageName, type: "Image", downloadURL: url))
                     }
-                    imageDetailsArray.add(tmpImgDetailsArray)
+                    
+                    
+                    for item1 in plistArrayImage {
+                        
+                        var valuem = item1 as? String
+                        
+                        if item1 as! String == "Blur1" {
+                            valuem = "Blur"
+                        }
+                        if ish.contains(valuem ?? "") {
+                            imageDetailArrayFilter.append(ImageType(typeName: item1 as? String ?? "" , imageDetailArray: tmpImgDetailsArray))
+                            break
+                        }
+                        
+                    }
                     tmpImgDetailsArray.removeAll()
+                    
+                    
+                    
+                    
                 }
+                
             }
+        }
+        for item in imageDetailArrayFilter {
+            print(item.typeName)
         }
     }
     
@@ -101,7 +125,7 @@ class SecondVc: UIView {
 extension SecondVc: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        plistArray.count
+        plistArrayImage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,12 +133,15 @@ extension SecondVc: UITableViewDelegate,UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryCell.cellID) as? CategoryCell else {
             return CategoryCell()
         }
-        if let value = plistArray[indexPath.row] as? String {
+        if let value = plistArrayImage[indexPath.row] as? String {
             cell.categoryImv.image = UIImage(named: value)
         }
         cell.selectionStyle = .none
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
     }
     
 }

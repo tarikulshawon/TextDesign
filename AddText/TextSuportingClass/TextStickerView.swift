@@ -26,7 +26,6 @@ class TextStickerView: UITextView, UIGestureRecognizerDelegate {
         withSender sender: Any?
     ) -> Bool {
         
-        print("khalamma")
         return false
     }
 

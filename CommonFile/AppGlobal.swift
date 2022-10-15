@@ -30,6 +30,11 @@ var dataDicRoot:NSDictionary? = nil
 var imageDetailsArray = NSMutableArray()
 var shouldRemove =  true
 
+var imageDetailArrayFilter = [ImageType]()
+var activeDownloads = [String: DownloadManager]()
+let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+var dataTask: URLSessionDataTask?
+
 
 
 struct AppURL {
@@ -52,6 +57,17 @@ enum BtnName:String {
     case Shape
     case Blur
 }
+
+
+struct ImageType {
+    var typeName = ""
+    var imageDetailArray = [ImageDetails]()
+    init(typeName: String = "", imageDetailArray: [ImageDetails] = [ImageDetails]()) {
+        self.typeName = typeName
+        self.imageDetailArray = imageDetailArray
+    }
+}
+
 
 enum BtnNameInt:Int {
     case Texts
