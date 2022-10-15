@@ -430,7 +430,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         currentBlurValue = Double(sender.value)
     }
     func updateHeight (heightNeedToBeRemoved: CGFloat) {
-        widthForImv.constant = HolderView.frame.width
+        widthForImv.constant = self.view.frame.width
         heightForImv.constant = HolderView.frame.height - heightNeedToBeRemoved
         
         print(HolderView.frame.width)
@@ -532,6 +532,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
     }
     
+    @objc func updateHeightF() {
+        self.updateHeight(heightNeedToBeRemoved: 0)
+    }
+    
     @IBAction func dismissColorPicker(_ sender: Any) {
         UIView.animate(withDuration: 0.2, animations: {
             
@@ -540,7 +544,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             
         }, completion: {_ in
             self.bottomSpceOfMainView.constant = 0
-            self.updateHeight(heightNeedToBeRemoved: 0)
+            self.perform(#selector(self.updateHeightF), with: self, afterDelay: 0.2)
+
+           
         })
         
     }
