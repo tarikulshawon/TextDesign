@@ -47,10 +47,10 @@ enum BtnName:String {
     case Quotes
     case Adjust
     case Filter
-    case Blur
     case Overlay
     case Image
     case Shape
+    case Blur
 }
 
 enum BtnNameInt:Int {
@@ -60,10 +60,10 @@ enum BtnNameInt:Int {
     case Quotes
     case Adjust
     case Filter
-    case Blur
     case Overlay
     case Image
     case Shape
+    case Blur
 }
 
 

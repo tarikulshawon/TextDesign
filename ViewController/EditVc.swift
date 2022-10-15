@@ -337,7 +337,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         saveBtn.setTitleColor(titleColor, for: .normal)
         
-        DoAdjustMent(inputImage: mainImage)
+        
+        if let data = UserDefaults.standard.data(forKey: imageInfoObj.id),
+           let scoreList = NSKeyedUnarchiver.unarchiveObject(with: data) as? Dictionary<String, Any> {
+            
+             currentFilterDic = scoreList
+         }
+        
         
         if isfromUpdate {
             stickerObjList = DBmanager.shared.getStickerInfo(fileName: imageInfoObj.id)
@@ -380,7 +386,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.perform(#selector(self.targetMethod1), with: self, afterDelay:0.1)
         
         if isfromUpdate {
-            self.DoAdjustMent(inputImage: mainImage)
+            
+            DispatchQueue.main.async {
+                self.DoAdjustMent(inputImage: self.mainImage)
+            }
+
             overLayVc.delegateForOverlay = self
             overLayVc.setOverLay(index: currentOverlayIndex)
             transParentView.alpha = CGFloat(ov)
@@ -582,6 +592,13 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         
         if isfromUpdate {
             DBmanager.shared.updateTableData(id: imageInfoObj.id, fileObj: imageInfoObj)
+            DBmanager.shared.insertmergeFile(fileObj: imageInfoObj)
+            let ma1 = DBmanager.shared.getMaxIdForMerge()
+            
+            let data = NSKeyedArchiver.archivedData(withRootObject: currentFilterDic ?? nil)
+            let defaults = UserDefaults.standard
+            defaults.set(data, forKey: "\(imageInfoObj.id)")
+            
             let images = screenSortView.takeScreenshot()
             createFile(fileName: "FileNameS" + "\(imageInfoObj.id)" + ".jpg",cropImage: images.resizeImage(targetSize: CGSize(width: 300, height: 300)))
             
