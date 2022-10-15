@@ -584,6 +584,16 @@ extension EditVc {
             
             // cell?.iconImv.tintColor = UIColor.red
             if let btnValue = cell?.iconLabel.text {
+                
+                if btnValue == BtnName.Quotes.rawValue {
+                    shouldRemove = false
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc: QuotesVc = storyboard.instantiateViewController(withIdentifier: "QuotesVc") as! QuotesVc
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    
+                    return
+                }
                 if btnValue == BtnName.Texts.rawValue {
                     
                     let p = self.bottomSpaceOfFontLoaderView.constant < 0 ? 0 : -1000

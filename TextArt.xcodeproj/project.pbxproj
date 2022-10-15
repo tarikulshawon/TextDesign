@@ -73,6 +73,8 @@
 		0127AAD428D8B71000EE45BC /* FilterGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0127AAD328D8B71000EE45BC /* FilterGroup.plist */; };
 		012FA0A828DA029000E44786 /* Nature in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0A728DA028F00E44786 /* Nature */; };
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
+		013AA6F928FAE01F00DBE800 /* QuotesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6F828FAE01F00DBE800 /* QuotesVc.swift */; };
+		013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6FA28FAE36300DBE800 /* QuotesCell.swift */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
 		018063F628DFDF1B0015E667 /* Motivational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018063F528DFDF1B0015E667 /* Motivational.plist */; };
@@ -336,6 +338,8 @@
 		0127AAD328D8B71000EE45BC /* FilterGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterGroup.plist; sourceTree = "<group>"; };
 		012FA0A728DA028F00E44786 /* Nature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nature; sourceTree = "<group>"; };
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
+		013AA6F828FAE01F00DBE800 /* QuotesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesVc.swift; sourceTree = "<group>"; };
+		013AA6FA28FAE36300DBE800 /* QuotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCell.swift; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
 		018063F528DFDF1B0015E667 /* Motivational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Motivational.plist; sourceTree = "<group>"; };
@@ -917,6 +921,7 @@
 				39F8225628A35133008925EF /* HomeVc.swift */,
 				39CC0E0128A4A5B000DF1C64 /* EditVc.swift */,
 				01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */,
+				013AA6F828FAE01F00DBE800 /* QuotesVc.swift */,
 				01507E2F28E10D0E002E5535 /* UI+Extension.swift */,
 			);
 			path = ViewController;
@@ -990,6 +995,7 @@
 				39CC0DEF28A4A33C00DF1C64 /* CategoryCell.xib */,
 				39F8228528A36596008925EF /* ColorCell.swift */,
 				39F8228428A36596008925EF /* ColorCell.xib */,
+				013AA6FA28FAE36300DBE800 /* QuotesCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1498,6 +1504,7 @@
 				01FD5AD928AE52C700CBF70F /* BorderExtenstion.swift in Sources */,
 				01FD5ADA28AE52C700CBF70F /* TextViewInof+Structure.swift in Sources */,
 				019BC53828E027E400B15323 /* FrameVc.swift in Sources */,
+				013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */,
 				39CC0E1428A4AAB100DF1C64 /* OverLayVc.swift in Sources */,
 				3992EF3028AC721400F783FB /* UICustomCollectionViewLayout.swift in Sources */,
 				3949332028AB2F20003E8D67 /* StickerValueObj.swift in Sources */,
@@ -1519,6 +1526,7 @@
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,
 				01B73E9D28F15029008B8D7A /* SettingVc.swift in Sources */,
+				013AA6F928FAE01F00DBE800 /* QuotesVc.swift in Sources */,
 				01FD5AD228AE52AE00CBF70F /* PanControllerImageView.swift in Sources */,
 				011F93CB28E372390090B44E /* UIColor+Extension.swift in Sources */,
 				3949331728AB2D0E003E8D67 /* StickerView.swift in Sources */,

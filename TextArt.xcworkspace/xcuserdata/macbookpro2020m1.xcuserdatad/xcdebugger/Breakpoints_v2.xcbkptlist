@@ -854,8 +854,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "797"
             endingLineNumber = "797"
-            landmarkName = "EditVc"
-            landmarkType = "3">
+            landmarkName = "gotoSave(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1478,8 +1478,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "204"
             endingLineNumber = "204"
-            landmarkName = "updateSticker(obj:)"
-            landmarkType = "7">
+            landmarkName = "EditVc"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1749,8 +1749,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "EditVc"
-            landmarkType = "21">
+            landmarkName = "showColorPickerView()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1930,111 +1930,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "082EECB4-B6E5-4F45-9FCA-0C442B96ADA4"
+            uuid = "1BA0152E-8695-417D-808D-B91CE3766E2F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
+            filePath = "ViewController/QuotesVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "082EECB4-B6E5-4F45-9FCA-0C442B96ADA4 - 8a65dd4f7908cec5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.viewDidLoad() -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "343"
-                  endingLineNumber = "343"
-                  offsetFromSymbolStart = "4065">
-               </Location>
-               <Location
-                  uuid = "082EECB4-B6E5-4F45-9FCA-0C442B96ADA4 - 8a65dd4f7908cec5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.viewDidLoad() -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "343"
-                  endingLineNumber = "343"
-                  offsetFromSymbolStart = "4539">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8576C0E2-8AD1-4D21-A0F3-E558E01C1F22"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8576C0E2-8AD1-4D21-A0F3-E558E01C1F22 - 8a65dd4f7908cee2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.viewDidLoad() -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "342"
-                  endingLineNumber = "342"
-                  offsetFromSymbolStart = "3601">
-               </Location>
-               <Location
-                  uuid = "8576C0E2-8AD1-4D21-A0F3-E558E01C1F22 - 8a65dd4f7908cee2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.viewDidLoad() -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "342"
-                  endingLineNumber = "342"
-                  offsetFromSymbolStart = "3840">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0AF1D8EC-593C-4D43-A9E2-2B49712BA22B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2042,15 +1946,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "377EE56B-316D-4DA7-973A-A34CF275B4FA"
+            uuid = "5FD88E3F-7226-4B5F-A9C1-FCE2BD357AE2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVc.swift"
+            filePath = "ViewController/QuotesVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B00C24A-2D57-40DF-8ED6-2214F05748AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/QuotesVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B31B5D0-F9CE-4DD8-9E6B-844CB37E59AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/QuotesVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
