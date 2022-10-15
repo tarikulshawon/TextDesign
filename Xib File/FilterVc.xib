@@ -17,7 +17,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cs-8X-ug6">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Zkh-ti-Kys"/>
                     </constraints>
@@ -38,7 +38,7 @@
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="8cs-8X-ug6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="384-cy-YXP"/>
                 <constraint firstAttribute="bottom" secondItem="IKp-aG-xhc" secondAttribute="bottom" constant="10" id="DB6-mG-Xxe"/>

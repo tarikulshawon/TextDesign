@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="245"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-Uk-i0o">
-                                                    <rect key="frame" x="-28.5" y="113" width="57" height="19.5"/>
+                                                    <rect key="frame" x="-28.5" y="112.5" width="57" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Ah3-bn-n7T" firstAttribute="top" secondItem="RPQ-Xf-5qw" secondAttribute="bottom" id="AO7-dK-KbI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ah3-bn-n7T" secondAttribute="trailing" id="CRJ-DR-EO2"/>
