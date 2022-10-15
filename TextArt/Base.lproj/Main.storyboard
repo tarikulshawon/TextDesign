@@ -466,7 +466,7 @@
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rqm-ni-Tkg">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="USb-pb-xHA">
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -481,6 +481,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </collectionViewCellContentView>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -971,7 +972,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMB-cR-6m1">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="uOR-3b-dua">
                                         <connections>
@@ -1015,7 +1016,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-KW-7dt" customClass="HorizontalDial" customModule="HorizontalDial">
-                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5QA-EQ-bar"/>
