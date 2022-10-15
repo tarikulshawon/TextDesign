@@ -116,6 +116,11 @@ class SettingVc: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt
+     indexPath: IndexPath){
+         //your code...
+    }
     /*
     // MARK: - Navigation
 

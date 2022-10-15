@@ -590,6 +590,7 @@ extension EditVc {
                     let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc: QuotesVc = storyboard.instantiateViewController(withIdentifier: "QuotesVc") as! QuotesVc
                     vc.modalPresentationStyle = .fullScreen
+                    vc.delegateForQuotes = self
                     self.present(vc, animated: true, completion: nil)
                     
                     return

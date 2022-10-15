@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol quotesDelegate: AnyObject {
+    func sendText1(text: String)
+}
+
 class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
      
+    
+    weak var delegateForQuotes: quotesDelegate?
     var quotesArray:NSArray!
     var headerName = [String]()
 
@@ -76,10 +82,22 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
             cell.quotesL.text = b[indexPath.row] as? String
         }
         
-       
-      
         return cell
         
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt
+     indexPath: IndexPath){
+        
+        var lol = quotesArray[indexPath.section]
+        if let a = lol as? Dictionary<String, Any> ,let b = a["items"] as? NSArray{
+            
+            self.delegateForQuotes?.sendText1(text: b[indexPath.row] as? String ?? "")
+        }
+         //you
+        
+        self.dismiss(animated: true)
     }
 
     /*

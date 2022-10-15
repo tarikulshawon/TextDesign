@@ -1179,7 +1179,11 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     
 }
 
-extension EditVc: StickerViewDelegate {
+extension EditVc: StickerViewDelegate,quotesDelegate {
+    func sendText1(text: String) {
+        self.addText(text: text, font: UIFont.systemFont(ofSize: 20.0))
+    }
+    
     func stickerViewDidBeginMoving(_ stickerView: StickerView) {
         currentStickerView = stickerView
         stickerView.showEditingHandlers = true
