@@ -65,6 +65,13 @@ class ImageShownViewController: UIViewController,URLSessionDelegate, URLSessionD
             activeDownloads[url] = nil
             
             
+            
+            DispatchQueue.main.async { [self] in
+                collectionViewForImage.reloadData()
+            }
+            
+            
+            
         }
     }
     
@@ -159,7 +166,7 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
         cell.gradietImv.contentMode = .scaleAspectFill
         cell.holderView.backgroundColor = UIColor.clear
         cell.layer.cornerRadius = 10.0
-       
+        
         return cell
     }
     
