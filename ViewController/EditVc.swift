@@ -55,6 +55,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBOutlet weak var heightForShapeVc: NSLayoutConstraint!
     
     
+    @IBOutlet weak var bottomSpaceForBlur: NSLayoutConstraint!
     @IBOutlet weak var slider1: UISlider!
     @IBOutlet weak var slider2: UISlider!
     @IBOutlet weak var slider3: UISlider!
@@ -78,6 +79,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var currentLookUpindex = 0
     var plistArray2:NSArray!
     var mainImage:UIImage!
+    var currentBlurValue:Double = -1
     
     var Brightness: Float = 0.0
     var max_brightness:Float = 0.7
@@ -391,6 +393,19 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.updateHeight(heightNeedToBeRemoved: 0)
     }
     
+    
+    
+    
+    @IBAction func mamama(_ sender: Any) {
+        currentFilterDic = nil
+        DoAdjustMent(inputImage: mainImage)
+
+    }
+    
+    @IBAction func blurValueChange(_ sender: UISlider) {
+        
+        currentBlurValue = Double(sender.value)
+    }
     func updateHeight (heightNeedToBeRemoved: CGFloat) {
         widthForImv.constant = HolderView.frame.width
         heightForImv.constant = HolderView.frame.height - heightNeedToBeRemoved
@@ -460,6 +475,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
+    
+    
+    
     func hueAdjust(inputImage: UIImage) {
         let context = CIContext(options: nil)
         
@@ -476,7 +494,11 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                         guard let self = self else { return }
                         if self.currentFilterDic != nil {
                             self.mainImv.image = getFilteredImage(withInfo: self.currentFilterDic, for: processedImage)
-                        } else {
+                            
+                        } else if self.currentBlurValue > 0 {
+                            self.mainImv.image = processedImage.blur(self.currentBlurValue)
+                        }
+                        else  {
                             // Memory warning
                             self.mainImv.image = processedImage
                         }
@@ -893,6 +915,10 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 self.bottomSpaceForFrame.constant = -1000
             }
             
+            if self.currentlyActiveIndex != BtnNameInt.Blur.rawValue {
+                self.bottomSpaceForBlur.constant = -1000
+            }
+            
             if self.currentlyActiveIndex != BtnNameInt.Texts.rawValue {
                 self.bottomSpaceOfFontLoaderView.constant = -1000
             }
@@ -921,6 +947,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             
             
             if currentlyActiveIndex >= 0 {
+                if self.currentlyActiveIndex == BtnNameInt.Blur.rawValue {
+                    self.bottomSpaceForBlur.constant = 0
+                }
                 if self.currentlyActiveIndex == BtnNameInt.Texts.rawValue {
                     self.bottomSpaceOfFontLoaderView.constant = 0
                 }
@@ -1031,6 +1060,7 @@ extension EditVc: TextStickerContainerViewDelegate {
 
 extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShape {
     func filterNameWithIndex(dic: Dictionary<String, Any>?) {
+        currentBlurValue = -1
         if let value =  dic {
             DispatchQueue.main.async { [self] in
                 

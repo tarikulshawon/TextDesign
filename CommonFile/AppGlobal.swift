@@ -80,7 +80,6 @@ enum TextEditingOption:String {
     case Rotate
     case Texture
 }
-
 func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIImage? {
     let filterName = dict?["filter"] as? String
     
@@ -395,5 +394,15 @@ extension UIColor {
             // Could not extract RGBA components:
             return nil
         }
+    }
+}
+
+extension UIImage {
+    
+    func blur(_ radius: Double) -> UIImage? {
+        if let img = CIImage(image: self) {
+            return UIImage(ciImage: img.applyingGaussianBlur(sigma: radius))
+        }
+        return nil
     }
 }

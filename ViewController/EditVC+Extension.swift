@@ -588,6 +588,17 @@ extension EditVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
                 }
             }
             
+            if btnValue == BtnName.Blur.rawValue {
+                
+                let p = self.bottomSpaceForBlur.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameInt.Blur.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+            }
+            
             if btnValue == BtnName.Adjust.rawValue {
                 let p = self.bottomSpaceForAdjust.constant < 0 ? 0 : -1000
                 

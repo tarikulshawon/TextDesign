@@ -635,6 +635,25 @@
                                         <rect key="frame" x="0.0" y="90" width="414" height="716"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxG-dQ-541">
+                                        <rect key="frame" x="0.0" y="1606" width="414" height="100"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="AZj-14-vsL">
+                                                <rect key="frame" x="32.5" y="35" width="349" height="31"/>
+                                                <connections>
+                                                    <action selector="blurValueChange:" destination="hPL-Dv-MQC" eventType="valueChanged" id="oNm-LQ-5cP"/>
+                                                    <action selector="mamama:" destination="hPL-Dv-MQC" eventType="touchUpInside" id="6tz-Fg-9oj"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="AZj-14-vsL" firstAttribute="width" secondItem="GxG-dQ-541" secondAttribute="width" multiplier="1:1.2" id="5yR-Ve-75Q"/>
+                                            <constraint firstItem="AZj-14-vsL" firstAttribute="centerX" secondItem="GxG-dQ-541" secondAttribute="centerX" id="FKl-8P-EQ4"/>
+                                            <constraint firstAttribute="height" constant="100" id="kiJ-50-KCt"/>
+                                            <constraint firstItem="AZj-14-vsL" firstAttribute="centerY" secondItem="GxG-dQ-541" secondAttribute="centerY" id="um9-TD-XTl"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -655,6 +674,7 @@
                                     <constraint firstAttribute="bottom" secondItem="aRW-YN-1HA" secondAttribute="bottom" id="ITd-UL-7H7"/>
                                     <constraint firstItem="e3o-uT-K16" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="IdO-Bv-wAP"/>
                                     <constraint firstItem="Bi9-1m-YSW" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="JPH-mn-xme"/>
+                                    <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="GxG-dQ-541" secondAttribute="bottom" constant="-900" id="JfA-qd-1MD"/>
                                     <constraint firstAttribute="trailing" secondItem="Wde-2t-hos" secondAttribute="trailing" id="MTD-g3-SKN"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="3bK-BU-Yhw" secondAttribute="bottom" constant="-1000" id="O38-oP-9gx"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="8hc-eU-4HA" secondAttribute="bottom" constant="-1000" id="OWS-Wt-6wj"/>
@@ -663,6 +683,7 @@
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="W6T-5e-2BJ" secondAttribute="bottom" constant="-700" id="TDl-kJ-eK1"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="TNL-gu-Bzy"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="uWX-UP-x1l" secondAttribute="bottom" constant="-1000" id="Ucy-Ch-s3F"/>
+                                    <constraint firstAttribute="trailing" secondItem="GxG-dQ-541" secondAttribute="trailing" id="Xmh-YT-32P"/>
                                     <constraint firstAttribute="trailing" secondItem="aRW-YN-1HA" secondAttribute="trailing" id="Y01-F7-KnB"/>
                                     <constraint firstItem="FC4-RB-40d" firstAttribute="top" secondItem="gEv-ba-ATW" secondAttribute="top" id="aT0-63-ofp"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="aQa-WA-Okg" secondAttribute="bottom" constant="-1000" id="bcE-Qj-Frj"/>
@@ -672,6 +693,7 @@
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="7vC-pb-dnW" secondAttribute="bottom" constant="-1000" id="del-Al-iMB"/>
                                     <constraint firstItem="W6T-5e-2BJ" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="em8-lh-jA1"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="f9v-OT-7Ne"/>
+                                    <constraint firstItem="GxG-dQ-541" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="fEa-Pe-20U"/>
                                     <constraint firstAttribute="trailing" secondItem="e3o-uT-K16" secondAttribute="trailing" id="gLF-tT-E1k"/>
                                     <constraint firstItem="aRW-YN-1HA" firstAttribute="top" secondItem="Rb8-9q-9Yc" secondAttribute="bottom" constant="-1000" id="gbu-DV-kfK"/>
                                     <constraint firstItem="3bK-BU-Yhw" firstAttribute="leading" secondItem="gEv-ba-ATW" secondAttribute="leading" id="iR1-H2-aAX"/>
@@ -704,6 +726,7 @@
                         <outlet property="bottomSpaceFoSticker" destination="csD-M5-ltP" id="gKA-dI-D2o"/>
                         <outlet property="bottomSpaceForAdjust" destination="del-Al-iMB" id="EYS-Xm-zqv"/>
                         <outlet property="bottomSpaceForBackGroundView" destination="OWS-Wt-6wj" id="TcV-hG-Ux0"/>
+                        <outlet property="bottomSpaceForBlur" destination="JfA-qd-1MD" id="Qv4-6t-PQx"/>
                         <outlet property="bottomSpaceForColorPicker" destination="TDl-kJ-eK1" id="Cto-P9-sCu"/>
                         <outlet property="bottomSpaceForDrawer" destination="O38-oP-9gx" id="WCi-ai-Teq"/>
                         <outlet property="bottomSpaceForFilter" destination="Ucy-Ch-s3F" id="Pqy-Yd-ryk"/>
