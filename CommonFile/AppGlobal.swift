@@ -82,7 +82,7 @@ enum BtnNameInt:Int {
 }
 
 
-enum TextEditingOption:String {
+enum TextEditingOption: String, CaseIterable {
     case AddText
     case Fonts
     case Color

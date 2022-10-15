@@ -31,7 +31,6 @@ class TextEditView: UIView {
     var btnScrollView: UIScrollView!
     var selectedIndexView: UIView!
     var tempViww: UIView!
-    var currentOption: TextEditingOption!
     
     @IBOutlet weak var alighnmentViewHolder: UIView!
     
@@ -42,6 +41,9 @@ class TextEditView: UIView {
     @IBOutlet weak var labelViewList: UIStackView!
     @IBOutlet weak var horizontalSlider: UISlider!
     
+    private var currentOption: TextEditingOption = .Fonts
+    private let options = TextEditingOption.allCases
+    
     weak var delegateForText: AddTextDelegate?
     
     override func awakeFromNib() {
@@ -50,7 +52,7 @@ class TextEditView: UIView {
         horizontalSlider.maximumTrackTintColor = unselectedColor
         horizontalSlider.minimumTrackTintColor = titleColor
         
-        currentOption = TextEditingOption.Fonts
+        //currentOption = TextEditingOption.Fonts
         alighnmentViewHolder.isHidden = true
         collectionViewForTextControls.isHidden = true
         sliderView.isHidden = true
@@ -77,8 +79,7 @@ class TextEditView: UIView {
     
     
     @IBAction func opacityValuChanges(_ sender: CustomSlider) {
-        
-        if currentOption.rawValue == TextEditingOption.Opacity.rawValue {
+        if currentOption == .Opacity {
             delegateForText?.sendOpacityValue(value: Double(sender.value))
         }
     }
@@ -121,52 +122,25 @@ class TextEditView: UIView {
     func buttonAction(sender: UIButton!) {
        
         self.tempViww.backgroundColor = titleColor
-        let selectedOption = plistAttayForTextEditOption[sender.tag - 700] as? String
-        switch(selectedOption) {
-        case  TextEditingOption.AddText.rawValue:
-            //
-            
-            currentOption = TextEditingOption.AddText
-        case  TextEditingOption.Fonts.rawValue:
-            currentOption = TextEditingOption.Fonts
-        case  TextEditingOption.Color.rawValue:
-            currentOption = TextEditingOption.Color
-        case  TextEditingOption.Gradient.rawValue:
-            currentOption = TextEditingOption.Gradient
-        case  TextEditingOption.Draw.rawValue:
-            currentOption = TextEditingOption.Draw
-        case  TextEditingOption.Shadow.rawValue:
-            currentOption = TextEditingOption.Shadow
-        case  TextEditingOption.Opacity.rawValue:
-            currentOption = TextEditingOption.Opacity
-        case  TextEditingOption.Align.rawValue:
-            currentOption = TextEditingOption.Align
-        case  TextEditingOption.Rotate.rawValue:
-            currentOption = TextEditingOption.Rotate
-        case  TextEditingOption.Texture.rawValue:
-            currentOption = TextEditingOption.Texture
-        case  TextEditingOption.BackGround.rawValue:
-            currentOption = TextEditingOption.BackGround
-        case .none:
-            break
-        case .some:
-            break
-        }
+        let optionString = plistAttayForTextEditOption[sender.tag - 700] as? String
+        let selectedOption = TextEditingOption(rawValue: optionString ?? "")
+        currentOption = selectedOption ?? .Fonts
+        
         print("Click: \(currentOption.rawValue)")
         
-        if selectedOption == TextEditingOption.Opacity.rawValue || selectedOption == TextEditingOption.Shadow.rawValue {
+        if selectedOption == .Opacity || selectedOption == .Shadow {
             
             sliderView.isHidden = false
             collectionViewForTextControls.isHidden = true
             alighnmentViewHolder.isHidden = true
         }
-        else if selectedOption == TextEditingOption.Align.rawValue  || selectedOption == TextEditingOption.Rotate.rawValue{
+        else if selectedOption == .Align  || selectedOption == .Rotate {
             collectionViewForTextControls.isHidden = true
             alighnmentViewHolder.isHidden = false
             sliderView.isHidden = true
             
             
-            if selectedOption == TextEditingOption.Align.rawValue {
+            if selectedOption == .Align {
                 imageViewList.isHidden = false
                 labelViewList.isHidden = true
                 
@@ -208,12 +182,12 @@ class TextEditView: UIView {
             
         })
         
-        if currentOption.rawValue == TextEditingOption.AddText.rawValue {
+        if currentOption == .AddText {
             delegateForText?.addText()
             
         }
         
-        if currentOption.rawValue == TextEditingOption.BackGround.rawValue {
+        if currentOption == .BackGround {
             delegateForText?.showBackground()
         }
         
@@ -221,14 +195,12 @@ class TextEditView: UIView {
             btn?.setTitleColor(unselectedColor, for: .normal)
             var btn1 = self.btnScrollView.viewWithTag(701) as? UIButton
             self.buttonAction(sender: btn1)
-            
-            
         }
-        
     }
+    
     func stickersScrollContents() {
         
-        print("mammamamama")
+        print("stickersScrollContents")
         var xCoord: CGFloat = 5
         let yCoord: CGFloat = 0
         let buttonHeight: CGFloat = 45.0
@@ -298,16 +270,12 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if currentOption.rawValue == TextEditingOption.Color.rawValue{
-            return plistArray.count + 1
+        switch currentOption {
+        case .Color:   return plistArray.count + 1
+        case .Fonts:   return arrayForFont.count
+        case .Texture: return 22 // TODO: Fix
+        default:       return plistArray1.count + 1
         }
-        else if currentOption.rawValue == TextEditingOption.Fonts.rawValue {
-            return arrayForFont.count
-        }
-        else if currentOption.rawValue == TextEditingOption.Texture.rawValue {
-            return 22
-        }
-        return plistArray1.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -322,15 +290,14 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         cell.fontLabel.isHidden = true
         cell.textColorView.isHidden = true
         
-        if currentOption.rawValue == TextEditingOption.Texture.rawValue {
+        switch currentOption {
+        case .Texture:
             cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.isHidden = false
             cell.gradietImv.image = UIImage(named: "Texture" + "\(indexPath.row)")
             cell.holderView.backgroundColor = UIColor.clear
-        }
-        
-        else if currentOption.rawValue ==  TextEditingOption.Fonts.rawValue {
             
+        case .Fonts:
             cell.holderView.isHidden = true
             cell.gradietImv.isHidden = true
             cell.textColorView.isHidden = false
@@ -343,9 +310,8 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             cell.layer.cornerRadius = 0.0
             cell.fontLabel.textColor = UIColor.white
             cell.fontLabel.textAlignment = .center
-        }
-        
-        else if currentOption.rawValue == TextEditingOption.Color.rawValue{
+            
+        case .Color:
             cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.isHidden = true
             
@@ -359,8 +325,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
                 cell.gradietImv.isHidden = true
             }
             
-        }
-        else if currentOption.rawValue == TextEditingOption.Gradient.rawValue  {
+        case .Gradient:
             cell.layer.cornerRadius = cell.frame.size.height/2.0
             cell.gradietImv.image = nil
             cell.gradietImv.isHidden = false
@@ -375,30 +340,28 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
                 cell.gradietImv.contentMode = .scaleAspectFill
                 cell.gradietImv.image = uimage
             }
+            
+        default: break
         }
+  
         print(cell.contentView.frame.size)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = collectionView.cellForItem(at: indexPath)
-        
-        UIView.animate(withDuration: 0.5, animations:
-                        {
+
+        UIView.animate(withDuration: 0.5, animations: {
             cell?.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            //cell?.backgroundColor = UIColor.lightGray
         }) { (true) in
-            UIView.animate(withDuration: 0.5, animations:
-                            {
-                cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0);                //cell?.backgroundColor = UIColor.clear
+            UIView.animate(withDuration: 0.5, animations: {
+                cell?.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0)
             })
         }
     
-        if currentOption.rawValue == TextEditingOption.Color.rawValue {
-            
-            
+        switch currentOption {
+        case .Color:
             if indexPath.row == 0 {
                 self.delegateForText?.showColorPickerView()
             }
@@ -406,18 +369,13 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
                 
                 delegateForText?.colorValue(color: colorString)
             }
-        }
-        
-        if currentOption.rawValue == TextEditingOption.Fonts.rawValue {
+        case .Fonts:
             delegateForText?.sendFonrIndex(index: indexPath.row)
-        }
-        
-        if currentOption.rawValue == TextEditingOption.Gradient.rawValue {
+        case .Gradient:
             delegateForText?.gradientValue(index: indexPath.row)
-        }
-        
-        else if currentOption.rawValue == TextEditingOption.Texture.rawValue {
+        case .Texture:
             delegateForText?.sendTextureIndex(index: indexPath.row)
+        default: break
         }
     }
 }
