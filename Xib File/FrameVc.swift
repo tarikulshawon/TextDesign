@@ -59,7 +59,7 @@ extension FrameVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 22
+        return 28
         
     }
     
