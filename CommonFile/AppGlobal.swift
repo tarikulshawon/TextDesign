@@ -68,7 +68,6 @@ struct ImageType {
     }
 }
 
-
 enum BtnNameInt:Int {
     case Texts
     case Graphics
@@ -150,6 +149,12 @@ func getFileUrlWithName(fileName:String) -> URL {
     let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     let path = documentsDirectoryURL?.appendingPathComponent(fileName)
     return path!
+}
+
+func getFilePathWithName(fileName:String) -> String {
+    guard let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return ""}
+    let path = documentsDirectoryURL.appendingPathComponent(fileName).path
+    return path
 }
 
 func isConnectedToNetwork() -> Bool {

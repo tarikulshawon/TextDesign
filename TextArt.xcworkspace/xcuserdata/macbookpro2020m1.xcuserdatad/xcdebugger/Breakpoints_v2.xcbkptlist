@@ -46,8 +46,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "saveToJsonFile(data:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "saveToJsonFile(data:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "saveToJsonFile(data:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "saveToJsonFile(data:)"
             landmarkType = "9">
             <Locations>
@@ -1763,8 +1763,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
             landmarkName = "blur(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1779,8 +1779,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "UIImage"
             landmarkType = "21">
          </BreakpointContent>
@@ -1795,8 +1795,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
             landmarkName = "blur(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1811,8 +1811,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "425"
+            endingLineNumber = "425"
             landmarkName = "blur(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1980,80 +1980,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C33CA10D-D073-4DD2-94C8-9E8435C2F506"
+            uuid = "C0A42BC1-99B0-4CEE-89FD-A5A27A5DCC2A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Xib File/SecondVc.swift"
+            filePath = "ViewController/ImageShownViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "createFormattedData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E259EFD2-286E-4DE7-81F1-12CE70EB0C38"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Xib File/SecondVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "createFormattedData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80E051F4-39B8-4306-A8B6-3F5400EBC171"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Xib File/SecondVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "createFormattedData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BD6507FD-0699-4E0C-A76C-AC6ACE8561FA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Xib File/SecondVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "createFormattedData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6EA1A6BF-B685-4F67-86E2-12773DC0802D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Xib File/SecondVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "createFormattedData()"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

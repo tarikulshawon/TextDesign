@@ -141,7 +141,37 @@ extension SecondVc: UITableViewDelegate,UITableViewDataSource {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt
+     indexPath: IndexPath){
+        
+        var value = plistArrayImage[indexPath.row]
+        var selectedArray = [ImageDetails]()
+        for item in imageDetailArrayFilter {
+            if item.typeName == value as? String {
+                selectedArray = item.imageDetailArray
+            }
+        }
+        
+        DispatchQueue.main.async {
+             
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc: ImageShownViewController = storyboard.instantiateViewController(withIdentifier: "ImageShownViewController") as! ImageShownViewController
+            vc.imageDetailArrayF = selectedArray
+            
+            let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+            if var topController = keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                topController.present(vc, animated: true, completion: nil)
+            }
+            
+        }
+        
+       
     }
+    
+   
     
 }
