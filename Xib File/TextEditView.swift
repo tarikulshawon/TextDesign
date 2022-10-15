@@ -43,6 +43,7 @@ class TextEditView: UIView {
     
     private var currentOption: TextEditingOption = .Fonts
     private let options = TextEditingOption.allCases
+    var centerCell: ColorCell?
     
     weak var delegateForText: AddTextDelegate?
     
@@ -376,6 +377,55 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
         case .Texture:
             delegateForText?.sendTextureIndex(index: indexPath.row)
         default: break
+        }
+    }
+}
+
+extension TextEditView {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView is UICollectionView else { return }
+
+        let centerPoint = CGPoint(
+            x: collectionViewForTextControls.frame.size.width / 2 +  scrollView.contentOffset.x,
+            y: collectionViewForTextControls.frame.size.height / 2 + scrollView.contentOffset.y
+        )
+
+        if let indexPath = collectionViewForTextControls.indexPathForItem(at: centerPoint) {
+            centerCell = collectionViewForTextControls.cellForItem(at: indexPath) as? ColorCell
+            centerCell?.toZoom()
+
+            switch currentOption {
+            case .Color:
+                if indexPath.row != 0, let colorString = plistArray[indexPath.row - 1] as? String {
+                    delegateForText?.colorValue(color: colorString)
+                }
+            case .Fonts:
+                delegateForText?.sendFonrIndex(index: indexPath.row)
+            case .Gradient:
+                delegateForText?.gradientValue(index: indexPath.row)
+            case .Texture:
+                delegateForText?.sendTextureIndex(index: indexPath.row)
+            default: break
+            }
+        }
+
+        if let cell = centerCell {
+            let offsetX = centerPoint.x - cell.center.x
+
+            if offsetX < -10 || offsetX > 10 {
+                cell.toOriginal()
+                centerCell = nil
+            }
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.collectionViewForTextControls.scrollToNearestVisibleCollectionViewCell()
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.collectionViewForTextControls.scrollToNearestVisibleCollectionViewCell()
         }
     }
 }
