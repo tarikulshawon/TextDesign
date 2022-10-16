@@ -597,7 +597,6 @@ extension EditVc {
                     if p == 0 {
                         currentlyActiveIndex = BtnNameInt.Texts.rawValue
                         let font = currentTextStickerView?.textView?.font ?? .systemFont(ofSize: 15.0)
-                        self.addText(text: "Double tap to edit", font: font)
                     } else {
                         currentlyActiveIndex = -1
                     }

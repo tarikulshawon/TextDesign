@@ -172,7 +172,7 @@ extension CropVc:UICollectionViewDelegate, UICollectionViewDataSource,UICollecti
             
         } else {
             
-            var obj = plistArray[indexPath.row] as? Dictionary<String, Any>
+            let obj = plistArray[indexPath.row] as? Dictionary<String, Any>
             
             guard  let value = obj?["Width"] as? CGFloat,let value1 = obj?["Height"] as? CGFloat  else {
                 return
