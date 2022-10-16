@@ -22,7 +22,7 @@ class ImageEditView: UIView{
     var tempViww:UIView!
     var selectedIndexView:UIView!
     var plistAttayForTextEditOption:NSArray!
-    let buttonWidth:CGFloat = 80.0
+    let buttonWidth:CGFloat = 90.0
     var selectedBtIndex = 0
     let gapBetweenButtons: CGFloat = 7
     weak var delegateForImage: sendImageDelegate?

@@ -669,7 +669,7 @@ extension EditVc {
                 if btnValue == BtnName.Image.rawValue {
                     currentlyActiveIndex = BtnNameInt.Image.rawValue
                     self.hideALL()
-                    self.processSnapShotPhotos()
+                   // self.processSnapShotPhotos()
                     
                     let p = self.bottomSpaceForImageViewHolder.constant < 0 ? 0 : -1000
                     
