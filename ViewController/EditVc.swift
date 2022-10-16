@@ -1105,10 +1105,9 @@ extension EditVc: TextStickerContainerViewDelegate {
         if textStickerContainerView.tag >= 0 {
             hideALL()
             DBmanager.shared.deleteSticker(id: "\(textStickerContainerView.tag)")
-            let images = screenSortView.takeScreenshot()
-            createFile(fileName: "FileNameS" + "\(imageInfoObj.id)" + ".jpg",cropImage: images.resizeImage(targetSize: CGSize(width: 300, height: 300)))
         }
         
+        perform(#selector(self.takeScreen), with: self, afterDelay: 0.1)
         currentTextStickerView?.removeFromSuperview()
     }
 }
