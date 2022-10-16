@@ -11,7 +11,7 @@ protocol TextStickerContainerViewDelegate: NSObject {
     func editTextStickerView(textStickerContainerView: TextStickerContainerView)
     func deleteTextStickerView(textStickerContainerView: TextStickerContainerView)
     func moveViewPosition(textStickerContainerView: TextStickerContainerView)
-    func showKeyBoard()
+    func showKeyBoard(text:String)
 }
 
 protocol UpdateTextFontSize: AnyObject {
@@ -353,7 +353,7 @@ extension TextStickerContainerView {
         // MARK: Add Edit And Delete Menu Bar
                 if let view = recognizer.view as? TextStickerContainerView {
                     print("halarpo")
-                    self.delegate?.showKeyBoard()
+                    self.delegate?.showKeyBoard(text: view.textStickerView.text)
                 }
         
         self.delegate?.setCurrentTextStickerView(textStickerContainerView: self)

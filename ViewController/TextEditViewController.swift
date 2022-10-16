@@ -16,6 +16,7 @@ public protocol sendTextValue {
 class TextEditViewController: UIViewController {
 
     @IBOutlet weak var textStickerTextView: UITextView!
+    var currentText = ""
     public var delegate: sendTextValue!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class TextEditViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        textStickerTextView.text = currentText
         textStickerTextView.textAlignment = .center
         textStickerTextView.becomeFirstResponder()
         

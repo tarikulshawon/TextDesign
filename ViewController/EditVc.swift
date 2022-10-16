@@ -1051,6 +1051,16 @@ extension EditVc {
 }
 
 extension EditVc: TextStickerContainerViewDelegate {
+    func showKeyBoard(text: String) {
+        shouldRemove = false
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: TextEditViewController = storyboard.instantiateViewController(withIdentifier: "TextEditViewController") as! TextEditViewController
+        vc.delegate = self
+        vc.currentText = text
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
     func showKeyBoard() {
         shouldRemove = false
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
