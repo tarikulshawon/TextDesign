@@ -20,6 +20,10 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     private var hiddenSections = Set<Int>()
     
     @IBOutlet weak var tableView: UITableView!
+
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredQuotes: [String] = []
+
     
     @IBAction func gotoPreviousvIEW(_ sender: Any) {
         self.dismiss(animated: true)
@@ -39,6 +43,13 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
                 quotesDic[sectionName] = contents
             }
         }
+
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Candies"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.delegate = self
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -56,12 +67,14 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
         return sectionButton
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int { quotesDic.keys.count }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        isFiltering ? 1 : quotesDic.keys.count
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { 40 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if isFiltering { return filteredQuotes.count }
         if self.hiddenSections.contains(section) { return 0 }
         
         return quotesDic[headerName[section]]?.count ?? 0
@@ -72,12 +85,14 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
             return QuotesCell()
         }
 
-        guard let arr = quotesDic[headerName[indexPath.section]] else { return QuotesCell() }
-        
-        cell.quotesL.text = arr[indexPath.row] as? String
-        
-        return cell
-        
+        if isFiltering {
+            cell.quotesL.text = filteredQuotes[indexPath.row]
+            return cell
+        } else {
+            guard let arr = quotesDic[headerName[indexPath.section]] else { return QuotesCell() }
+            cell.quotesL.text = arr[indexPath.row] as? String
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -91,6 +106,51 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
         self.dismiss(animated: true)
     }
+}
+
+extension QuotesVc {
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
+
+    func filterContentForSearchText(_ searchText: String) {
+//        filteredQuotes = candies.filter { (candy: Candy) -> Bool in
+//            return candy.name.lowercased().contains(searchText.lowercased())
+//        }
+        let quotes = quotesDic.map { $0.1 }
+        _ = quotes.map {
+            $0.forEach { quote in
+                if let str = quote as? String {
+                    if str.lowercased().contains(searchText.lowercased()) {
+                        filteredQuotes.append(str)
+                    }
+                }
+            }
+            
+        }
+        
+        print(filteredQuotes)
+        
+        tableView.reloadData()
+    }
+
+}
+
+extension QuotesVc: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    filterContentForSearchText(searchBar.text!)
+  }
+}
+
+extension QuotesVc: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+ //
+  }
 }
 
 extension QuotesVc {
