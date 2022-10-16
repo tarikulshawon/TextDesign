@@ -307,6 +307,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         controller.view.frame = CGRect(x: 0, y: 45, width: colorPickerHolder.frame.width, height: colorPickerHolder.frame.height - 50)
+        DBmanager.shared.initDB()
     }
     
     override func viewDidLoad() {
@@ -1100,6 +1101,14 @@ extension EditVc: TextStickerContainerViewDelegate {
     
     func deleteTextStickerView(textStickerContainerView: TextStickerContainerView) {
         //screenSortView.subviews
+        
+        if textStickerContainerView.tag >= 0 {
+            hideALL()
+            DBmanager.shared.deleteSticker(id: "\(textStickerContainerView.tag)")
+            let images = screenSortView.takeScreenshot()
+            createFile(fileName: "FileNameS" + "\(imageInfoObj.id)" + ".jpg",cropImage: images.resizeImage(targetSize: CGSize(width: 300, height: 300)))
+        }
+        
         currentTextStickerView?.removeFromSuperview()
     }
 }
@@ -1205,6 +1214,10 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     func sendShape(sticker: String) {
         self.addSticker(test: UIImage(named: sticker) ?? UIImage(), type: "shape", pathName: sticker)
     }
+    @objc func takeScreen() {
+        let images = screenSortView.takeScreenshot()
+        createFile(fileName: "FileNameS" + "\(imageInfoObj.id)" + ".jpg",cropImage: images.resizeImage(targetSize: CGSize(width: 300, height: 300)))
+    }
     
 }
 
@@ -1240,6 +1253,25 @@ extension EditVc: StickerViewDelegate,quotesDelegate {
     }
     func stickerViewDidClose(_ stickerView: StickerView) {
         
+        if stickerView.pathType == "Image" {
+            var lol  = getFileUrlWithName(fileName: stickerView.pathName)
+            let fileManager = FileManager.default
+            do {
+                try fileManager.removeItem(at: lol as URL)
+            } catch {
+                // Non-fatal: file probably doesn't exist
+            }
+        }
+        
+        if stickerView.tag >= 0 {
+            hideALL()
+            DBmanager.shared.deleteSticker(id: "\(stickerView.tag)")
+            perform(#selector(self.takeScreen), with: self, afterDelay: 0.1)
+
+           
+        }
+        
+      
     }
     func stickerViewDidTap(_ stickerView: StickerView) {
         hideALL()
