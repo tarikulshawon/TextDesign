@@ -17,13 +17,14 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var headerName = [String]()
     var quotesDic = [String: NSArray]()
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
+    
     private var hiddenSections = Set<Int>()
     
     @IBOutlet weak var tableView: UITableView!
-
-    let searchController = UISearchController(searchResultsController: nil)
+    
     var filteredQuotes: [String] = []
-
     
     @IBAction func gotoPreviousvIEW(_ sender: Any) {
         self.dismiss(animated: true)
@@ -43,16 +44,13 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
                 quotesDic[sectionName] = contents
             }
         }
-
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        searchController.searchBar.delegate = self
+        
+        searchBar.placeholder = "Search Quotes"
+        searchBar.delegate = self
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if isFiltering { return nil }
         let sectionButton = UIButton()
         sectionButton.setTitle(headerName[section], for: .normal)
         sectionButton.setTitleColor(.black, for: .normal)
@@ -71,7 +69,9 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
         isFiltering ? 1 : quotesDic.keys.count
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { 40 }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        isFiltering ? 8 : 40
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering { return filteredQuotes.count }
@@ -84,7 +84,7 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuotesCell") as? QuotesCell else {
             return QuotesCell()
         }
-
+        
         if isFiltering {
             cell.quotesL.text = filteredQuotes[indexPath.row]
             return cell
@@ -96,7 +96,7 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5.0
+        return 8
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -110,17 +110,15 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
 extension QuotesVc {
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+        return searchBar.text?.isEmpty ?? true
     }
     
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+        return !isSearchBarEmpty
     }
-
+    
     func filterContentForSearchText(_ searchText: String) {
-//        filteredQuotes = candies.filter { (candy: Candy) -> Bool in
-//            return candy.name.lowercased().contains(searchText.lowercased())
-//        }
+        filteredQuotes.removeAll()
         let quotes = quotesDic.map { $0.1 }
         _ = quotes.map {
             $0.forEach { quote in
@@ -133,24 +131,43 @@ extension QuotesVc {
             
         }
         
-        print(filteredQuotes)
+        print(filteredQuotes.count)
         
         tableView.reloadData()
     }
-
+    
 }
 
 extension QuotesVc: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    let searchBar = searchController.searchBar
-    filterContentForSearchText(searchBar.text!)
-  }
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
 }
 
 extension QuotesVc: UISearchBarDelegate {
-  func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
- //
-  }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let text = searchBar.text else { return }
+        
+        filterContentForSearchText(text)
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        tableView.reloadData()
+    }
 }
 
 extension QuotesVc {
