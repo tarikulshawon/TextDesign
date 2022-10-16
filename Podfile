@@ -25,4 +25,5 @@ pod 'MetalPetal/Swift'
 pod 'FlexColorPicker'
 pod 'SDWebImage', '~> 5.0'
 pod "FloatingBubbles"
+pod 'MKToolTip'
 end
