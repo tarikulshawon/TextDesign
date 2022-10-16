@@ -84,6 +84,13 @@ class FirstVc: UIView, CustomLayoutDelegate, callDelegate {
     @objc func buttonTapped(sender : UIButton) {
         let btn = sender.tag - 1000
         let obj = imageIntoObjList[btn]
+        var lol  = getFileUrlWithName(fileName: obj.fileName)
+        let fileManager = FileManager.default
+        do {
+            try fileManager.removeItem(at: lol as URL)
+        } catch {
+            // Non-fatal: file probably doesn't exist
+        }
         DBmanager.shared.deleteFile(id: obj.id)
         reloadDataF()
         
