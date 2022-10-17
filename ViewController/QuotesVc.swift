@@ -17,6 +17,7 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var headerName = [String]()
     var quotesDic = [String: NSArray]()
     
+    @IBOutlet weak var searchButton: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
     
@@ -45,6 +46,10 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(searchButtonAction))
+        searchButton.addGestureRecognizer(gesture)
+        
+        searchBarHeight.constant = 0
         searchBar.placeholder = "Search Quotes"
         searchBar.delegate = self
     }
@@ -197,5 +202,10 @@ extension QuotesVc {
             self.tableView.deleteRows(at: indexPathsForSection(),
                                       with: .fade)
         }
+    }
+    
+    @objc
+    func searchButtonAction(sender: UIImageView) {
+        searchBarHeight.constant = searchBarHeight.constant.isZero ? 44 : 0
     }
 }
