@@ -75,6 +75,7 @@
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
 		013AA6F928FAE01F00DBE800 /* QuotesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6F828FAE01F00DBE800 /* QuotesVc.swift */; };
 		013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6FA28FAE36300DBE800 /* QuotesCell.swift */; };
+		014F9B1228FCD8390072179E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 014F9B1128FCD8390072179E /* Fonts */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
 		016DA3FA28FB18EF004F4673 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DA3F928FB18EE004F4673 /* DownloadManager.swift */; };
@@ -342,6 +343,7 @@
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
 		013AA6F828FAE01F00DBE800 /* QuotesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesVc.swift; sourceTree = "<group>"; };
 		013AA6FA28FAE36300DBE800 /* QuotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCell.swift; sourceTree = "<group>"; };
+		014F9B1128FCD8390072179E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
 		016DA3F928FB18EE004F4673 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
@@ -797,6 +799,7 @@
 		39CC0E0028A4A3BC00DF1C64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				014F9B1128FCD8390072179E /* Fonts */,
 				016DA3FD28FB21B3004F4673 /* bg.png */,
 				01197B0328F2B38400B2CD37 /* watermark (1).png */,
 				019BC4FC28E0270A00B15323 /* BigFrame */,
@@ -1239,6 +1242,7 @@
 				39F8228628A36596008925EF /* ColorCell.xib in Resources */,
 				019BC52128E0270A00B15323 /* F22.jpg in Resources */,
 				019BC4E928E026F400B15323 /* FrameThumb6.png in Resources */,
+				014F9B1228FCD8390072179E /* Fonts in Resources */,
 				012FA0A828DA029000E44786 /* Nature in Resources */,
 				01B0DFD628D650A000081369 /* Sale in Resources */,
 				3949338028AB347F003E8D67 /* Texture4.png in Resources */,

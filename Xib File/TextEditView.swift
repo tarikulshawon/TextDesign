@@ -303,7 +303,7 @@ extension TextEditView: UICollectionViewDataSource,UICollectionViewDelegate,UICo
             cell.gradietImv.isHidden = true
             cell.textColorView.isHidden = false
             cell.fontLabel.isHidden = false
-            var fontName = UIFont(name: arrayForFont[indexPath.row] as! String, size: 15.0)
+            var fontName = UIFont(name: arrayForFont[indexPath.row] as! String, size: 25.0)
             cell.fontLabel.font = fontName
             cell.fontLabel.text =  "Text art"
             cell.textColorView.backgroundColor = UIColor.init(red: 128.0/255.0, green: 92.0/255.0, blue: 242.0/255.0, alpha: 1.0)
