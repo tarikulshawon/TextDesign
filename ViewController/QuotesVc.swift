@@ -16,6 +16,7 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var quotesArray: NSArray!
     var headerName = [String]()
     var quotesDic = [String: NSArray]()
+    private var searchedKey: String?
     
     @IBOutlet weak var searchButton: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -91,7 +92,8 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
         
         if isFiltering {
-            cell.quotesL.text = filteredQuotes[indexPath.row]
+            cell.quotesL.setHighlighted(filteredQuotes[indexPath.row], with: searchedKey)
+            //cell.quotesL.text = filteredQuotes[indexPath.row]
             return cell
         } else {
             guard let arr = quotesDic[headerName[indexPath.section]] else { return QuotesCell() }
@@ -135,9 +137,7 @@ extension QuotesVc {
             }
             
         }
-        
-        print(filteredQuotes.count)
-        
+                
         tableView.reloadData()
     }
     
@@ -152,9 +152,14 @@ extension QuotesVc: UISearchResultsUpdating {
 
 extension QuotesVc: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let text = searchBar.text else { return }
+        searchedKey = searchText
+
+        guard !searchText.isEmpty else {
+            tableView.reloadData()
+            return
+        }
         
-        filterContentForSearchText(text)
+        filterContentForSearchText(searchText)
         
         tableView.reloadData()
     }
@@ -163,7 +168,7 @@ extension QuotesVc: UISearchBarDelegate {
         self.searchBar.showsCancelButton = true
     }
     
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
@@ -207,5 +212,6 @@ extension QuotesVc {
     @objc
     func searchButtonAction(sender: UIImageView) {
         searchBarHeight.constant = searchBarHeight.constant.isZero ? 44 : 0
+        searchBarCancelButtonClicked(searchBar)
     }
 }
