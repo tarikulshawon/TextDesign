@@ -225,7 +225,6 @@
 		39CC0E3628A4AF6600DF1C64 /* Arrows in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3028A4AF6500DF1C64 /* Arrows */; };
 		39CC0E3728A4AF6600DF1C64 /* Cute in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3128A4AF6500DF1C64 /* Cute */; };
 		39CC0E3828A4AF6600DF1C64 /* Floral in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3228A4AF6600DF1C64 /* Floral */; };
-		39CC0E3A28A4AF9500DF1C64 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 39CC0E3928A4AF9500DF1C64 /* Fonts */; };
 		39F8222628A3505C008925EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8222528A3505C008925EF /* AppDelegate.swift */; };
 		39F8222828A3505C008925EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8222728A3505C008925EF /* SceneDelegate.swift */; };
 		39F8222A28A3505C008925EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8222928A3505C008925EF /* ViewController.swift */; };
@@ -493,7 +492,6 @@
 		39CC0E3028A4AF6500DF1C64 /* Arrows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Arrows; sourceTree = "<group>"; };
 		39CC0E3128A4AF6500DF1C64 /* Cute */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cute; sourceTree = "<group>"; };
 		39CC0E3228A4AF6600DF1C64 /* Floral */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Floral; sourceTree = "<group>"; };
-		39CC0E3928A4AF9500DF1C64 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		39F8222228A3505C008925EF /* TextArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8222528A3505C008925EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39F8222728A3505C008925EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -806,7 +804,6 @@
 				01219B0E28DEBC6B00133E56 /* Thumb */,
 				01E9232A28D7197500F21554 /* wallpapers.json */,
 				3949335C28AB347F003E8D67 /* Textures */,
-				39CC0E3928A4AF9500DF1C64 /* Fonts */,
 				39CC0E2C28A4AF3F00DF1C64 /* Sticker */,
 				39CC0DF328A4A3B900DF1C64 /* Categories */,
 			);
@@ -1326,7 +1323,6 @@
 				39CC0E0D28A4AA0500DF1C64 /* TextEditView.xib in Resources */,
 				39F8222F28A3505E008925EF /* Assets.xcassets in Resources */,
 				01BA624F28ED61B100B46931 /* Transport in Resources */,
-				39CC0E3A28A4AF9500DF1C64 /* Fonts in Resources */,
 				019BC52B28E0270A00B15323 /* F18.jpg in Resources */,
 				019BC4EA28E026F400B15323 /* FrameThumb7.png in Resources */,
 				01219B6A28DEBC6B00133E56 /* OverlayThumb14.png in Resources */,
