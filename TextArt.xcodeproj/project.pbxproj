@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0105428428D860040004A516 /* CropVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428328D860040004A516 /* CropVc.swift */; };
 		0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105428528D86CA30004A516 /* ExampleCropViewController.swift */; };
+		010AFF9E28FF1E1100ED71E0 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */; };
+		010AFFA228FF1E9000ED71E0 /* QuotesCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010AFFA028FF1E9000ED71E0 /* QuotesCardCell.swift */; };
+		010AFFA328FF1E9000ED71E0 /* QuotesCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010AFFA128FF1E9000ED71E0 /* QuotesCardCell.xib */; };
 		01197B0428F2B38400B2CD37 /* watermark (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 01197B0328F2B38400B2CD37 /* watermark (1).png */; };
 		011F934028E356670090B44E /* Quotes in Resources */ = {isa = PBXBuildFile; fileRef = 011F933F28E356670090B44E /* Quotes */; };
 		011F934228E3567B0090B44E /* Education in Resources */ = {isa = PBXBuildFile; fileRef = 011F934128E3567B0090B44E /* Education */; };
@@ -277,6 +280,9 @@
 /* Begin PBXFileReference section */
 		0105428328D860040004A516 /* CropVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropVc.swift; sourceTree = "<group>"; };
 		0105428528D86CA30004A516 /* ExampleCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCropViewController.swift; sourceTree = "<group>"; };
+		010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
+		010AFFA028FF1E9000ED71E0 /* QuotesCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCardCell.swift; sourceTree = "<group>"; };
+		010AFFA128FF1E9000ED71E0 /* QuotesCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotesCardCell.xib; sourceTree = "<group>"; };
 		01197B0328F2B38400B2CD37 /* watermark (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watermark (1).png"; sourceTree = "<group>"; };
 		011F933F28E356670090B44E /* Quotes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Quotes; sourceTree = "<group>"; };
 		011F934128E3567B0090B44E /* Education */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Education; sourceTree = "<group>"; };
@@ -563,6 +569,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010AFF9C28FF1DBE00ED71E0 /* Quotes Module */ = {
+			isa = PBXGroup;
+			children = (
+				013AA6F828FAE01F00DBE800 /* QuotesVc.swift */,
+				010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */,
+				010AFF9F28FF1E4900ED71E0 /* Views */,
+			);
+			path = "Quotes Module";
+			sourceTree = "<group>";
+		};
+		010AFF9F28FF1E4900ED71E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				010AFFA028FF1E9000ED71E0 /* QuotesCardCell.swift */,
+				010AFFA128FF1E9000ED71E0 /* QuotesCardCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		011F93C928E372270090B44E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -922,6 +947,7 @@
 		39F8225528A3510E008925EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				010AFF9C28FF1DBE00ED71E0 /* Quotes Module */,
 				01B73E9C28F15028008B8D7A /* SettingVc.swift */,
 				01219B7D28DF39EE00133E56 /* TextEditViewController.swift */,
 				0105428528D86CA30004A516 /* ExampleCropViewController.swift */,
@@ -929,7 +955,6 @@
 				39F8225628A35133008925EF /* HomeVc.swift */,
 				39CC0E0128A4A5B000DF1C64 /* EditVc.swift */,
 				01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */,
-				013AA6F828FAE01F00DBE800 /* QuotesVc.swift */,
 				01507E2F28E10D0E002E5535 /* UI+Extension.swift */,
 				016DA3FB28FB19B1004F4673 /* ImageShownViewController.swift */,
 			);
@@ -1348,6 +1373,7 @@
 				019BC4EE28E026F400B15323 /* FrameThumb5.png in Resources */,
 				019BC52D28E0270A00B15323 /* F28.jpg in Resources */,
 				01219B5828DEBC6B00133E56 /* OverlayThumb34.png in Resources */,
+				010AFFA328FF1E9000ED71E0 /* QuotesCardCell.xib in Resources */,
 				39F8228028A3652F008925EF /* colorp.plist in Resources */,
 				39F8227128A36174008925EF /* ThirdVc.xib in Resources */,
 				019BC53528E0270A00B15323 /* F10.jpg in Resources */,
@@ -1535,8 +1561,10 @@
 				39CC0E1D28A4AADE00DF1C64 /* StickerVc.swift in Sources */,
 				01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */,
 				39F8222828A3505C008925EF /* SceneDelegate.swift in Sources */,
+				010AFFA228FF1E9000ED71E0 /* QuotesCardCell.swift in Sources */,
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,
+				010AFF9E28FF1E1100ED71E0 /* QuotesViewModel.swift in Sources */,
 				01B73E9D28F15029008B8D7A /* SettingVc.swift in Sources */,
 				013AA6F928FAE01F00DBE800 /* QuotesVc.swift in Sources */,
 				01FD5AD228AE52AE00CBF70F /* PanControllerImageView.swift in Sources */,
