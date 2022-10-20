@@ -83,6 +83,11 @@ class TextStickerContainerView: UIView {
     var pathName: String!
     var pathType: String!
     
+    // ** Add more views here **
+    lazy var touchableViews: [UIView] = {
+        return [self.scaleController, self.deleteController]
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -98,7 +103,7 @@ class TextStickerContainerView: UIView {
         textStickerView.tag = 1000
         layer.cornerRadius = 10
         backgroundColor = .clear
-        clipsToBounds = true
+        clipsToBounds = false
         addSubview(self.textStickerView)
         isUserInteractionEnabled = true
         
@@ -150,6 +155,28 @@ extension TextStickerContainerView {
         }
     }
     
+    
+    // Boilerplate
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        for view in touchableViews {
+            if let v = view.hitTest(view.convert(point, from: self), with: event) {
+                return v
+            }
+        }
+        return super.hitTest(point, with: event)
+    }
+
+    // Boilerplate
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if super.point(inside: point, with: event) {
+            return true
+        }
+        for view in touchableViews {
+            return !view.isHidden && view.point(inside: view.convert(point, from: self), with: event)
+        }
+        return false
+    }
+    
     func addStickerViewSubViews() {
     scaleController = PanControllerImageView(frame: CGRect(x: self.self.textStickerView.bounds.width +  panControllerSize, y: self.textStickerView.bounds.height + panControllerSize, width: panControllerSize, height: panControllerSize))
         scaleController.layer.name = "hide"
@@ -160,7 +187,7 @@ extension TextStickerContainerView {
         self.breakWordController?.layer.name = "hide"
         self.addSubview(breakWordController!)
         
-/// NOTE: Red mark on the boundary is removed. Uncomment if you need this is future
+        /// NOTE: Red mark on the boundary is removed. Uncomment if you need this is future
         extendBarView = UIView(
             frame: CGRect(
                 x: panControllerSize * 0.5 - 4,
@@ -179,7 +206,15 @@ extension TextStickerContainerView {
         
         self.addSubview(scaleController)
         
-        deleteController = DeleteImageView(frame: CGRect(x: self.textStickerView.bounds.width +  panControllerSize, y: 0, width: panControllerSize, height: panControllerSize))
+        deleteController = DeleteImageView(
+            frame: CGRect(
+                x: self.textStickerView.bounds.width +  panControllerSize,
+                y: 0,
+                width: panControllerSize,
+                height: panControllerSize
+            )
+        )
+        
         deleteController.layer.name = "hide"
         deleteController.delegateDelete = self
         deleteController.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin]

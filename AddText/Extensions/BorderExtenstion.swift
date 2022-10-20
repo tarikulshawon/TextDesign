@@ -30,7 +30,7 @@ extension UIView {
         layer.strokeColor = isHidden ?? false ?
                             UIColor.clear.cgColor
                             : UIColor.white.cgColor
-       // layer.lineDashPattern = [2,1]
+        layer.lineDashPattern = [2,1]
         layer.backgroundColor = UIColor.clear.cgColor
         layer.fillColor = UIColor.clear.cgColor
         layer.lineWidth = 3.0 / zoomScale

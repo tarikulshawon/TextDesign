@@ -1113,7 +1113,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-Dh-RgD">
                                         <rect key="frame" x="173" y="50" width="68.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="0.38" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Back2ndPage" translatesAutoresizingMaskIntoConstraints="NO" id="Xxe-Am-OAb">
@@ -1132,30 +1132,24 @@
                                             <action selector="gotoPreviousvIEW:" destination="E1P-7r-2M3" eventType="touchUpInside" id="zyC-ex-qCb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snf-tY-tdm">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="M7D-gL-lVu">
                                         <rect key="frame" x="374" y="47" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="kMN-pE-G4H"/>
-                                            <constraint firstAttribute="height" constant="30" id="pLV-Tg-wZS"/>
+                                            <constraint firstAttribute="height" constant="30" id="5mn-DC-wDD"/>
+                                            <constraint firstAttribute="width" constant="30" id="k6Q-h1-xgq"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="gotoSave:" destination="hPL-Dv-MQC" eventType="touchUpInside" id="aXy-y4-xEe"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ox3-hn-5M7" firstAttribute="leading" secondItem="y2m-pq-rDa" secondAttribute="leading" id="6yY-z2-qeB"/>
-                                    <constraint firstItem="snf-tY-tdm" firstAttribute="centerY" secondItem="ePT-Dh-RgD" secondAttribute="centerY" id="9Rf-eb-PEs"/>
                                     <constraint firstItem="Xxe-Am-OAb" firstAttribute="centerY" secondItem="ppM-CQ-VwW" secondAttribute="centerY" id="Afe-aw-8cS"/>
-                                    <constraint firstAttribute="trailing" secondItem="snf-tY-tdm" secondAttribute="trailing" constant="10" id="BNB-0E-A67"/>
                                     <constraint firstItem="ox3-hn-5M7" firstAttribute="top" secondItem="y2m-pq-rDa" secondAttribute="top" id="F0A-u9-nM6"/>
+                                    <constraint firstItem="M7D-gL-lVu" firstAttribute="centerY" secondItem="ppM-CQ-VwW" secondAttribute="centerY" id="GYl-Xw-CSx"/>
                                     <constraint firstItem="ox3-hn-5M7" firstAttribute="top" secondItem="y2m-pq-rDa" secondAttribute="top" id="Lg7-3e-70R"/>
                                     <constraint firstItem="Xxe-Am-OAb" firstAttribute="centerX" secondItem="ppM-CQ-VwW" secondAttribute="centerX" id="SRy-KJ-NSO"/>
                                     <constraint firstItem="ppM-CQ-VwW" firstAttribute="leading" secondItem="y2m-pq-rDa" secondAttribute="leading" constant="10" id="VRI-6s-GWy"/>
+                                    <constraint firstAttribute="trailing" secondItem="M7D-gL-lVu" secondAttribute="trailing" constant="10" id="XzC-uk-VjG"/>
                                     <constraint firstItem="Xxe-Am-OAb" firstAttribute="width" secondItem="ppM-CQ-VwW" secondAttribute="width" id="kne-fA-sYw"/>
                                     <constraint firstAttribute="trailing" secondItem="ox3-hn-5M7" secondAttribute="trailing" id="pqc-UJ-AFI"/>
                                     <constraint firstItem="Xxe-Am-OAb" firstAttribute="height" secondItem="ppM-CQ-VwW" secondAttribute="height" id="rnM-NH-hNw"/>
@@ -1235,6 +1229,7 @@
                     <connections>
                         <outlet property="searchBar" destination="Uol-Pt-gkZ" id="TJS-KB-m14"/>
                         <outlet property="searchBarHeight" destination="EMf-Vf-AkO" id="zq7-Uk-rbp"/>
+                        <outlet property="searchButton" destination="M7D-gL-lVu" id="bJZ-0s-K2g"/>
                         <outlet property="tableView" destination="fKe-4C-riS" id="Mtc-dv-fhm"/>
                     </connections>
                 </viewController>
@@ -1580,6 +1575,7 @@
         <image name="Next2ndPage" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Right" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="search" width="512" height="512"/>
         <image name="settings-arrow" width="16.666666030883789" height="16.666666030883789"/>
         <image name="settings-crown" width="26.666666030883789" height="26.666666030883789"/>
         <systemColor name="systemBackgroundColor">

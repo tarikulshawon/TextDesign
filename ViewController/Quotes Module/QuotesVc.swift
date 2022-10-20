@@ -11,12 +11,18 @@ protocol quotesDelegate: AnyObject {
     func sendText1(text: String)
 }
 
+protocol QuotesCardDelegate: AnyObject {
+    func sendTouchSignal(_ section: Int)
+}
+
 class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     weak var delegateForQuotes: quotesDelegate?
     var quotesArray: NSArray!
     var headerName = [String]()
     var quotesDic = [String: NSArray]()
+    private var searchedKey: String?
     
+    @IBOutlet weak var searchButton: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
     
@@ -45,24 +51,45 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        tableView.register(UINib(nibName: "QuotesCardCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "QuotesCardCell")
+        //tableView.register(UINib(nibName: "QuotesCardCell", bundle: nil), forCellReuseIdentifier: "QuotesCardCell")
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(searchButtonAction))
+        searchButton.addGestureRecognizer(gesture)
+        
+        searchBarHeight.constant = 0
         searchBar.placeholder = "Search Quotes"
         searchBar.delegate = self
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if isFiltering { return nil }
-        let sectionButton = UIButton()
-        sectionButton.setTitle(headerName[section], for: .normal)
-        sectionButton.setTitleColor(.black, for: .normal)
-        sectionButton.layer.cornerRadius = 10
+//        let sectionButton = UIButton()
+//        sectionButton.setTitle(headerName[section], for: .normal)
+//        sectionButton.setTitleColor(.black, for: .normal)
+//        sectionButton.layer.cornerRadius = 10
+//
+//        sectionButton.backgroundColor = .systemGray5
+//        sectionButton.tag = section
+//        sectionButton.addTarget(self,
+//                                action: #selector(self.hideSection(sender:)),
+//                                for: .touchUpInside)
+//
+//        return sectionButton
         
-        sectionButton.backgroundColor = .systemGray5
-        sectionButton.tag = section
-        sectionButton.addTarget(self,
-                                action: #selector(self.hideSection(sender:)),
-                                for: .touchUpInside)
+        guard let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "QuotesCardCell") as? QuotesCardCell else {
+            return UITableViewCell()
+        }
         
-        return sectionButton
+        let expand = hiddenSections.contains(section)
+        cell.prepare(
+            title: headerName[section],
+            count: quotesDic[headerName[section]]?.count ?? 0,
+            section: section,
+            isExpand: !expand,
+            delegate: self
+        )
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,7 +97,7 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        isFiltering ? 8 : 40
+        isFiltering ? 8 : 64
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,7 +113,8 @@ class QuotesVc: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
         
         if isFiltering {
-            cell.quotesL.text = filteredQuotes[indexPath.row]
+            cell.quotesL.setHighlighted(filteredQuotes[indexPath.row], with: searchedKey)
+            //cell.quotesL.text = filteredQuotes[indexPath.row]
             return cell
         } else {
             guard let arr = quotesDic[headerName[indexPath.section]] else { return QuotesCell() }
@@ -130,12 +158,18 @@ extension QuotesVc {
             }
             
         }
-        
-        print(filteredQuotes.count)
-        
+                
         tableView.reloadData()
     }
     
+}
+
+extension QuotesVc: QuotesCardDelegate {
+    func sendTouchSignal(_ section: Int) {
+        self.hideSection(at: section)
+        
+        //tableView.reloadData()
+    }
 }
 
 extension QuotesVc: UISearchResultsUpdating {
@@ -147,9 +181,14 @@ extension QuotesVc: UISearchResultsUpdating {
 
 extension QuotesVc: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let text = searchBar.text else { return }
+        searchedKey = searchText
+
+        guard !searchText.isEmpty else {
+            tableView.reloadData()
+            return
+        }
         
-        filterContentForSearchText(text)
+        filterContentForSearchText(searchText)
         
         tableView.reloadData()
     }
@@ -158,7 +197,7 @@ extension QuotesVc: UISearchBarDelegate {
         self.searchBar.showsCancelButton = true
     }
     
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
@@ -172,8 +211,8 @@ extension QuotesVc: UISearchBarDelegate {
 
 extension QuotesVc {
     @objc
-    private func hideSection(sender: UIButton) {
-        let section = sender.tag
+    private func hideSection(at: Int) {
+        let section = at
         
         func indexPathsForSection() -> [IndexPath] {
             var indexPaths = [IndexPath]()
@@ -197,5 +236,11 @@ extension QuotesVc {
             self.tableView.deleteRows(at: indexPathsForSection(),
                                       with: .fade)
         }
+    }
+    
+    @objc
+    func searchButtonAction(sender: UIImageView) {
+        searchBarHeight.constant = searchBarHeight.constant.isZero ? 44 : 0
+        searchBarCancelButtonClicked(searchBar)
     }
 }
