@@ -112,13 +112,13 @@ extension ThirdVc: UICollectionViewDataSource,UICollectionViewDelegate,UICollect
                     allcolors.append(color.cgColor)
                 }
                 
-                mainImage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 1000,height: 1000), colors: allcolors)
+                mainImage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 1000,height: 1600), colors: allcolors)
                 
             }
         } else {
             if let colorString = colorList[indexPath.row] as? String, selectedSegment == .color {
                 let colorF  = getColor(colorString: colorString)
-                mainImage = colorF.image(CGSize(width: 1000, height: 1000))
+                mainImage = colorF.image(CGSize(width: 1000, height: 1600))
             }
             
         }
