@@ -841,7 +841,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
         selectedImage = selectedImage.makeFixOrientation()
-        selectedImage = selectedImage.resizeImage(targetSize: CGSize(width: 400, height: 400))
+        selectedImage = selectedImage.scalePreservingAspectRatio(targetSize: CGSizeMake(400, 400))
         
         
         
@@ -1156,7 +1156,15 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
     }
     
     func addSticker(test: UIImage, type: String, pathName: String) {
-        let testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        var testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        
+        if type == "Image" {
+            var height = (test.size.height*100)/test.size.width
+            print(height)
+            
+            testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: height))
+        }
         testImage.image = test
         
         let stickerView3 = StickerView.init(contentView: testImage)
