@@ -78,9 +78,10 @@
 	<dict>
 		<key>items</key>
 		<array>
-			<string>Be thankful for what you have; you&apos;ll end up having more. If you concentrate on what you don&apos;t have, you will never, ever have enough.</string>
-			<string>As we express our gratitude, we must never forget that the highest appreciation is not to utter words but to live by them</string>
-			<string>This is from my heart, to thank you for everything you have done for me, for all the times I forgot to tell you how I feel about you, and how happy I am that you are in my life. </string>
+			<string>As the day turns into night, keep your worries out of sight. Close your eyes and go to sleep, for all the good times are yours to keep. Good night</string>
+			<string>No matter how far you are, you are always in my thoughts. Good night</string>
+			<string>Whatever you wish for, I wish for you too. May all your hopes, dreams and wishes come true! Sweet dreams.</string>
+			<string>Always remember to fall asleep with a dream and wake up with a purpose. Good night.</string>
 		</array>
 		<key>types</key>
 		<string>Good Night</string>
@@ -88,19 +89,10 @@
 	<dict>
 		<key>items</key>
 		<array>
-			<string>Be thankful for what you have; you&apos;ll end up having more. If you concentrate on what you don&apos;t have, you will never, ever have enough.</string>
-			<string>As we express our gratitude, we must never forget that the highest appreciation is not to utter words but to live by them</string>
-			<string>This is from my heart, to thank you for everything you have done for me, for all the times I forgot to tell you how I feel about you, and how happy I am that you are in my life. </string>
-		</array>
-		<key>types</key>
-		<string>Luck</string>
-	</dict>
-	<dict>
-		<key>items</key>
-		<array>
-			<string>Be thankful for what you have; you&apos;ll end up having more. If you concentrate on what you don&apos;t have, you will never, ever have enough.</string>
-			<string>As we express our gratitude, we must never forget that the highest appreciation is not to utter words but to live by them</string>
-			<string>This is from my heart, to thank you for everything you have done for me, for all the times I forgot to tell you how I feel about you, and how happy I am that you are in my life. </string>
+			<string>Luck is when an opportunity comes along and you’re prepared for it</string>
+			<string>Nobody gets justice. People only get good luck or bad luck.</string>
+			<string>I say luck is when an opportunity comes along and you&apos;re prepared for it</string>
+			<string>Dreams can still come true; you need a great deal of energy and determination, and a little bit of luck.</string>
 		</array>
 		<key>types</key>
 		<string>Luck</string>
