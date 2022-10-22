@@ -92,6 +92,7 @@ PODS:
     - GoogleUtilities/Logger
   - HorizontalDial (4.0)
   - IGRPhotoTweaks (1.0.8)
+  - IHProgressHUD (0.1.6)
   - ImageActionSheet (1.0.1)
   - MetalPetal/Core (1.24.2)
   - MetalPetal/Swift (1.24.2):
@@ -102,11 +103,16 @@ PODS:
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
+  - ProgressHUD (13.6)
   - PromisesObjC (2.1.1)
   - SDWebImage (5.13.4):
     - SDWebImage/Core (= 5.13.4)
   - SDWebImage/Core (5.13.4)
+  - SVProgressHUD (2.2.6):
+    - SVProgressHUD/Core (= 2.2.6)
+  - SVProgressHUD/Core (2.2.6)
   - SwiftHSVColorPicker (1.1.1)
+  - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
   - AMColorPicker
@@ -117,11 +123,15 @@ DEPENDENCIES:
   - FloatingBubbles
   - HorizontalDial
   - IGRPhotoTweaks (~> 1.0.0)
+  - IHProgressHUD (from `https://github.com/Swiftify-Corp/IHProgressHUD.git`)
   - ImageActionSheet
   - MetalPetal/Swift
   - MKToolTip
+  - ProgressHUD
   - SDWebImage (~> 5.0)
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftHSVColorPicker
+  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
@@ -143,9 +153,25 @@ SPEC REPOS:
     - MetalPetal
     - MKToolTip
     - nanopb
+    - ProgressHUD
     - PromisesObjC
     - SDWebImage
     - SwiftHSVColorPicker
+    - SwiftyStoreKit
+
+EXTERNAL SOURCES:
+  IHProgressHUD:
+    :git: https://github.com/Swiftify-Corp/IHProgressHUD.git
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  IHProgressHUD:
+    :commit: 516a4102f01425a3a3d5f7be397986da93ebd09a
+    :git: https://github.com/Swiftify-Corp/IHProgressHUD.git
+  SVProgressHUD:
+    :commit: de1d4dba816a19454329031156b8788692bcfa2c
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   AMColorPicker: 8532f0cb7e0c6e498858368d61089008ee102bd4
@@ -162,14 +188,18 @@ SPEC CHECKSUMS:
   GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
   HorizontalDial: 50b43d3d12b9024688c40633ccab46066911846f
   IGRPhotoTweaks: e348cec1dfc7afc36ff0f10115637bc3b03836fa
+  IHProgressHUD: 3f7d9ff28d4c339d50fce7c32daa26ddfefd8703
   ImageActionSheet: fb9053b45af2761f0b85d7c23bd7782efc4dca7a
   MetalPetal: 063cb7f12c011a22fd311a355a4bd05302fc0de4
   MKToolTip: 69509b1cada10f96bd9f4ab559a768e7c6557933
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SVProgressHUD: de812b4f0e1d65358f0064416473174ae619843f
   SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 5e8464ac814796642390301e8350335c2ee17f1f
+PODFILE CHECKSUM: 22dc7f83dba5975ff9cbdfdfc6c24fb6456cd1b6
 
 COCOAPODS: 1.11.3

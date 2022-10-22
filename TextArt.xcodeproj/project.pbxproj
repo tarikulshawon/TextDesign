@@ -12,6 +12,11 @@
 		010AFF9E28FF1E1100ED71E0 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */; };
 		010AFFA228FF1E9000ED71E0 /* QuotesCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010AFFA028FF1E9000ED71E0 /* QuotesCardCell.swift */; };
 		010AFFA328FF1E9000ED71E0 /* QuotesCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010AFFA128FF1E9000ED71E0 /* QuotesCardCell.xib */; };
+		011761422904488100E431E0 /* SubscriptionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011761412904488100E431E0 /* SubscriptionVc.swift */; };
+		0117614429044E0A00E431E0 /* PoohWisdomProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117614329044E0900E431E0 /* PoohWisdomProducts.swift */; };
+		0117614629044E3500E431E0 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117614529044E3500E431E0 /* IAPManager.swift */; };
+		0117614829044EA100E431E0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117614729044EA100E431E0 /* Store.swift */; };
+		0117614A29044EDE00E431E0 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117614929044EDE00E431E0 /* CommonViewController.swift */; };
 		01197B0428F2B38400B2CD37 /* watermark (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 01197B0328F2B38400B2CD37 /* watermark (1).png */; };
 		011F934028E356670090B44E /* Quotes in Resources */ = {isa = PBXBuildFile; fileRef = 011F933F28E356670090B44E /* Quotes */; };
 		011F934228E3567B0090B44E /* Education in Resources */ = {isa = PBXBuildFile; fileRef = 011F934128E3567B0090B44E /* Education */; };
@@ -329,6 +334,11 @@
 		010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		010AFFA028FF1E9000ED71E0 /* QuotesCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCardCell.swift; sourceTree = "<group>"; };
 		010AFFA128FF1E9000ED71E0 /* QuotesCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotesCardCell.xib; sourceTree = "<group>"; };
+		011761412904488100E431E0 /* SubscriptionVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionVc.swift; sourceTree = "<group>"; };
+		0117614329044E0900E431E0 /* PoohWisdomProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoohWisdomProducts.swift; sourceTree = "<group>"; };
+		0117614529044E3500E431E0 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		0117614729044EA100E431E0 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		0117614929044EDE00E431E0 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		01197B0328F2B38400B2CD37 /* watermark (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watermark (1).png"; sourceTree = "<group>"; };
 		011F933F28E356670090B44E /* Quotes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Quotes; sourceTree = "<group>"; };
 		011F934128E3567B0090B44E /* Education */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Education; sourceTree = "<group>"; };
@@ -979,6 +989,9 @@
 		39CC0E0328A4A6DB00DF1C64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0117614729044EA100E431E0 /* Store.swift */,
+				0117614529044E3500E431E0 /* IAPManager.swift */,
+				0117614329044E0900E431E0 /* PoohWisdomProducts.swift */,
 				016DA3F928FB18EE004F4673 /* DownloadManager.swift */,
 				01219B0228DE7DAA00133E56 /* AlphaSlider.swift */,
 				01E9232C28D7231700F21554 /* ImageDetails.swift */,
@@ -1085,10 +1098,12 @@
 		39F8225528A3510E008925EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0117614929044EDE00E431E0 /* CommonViewController.swift */,
 				010AFF9C28FF1DBE00ED71E0 /* Quotes Module */,
 				01B73E9C28F15028008B8D7A /* SettingVc.swift */,
 				01219B7D28DF39EE00133E56 /* TextEditViewController.swift */,
 				0105428528D86CA30004A516 /* ExampleCropViewController.swift */,
+				011761412904488100E431E0 /* SubscriptionVc.swift */,
 				0105428328D860040004A516 /* CropVc.swift */,
 				39F8225628A35133008925EF /* HomeVc.swift */,
 				39CC0E0128A4A5B000DF1C64 /* EditVc.swift */,
@@ -1712,17 +1727,20 @@
 			files = (
 				3949331C28AB2E93003E8D67 /* DBmanager.swift in Sources */,
 				016DA3FC28FB19B1004F4673 /* ImageShownViewController.swift in Sources */,
+				0117614629044E3500E431E0 /* IAPManager.swift in Sources */,
 				0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */,
 				01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */,
 				01FD5AD128AE52AE00CBF70F /* BreakWordControllerView.swift in Sources */,
 				01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */,
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
+				0117614429044E0A00E431E0 /* PoohWisdomProducts.swift in Sources */,
 				01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */,
 				39CC0E0C28A4AA0500DF1C64 /* TextEditView.swift in Sources */,
 				39F8225F28A35E7A008925EF /* FirstVc.swift in Sources */,
 				39F8228728A36596008925EF /* ColorCell.swift in Sources */,
 				01FD5AD928AE52C700CBF70F /* BorderExtenstion.swift in Sources */,
+				011761422904488100E431E0 /* SubscriptionVc.swift in Sources */,
 				01FD5ADA28AE52C700CBF70F /* TextViewInof+Structure.swift in Sources */,
 				019BC53828E027E400B15323 /* FrameVc.swift in Sources */,
 				013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */,
@@ -1739,6 +1757,7 @@
 				39F8226F28A3616A008925EF /* ThirdVc.swift in Sources */,
 				39CC0E0528A4A6FE00DF1C64 /* CustomSlider.swift in Sources */,
 				01B73EA028F1504D008B8D7A /* SettingCell.swift in Sources */,
+				0117614829044EA100E431E0 /* Store.swift in Sources */,
 				39F8222628A3505C008925EF /* AppDelegate.swift in Sources */,
 				01FD5ADD28AED4BD00CBF70F /* TextInfoData.swift in Sources */,
 				01FD5AD828AE52C700CBF70F /* UIColor+ExtensionOfTextSticker.swift in Sources */,
@@ -1763,6 +1782,7 @@
 				39CC0E0928A4A82C00DF1C64 /* RatioCell.swift in Sources */,
 				01219B0528DE7F1400133E56 /* Adjust.swift in Sources */,
 				39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */,
+				0117614A29044EDE00E431E0 /* CommonViewController.swift in Sources */,
 				01FD5AD028AE52AE00CBF70F /* DeleteImageView.swift in Sources */,
 				0105428428D860040004A516 /* CropVc.swift in Sources */,
 			);

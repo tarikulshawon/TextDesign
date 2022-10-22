@@ -35,6 +35,11 @@ var activeDownloads = [String: DownloadManager]()
 let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
 var dataTask: URLSessionDataTask?
 
+var weeklyPrice = "$3.99/week"
+var monthlyPrice = "$10.99/month"
+var yearlyPrice = "Try 3-days for free, then $28.99/Year"
+
+
 
 
 struct AppURL {
