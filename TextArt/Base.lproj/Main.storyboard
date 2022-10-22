@@ -1870,7 +1870,7 @@
                                                                                                 </constraints>
                                                                                             </view>
                                                                                         </subviews>
-                                                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
                                                                                             <constraint firstItem="12z-5h-sca" firstAttribute="centerX" secondItem="PBh-xv-DZX" secondAttribute="centerX" id="4Jx-GV-5ns"/>
                                                                                             <constraint firstItem="12z-5h-sca" firstAttribute="top" secondItem="PBh-xv-DZX" secondAttribute="top" constant="30" id="84G-e5-hCP"/>
@@ -1922,10 +1922,10 @@
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-j8-7i2">
-                                                                                                <rect key="frame" x="59" y="87.5" width="296" height="162.5"/>
+                                                                                                <rect key="frame" x="19" y="87.5" width="376" height="162.5"/>
                                                                                                 <subviews>
                                                                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fY9-XA-twx" customClass="SSRollingButtonScrollView">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="296" height="162.5"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="376" height="162.5"/>
                                                                                                     </scrollView>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1938,7 +1938,7 @@
                                                                                             <constraint firstItem="G0A-HX-O3r" firstAttribute="top" secondItem="lTr-9G-UI8" secondAttribute="top" id="DRn-MT-ZMV"/>
                                                                                             <constraint firstItem="G0A-HX-O3r" firstAttribute="centerX" secondItem="lTr-9G-UI8" secondAttribute="centerX" id="SM5-Q9-mu9"/>
                                                                                             <constraint firstItem="KBt-j8-7i2" firstAttribute="top" secondItem="G0A-HX-O3r" secondAttribute="bottom" constant="5" id="TZb-pE-EMb"/>
-                                                                                            <constraint firstItem="KBt-j8-7i2" firstAttribute="width" secondItem="lTr-9G-UI8" secondAttribute="width" multiplier="1:1.4" id="UST-tK-KZP"/>
+                                                                                            <constraint firstItem="KBt-j8-7i2" firstAttribute="width" secondItem="lTr-9G-UI8" secondAttribute="width" multiplier="1:1.1" id="UST-tK-KZP"/>
                                                                                             <constraint firstAttribute="height" constant="250" id="YJk-bP-r1M"/>
                                                                                             <constraint firstItem="KBt-j8-7i2" firstAttribute="centerX" secondItem="lTr-9G-UI8" secondAttribute="centerX" id="zwd-A9-SBB"/>
                                                                                         </constraints>
@@ -2225,9 +2225,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
