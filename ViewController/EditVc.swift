@@ -841,7 +841,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
         
         selectedImage = selectedImage.makeFixOrientation()
-        selectedImage = selectedImage.scalePreservingAspectRatio(targetSize: CGSizeMake(400, 400))
+        selectedImage = selectedImage.scalePreservingAspectRatio(targetSize: CGSizeMake(250, 250))
         
         
         
