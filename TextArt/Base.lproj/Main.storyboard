@@ -1621,9 +1621,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pt-7f-X3p">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="T7J-Hk-d6F">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLj-Pb-CJ3">
                                         <rect key="frame" x="0.0" y="596" width="414" height="300"/>
                                         <subviews>
@@ -2022,16 +2019,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="T7J-Hk-d6F" firstAttribute="width" secondItem="5pt-7f-X3p" secondAttribute="width" id="8uY-fd-8Hl"/>
-                                    <constraint firstItem="T7J-Hk-d6F" firstAttribute="centerX" secondItem="5pt-7f-X3p" secondAttribute="centerX" id="Coc-kT-6Ql"/>
-                                    <constraint firstItem="T7J-Hk-d6F" firstAttribute="height" secondItem="5pt-7f-X3p" secondAttribute="height" id="EFG-aB-Wy3"/>
                                     <constraint firstItem="rLj-Pb-CJ3" firstAttribute="leading" secondItem="5pt-7f-X3p" secondAttribute="leading" id="QMA-ly-ANU"/>
                                     <constraint firstItem="0Tx-Lc-Y9M" firstAttribute="leading" secondItem="5pt-7f-X3p" secondAttribute="leading" id="SUg-lo-ESC"/>
                                     <constraint firstAttribute="trailing" secondItem="rLj-Pb-CJ3" secondAttribute="trailing" id="Vru-qH-WC9"/>
                                     <constraint firstAttribute="bottom" secondItem="rLj-Pb-CJ3" secondAttribute="bottom" id="fyE-6E-QQl"/>
                                     <constraint firstAttribute="trailing" secondItem="0Tx-Lc-Y9M" secondAttribute="trailing" id="gOb-QD-SRI"/>
                                     <constraint firstItem="rLj-Pb-CJ3" firstAttribute="top" secondItem="0Tx-Lc-Y9M" secondAttribute="bottom" id="hGZ-Wm-U3l"/>
-                                    <constraint firstItem="T7J-Hk-d6F" firstAttribute="centerY" secondItem="5pt-7f-X3p" secondAttribute="centerY" id="yes-af-Kil"/>
                                     <constraint firstItem="0Tx-Lc-Y9M" firstAttribute="top" secondItem="5pt-7f-X3p" secondAttribute="top" id="zQz-Df-KmP"/>
                                 </constraints>
                             </view>
@@ -2214,7 +2207,6 @@
         <image name="Right" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
         <image name="add.png" width="16" height="16"/>
-        <image name="bg.png" width="450" height="700"/>
         <image name="search" width="512" height="512"/>
         <image name="settings-arrow" width="16.666666030883789" height="16.666666030883789"/>
         <image name="settings-crown" width="26.666666030883789" height="26.666666030883789"/>
