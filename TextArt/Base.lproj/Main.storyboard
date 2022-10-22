@@ -1916,7 +1916,7 @@
                                                                                         <rect key="frame" x="0.0" y="290" width="414" height="250"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET UNLIMITED ACCESS TO ALL PREMIMUM POSTER ART FEATURES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0A-HX-O3r">
-                                                                                                <rect key="frame" x="59" y="0.0" width="296" height="82.5"/>
+                                                                                                <rect key="frame" x="48" y="0.0" width="318" height="82.5"/>
                                                                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -1934,7 +1934,7 @@
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="bottom" secondItem="KBt-j8-7i2" secondAttribute="bottom" id="CMU-Ha-JqP"/>
-                                                                                            <constraint firstItem="G0A-HX-O3r" firstAttribute="width" secondItem="lTr-9G-UI8" secondAttribute="width" multiplier="1:1.4" id="DE4-YW-ImT"/>
+                                                                                            <constraint firstItem="G0A-HX-O3r" firstAttribute="width" secondItem="lTr-9G-UI8" secondAttribute="width" multiplier="1:1.3" id="DE4-YW-ImT"/>
                                                                                             <constraint firstItem="G0A-HX-O3r" firstAttribute="top" secondItem="lTr-9G-UI8" secondAttribute="top" id="DRn-MT-ZMV"/>
                                                                                             <constraint firstItem="G0A-HX-O3r" firstAttribute="centerX" secondItem="lTr-9G-UI8" secondAttribute="centerX" id="SM5-Q9-mu9"/>
                                                                                             <constraint firstItem="KBt-j8-7i2" firstAttribute="top" secondItem="G0A-HX-O3r" secondAttribute="bottom" constant="5" id="TZb-pE-EMb"/>
@@ -2048,8 +2048,8 @@
                         <outlet property="topScrollView" destination="0Tx-Lc-Y9M" id="w8L-Ai-M7M"/>
                         <outlet property="topView" destination="rLj-Pb-CJ3" id="7NU-G1-HS8"/>
                         <outlet property="trialButton" destination="Gbx-qV-2R0" id="Idl-hk-3na"/>
-                        <outlet property="view1" destination="MLn-uq-wOM" id="DXU-fl-QSW"/>
                         <outlet property="view2" destination="9hF-Ij-QVW" id="mxy-cX-7ng"/>
+                        <outlet property="view3" destination="fY9-XA-twx" id="OLL-HL-ylX"/>
                         <outlet property="weeklyLabel" destination="AeW-8k-plH" id="SD1-CW-ug0"/>
                         <outlet property="yealryLabel" destination="9NA-fh-gvc" id="1UO-pf-xBG"/>
                     </connections>

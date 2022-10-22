@@ -5,6 +5,7 @@
  import ProgressHUD
  class SubscriptionVc: UIViewController,UIScrollViewDelegate {
      
+     @IBOutlet weak var view3: SSRollingButtonScrollView!
      @IBOutlet weak var yealryLabel: UILabel!
      
      @IBOutlet weak var weeklyLabel: UILabel!
@@ -19,14 +20,27 @@
      
      @IBOutlet var view1: UIImageView!
      @IBOutlet var view2: UIImageView!
-     
+     let dataset = NSArray(objects: "0", "1", "2",  "3","4", "5", "6", "7")
      @IBOutlet weak var monthlyLable: UILabel!
+     var timer = Timer()
      override func viewDidLoad() {
          super.viewDidLoad()
          topScrollView.delegate = self
         roundedView.layer.cornerRadius = 20.0
         roundedView.clipsToBounds = true
+        self.scrollSlowly()
          // Do any additional setup after loading the view.
+     }
+     
+     func scrollSlowly() {
+         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+     }
+     
+     @objc
+     func timerAction() {
+         var point=self.view3.contentOffset
+         view3.setContentOffset(CGPoint(x: point.x + 15, y: 0), animated: true)
+         
      }
      
      
