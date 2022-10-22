@@ -13,7 +13,7 @@ import PhotosUI
 class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet private weak var collectionViewHolder: UIView!
     @IBOutlet private weak var lineHolderView: UIView!
-
+    
     private var scrollView: UIScrollView!
     private var lineView: UIView!
     private var firstVc: FirstVc!
@@ -24,13 +24,13 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
     @IBOutlet weak var lbl2: UILabel!
     @IBOutlet weak var lbl3: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.perform(#selector(self.targetMethod1), with: self, afterDelay:0.1)
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -41,7 +41,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         self.selectedUnselectedColor(m1: true, m2: false, m3: false)
         self.gotoIndex(width: 0, index: 0)
         
-         
+        
     }
     
     
@@ -60,6 +60,16 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         firstVc.deleteBtnPressed = !firstVc.deleteBtnPressed
         firstVc.reloadDataF()
     }
+    
+    @IBAction func gotoSubscription(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SubscriptionVc") as! SubscriptionVc
+        initialViewController.modalPresentationStyle = .fullScreen
+        self.present(initialViewController, animated: true, completion: nil)
+        
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
@@ -97,12 +107,12 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         rect.size.width = lineHolderView.frame.size.width / 3.0
         rect.size.height = lineHolderView.frame.height
         lineView.frame = rect
-
+        
         let screenWidth = collectionViewHolder.frame.width
         let screenHeight = collectionViewHolder.frame.height
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         collectionViewHolder.addSubview(scrollView)
-
+        
         firstVc = FirstVc.loadFromXib()
         firstVc.frame = CGRect(x: 0,y: 0,width: screenWidth,height: screenHeight)
         scrollView.addSubview(firstVc)
@@ -114,7 +124,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         let thirdVc = ThirdVc.loadFromXib()
         thirdVc.frame = CGRect(x: 2*screenWidth,y: 0,width: screenWidth,height: screenHeight)
         scrollView.addSubview(thirdVc)
-
+        
         
         
         scrollView.isScrollEnabled = false
@@ -131,7 +141,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
             self.present(imagePickerController, animated: true, completion: nil)
         }
     }
-
+    
     private func showAlert()
     {
         DispatchQueue.main.async {
@@ -150,7 +160,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         }
         
     }
-
+    
     private func gotoCamerA()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
@@ -164,7 +174,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
             print("Camera UnAvaialable")
         }
     }
-
+    
     private func checkCameraPermission() {
         let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         switch authStatus {
@@ -174,7 +184,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         default: alertToEncourageCameraAccessInitially()
         }
     }
-
+    
     private func alertToEncourageCameraAccessInitially() {
         let alert = UIAlertController(
             title: "Access Denied",
@@ -187,7 +197,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         }))
         present(alert, animated: true, completion: nil)
     }
-
+    
     private func photoLibraryAvailabilityCheck()
     {
         PHPhotoLibrary.requestAuthorization { status in
@@ -204,9 +214,9 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
             }
         }
     }
-
+    
     @IBAction func gotoCameraView(_ sender: Any) {
-
+        
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
         
         let saveAction = UIAlertAction(title: "Camera", style: .default, handler: {
@@ -219,7 +229,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
             (alert: UIAlertAction!) -> Void in
             self.photoLibraryAvailabilityCheck()
         })
-
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
             
@@ -242,24 +252,24 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         lbl3.textColor = m3 == true ? titleColor : unselectedColor
         
     }
-
+    
     @IBAction func gotoBtn1(_ sender: Any) {
-
+        
         self.selectedUnselectedColor(m1: true, m2: false, m3: false)
         self.gotoIndex(width: 0, index: 0)
     }
-
+    
     @IBAction func gotoBtn2(_ sender: Any) {
         self.selectedUnselectedColor(m1: false, m2: true, m3: false)
         self.gotoIndex(width: self.lineHolderView.frame.size.width/3.0, index: 1)
     }
-
+    
     @IBAction func gotoBtn3(_ sender: Any) {
         
         self.selectedUnselectedColor(m1: false, m2: false, m3: true)
         self.gotoIndex(width: 2*self.lineHolderView.frame.size.width/3.0, index: 2)
     }
-
+    
     func gotoIndex(width:CGFloat,index:Int) {
         
         DispatchQueue.main.async {
@@ -282,7 +292,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
             }
         }
     }
-
+    
 }
 
 

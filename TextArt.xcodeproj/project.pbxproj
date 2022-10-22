@@ -149,6 +149,16 @@
 		019BC53628E0270A00B15323 /* F11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 019BC51928E0270A00B15323 /* F11.jpg */; };
 		019BC53828E027E400B15323 /* FrameVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BC53728E027E400B15323 /* FrameVc.swift */; };
 		019BC53A28E027FC00B15323 /* FrameVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 019BC53928E027FC00B15323 /* FrameVc.xib */; };
+		019C6188290455E600243B1E /* sub-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C6187290455E600243B1E /* sub-top.png */; };
+		019C619229045B4200243B1E /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C618A29045B4100243B1E /* 7.png */; };
+		019C619329045B4200243B1E /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C618B29045B4100243B1E /* 3.png */; };
+		019C619429045B4200243B1E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C618C29045B4200243B1E /* 1.png */; };
+		019C619529045B4200243B1E /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C618D29045B4200243B1E /* 6.png */; };
+		019C619629045B4200243B1E /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C618E29045B4200243B1E /* 4.png */; };
+		019C619729045B4200243B1E /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C618F29045B4200243B1E /* 0.png */; };
+		019C619829045B4200243B1E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C619029045B4200243B1E /* 2.png */; };
+		019C619929045B4200243B1E /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 019C619129045B4200243B1E /* 5.png */; };
+		019C619D29045BCB00243B1E /* SSRollingButtonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 019C619C29045BCB00243B1E /* SSRollingButtonScrollView.m */; };
 		01B0DFD028D6506400081369 /* Bubbles in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFCF28D6506400081369 /* Bubbles */; };
 		01B0DFD228D6506B00081369 /* Paper in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD128D6506B00081369 /* Paper */; };
 		01B0DFD428D6508000081369 /* FastFood in Resources */ = {isa = PBXBuildFile; fileRef = 01B0DFD328D6508000081369 /* FastFood */; };
@@ -471,6 +481,18 @@
 		019BC51928E0270A00B15323 /* F11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = F11.jpg; sourceTree = "<group>"; };
 		019BC53728E027E400B15323 /* FrameVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameVc.swift; sourceTree = "<group>"; };
 		019BC53928E027FC00B15323 /* FrameVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrameVc.xib; sourceTree = "<group>"; };
+		019C6187290455E600243B1E /* sub-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sub-top.png"; sourceTree = "<group>"; };
+		019C618A29045B4100243B1E /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		019C618B29045B4100243B1E /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		019C618C29045B4200243B1E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		019C618D29045B4200243B1E /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		019C618E29045B4200243B1E /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		019C618F29045B4200243B1E /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		019C619029045B4200243B1E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		019C619129045B4200243B1E /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		019C619A29045BCA00243B1E /* TextArt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextArt-Bridging-Header.h"; sourceTree = "<group>"; };
+		019C619B29045BCB00243B1E /* SSRollingButtonScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRollingButtonScrollView.h; sourceTree = "<group>"; };
+		019C619C29045BCB00243B1E /* SSRollingButtonScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRollingButtonScrollView.m; sourceTree = "<group>"; };
 		01B0DFCF28D6506400081369 /* Bubbles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bubbles; sourceTree = "<group>"; };
 		01B0DFD128D6506B00081369 /* Paper */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Paper; sourceTree = "<group>"; };
 		01B0DFD328D6508000081369 /* FastFood */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FastFood; sourceTree = "<group>"; };
@@ -873,6 +895,21 @@
 			path = BigFrame;
 			sourceTree = "<group>";
 		};
+		019C618929045B1000243B1E /* Subscription assest */ = {
+			isa = PBXGroup;
+			children = (
+				019C618F29045B4200243B1E /* 0.png */,
+				019C618C29045B4200243B1E /* 1.png */,
+				019C619029045B4200243B1E /* 2.png */,
+				019C618B29045B4100243B1E /* 3.png */,
+				019C618E29045B4200243B1E /* 4.png */,
+				019C619129045B4200243B1E /* 5.png */,
+				019C618D29045B4200243B1E /* 6.png */,
+				019C618A29045B4100243B1E /* 7.png */,
+			);
+			path = "Subscription assest";
+			sourceTree = "<group>";
+		};
 		01FD5AC528AE51FD00CBF70F /* AddText */ = {
 			isa = PBXGroup;
 			children = (
@@ -972,6 +1009,8 @@
 		39CC0E0028A4A3BC00DF1C64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				019C618929045B1000243B1E /* Subscription assest */,
+				019C6187290455E600243B1E /* sub-top.png */,
 				014F9B1128FCD8390072179E /* Fonts */,
 				016DA3FD28FB21B3004F4673 /* bg.png */,
 				01197B0328F2B38400B2CD37 /* watermark (1).png */,
@@ -989,6 +1028,8 @@
 		39CC0E0328A4A6DB00DF1C64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				019C619B29045BCB00243B1E /* SSRollingButtonScrollView.h */,
+				019C619C29045BCB00243B1E /* SSRollingButtonScrollView.m */,
 				0117614729044EA100E431E0 /* Store.swift */,
 				0117614529044E3500E431E0 /* IAPManager.swift */,
 				0117614329044E0900E431E0 /* PoohWisdomProducts.swift */,
@@ -1003,6 +1044,7 @@
 				3949331628AB2D0E003E8D67 /* StickerView.swift */,
 				39CC0E2628A4AD4100DF1C64 /* ODRManager.swift */,
 				39CC0E0428A4A6FE00DF1C64 /* CustomSlider.swift */,
+				019C619A29045BCA00243B1E /* TextArt-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1326,6 +1368,7 @@
 				TargetAttributes = {
 					39F8222128A3505C008925EF = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1400;
 					};
 					39F8223728A3505E008925EF = {
 						CreatedOnToolsVersion = 13.3;
@@ -1371,6 +1414,7 @@
 				3949337428AB347F003E8D67 /* Texture21.png in Resources */,
 				01219B7228DEBC6B00133E56 /* OverlayThumb9.png in Resources */,
 				019BC53328E0270A00B15323 /* F9.jpg in Resources */,
+				019C619429045B4200243B1E /* 1.png in Resources */,
 				019BC4F928E026F400B15323 /* FrameThumb12.png in Resources */,
 				019BC4EF28E026F400B15323 /* FrameThumb4.png in Resources */,
 				39F8228128A3652F008925EF /* imageEdit.plist in Resources */,
@@ -1490,6 +1534,7 @@
 				39CC0E3628A4AF6600DF1C64 /* Arrows in Resources */,
 				01B0DFD428D6508000081369 /* FastFood in Resources */,
 				01D4B30A29038DF20033C40F /* F39.png in Resources */,
+				019C619729045B4200243B1E /* 0.png in Resources */,
 				019BC53A28E027FC00B15323 /* FrameVc.xib in Resources */,
 				01BA625728ED62E800B46931 /* Shopping in Resources */,
 				01EDA06828E929F90087D7E8 /* Comic in Resources */,
@@ -1505,6 +1550,7 @@
 				01219B6228DEBC6B00133E56 /* OverlayThumb26.png in Resources */,
 				39CC0E3328A4AF6600DF1C64 /* Draw in Resources */,
 				01219B4D28DEBC6B00133E56 /* OverlayThumb47.png in Resources */,
+				019C619229045B4200243B1E /* 7.png in Resources */,
 				019BC4E428E026F400B15323 /* FrameThumb23.png in Resources */,
 				019BC4E528E026F400B15323 /* FrameThumb3.png in Resources */,
 				01197B0428F2B38400B2CD37 /* watermark (1).png in Resources */,
@@ -1518,6 +1564,7 @@
 				3949337328AB347F003E8D67 /* Texture20.png in Resources */,
 				01219B4B28DEBC6B00133E56 /* OverlayThumb6.png in Resources */,
 				01D4B30D29038DF20033C40F /* F28.png in Resources */,
+				019C619329045B4200243B1E /* 3.png in Resources */,
 				3949337F28AB347F003E8D67 /* Texture17.png in Resources */,
 				01219B0B28DE837C00133E56 /* AdjustV.plist in Resources */,
 				019BC53428E0270A00B15323 /* F12.jpg in Resources */,
@@ -1525,6 +1572,7 @@
 				3949338428AB347F003E8D67 /* Texture12.png in Resources */,
 				39CC0E1C28A4AADE00DF1C64 /* StickerVc.xib in Resources */,
 				019BC4F628E026F400B15323 /* FrameThumb16.png in Resources */,
+				019C6188290455E600243B1E /* sub-top.png in Resources */,
 				39CC0E1928A4AAC500DF1C64 /* ShapeVc.xib in Resources */,
 				01219B5C28DEBC6B00133E56 /* OverlayThumb25.png in Resources */,
 				01D4B30829038DF20033C40F /* F41.png in Resources */,
@@ -1543,6 +1591,7 @@
 				019BC52428E0270A00B15323 /* F27.jpg in Resources */,
 				01D4B30329038DF20033C40F /* F49.png in Resources */,
 				01B73EA128F1504D008B8D7A /* SettingCell.xib in Resources */,
+				019C619929045B4200243B1E /* 5.png in Resources */,
 				01D4B2CF29038DD90033C40F /* FrameThumb43.png in Resources */,
 				01219B4728DEBC6B00133E56 /* OverlayThumb3.png in Resources */,
 				01D4B2D529038DD90033C40F /* FrameThumb37.png in Resources */,
@@ -1563,6 +1612,7 @@
 				019BC4F128E026F400B15323 /* FrameThumb18.png in Resources */,
 				01219B5428DEBC6B00133E56 /* OverlayThumb23.png in Resources */,
 				019BC4EE28E026F400B15323 /* FrameThumb5.png in Resources */,
+				019C619829045B4200243B1E /* 2.png in Resources */,
 				019BC52D28E0270A00B15323 /* F28.jpg in Resources */,
 				01219B5828DEBC6B00133E56 /* OverlayThumb34.png in Resources */,
 				010AFFA328FF1E9000ED71E0 /* QuotesCardCell.xib in Resources */,
@@ -1578,6 +1628,7 @@
 				01D4B2D129038DD90033C40F /* FrameThumb49.png in Resources */,
 				01D4B2D329038DD90033C40F /* FrameThumb32.png in Resources */,
 				39CC0DF128A4A33C00DF1C64 /* CategoryCell.xib in Resources */,
+				019C619629045B4200243B1E /* 4.png in Resources */,
 				39CC0DFF28A4A3B900DF1C64 /* Cute.png in Resources */,
 				01D4B30029038DF20033C40F /* F35.png in Resources */,
 				019BC4F328E026F400B15323 /* FrameThumb9.png in Resources */,
@@ -1587,6 +1638,7 @@
 				011F934228E3567B0090B44E /* Education in Resources */,
 				019BC53228E0270A00B15323 /* F8.jpg in Resources */,
 				019BC4F428E026F400B15323 /* FrameThumb8.png in Resources */,
+				019C619529045B4200243B1E /* 6.png in Resources */,
 				39CC0E3428A4AF6600DF1C64 /* Summer in Resources */,
 				01D4B2FC29038DF20033C40F /* F45.png in Resources */,
 				01D4B2E329038DD90033C40F /* FrameThumb28.png in Resources */,
@@ -1735,6 +1787,7 @@
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
 				0117614429044E0A00E431E0 /* PoohWisdomProducts.swift in Sources */,
+				019C619D29045BCB00243B1E /* SSRollingButtonScrollView.m in Sources */,
 				01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */,
 				39CC0E0C28A4AA0500DF1C64 /* TextEditView.swift in Sources */,
 				39F8225F28A35E7A008925EF /* FirstVc.swift in Sources */,
@@ -1960,6 +2013,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7T4SDWZ6VK;
@@ -1979,6 +2033,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Samsung.TextArt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/TextArt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1990,6 +2046,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7T4SDWZ6VK;
@@ -2009,6 +2066,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Samsung.TextArt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Model/TextArt-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
