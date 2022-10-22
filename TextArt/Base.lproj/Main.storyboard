@@ -838,7 +838,7 @@
                                                     <action selector="gotoPreviousView:" destination="Ajo-ba-6g4" eventType="touchUpInside" id="EEz-Y8-MFe"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Next2ndPage" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-ac-S2c">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-ac-S2c">
                                                 <rect key="frame" x="369" y="47" width="30" height="30"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-H4-jXp">
@@ -1003,7 +1003,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMB-cR-6m1">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="uOR-3b-dua">
                                         <connections>
@@ -1047,7 +1047,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-KW-7dt" customClass="HorizontalDial" customModule="HorizontalDial">
-                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5QA-EQ-bar"/>
@@ -1603,7 +1603,6 @@
         <image name="Back2ndPage" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Crown" width="33.333332061767578" height="33.333332061767578"/>
         <image name="NewProject" width="166.66667175292969" height="50"/>
-        <image name="Next2ndPage" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Right" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Settings" width="33.333332061767578" height="33.333332061767578"/>
         <image name="search" width="512" height="512"/>
