@@ -838,9 +838,6 @@
                                                     <action selector="gotoPreviousView:" destination="Ajo-ba-6g4" eventType="touchUpInside" id="EEz-Y8-MFe"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-ac-S2c">
-                                                <rect key="frame" x="369" y="47" width="30" height="30"/>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-H4-jXp">
                                                 <rect key="frame" x="369" y="47" width="30" height="30"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -850,6 +847,9 @@
                                                     <action selector="doneBtnPressed:" destination="Ajo-ba-6g4" eventType="touchUpInside" id="PEH-ha-0Bd"/>
                                                 </connections>
                                             </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-ac-S2c">
+                                                <rect key="frame" x="369" y="47" width="30" height="30"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
