@@ -26,4 +26,7 @@ pod 'FlexColorPicker'
 pod 'SDWebImage', '~> 5.0'
 pod "FloatingBubbles"
 pod 'MKToolTip'
+pod 'Firebase'
+pod 'Firebase/InAppMessaging'
+pod 'Firebase/Analytics'
 end
