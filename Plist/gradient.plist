@@ -106,5 +106,17 @@
 		<string>142, 45, 226</string>
 		<string>74, 0, 224</string>
 	</array>
+	<array>
+		<string>161, 255, 206</string>
+		<string>250, 255, 209</string>
+	</array>
+	<array>
+		<string>178, 254, 250</string>
+		<string>14, 210, 247</string>
+	</array>
+	<array>
+		<string>120,120,120</string>
+		<string>250, 255, 209</string>
+	</array>
 </array>
 </plist>
