@@ -305,7 +305,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuU-wO-eMz">
-                                                <rect key="frame" x="375" y="44.5" width="29" height="35"/>
+                                                <rect key="frame" x="325" y="44.5" width="29" height="35"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="."/>
@@ -313,19 +313,43 @@
                                                     <action selector="gotoSave:" destination="hPL-Dv-MQC" eventType="touchUpInside" id="0UZ-V0-ntM"/>
                                                 </connections>
                                             </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share" translatesAutoresizingMaskIntoConstraints="NO" id="3Vs-QL-67Q">
+                                                <rect key="frame" x="359" y="42" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="3Vs-QL-67Q" secondAttribute="height" id="4Q9-33-uLh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-zG-dVF">
+                                                <rect key="frame" x="354" y="37" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="fSW-c2-jIN"/>
+                                                    <constraint firstAttribute="width" secondItem="naJ-zG-dVF" secondAttribute="height" multiplier="1:1" id="rTZ-Bn-tTT"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="gotoShare:" destination="hPL-Dv-MQC" eventType="touchUpInside" id="n6R-66-ggt"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="b8P-zl-aCP" firstAttribute="centerY" secondItem="fZP-xf-MnN" secondAttribute="centerY" id="9ff-ws-B9V"/>
+                                            <constraint firstItem="xuU-wO-eMz" firstAttribute="centerY" secondItem="3Vs-QL-67Q" secondAttribute="centerY" id="Aji-8j-7ZE"/>
+                                            <constraint firstItem="naJ-zG-dVF" firstAttribute="centerY" secondItem="xuU-wO-eMz" secondAttribute="centerY" id="JrC-Ng-gkd"/>
                                             <constraint firstItem="JdQ-9m-H7A" firstAttribute="top" secondItem="FC4-RB-40d" secondAttribute="top" id="LTR-ot-dU7"/>
                                             <constraint firstAttribute="trailing" secondItem="JdQ-9m-H7A" secondAttribute="trailing" id="QKl-Kn-wsr"/>
                                             <constraint firstItem="JdQ-9m-H7A" firstAttribute="leading" secondItem="FC4-RB-40d" secondAttribute="leading" id="Sod-BJ-Cym"/>
                                             <constraint firstItem="JdQ-9m-H7A" firstAttribute="top" secondItem="FC4-RB-40d" secondAttribute="top" id="TCv-c9-7W3"/>
+                                            <constraint firstAttribute="trailing" secondItem="naJ-zG-dVF" secondAttribute="trailing" constant="10" id="UzU-HJ-E3j"/>
                                             <constraint firstItem="ClI-BJ-GUg" firstAttribute="width" secondItem="b8P-zl-aCP" secondAttribute="width" id="W2F-fa-9u2"/>
                                             <constraint firstItem="ClI-BJ-GUg" firstAttribute="centerX" secondItem="b8P-zl-aCP" secondAttribute="centerX" id="WAD-vL-AEs"/>
+                                            <constraint firstItem="3Vs-QL-67Q" firstAttribute="width" secondItem="naJ-zG-dVF" secondAttribute="width" multiplier="0.8" id="Xxp-nF-Jua"/>
                                             <constraint firstItem="b8P-zl-aCP" firstAttribute="leading" secondItem="FC4-RB-40d" secondAttribute="leading" constant="10" id="ei2-Ss-TWq"/>
                                             <constraint firstItem="fZP-xf-MnN" firstAttribute="centerX" secondItem="FC4-RB-40d" secondAttribute="centerX" id="fuf-tF-uuZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="xuU-wO-eMz" secondAttribute="trailing" constant="10" id="ghc-I4-d8N"/>
+                                            <constraint firstAttribute="trailing" secondItem="xuU-wO-eMz" secondAttribute="trailing" constant="60" id="ghc-I4-d8N"/>
+                                            <constraint firstItem="3Vs-QL-67Q" firstAttribute="centerX" secondItem="naJ-zG-dVF" secondAttribute="centerX" id="hGq-Vn-ZLO"/>
                                             <constraint firstItem="xuU-wO-eMz" firstAttribute="centerY" secondItem="fZP-xf-MnN" secondAttribute="centerY" id="m3N-5K-uqE"/>
                                             <constraint firstAttribute="height" constant="90" id="mo0-Ke-40I"/>
                                             <constraint firstItem="ClI-BJ-GUg" firstAttribute="centerY" secondItem="b8P-zl-aCP" secondAttribute="centerY" id="u4q-7B-7um"/>
@@ -769,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWd-mW-hBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1197" y="1095"/>
+            <point key="canvasLocation" x="-1359" y="1367"/>
         </scene>
         <!--Crop Vc-->
         <scene sceneID="wO3-EQ-e2k">
@@ -1446,7 +1470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COp-kS-Vxe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="155" y="310"/>
+            <point key="canvasLocation" x="122" y="573"/>
         </scene>
         <!--Setting Vc-->
         <scene sceneID="nY5-J3-DHQ">
@@ -1585,6 +1609,7 @@
         <image name="search" width="512" height="512"/>
         <image name="settings-arrow" width="16.666666030883789" height="16.666666030883789"/>
         <image name="settings-crown" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="share" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

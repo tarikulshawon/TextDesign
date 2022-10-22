@@ -156,7 +156,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                         if let output = currentFilter.outputImage {
                             if let cgimg = context.createCGImage(output, from: output.extent) {
                                 let processedImage = UIImage(cgImage: cgimg)
-                                 return processedImage
+                                return processedImage
                             }
                         }
                     }
@@ -234,6 +234,18 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.DoAdjustMent(inputImage: mainImage)
     }
     
+    @IBAction func gotoShare(_ sender: Any) {
+        
+        self.hideALL()
+        let image = screenSortView.takeScreenshot()
+        
+        // set up activity view controller
+        let imageToShare = [ image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
     func sendFramesIndex(frames: String) {
         self.addSticker(test: UIImage(named: frames)!, type: "Image", pathName: frames)
     }
@@ -324,12 +336,12 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         self.addChild(controller)
         controller.didMove(toParent: self)
         
-//        let childView = UIHostingController(rootView: SwiftUIView())
-//        addChild(childView)
-//        childView.view.frame = watermarkView.bounds
-//        watermarkView.addSubview(childView.view)
-//        childView.view.backgroundColor = .clear
-//        childView.didMove(toParent: self)
+        //        let childView = UIHostingController(rootView: SwiftUIView())
+        //        addChild(childView)
+        //        childView.view.frame = watermarkView.bounds
+        //        watermarkView.addSubview(childView.view)
+        //        childView.view.backgroundColor = .clear
+        //        childView.didMove(toParent: self)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         screenSortView.addGestureRecognizer(tap)
@@ -339,18 +351,20 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         mainImv.contentMode = .scaleAspectFit
         
         if isfromUpdate {
-            saveBtn.setTitle("Update", for: .normal)
+            saveBtn.setTitle("Save", for: .normal)
         } else {
             saveBtn.setTitle("Save", for: .normal)
         }
         saveBtn.setTitleColor(titleColor, for: .normal)
         
+        saveBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
         
         if let data = UserDefaults.standard.data(forKey: imageInfoObj.id),
            let scoreList = NSKeyedUnarchiver.unarchiveObject(with: data) as? Dictionary<String, Any> {
             
-             currentFilterDic = scoreList
-         }
+            currentFilterDic = scoreList
+        }
         
         
         if isfromUpdate {
@@ -404,7 +418,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             DispatchQueue.main.async {
                 self.DoAdjustMent(inputImage: self.mainImage)
             }
-
+            
             overLayVc.delegateForOverlay = self
             overLayVc.setOverLay(index: currentOverlayIndex)
             transParentView.alpha = CGFloat(ov)
@@ -423,7 +437,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     @IBAction func mamama(_ sender: Any) {
         currentFilterDic = nil
         DoAdjustMent(inputImage: mainImage)
-
+        
     }
     
     @IBAction func blurValueChange(_ sender: UISlider) {
@@ -547,8 +561,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }, completion: {_ in
             
             self.perform(#selector(self.updateHeightF), with: self, afterDelay: 0.2)
-
-           
+            
+            
         })
         
     }
@@ -1031,7 +1045,7 @@ extension EditVc {
             Animation.linear(duration: 5.0)
                 .repeatForever(autoreverses: false)
         }
-
+        
         var body: some View {
             Button(action: { self.showProgress.toggle() }, label: {
                 if showProgress {
@@ -1274,11 +1288,11 @@ extension EditVc: StickerViewDelegate,quotesDelegate {
             hideALL()
             DBmanager.shared.deleteSticker(id: "\(stickerView.tag)")
             perform(#selector(self.takeScreen), with: self, afterDelay: 0.1)
-
-           
+            
+            
         }
         
-      
+        
     }
     func stickerViewDidTap(_ stickerView: StickerView) {
         hideALL()

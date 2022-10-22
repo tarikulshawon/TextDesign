@@ -205,8 +205,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "582"
-            endingLineNumber = "582"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "sliderValueChnaged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -548,8 +548,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "EditVc"
             landmarkType = "3">
          </BreakpointContent>
@@ -564,8 +564,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "colorPicker(_:confirmedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -580,8 +580,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -596,8 +596,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,8 +612,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -628,8 +628,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "rgbComponents(color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -644,8 +644,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "EditVc"
             landmarkType = "3">
          </BreakpointContent>
@@ -660,8 +660,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -676,8 +676,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "colorPicker(_:selectedColor:usingControl:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -692,10 +692,42 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "697"
-            endingLineNumber = "697"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E742A047-F431-4F70-81F5-F5BAFEF12CED - 7bae2f551d55dea1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "711"
+                  endingLineNumber = "711"
+                  offsetFromSymbolStart = "20921">
+               </Location>
+               <Location
+                  uuid = "E742A047-F431-4F70-81F5-F5BAFEF12CED - 7bae2f551d55dea1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "711"
+                  endingLineNumber = "711"
+                  offsetFromSymbolStart = "21120">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -708,8 +740,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "695"
-            endingLineNumber = "695"
+            startingLineNumber = "709"
+            endingLineNumber = "709"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -724,8 +756,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "690"
-            endingLineNumber = "690"
+            startingLineNumber = "704"
+            endingLineNumber = "704"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -740,8 +772,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "687"
-            endingLineNumber = "687"
+            startingLineNumber = "701"
+            endingLineNumber = "701"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -756,10 +788,42 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "685"
-            endingLineNumber = "685"
+            startingLineNumber = "699"
+            endingLineNumber = "699"
             landmarkName = "gotoSave(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "710B35D5-2CBD-47A1-A555-5D65931A0A4F - 7bae2f551d55df2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "699"
+                  endingLineNumber = "699"
+                  offsetFromSymbolStart = "17378">
+               </Location>
+               <Location
+                  uuid = "710B35D5-2CBD-47A1-A555-5D65931A0A4F - 7bae2f551d55df2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.gotoSave(Any) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "699"
+                  endingLineNumber = "699"
+                  offsetFromSymbolStart = "17602">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -996,8 +1060,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1290"
-            endingLineNumber = "1290"
+            startingLineNumber = "1304"
+            endingLineNumber = "1304"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -1347,8 +1411,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
+            startingLineNumber = "574"
+            endingLineNumber = "574"
             landmarkName = "gotoBri(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1363,8 +1427,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "559"
-            endingLineNumber = "559"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "gotoBri(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1379,8 +1443,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "558"
-            endingLineNumber = "558"
+            startingLineNumber = "572"
+            endingLineNumber = "572"
             landmarkName = "gotoBri(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1507,10 +1571,42 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "hideBackgorundView(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A2159EFB-4125-46E2-B4CE-8E249B7566FC - 73e1d11de184da53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.hideBackgorundView(Any) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "312"
+                  endingLineNumber = "312"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  uuid = "A2159EFB-4125-46E2-B4CE-8E249B7566FC - 576c5a428e138d9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in TextArt.EditVc.hideBackgorundView(Any) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "313"
+                  endingLineNumber = "313"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1523,8 +1619,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "hideBackgorundView(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1539,8 +1635,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "549"
-            endingLineNumber = "549"
+            startingLineNumber = "563"
+            endingLineNumber = "563"
             landmarkName = "dismissColorPicker(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1555,57 +1651,10 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "547"
-            endingLineNumber = "547"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
             landmarkName = "dismissColorPicker(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AA5D6AC3-32ED-4E60-B3BD-35E33A567938 - 62e3d934f0373aba"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextArt.EditVc.dismissColorPicker(Any) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "547"
-                  endingLineNumber = "547"
-                  offsetFromSymbolStart = "256">
-               </Location>
-               <Location
-                  uuid = "AA5D6AC3-32ED-4E60-B3BD-35E33A567938 - f10e31ae0b33de0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in TextArt.EditVc.dismissColorPicker(Any) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "547"
-                  endingLineNumber = "547"
-                  offsetFromSymbolStart = "567">
-               </Location>
-               <Location
-                  uuid = "AA5D6AC3-32ED-4E60-B3BD-35E33A567938 - 694df147669a8aa6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Bool) -&gt; () in TextArt.EditVc.dismissColorPicker(Any) -&gt; ()"
-                  moduleName = "TextArt"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "549"
-                  endingLineNumber = "549"
-                  offsetFromSymbolStart = "39">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1618,8 +1667,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "545"
-            endingLineNumber = "545"
+            startingLineNumber = "559"
+            endingLineNumber = "559"
             landmarkName = "dismissColorPicker(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1666,8 +1715,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1289"
-            endingLineNumber = "1289"
+            startingLineNumber = "1303"
+            endingLineNumber = "1303"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -1682,8 +1731,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1287"
-            endingLineNumber = "1287"
+            startingLineNumber = "1301"
+            endingLineNumber = "1301"
             landmarkName = "stickerViewDidTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1698,8 +1747,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1286"
-            endingLineNumber = "1286"
+            startingLineNumber = "1300"
+            endingLineNumber = "1300"
             landmarkName = "stickerViewDidTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1714,8 +1763,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1285"
-            endingLineNumber = "1285"
+            startingLineNumber = "1299"
+            endingLineNumber = "1299"
             landmarkName = "stickerViewDidTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1730,8 +1779,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1282"
-            endingLineNumber = "1282"
+            startingLineNumber = "1296"
+            endingLineNumber = "1296"
             landmarkName = "stickerViewDidClose(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1746,8 +1795,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1284"
-            endingLineNumber = "1284"
+            startingLineNumber = "1298"
+            endingLineNumber = "1298"
             landmarkName = "stickerViewDidTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1762,8 +1811,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1280"
-            endingLineNumber = "1280"
+            startingLineNumber = "1294"
+            endingLineNumber = "1294"
             landmarkName = "stickerViewDidClose(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1778,8 +1827,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1275"
-            endingLineNumber = "1275"
+            startingLineNumber = "1289"
+            endingLineNumber = "1289"
             landmarkName = "stickerViewDidClose(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1794,10 +1843,42 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1273"
-            endingLineNumber = "1273"
+            startingLineNumber = "1287"
+            endingLineNumber = "1287"
             landmarkName = "stickerViewDidClose(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "57428779-E5D5-4BAE-A683-B7FC4C709AD6 - 6b80a7371a093e4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.stickerViewDidClose(TextArt.StickerView) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1287"
+                  endingLineNumber = "1287"
+                  offsetFromSymbolStart = "1796">
+               </Location>
+               <Location
+                  uuid = "57428779-E5D5-4BAE-A683-B7FC4C709AD6 - 6b80a7371a093e4d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.EditVc.stickerViewDidClose(TextArt.StickerView) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/EditVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1287"
+                  endingLineNumber = "1287"
+                  offsetFromSymbolStart = "1815">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1810,8 +1891,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1270"
-            endingLineNumber = "1270"
+            startingLineNumber = "1284"
+            endingLineNumber = "1284"
             landmarkName = "stickerViewDidClose(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1826,8 +1907,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1269"
-            endingLineNumber = "1269"
+            startingLineNumber = "1283"
+            endingLineNumber = "1283"
             landmarkName = "stickerViewDidClose(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1842,8 +1923,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1228"
-            endingLineNumber = "1228"
+            startingLineNumber = "1242"
+            endingLineNumber = "1242"
             landmarkName = "EditVc"
             landmarkType = "21">
          </BreakpointContent>
@@ -1858,8 +1939,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1227"
-            endingLineNumber = "1227"
+            startingLineNumber = "1241"
+            endingLineNumber = "1241"
             landmarkName = "takeScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2066,8 +2147,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1167"
-            endingLineNumber = "1167"
+            startingLineNumber = "1181"
+            endingLineNumber = "1181"
             landmarkName = "addSticker(test:type:pathName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2082,8 +2163,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1162"
-            endingLineNumber = "1162"
+            startingLineNumber = "1176"
+            endingLineNumber = "1176"
             landmarkName = "addSticker(test:type:pathName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2098,8 +2179,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1163"
-            endingLineNumber = "1163"
+            startingLineNumber = "1177"
+            endingLineNumber = "1177"
             landmarkName = "addSticker(test:type:pathName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2114,8 +2195,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1166"
-            endingLineNumber = "1166"
+            startingLineNumber = "1180"
+            endingLineNumber = "1180"
             landmarkName = "addSticker(test:type:pathName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2130,8 +2211,8 @@
             filePath = "ViewController/EditVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1164"
-            endingLineNumber = "1164"
+            startingLineNumber = "1178"
+            endingLineNumber = "1178"
             landmarkName = "addSticker(test:type:pathName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2277,6 +2358,70 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "urlSession(_:downloadTask:didFinishDownloadingTo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19C36804-C831-455F-9183-615C72F8E9FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "gotoShare(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E81DEECB-BF75-4D70-81D6-2CF7ED5265CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "gotoShare(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "133AF418-497F-4317-80BE-B225D906EF0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "gotoShare(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "983735E5-1AB7-447F-B257-CFF994649D45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/EditVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "gotoShare(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
