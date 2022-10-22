@@ -82,5 +82,29 @@
 		<string>133,255,189</string>
 		<string>255,251,125</string>
 	</array>
+	<array>
+		<string>33, 147, 176</string>
+		<string>109 ,213, 237</string>
+	</array>
+	<array>
+		<string>55, 59, 68</string>
+		<string>66, 134, 244</string>
+	</array>
+	<array>
+		<string>17, 153, 142</string>
+		<string>56, 239, 125</string>
+	</array>
+	<array>
+		<string>188, 78, 156</string>
+		<string>248, 7, 89</string>
+	</array>
+	<array>
+		<string>249, 83, 198</string>
+		<string>185, 29, 115</string>
+	</array>
+	<array>
+		<string>142, 45, 226</string>
+		<string>74, 0, 224</string>
+	</array>
 </array>
 </plist>
