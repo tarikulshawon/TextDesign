@@ -900,6 +900,9 @@
 		019C618929045B1000243B1E /* Subscription assest */ = {
 			isa = PBXGroup;
 			children = (
+				01197B0328F2B38400B2CD37 /* watermark (1).png */,
+				016DA3FD28FB21B3004F4673 /* bg.png */,
+				019C6187290455E600243B1E /* sub-top.png */,
 				018CAB5A29050C9400D6BD42 /* sub-1st-button.png */,
 				019C618F29045B4200243B1E /* 0.png */,
 				019C618C29045B4200243B1E /* 1.png */,
@@ -1013,10 +1016,7 @@
 			isa = PBXGroup;
 			children = (
 				019C618929045B1000243B1E /* Subscription assest */,
-				019C6187290455E600243B1E /* sub-top.png */,
 				014F9B1128FCD8390072179E /* Fonts */,
-				016DA3FD28FB21B3004F4673 /* bg.png */,
-				01197B0328F2B38400B2CD37 /* watermark (1).png */,
 				019BC4FC28E0270A00B15323 /* BigFrame */,
 				019BC4C328E026F400B15323 /* SmallFrame */,
 				01219B0E28DEBC6B00133E56 /* Thumb */,
