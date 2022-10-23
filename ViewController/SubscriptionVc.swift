@@ -117,7 +117,7 @@
          heightConstrainForView.constant = privacyPolicy.frame.origin.y + privacyPolicy.frame.size.height + 50
          self.setViewSettingWithBgShade(view: topView)
          
-        //view1.layer.cornerRadius = 20
+        view1.layer.cornerRadius = 20
         // view1.layer.borderWidth = 1
          //view1.layer.borderColor = UIColor(red: 135.0/255.0, green: 14.0/255.0, blue: 79.0/255.0, alpha: 1.0).cgColor
          
