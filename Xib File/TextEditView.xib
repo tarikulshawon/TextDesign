@@ -77,7 +77,7 @@
                                                     <rect key="frame" x="22.5" y="20" width="35" height="35"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="       "/>
                                                     <connections>
                                                         <action selector="gotoLeft:" destination="iN0-l3-epB" eventType="touchUpInside" id="eRK-hO-eYo"/>
                                                     </connections>
@@ -107,7 +107,7 @@
                                                     <rect key="frame" x="22.5" y="20" width="35" height="35"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="    "/>
                                                     <connections>
                                                         <action selector="gotocenter:" destination="iN0-l3-epB" eventType="touchUpInside" id="chH-II-Jva"/>
                                                     </connections>
@@ -137,7 +137,7 @@
                                                     <rect key="frame" x="22.5" y="20" width="35" height="35"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="   "/>
                                                     <connections>
                                                         <action selector="gotoRight:" destination="iN0-l3-epB" eventType="touchUpInside" id="erc-UH-OcX"/>
                                                     </connections>
@@ -167,7 +167,7 @@
                                                     <rect key="frame" x="22.5" y="20" width="35" height="35"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="   "/>
                                                     <connections>
                                                         <action selector="gotoJustified:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nc9-EC-tMu"/>
                                                     </connections>
