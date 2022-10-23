@@ -893,86 +893,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "195F1DA2-1F44-46A8-AB94-101B65439365"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "560"
-            endingLineNumber = "560"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A8A8E614-8777-4B18-B3AD-86D1199BB21C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "559"
-            endingLineNumber = "559"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "67F75F2B-76B4-44B5-8BE1-40591FBD89D2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "553"
-            endingLineNumber = "553"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E7675402-4247-4E89-8F72-0E4242BD65F4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "550"
-            endingLineNumber = "550"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0BA5A0C7-FDAA-45B6-9BA7-8961B90E6745"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewController/EditVC+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "548"
-            endingLineNumber = "548"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DCF3D0C8-4355-404D-87D1-15FB5CBE867D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2354,8 +2274,8 @@
             filePath = "ViewController/SubscriptionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "gotoWebView(name:url:)"
             landmarkType = "7">
          </BreakpointContent>

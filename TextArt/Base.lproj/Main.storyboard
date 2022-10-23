@@ -1924,7 +1924,7 @@
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-j8-7i2">
                                                                                                 <rect key="frame" x="0.0" y="87.5" width="414" height="162.5"/>
                                                                                                 <subviews>
-                                                                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fY9-XA-twx" customClass="SSRollingButtonScrollView">
+                                                                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY9-XA-twx" customClass="SSRollingButtonScrollView">
                                                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="162.5"/>
                                                                                                     </scrollView>
                                                                                                 </subviews>
@@ -2048,6 +2048,7 @@
                         <outlet property="topScrollView" destination="0Tx-Lc-Y9M" id="w8L-Ai-M7M"/>
                         <outlet property="topView" destination="rLj-Pb-CJ3" id="7NU-G1-HS8"/>
                         <outlet property="trialButton" destination="Gbx-qV-2R0" id="Idl-hk-3na"/>
+                        <outlet property="view1" destination="MLn-uq-wOM" id="bSt-1K-6SN"/>
                         <outlet property="view2" destination="9hF-Ij-QVW" id="mxy-cX-7ng"/>
                         <outlet property="view3" destination="fY9-XA-twx" id="OLL-HL-ylX"/>
                         <outlet property="weeklyLabel" destination="AeW-8k-plH" id="SD1-CW-ug0"/>
@@ -2064,24 +2065,24 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <prototypes>
                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="tad-tr-ui9" customClass="ExpandableCellTableViewCell" customModule="TextArt" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="50" width="414" height="20.666666030883789"/>
+                                    <rect key="frame" x="0.0" y="50" width="414" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tad-tr-ui9" id="ckf-AB-TkP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.666666030883789"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cz4-fb-8kB">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvR-NA-DFb">
-                                                        <rect key="frame" x="15" y="-7.3333333333333321" width="35" height="35.333333333333336"/>
+                                                        <rect key="frame" x="15" y="-7" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xvR-NA-DFb" secondAttribute="height" multiplier="1:1" id="0CF-jG-Z5f"/>
                                                             <constraint firstAttribute="width" constant="35" id="nd7-9y-ZZ5"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ9-YR-b4m">
-                                                        <rect key="frame" x="60" y="0.0" width="354" height="20.666666666666668"/>
+                                                        <rect key="frame" x="60" y="0.0" width="354" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.53333333329999999" green="0.054901960780000002" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2127,13 +2128,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gy-Fx-rCP">
-                            <rect key="frame" x="34.666666666666657" y="13" width="345" height="54"/>
+                            <rect key="frame" x="34.5" y="13" width="345" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="4gy-Fx-rCP" secondAttribute="height" multiplier="960:150" id="qdo-rH-3Aq"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-dh-w25">
-                            <rect key="frame" x="34.666666666666657" y="13" width="345" height="54"/>
+                            <rect key="frame" x="34.5" y="13" width="345" height="54"/>
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="E9d-Bt-ThA"/>

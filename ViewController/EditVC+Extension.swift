@@ -150,7 +150,7 @@ extension EditVc {
                             allcolors.append(color.cgColor)
                         }
                         
-                        let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                        let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 400,height: 400), colors: allcolors)
                         sticker.textStickerView.textColor = UIColor(patternImage: uimage)
                     }
                     sticker.currentColorSting = ""
@@ -542,7 +542,7 @@ extension EditVc {
                             allcolors.append(color.cgColor)
                         }
                         
-                        let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 200,height: 200), colors: allcolors)
+                        let uimage = UIImage.gradientImageWithBounds(bounds: CGRect(x: 0,y: 0,width: 400,height: 400), colors: allcolors)
                         currentTextStickerView?.backgroundColor = UIColor(patternImage: uimage)
                         
                     }

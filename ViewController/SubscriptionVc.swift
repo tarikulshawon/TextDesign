@@ -29,6 +29,7 @@
         roundedView.layer.cornerRadius = 20.0
         roundedView.clipsToBounds = true
         view3.createButtonArray(withButtonTitles: dataset as? [Any], andLayoutStyle: SShorizontalLayout)
+         view3.isUserInteractionEnabled = false
         self.scrollSlowly()
          // Do any additional setup after loading the view.
      }
