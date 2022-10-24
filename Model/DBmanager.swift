@@ -125,7 +125,7 @@ class DBmanager: NSObject {
     }
     
     func updateTextData(fileNAME: String, fileObj: TextInfoData) {
-        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)',bcColor='\(fileObj.bcColor)',bcTexture='\(fileObj.bcTexture)',bcGradient='\(fileObj.bcGradient)' WHERE id='\(fileNAME)'"
+        let createTable = "UPDATE TextInfo SET font='\(fileObj.font)', color='\(fileObj.color)',gradient='\(fileObj.gradient)',texture='\(fileObj.texture)',opacity='\(fileObj.opacity)',shadow='\(fileObj.shadow)',align='\(fileObj.align)',align='\(fileObj.align)',text='\(fileObj.text)',fontSize='\(fileObj.fontSize)',bcColor='\(fileObj.bcColor)',bcTexture='\(fileObj.bcTexture)',bcGradient='\(fileObj.bcGradient)',shadowOffset='\(fileObj.shadowOffset)',shadowOpacity='\(fileObj.shadowOpacity)',shadowRadius='\(fileObj.shadowRadius)' WHERE id='\(fileNAME)'"
         
         if sqlite3_open(DBpath, &db) == SQLITE_OK {
             if sqlite3_exec(db, createTable, nil, nil, nil)  != SQLITE_OK {
@@ -149,7 +149,7 @@ class DBmanager: NSObject {
     
     
     func insertTextFile(fileObj: TextInfoData) {
-        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id,bcTexture,bcColor,bcGradient) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)','\(fileObj.bcTexture)','\(fileObj.bcColor)','\(fileObj.bcGradient)')"
+        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id,bcTexture,bcColor,bcGradient,shadowOpacity,shadowOffset,shadowRadius) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)','\(fileObj.bcTexture)','\(fileObj.bcColor)','\(fileObj.shadowOpacity)','\(fileObj.shadowOffset)','\(fileObj.shadowRadius)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
@@ -214,7 +214,7 @@ class DBmanager: NSObject {
         var mutableArray = [TextInfoData]()
         var queryStatement: OpaquePointer? = nil
         
-        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize,bcColor,bcTexture,bcGradient FROM TextInfo where id = \(id)"
+        let stmt =  "SELECT font,color,gradient,texture,opacity,shadow,align,rotate,align,text,fontSize,bcColor,bcTexture,bcGradient,shadowOpacity,shadowOffset,shadowRadius FROM TextInfo where id = \(id)"
         if (sqlite3_open(DBpath, &db) == SQLITE_OK) {
             if sqlite3_prepare_v2(db, stmt, -1, &queryStatement, nil) == SQLITE_OK {
                 while (sqlite3_step(queryStatement) == SQLITE_ROW) {
@@ -233,6 +233,9 @@ class DBmanager: NSObject {
                     let bcColor =       sqlite3_column_text(queryStatement, 11)
                     let bcTexture =       sqlite3_column_text(queryStatement, 12)
                     let bcGradient =       sqlite3_column_text(queryStatement, 13)
+                    let shadowOpacity =       sqlite3_column_text(queryStatement, 13)
+                    let shadowOffset =       sqlite3_column_text(queryStatement, 14)
+                    let shadowRadius =       sqlite3_column_text(queryStatement, 15)
                    
                     obj.font = String(cString: font!)
                     obj.color = String(cString: color!)
@@ -247,6 +250,10 @@ class DBmanager: NSObject {
                     obj.bcColor = String(cString: bcColor!)
                     obj.bcTexture = String(cString: bcTexture!)
                     obj.bcGradient = String(cString: bcGradient!)
+                    
+                    obj.shadowOpacity = String(cString: shadowOpacity!)
+                    obj.shadowOffset = String(cString: shadowOffset!)
+                    obj.shadowRadius = String(cString: shadowRadius!)
 
                     mutableArray.append(obj)
                 }
