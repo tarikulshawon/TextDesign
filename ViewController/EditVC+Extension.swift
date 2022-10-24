@@ -200,6 +200,21 @@ extension EditVc {
     
     // Delegate for AddText
 extension EditVc: AddTextDelegate {
+    func opacityShadowValue(value: Double) {
+        currentTextStickerView?.textStickerView.textInputView.layer.shadowOpacity = Float(value)
+        currentTextStickerView?.shadowOpacity = value
+         
+    }
+    func radiusShadowalue(value: Double) {
+        currentTextStickerView?.textStickerView.textInputView.layer.shadowRadius = CGFloat(Float(value))
+        currentTextStickerView?.shadowRadius = value
+
+    }
+    func offsetShadowValue(value: Double) {
+        currentTextStickerView?.textStickerView.textInputView.layer.shadowOffset = .init(width: 5, height: Int(value))
+        currentTextStickerView?.shadowOffset = value
+        
+    }
     func setTextEditViewHeight(height: Double) {
         
         UIView.animate(withDuration: 0.3) {

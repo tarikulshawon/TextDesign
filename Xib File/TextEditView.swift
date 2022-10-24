@@ -19,6 +19,10 @@ protocol AddTextDelegate: AnyObject {
     func sendOpacityValue(value: Double)
     func showColorPickerView()
     func setTextEditViewHeight(height:Double)
+    func opacityShadowValue(value:Double)
+    func radiusShadowalue(value:Double)
+    func offsetShadowValue(value:Double)
+    
 }
 
 class TextEditView: UIView {
@@ -48,7 +52,10 @@ class TextEditView: UIView {
     
     weak var delegateForText: AddTextDelegate?
     
-    
+    @IBOutlet weak var sliderForOffset: CustomSlider!
+    @IBOutlet weak var sliderForOpacity: CustomSlider!
+    @IBOutlet weak var sliderForRadius: CustomSlider!
+
     @IBOutlet weak var shdowHolder: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,17 +86,29 @@ class TextEditView: UIView {
         collectionViewForTextControls.dataSource = self
         collectionViewForTextControls.showsVerticalScrollIndicator = false
         collectionViewForTextControls.showsHorizontalScrollIndicator = false
+        
+        sliderForRadius.maximumValue = 15
+        sliderForRadius.minimumValue = 3
+        
+        sliderForOffset.maximumValue = 25
+        sliderForOffset.minimumValue = -25
+        
+        sliderForOpacity.maximumValue = 1.0
+        sliderForOpacity.minimumValue = 0.0
     }
     
     
     @IBAction func offsetValueChanged(_ sender: UISlider) {
+        delegateForText?.offsetShadowValue(value: Double(sender.value))
     }
     
-    @IBAction func opacityShadowValueChanged(_ sender: Any) {
+    @IBAction func opacityShadowValueChanged(_ sender: UISlider) {
+        delegateForText?.opacityShadowValue(value:  Double(sender.value))
     }
     
     
-    @IBAction func radiusValueChanged(_ sender: Any) {
+    @IBAction func radiusValueChanged(_ sender: UISlider) {
+        delegateForText?.radiusShadowalue(value:  Double(sender.value))
     }
     
     
@@ -111,10 +130,6 @@ class TextEditView: UIView {
         
 
     }
-    
-    
-    
-    
     
     @IBAction func gotoLeft(_ sender: Any) {
         delegateForText?.setAlighnMent(index: 0)

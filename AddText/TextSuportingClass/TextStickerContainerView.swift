@@ -35,6 +35,9 @@ class TextStickerContainerView: UIView {
     var bcColor = ""
     var bcGradient = -1
     var bcTexture = -1
+    var shadowOpacity = -1000.0
+    var shadowOffset = -100000.0
+    var shadowRadius = -100000.0
     
     
     lazy var pinchGestureRecognizer: UIPinchGestureRecognizer = {

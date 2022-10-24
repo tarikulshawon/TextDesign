@@ -284,8 +284,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aFy-CF-zih">
-                                                    <rect key="frame" x="62.5" y="0.0" width="353.5" height="86"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aFy-CF-zih" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
+                                                    <rect key="frame" x="62.5" y="0.0" width="323.5" height="86"/>
                                                     <connections>
                                                         <action selector="offsetValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="sVr-1a-knR"/>
                                                     </connections>
@@ -294,7 +294,7 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="aFy-CF-zih" firstAttribute="leading" secondItem="Hwf-VI-rfO" secondAttribute="trailing" constant="12" id="MYR-rO-HlP"/>
-                                                <constraint firstAttribute="trailing" secondItem="aFy-CF-zih" secondAttribute="trailing" id="W41-St-hJy"/>
+                                                <constraint firstAttribute="trailing" secondItem="aFy-CF-zih" secondAttribute="trailing" constant="30" id="W41-St-hJy"/>
                                                 <constraint firstItem="aFy-CF-zih" firstAttribute="top" secondItem="X2x-15-ED2" secondAttribute="top" id="XXD-eq-BhH"/>
                                                 <constraint firstItem="Hwf-VI-rfO" firstAttribute="leading" secondItem="X2x-15-ED2" secondAttribute="leading" constant="5" id="rTQ-Qy-1QT"/>
                                                 <constraint firstAttribute="bottom" secondItem="aFy-CF-zih" secondAttribute="bottom" id="tOP-ws-gaF"/>
@@ -310,10 +310,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rQ-C92">
-                                                    <rect key="frame" x="74" y="0.0" width="342" height="86"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rQ-C92" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
+                                                    <rect key="frame" x="74" y="0.0" width="312" height="86"/>
                                                     <connections>
-                                                        <action selector="opacityShadowValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="KxG-ur-5y6"/>
+                                                        <action selector="opacityValuChanges:" destination="iN0-l3-epB" eventType="valueChanged" id="oFh-Wu-DD0"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
@@ -323,7 +323,7 @@
                                                 <constraint firstItem="i8U-wr-X7n" firstAttribute="leading" secondItem="bKy-HC-9Fs" secondAttribute="leading" constant="5" id="Dzo-Ib-mzp"/>
                                                 <constraint firstItem="33h-rQ-C92" firstAttribute="leading" secondItem="i8U-wr-X7n" secondAttribute="trailing" constant="12" id="Ty2-9W-1fk"/>
                                                 <constraint firstItem="33h-rQ-C92" firstAttribute="top" secondItem="bKy-HC-9Fs" secondAttribute="top" id="cfe-T8-fAg"/>
-                                                <constraint firstAttribute="trailing" secondItem="33h-rQ-C92" secondAttribute="trailing" id="nnn-1V-952"/>
+                                                <constraint firstAttribute="trailing" secondItem="33h-rQ-C92" secondAttribute="trailing" constant="30" id="nnn-1V-952"/>
                                                 <constraint firstItem="i8U-wr-X7n" firstAttribute="centerY" secondItem="bKy-HC-9Fs" secondAttribute="centerY" id="yJ2-DV-gsT"/>
                                             </constraints>
                                         </view>
@@ -336,10 +336,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8bL-Kj-TRZ">
-                                                    <rect key="frame" x="57.5" y="0.0" width="358.5" height="86"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8bL-Kj-TRZ" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
+                                                    <rect key="frame" x="57.5" y="0.0" width="328.5" height="86"/>
                                                     <connections>
-                                                        <action selector="radiusValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="hT4-rx-bWx"/>
+                                                        <action selector="radiusValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="1fs-0K-HfU"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
@@ -347,7 +347,7 @@
                                             <constraints>
                                                 <constraint firstItem="FUJ-dH-mHb" firstAttribute="leading" secondItem="san-KQ-FvU" secondAttribute="leading" constant="5" id="MzA-yz-m2w"/>
                                                 <constraint firstItem="FUJ-dH-mHb" firstAttribute="centerY" secondItem="san-KQ-FvU" secondAttribute="centerY" id="WJy-g4-AXC"/>
-                                                <constraint firstAttribute="trailing" secondItem="8bL-Kj-TRZ" secondAttribute="trailing" id="dIj-je-o2j"/>
+                                                <constraint firstAttribute="trailing" secondItem="8bL-Kj-TRZ" secondAttribute="trailing" constant="30" id="dIj-je-o2j"/>
                                                 <constraint firstItem="8bL-Kj-TRZ" firstAttribute="top" secondItem="san-KQ-FvU" secondAttribute="top" id="eEL-9T-XHv"/>
                                                 <constraint firstItem="8bL-Kj-TRZ" firstAttribute="leading" secondItem="FUJ-dH-mHb" secondAttribute="trailing" constant="12" id="k9F-fz-Kn0"/>
                                                 <constraint firstAttribute="bottom" secondItem="8bL-Kj-TRZ" secondAttribute="bottom" id="uHz-TY-G4f"/>
@@ -408,6 +408,9 @@
                 <outlet property="labelViewList" destination="pZp-n0-ng3" id="a7T-cj-2QA"/>
                 <outlet property="optionHolderView" destination="WFZ-uf-Scb" id="Z5U-Xv-3Ri"/>
                 <outlet property="shdowHolder" destination="UnU-3g-diG" id="dOi-qD-VQO"/>
+                <outlet property="sliderForOffset" destination="aFy-CF-zih" id="kI2-HB-kMz"/>
+                <outlet property="sliderForOpacity" destination="33h-rQ-C92" id="Z3B-Sr-gId"/>
+                <outlet property="sliderForRadius" destination="8bL-Kj-TRZ" id="R2H-lf-vNP"/>
                 <outlet property="sliderView" destination="IPa-Ry-taf" id="jUh-RC-5tb"/>
             </connections>
             <point key="canvasLocation" x="329" y="108"/>
