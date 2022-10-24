@@ -704,6 +704,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.bcColor = "\(ma.bcColor)"
                     objV.bcGradient = "\(ma.bcGradient)"
                     objV.bcTexture = "\(ma.bcTexture)"
+                    objV.shadowRadius = "\(ma.shadowRadius)"
+                    objV.shadowOffset = "\(ma.shadowOffset)"
+                    objV.shadowOpacity = "\(ma.shadowOpacity)"
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
@@ -808,6 +811,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     objV.bcColor = "\(ma.bcColor)"
                     objV.bcGradient = "\(ma.bcGradient)"
                     objV.bcTexture = "\(ma.bcTexture)"
+                    objV.shadowRadius = "\(ma.shadowRadius)"
+                    objV.shadowOffset = "\(ma.shadowOffset)"
+                    objV.shadowOpacity = "\(ma.shadowOpacity)"
                     
                     if let fontSize = ma.textStickerView?.fontSize {
                         objV.fontSize = "\(fontSize)"
