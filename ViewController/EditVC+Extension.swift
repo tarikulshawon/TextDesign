@@ -199,7 +199,16 @@ extension EditVc {
     }
     
     // Delegate for AddText
-    extension EditVc: AddTextDelegate {
+extension EditVc: AddTextDelegate {
+    func setTextEditViewHeight(height: Double) {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.heightForSliderViewForText.constant = height
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
         func showColorPickerView() {
             self.updateHeight(heightNeedToBeRemoved: self.heightForColorPickerView.constant)
             UIView.animate(withDuration: 0.2, animations: {

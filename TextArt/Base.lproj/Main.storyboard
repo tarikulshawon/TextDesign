@@ -788,6 +788,7 @@
                         <outlet property="heightForColorPickerView" destination="qgH-IJ-bCz" id="bc7-wf-C26"/>
                         <outlet property="heightForImv" destination="2Vw-tH-DoV" id="JPS-VE-XZq"/>
                         <outlet property="heightForShapeVc" destination="e3d-Cg-2ze" id="7Me-jM-BZp"/>
+                        <outlet property="heightForSliderViewForText" destination="or1-Dc-NMP" id="EzH-CV-5g8"/>
                         <outlet property="imageViewHolder" destination="Wde-2t-hos" id="xFK-uy-drZ"/>
                         <outlet property="mainImv" destination="6Ah-cF-kPf" id="0vQ-0u-qDT"/>
                         <outlet property="overLaySlider" destination="JUZ-xi-sbg" id="Sb7-dO-SEn"/>
@@ -1015,7 +1016,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMB-cR-6m1">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="uOR-3b-dua">
                                         <connections>
@@ -1059,7 +1060,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-KW-7dt" customClass="HorizontalDial" customModule="HorizontalDial">
-                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5QA-EQ-bar"/>
@@ -2065,24 +2066,24 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <prototypes>
                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="tad-tr-ui9" customClass="ExpandableCellTableViewCell" customModule="TextArt" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="50" width="414" height="21"/>
+                                    <rect key="frame" x="0.0" y="50" width="414" height="21.333333969116211"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tad-tr-ui9" id="ckf-AB-TkP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="21.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cz4-fb-8kB">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="21.333333333333332"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvR-NA-DFb">
-                                                        <rect key="frame" x="15" y="-7" width="35" height="35"/>
+                                                        <rect key="frame" x="15" y="-7" width="35" height="35.333333333333336"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xvR-NA-DFb" secondAttribute="height" multiplier="1:1" id="0CF-jG-Z5f"/>
                                                             <constraint firstAttribute="width" constant="35" id="nd7-9y-ZZ5"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ9-YR-b4m">
-                                                        <rect key="frame" x="60" y="0.0" width="354" height="21"/>
+                                                        <rect key="frame" x="60" y="0.0" width="354" height="21.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.53333333329999999" green="0.054901960780000002" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2128,13 +2129,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gy-Fx-rCP">
-                            <rect key="frame" x="34.5" y="13" width="345" height="54"/>
+                            <rect key="frame" x="34.666666666666657" y="13" width="345" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="4gy-Fx-rCP" secondAttribute="height" multiplier="960:150" id="qdo-rH-3Aq"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-dh-w25">
-                            <rect key="frame" x="34.5" y="13" width="345" height="54"/>
+                            <rect key="frame" x="34.666666666666657" y="13" width="345" height="54"/>
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="E9d-Bt-ThA"/>

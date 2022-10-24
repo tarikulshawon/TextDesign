@@ -105,6 +105,8 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var currentBackGroundIndex  = 0
     var tagValue = 1000000
     
+    @IBOutlet weak var heightForSliderViewForText: NSLayoutConstraint!
+    
     @IBOutlet weak var bottomSpaceForBackGroundView: NSLayoutConstraint!
     @IBOutlet weak var btnCollectionView: UICollectionView!
     @IBOutlet weak var mainImv: UIImageView!

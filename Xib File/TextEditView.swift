@@ -18,6 +18,7 @@ protocol AddTextDelegate: AnyObject {
     func setAlighnMent(index:Int)
     func sendOpacityValue(value: Double)
     func showColorPickerView()
+    func setTextEditViewHeight(height:Double)
 }
 
 class TextEditView: UIView {
@@ -47,6 +48,8 @@ class TextEditView: UIView {
     
     weak var delegateForText: AddTextDelegate?
     
+    
+    @IBOutlet weak var shdowHolder: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -79,6 +82,17 @@ class TextEditView: UIView {
     }
     
     
+    @IBAction func offsetValueChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func opacityShadowValueChanged(_ sender: Any) {
+    }
+    
+    
+    @IBAction func radiusValueChanged(_ sender: Any) {
+    }
+    
+    
     @IBAction func opacityValuChanges(_ sender: CustomSlider) {
         if currentOption == .Opacity {
             delegateForText?.sendOpacityValue(value: Double(sender.value))
@@ -97,6 +111,9 @@ class TextEditView: UIView {
         
 
     }
+    
+    
+    
     
     
     @IBAction func gotoLeft(_ sender: Any) {
@@ -129,11 +146,22 @@ class TextEditView: UIView {
         
         print("Click: \(currentOption.rawValue)")
         
-        if selectedOption == .Opacity || selectedOption == .Shadow {
+        delegateForText?.setTextEditViewHeight(height: 130.0)
+        if selectedOption == .Shadow {
+            sliderView.isHidden = true
+            collectionViewForTextControls.isHidden = true
+            alighnmentViewHolder.isHidden = true
+            shdowHolder.isHidden = false
+            delegateForText?.setTextEditViewHeight(height: 200.0)
+            
+        }
+        
+        else if selectedOption == .Opacity  {
             
             sliderView.isHidden = false
             collectionViewForTextControls.isHidden = true
             alighnmentViewHolder.isHidden = true
+            shdowHolder.isHidden = true
         }
         else if selectedOption == .Align  || selectedOption == .Rotate {
             collectionViewForTextControls.isHidden = true
@@ -149,12 +177,13 @@ class TextEditView: UIView {
                 imageViewList.isHidden = true
                 labelViewList.isHidden = false
             }
+            shdowHolder.isHidden = true
             
         } else {
             alighnmentViewHolder.isHidden = true
             collectionViewForTextControls.isHidden = false
             sliderView.isHidden = true
-            
+            shdowHolder.isHidden = true
         }
         
         
