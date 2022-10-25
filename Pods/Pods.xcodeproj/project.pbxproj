@@ -18,6 +18,7 @@
 				981E4D2D11ABD6FC587CD83BB8D153F1 /* PBXTargetDependency */,
 			);
 			name = Firebase;
+			productName = Firebase;
 		};
 		B53D977A951AFC38B21751B706C1DF83 /* GoogleAppMeasurement */ = {
 			isa = PBXAggregateTarget;
@@ -30,6 +31,7 @@
 				054844FB6C204E35AA1C313354C035C8 /* PBXTargetDependency */,
 			);
 			name = GoogleAppMeasurement;
+			productName = GoogleAppMeasurement;
 		};
 		C49E7A4D59E5C8BE8DE9FB1EFB150185 /* FirebaseAnalytics */ = {
 			isa = PBXAggregateTarget;
@@ -45,6 +47,7 @@
 				EA84AAC05D8373D5ECD289450CD2AD28 /* PBXTargetDependency */,
 			);
 			name = FirebaseAnalytics;
+			productName = FirebaseAnalytics;
 		};
 /* End PBXAggregateTarget section */
 
@@ -66,7 +69,7 @@
 		03364EED19771972B17C415A29EC29E3 /* MTIBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3B02A5C55E4EDCB8DC9A8003045038 /* MTIBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04295D7285B17C002ABF746D836E97FF /* DefaultColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324B4D438E1950472FF08E22778ADE34 /* DefaultColorPickerViewController.swift */; };
 		04562060E190C5820FCF0D2DD9F6B06D /* GULUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = A7370F8DDBF20D0B5B2A42D40D7013AF /* GULUserDefaults.m */; };
-		0490866AF3E54023F2744D3219E18802 /* FirebaseInAppMessaging-InAppMessagingDisplayResources in Resources */ = {isa = PBXBuildFile; fileRef = B417416C7A485EDC28E38A89AF647AC7 /* FirebaseInAppMessaging-InAppMessagingDisplayResources */; };
+		0490866AF3E54023F2744D3219E18802 /* InAppMessagingDisplayResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B417416C7A485EDC28E38A89AF647AC7 /* InAppMessagingDisplayResources.bundle */; };
 		04DC6659183B4ADF5763DB4E94A3977D /* GoogleUtilities-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 587094B9A73C11F6A2BEF3CF7EF21663 /* GoogleUtilities-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		04F6BB56F79C8CE265723E6BF5B7D01C /* MTIMPSKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C4F89CA49C4271E1E6184B40B15AA2 /* MTIMPSKernel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05102BD9E7BCB80DC7B64A34D0E7850B /* SDWebImageCacheSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD0440EEA8E234501A85DE9C308F5F6 /* SDWebImageCacheSerializer.m */; };
@@ -1494,7 +1497,7 @@
 		0083099A958F269935125940D6E8B02B /* FBLPromise+Async.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FBLPromise+Async.m"; path = "Sources/FBLPromises/FBLPromise+Async.m"; sourceTree = "<group>"; };
 		0088CDB609D954914E542CCC1F4D2121 /* MetalPetal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MetalPetal-Info.plist"; sourceTree = "<group>"; };
 		00BF8F53159C24D10DA714C20BACBE4B /* FIRIAMDisplayTriggerDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMDisplayTriggerDefinition.h; path = FirebaseInAppMessaging/Sources/Private/DisplayTrigger/FIRIAMDisplayTriggerDefinition.h; sourceTree = "<group>"; };
-		018945B8334A10C115E338F4FC723830 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
+		018945B8334A10C115E338F4FC723830 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = pb_decode.c; sourceTree = "<group>"; };
 		0282DCA7A1C46D721961E24819A8CDC2 /* SDDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDiskCache.m; path = SDWebImage/Core/SDDiskCache.m; sourceTree = "<group>"; };
 		02C1D190AF3BFDE88AB330DCDE723FFC /* FBLPromise+Wrap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBLPromise+Wrap.h"; path = "Sources/FBLPromises/include/FBLPromise+Wrap.h"; sourceTree = "<group>"; };
 		032A1F6608269AB2BAE7F8C773AB46F1 /* MTIContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MTIContext.swift; path = Frameworks/MetalPetal/MTIContext.swift; sourceTree = "<group>"; };
@@ -1533,7 +1536,7 @@
 		0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MetalPetal; path = MetalPetal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0F49F3FCB1E41E9D6F7D12A09CF72A /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		0B16CB80752D5049ED89EAB30FE1A680 /* MTIShaderLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIShaderLib.h; path = Frameworks/MetalPetal/Shaders/MTIShaderLib.h; sourceTree = "<group>"; };
-		0B23C4EE72D5E09C7A1488C8B1D498F3 /* Shaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = Shaders.metal; path = Frameworks/MetalPetal/Shaders/Shaders.metal; sourceTree = "<group>"; };
+		0B23C4EE72D5E09C7A1488C8B1D498F3 /* Shaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Shaders.metal; path = Frameworks/MetalPetal/Shaders/Shaders.metal; sourceTree = "<group>"; };
 		0C01719F477404C3CD5C2072A1E0788B /* MTIDrawableRendering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIDrawableRendering.h; path = Frameworks/MetalPetal/MTIDrawableRendering.h; sourceTree = "<group>"; };
 		0C21985ED2CE2E71C46725883AD321BF /* SDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.debug.xcconfig; sourceTree = "<group>"; };
 		0C47FC3265A15F033B9BA32E62082C39 /* FIRCurrentDateProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRCurrentDateProvider.h; path = FirebaseInstallations/Source/Library/InstallationsIDController/FIRCurrentDateProvider.h; sourceTree = "<group>"; };
@@ -1713,7 +1716,7 @@
 		38DF1F4883B5A2CD216482C7EDA14E3B /* FIRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfiguration.h; path = FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h; sourceTree = "<group>"; };
 		39123268F6A663F4BA8039B21B33CF54 /* MetalPetal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MetalPetal.release.xcconfig; sourceTree = "<group>"; };
 		397CC545D9DE0706E1D6E56D77D58A00 /* SDImageTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageTransformer.m; path = SDWebImage/Core/SDImageTransformer.m; sourceTree = "<group>"; };
-		39AF7C35E6EEB2663F6C8D0100FA53E0 /* ColorConversionShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = ColorConversionShaders.metal; path = Frameworks/MetalPetal/Shaders/ColorConversionShaders.metal; sourceTree = "<group>"; };
+		39AF7C35E6EEB2663F6C8D0100FA53E0 /* ColorConversionShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = ColorConversionShaders.metal; path = Frameworks/MetalPetal/Shaders/ColorConversionShaders.metal; sourceTree = "<group>"; };
 		39CB2EEF798B897463B22AF706D6A26A /* MTIImageRenderingContext+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MTIImageRenderingContext+Internal.h"; path = "Frameworks/MetalPetal/MTIImageRenderingContext+Internal.h"; sourceTree = "<group>"; };
 		39F0B831E38C930E3BC4AD5CB025FE12 /* Pods-TextArtTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextArtTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3A743ABC428E488827350EC9AAE92ED4 /* FIRInstallationsErrorUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstallationsErrorUtil.m; path = FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.m; sourceTree = "<group>"; };
@@ -1729,7 +1732,7 @@
 		3D74089CF2E070488EC7D59510A89284 /* IHProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IHProgressHUD.bundle; path = Sources/IHProgressHUD/Resources/IHProgressHUD.bundle; sourceTree = "<group>"; };
 		3E5E309050AEBF622898DB421570A17E /* GULNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GULNSData+zlib.h"; path = "GoogleUtilities/NSData+zlib/Public/GoogleUtilities/GULNSData+zlib.h"; sourceTree = "<group>"; };
 		3E6432DD906CA5FB05EEB7C55134016D /* AMColorPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMColorPicker.release.xcconfig; sourceTree = "<group>"; };
-		3E7EB7B81B13679F86AFF9A1B27B3F70 /* Halftone.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = Halftone.metal; path = Frameworks/MetalPetal/Shaders/Halftone.metal; sourceTree = "<group>"; };
+		3E7EB7B81B13679F86AFF9A1B27B3F70 /* Halftone.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = Halftone.metal; path = Frameworks/MetalPetal/Shaders/Halftone.metal; sourceTree = "<group>"; };
 		3EB24EE8FFFB12721B416C48558FCF0E /* IGRPhotoTweaks-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IGRPhotoTweaks-Info.plist"; sourceTree = "<group>"; };
 		3F0AADE79F498919387E6B2DAE8E948C /* FIRFirebaseUserAgent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRFirebaseUserAgent.h; path = FirebaseCore/Sources/FIRFirebaseUserAgent.h; sourceTree = "<group>"; };
 		3F359A0A73F591915D91B2952DA2E08E /* FBLPromise+Async.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBLPromise+Async.h"; path = "Sources/FBLPromises/include/FBLPromise+Async.h"; sourceTree = "<group>"; };
@@ -1761,9 +1764,9 @@
 		44D43FA65C272FC8B64ABA89BF591543 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		454EB30C5AD0E25BEA42854A8C22EA08 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
 		4576B613BC0836DA5E970E1AF1CC79D4 /* ABTExperimentPayload.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABTExperimentPayload.h; path = FirebaseABTesting/Sources/Private/ABTExperimentPayload.h; sourceTree = "<group>"; };
-		45DFB2436504F240F54450445D53F63D /* LensBlur.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = LensBlur.metal; path = Frameworks/MetalPetal/Shaders/LensBlur.metal; sourceTree = "<group>"; };
+		45DFB2436504F240F54450445D53F63D /* LensBlur.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = LensBlur.metal; path = Frameworks/MetalPetal/Shaders/LensBlur.metal; sourceTree = "<group>"; };
 		45F0BC3F0DA2FC0BCC40B1093DE425B9 /* FIRIAMDisplayCheckTriggerFlow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMDisplayCheckTriggerFlow.h; path = FirebaseInAppMessaging/Sources/Private/Flows/FIRIAMDisplayCheckTriggerFlow.h; sourceTree = "<group>"; };
-		45FCE110052FF1CB6CAE3294F83E5849 /* MTITexturePool.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = MTITexturePool.mm; path = Frameworks/MetalPetal/MTITexturePool.mm; sourceTree = "<group>"; };
+		45FCE110052FF1CB6CAE3294F83E5849 /* MTITexturePool.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = MTITexturePool.mm; path = Frameworks/MetalPetal/MTITexturePool.mm; sourceTree = "<group>"; };
 		462A2D696CCD651B13A1266BE52200EB /* AMColorPickerAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = AMColorPickerAssets.xcassets; path = Source/AMColorPickerAssets.xcassets; sourceTree = "<group>"; };
 		464D4F447EEC614915E83BB24A16C455 /* ProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		46A69DB8D6F5CD7D922A3669946CE91F /* FirebaseCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseCore-umbrella.h"; sourceTree = "<group>"; };
@@ -1828,7 +1831,7 @@
 		5664AA080A4188707ABB55A367828E9D /* MTIColorMatrix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIColorMatrix.h; path = Frameworks/MetalPetal/MTIColorMatrix.h; sourceTree = "<group>"; };
 		568F5FE9F63BC145560B6AFD12B1397D /* FIRIAMElapsedTimeTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMElapsedTimeTracker.h; path = FirebaseInAppMessaging/Sources/Util/FIRIAMElapsedTimeTracker.h; sourceTree = "<group>"; };
 		56DB3C0A72048F6216A053FC2B950372 /* Pods-TextArt-TextArtUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextArt-TextArtUITests-umbrella.h"; sourceTree = "<group>"; };
-		56F26620AB3B6CBC90B6D78E9A78C4C2 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
+		56F26620AB3B6CBC90B6D78E9A78C4C2 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = pb_common.c; sourceTree = "<group>"; };
 		57191EA290AB1000E3851557EE46E006 /* FirebaseCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseCore.h; path = FirebaseCore/Sources/Public/FirebaseCore/FirebaseCore.h; sourceTree = "<group>"; };
 		5772FCBB46234A685E2955EE77C89496 /* ImageActionSheet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImageActionSheet-Info.plist"; sourceTree = "<group>"; };
 		579EF66F9AA52AE847101DA1281CBF9F /* MTIImageProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIImageProperties.h; path = Frameworks/MetalPetal/MTIImageProperties.h; sourceTree = "<group>"; };
@@ -1928,7 +1931,7 @@
 		6F5A56D3F827C3521EC7A6EE8A752019 /* FIRExperimentController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRExperimentController.h; path = FirebaseABTesting/Sources/Public/FirebaseABTesting/FIRExperimentController.h; sourceTree = "<group>"; };
 		6F86201AFAC34F167A69C87D5F5541A5 /* FIRIAMFetchOnAppForegroundFlow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRIAMFetchOnAppForegroundFlow.m; path = FirebaseInAppMessaging/Sources/Flows/FIRIAMFetchOnAppForegroundFlow.m; sourceTree = "<group>"; };
 		6FAC404DDE1EDC716A6CA83E1C5A046A /* IGRCropView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IGRCropView.swift; path = IGRPhotoTweaks/PhotoTweakView/CropView/IGRCropView.swift; sourceTree = "<group>"; };
-		6FB56B2B3B9DE84FC0ACF5908979D921 /* MTIBlendFormulaSupport.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = MTIBlendFormulaSupport.mm; path = Frameworks/MetalPetal/MTIBlendFormulaSupport.mm; sourceTree = "<group>"; };
+		6FB56B2B3B9DE84FC0ACF5908979D921 /* MTIBlendFormulaSupport.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = MTIBlendFormulaSupport.mm; path = Frameworks/MetalPetal/MTIBlendFormulaSupport.mm; sourceTree = "<group>"; };
 		6FB6525247B5110AEFAD82296F4A8C6C /* SDImageGraphics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageGraphics.h; path = SDWebImage/Core/SDImageGraphics.h; sourceTree = "<group>"; };
 		70029FDB3FC75037D290240E4549F3A5 /* AMColorPickerRGBSliderView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = AMColorPickerRGBSliderView.xib; path = Source/view/AMColorPickerRGBSliderView.xib; sourceTree = "<group>"; };
 		700FDF5FD088E4003D88D7FD8C50E537 /* Pods-TextArt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextArt.modulemap"; sourceTree = "<group>"; };
@@ -2023,7 +2026,7 @@
 		8390F1302F37ADFA1ADA3DD55E0227D0 /* MTILayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTILayer.h; path = Frameworks/MetalPetal/MTILayer.h; sourceTree = "<group>"; };
 		83D6666585179DB5A84B9C4CB983933B /* MTICVMetalTextureCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTICVMetalTextureCache.m; path = Frameworks/MetalPetal/MTICVMetalTextureCache.m; sourceTree = "<group>"; };
 		83E330569C2B03B10C299B01E5C20F48 /* MTIVector+SIMD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MTIVector+SIMD.m"; path = "Frameworks/MetalPetal/MTIVector+SIMD.m"; sourceTree = "<group>"; };
-		8442CF544E034A47EE10C3945F4599D8 /* CLAHE.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = CLAHE.metal; path = Frameworks/MetalPetal/Shaders/CLAHE.metal; sourceTree = "<group>"; };
+		8442CF544E034A47EE10C3945F4599D8 /* CLAHE.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = CLAHE.metal; path = Frameworks/MetalPetal/Shaders/CLAHE.metal; sourceTree = "<group>"; };
 		8442F7A86C5827B3AD82E1458B7D88D9 /* UIColor+SDHexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SDHexString.m"; path = "SDWebImage/Private/UIColor+SDHexString.m"; sourceTree = "<group>"; };
 		8459EB0B2378FF3E889B7FCA087091AA /* FIRInstallationsSingleOperationPromiseCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstallationsSingleOperationPromiseCache.h; path = FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsSingleOperationPromiseCache.h; sourceTree = "<group>"; };
 		84EBBB547EF7F5DC9ABF0258A67B43F4 /* FIRIAMClearcutHttpRequestSender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRIAMClearcutHttpRequestSender.m; path = FirebaseInAppMessaging/Sources/Analytics/FIRIAMClearcutHttpRequestSender.m; sourceTree = "<group>"; };
@@ -2106,7 +2109,7 @@
 		9D530BFEAABAB9965A5EEDF224CEA76C /* MTIColorLookupFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIColorLookupFilter.h; path = Frameworks/MetalPetal/Filters/MTIColorLookupFilter.h; sourceTree = "<group>"; };
 		9D6817C79999CB9D5CB904C9D315B2AA /* FIRComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponent.h; path = FirebaseCore/Extension/FIRComponent.h; sourceTree = "<group>"; };
 		9D896D57D2B2F0597E37FACF830C2597 /* GULSecureCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULSecureCoding.h; path = GoogleUtilities/Environment/Public/GoogleUtilities/GULSecureCoding.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD6D9DA53F9F6735734CBFEF0A23260 /* SDWebImageOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOperation.m; path = SDWebImage/Core/SDWebImageOperation.m; sourceTree = "<group>"; };
 		9E01A2B0940CB14CB781EE8BA890757F /* FIRInstallationsStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstallationsStore.m; path = FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStore.m; sourceTree = "<group>"; };
 		9E3B7A7215D434A86550F63D59C873D6 /* FIRAnalyticsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAnalyticsConfiguration.m; path = FirebaseCore/Sources/FIRAnalyticsConfiguration.m; sourceTree = "<group>"; };
@@ -2124,7 +2127,7 @@
 		A1BFFC2568365EB4738342709343C6DA /* ImageActionSheet */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImageActionSheet; path = ImageActionSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DD9B53886A675A89ED70CBBEAFB6C3 /* MTIMask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMask.m; path = Frameworks/MetalPetal/MTIMask.m; sourceTree = "<group>"; };
 		A246DCBF981497EDDFC6E225F8B32FFA /* FBLPromise+Any.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FBLPromise+Any.m"; path = "Sources/FBLPromises/FBLPromise+Any.m"; sourceTree = "<group>"; };
-		A2AF9D2104FC30B13D929E13E6DB7624 /* BlendingShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = BlendingShaders.metal; path = Frameworks/MetalPetal/Shaders/BlendingShaders.metal; sourceTree = "<group>"; };
+		A2AF9D2104FC30B13D929E13E6DB7624 /* BlendingShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = BlendingShaders.metal; path = Frameworks/MetalPetal/Shaders/BlendingShaders.metal; sourceTree = "<group>"; };
 		A2B49C61650B8772D0E1B9463E11D41F /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = nanopb.modulemap; sourceTree = "<group>"; };
 		A2DAF0E4F8DF5CE57312339FFE5BE369 /* IGRPhotoTweakViewController+AspectRatio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IGRPhotoTweakViewController+AspectRatio.swift"; path = "IGRPhotoTweaks/IGRPhotoTweakViewController+AspectRatio.swift"; sourceTree = "<group>"; };
 		A2EB26D8B21A7950EE5DD4CA8932397F /* MTICorner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MTICorner.swift; path = Frameworks/MetalPetal/MTICorner.swift; sourceTree = "<group>"; };
@@ -2162,7 +2165,7 @@
 		A8EA61FC4DABB6FDDF6537CBBB2D14A6 /* SDImageCoderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoderHelper.h; path = SDWebImage/Core/SDImageCoderHelper.h; sourceTree = "<group>"; };
 		A9E11C378A485C7EDB4FAB77DCAEFA59 /* Pods-TextArtTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextArtTests-Info.plist"; sourceTree = "<group>"; };
 		AA26F7CA2952E4C39AC0C9293EF003A3 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		AA3229A9D44C2C10D8E79E809063E837 /* MTIImageRenderingContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = MTIImageRenderingContext.mm; path = Frameworks/MetalPetal/MTIImageRenderingContext.mm; sourceTree = "<group>"; };
+		AA3229A9D44C2C10D8E79E809063E837 /* MTIImageRenderingContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = MTIImageRenderingContext.mm; path = Frameworks/MetalPetal/MTIImageRenderingContext.mm; sourceTree = "<group>"; };
 		AA6F60548C61F9568815CA9ACB65BDA3 /* FIRComponentContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentContainer.h; path = FirebaseCore/Extension/FIRComponentContainer.h; sourceTree = "<group>"; };
 		AA78EB5BA62522FB5D4E7EBE302F68BE /* PromisesObjC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PromisesObjC-Info.plist"; sourceTree = "<group>"; };
 		AA86329E3EE4F202869189044DF298F0 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/Core/SDWebImageDownloader.h; sourceTree = "<group>"; };
@@ -2202,7 +2205,7 @@
 		B344A3B8AC36AC95A8774654748F58F2 /* SwiftHSVColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHSVColorPicker-dummy.m"; sourceTree = "<group>"; };
 		B37F3993B66624C8B52FF1FEB25386D3 /* SDWebImageDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDefine.m; path = SDWebImage/Core/SDWebImageDefine.m; sourceTree = "<group>"; };
 		B3F1F293FAEAAC0598818C62F8FBEA5C /* MTISIMDArgumentEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MTISIMDArgumentEncoder.swift; path = Frameworks/MetalPetal/MTISIMDArgumentEncoder.swift; sourceTree = "<group>"; };
-		B417416C7A485EDC28E38A89AF647AC7 /* FirebaseInAppMessaging-InAppMessagingDisplayResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "FirebaseInAppMessaging-InAppMessagingDisplayResources"; path = InAppMessagingDisplayResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B417416C7A485EDC28E38A89AF647AC7 /* InAppMessagingDisplayResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InAppMessagingDisplayResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43874C6CBB50E7134FBEC24BABFE14F /* GoogleUtilities */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleUtilities; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46C2D63780D44BE13C35907BF34D664 /* MTIChromaKeyBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIChromaKeyBlendFilter.h; path = Frameworks/MetalPetal/Filters/MTIChromaKeyBlendFilter.h; sourceTree = "<group>"; };
 		B523400CA4BE02AD25E2880155676403 /* IHProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHProgressHUD-umbrella.h"; sourceTree = "<group>"; };
@@ -2361,14 +2364,14 @@
 		D792163E55A3A3C2EDF45B9D3F50ED6C /* FIRHeartbeatLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRHeartbeatLogger.m; path = FirebaseCore/Sources/FIRHeartbeatLogger.m; sourceTree = "<group>"; };
 		D7CD0D62C8CF6CFC1382B39DE378EC37 /* FirebaseCore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FirebaseCore-Info.plist"; sourceTree = "<group>"; };
 		D8683DE7A1172EC18B6074DBDFD1CC44 /* MTICLAHEFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTICLAHEFilter.h; path = Frameworks/MetalPetal/Filters/MTICLAHEFilter.h; sourceTree = "<group>"; };
-		D899693699A1423E4962CE24874C92BC /* HighPassSkinSmoothing.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = HighPassSkinSmoothing.metal; path = Frameworks/MetalPetal/Shaders/HighPassSkinSmoothing.metal; sourceTree = "<group>"; };
+		D899693699A1423E4962CE24874C92BC /* HighPassSkinSmoothing.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = HighPassSkinSmoothing.metal; path = Frameworks/MetalPetal/Shaders/HighPassSkinSmoothing.metal; sourceTree = "<group>"; };
 		D8F6FE3AB8E87E1D50BCFEAEE37B65FE /* MTIMPSDefinitionFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMPSDefinitionFilter.m; path = Frameworks/MetalPetal/Filters/MTIMPSDefinitionFilter.m; sourceTree = "<group>"; };
 		D8F7A22A57A28CF75109FFF1D92A458C /* FIRInstallationsItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstallationsItem.h; path = FirebaseInstallations/Source/Library/FIRInstallationsItem.h; sourceTree = "<group>"; };
 		D9067182A4AFF819398D7A4D67AB0FD5 /* PaletteControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaletteControls.swift; path = FlexColorPicker/Classes/Controls/PaletteControls.swift; sourceTree = "<group>"; };
 		D991CA5F8CC51763C7FC539486C21394 /* FBLPromiseError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBLPromiseError.m; path = Sources/FBLPromises/FBLPromiseError.m; sourceTree = "<group>"; };
 		DA1D482CC579C565F39939D493274EB9 /* MTITextureDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTITextureDescriptor.m; path = Frameworks/MetalPetal/MTITextureDescriptor.m; sourceTree = "<group>"; };
 		DAA64F8166BCC4E0172DBE22C1E73676 /* nanopb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.release.xcconfig; sourceTree = "<group>"; };
-		DAAE89D3E9659070410BBCB1A74C2AC7 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = FirebaseAnalytics.xcframework; path = Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		DAAE89D3E9659070410BBCB1A74C2AC7 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
 		DABEF5AC831751D9AF7B2F65D2731CA2 /* FIRLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLibrary.h; path = FirebaseCore/Extension/FIRLibrary.h; sourceTree = "<group>"; };
 		DB3B02A5C55E4EDCB8DC9A8003045038 /* MTIBuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIBuffer.h; path = Frameworks/MetalPetal/MTIBuffer.h; sourceTree = "<group>"; };
 		DB48D73FD3D9E9095AC33BE9F9BDC637 /* PromisesObjC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromisesObjC-dummy.m"; sourceTree = "<group>"; };
@@ -2390,9 +2393,9 @@
 		DDEA0B67016F94B695A67A8C3BD445FA /* FIRComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRComponent.m; path = FirebaseCore/Sources/FIRComponent.m; sourceTree = "<group>"; };
 		DDEC719703178C089368C0BFB21880B2 /* SDImageGraphics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageGraphics.m; path = SDWebImage/Core/SDImageGraphics.m; sourceTree = "<group>"; };
 		DE5A1B4DF32C937411B80275521B694F /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		DE879EBEB2F42758F21338AB0C2C83C2 /* fiam.nanopb.c */ = {isa = PBXFileReference; includeInIndex = 1; name = fiam.nanopb.c; path = FirebaseInAppMessaging/Sources/Analytics/Protogen/nanopb/fiam.nanopb.c; sourceTree = "<group>"; };
+		DE879EBEB2F42758F21338AB0C2C83C2 /* fiam.nanopb.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fiam.nanopb.c; path = FirebaseInAppMessaging/Sources/Analytics/Protogen/nanopb/fiam.nanopb.c; sourceTree = "<group>"; };
 		DEB27BE2C726F13939C3D0944DC74585 /* GoogleUtilities-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GoogleUtilities-Info.plist"; sourceTree = "<group>"; };
-		DEDA5C2BCCFA778EDFB19A18CD51437D /* MultilayerCompositeShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; name = MultilayerCompositeShaders.metal; path = Frameworks/MetalPetal/Shaders/MultilayerCompositeShaders.metal; sourceTree = "<group>"; };
+		DEDA5C2BCCFA778EDFB19A18CD51437D /* MultilayerCompositeShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = MultilayerCompositeShaders.metal; path = Frameworks/MetalPetal/Shaders/MultilayerCompositeShaders.metal; sourceTree = "<group>"; };
 		DF5E6259283D85485E51CED289EC99D8 /* SDWebImageTransitionInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransitionInternal.h; path = SDWebImage/Private/SDWebImageTransitionInternal.h; sourceTree = "<group>"; };
 		DFA12D1BB59EF9A9954C45C9D249D54D /* FIRIAMMsgFetcherUsingRestful.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMMsgFetcherUsingRestful.h; path = FirebaseInAppMessaging/Sources/Private/Flows/FIRIAMMsgFetcherUsingRestful.h; sourceTree = "<group>"; };
 		DFD3B474FE4AB857BAEF622B8B003224 /* FIRIAMActionURLFollower.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMActionURLFollower.h; path = FirebaseInAppMessaging/Sources/Private/Runtime/FIRIAMActionURLFollower.h; sourceTree = "<group>"; };
@@ -2434,7 +2437,7 @@
 		E975D91C1097CBBD804ACA94EB997785 /* FIRIAMMessageContentDataWithImageURL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMMessageContentDataWithImageURL.h; path = FirebaseInAppMessaging/Sources/Private/Data/FIRIAMMessageContentDataWithImageURL.h; sourceTree = "<group>"; };
 		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E990EDDE974B2A4F5570F70991BD99A8 /* FIRIAMTimeFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRIAMTimeFetcher.h; path = FirebaseInAppMessaging/Sources/Private/Util/FIRIAMTimeFetcher.h; sourceTree = "<group>"; };
-		E9C1CEBB65981DF505527558D679D5BD /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
+		E9C1CEBB65981DF505527558D679D5BD /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = pb_encode.c; sourceTree = "<group>"; };
 		EABB64265D1AFB33F2D2C22CFB75F455 /* _ObjC_HeartbeatsPayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = _ObjC_HeartbeatsPayload.swift; path = FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift; sourceTree = "<group>"; };
 		EADF2CFA3358626BFFE1C9A638FF948A /* MTICLAHEFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTICLAHEFilter.m; path = Frameworks/MetalPetal/Filters/MTICLAHEFilter.m; sourceTree = "<group>"; };
 		EB0580C8260C03641C19F625E34C8BB2 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
@@ -2511,7 +2514,7 @@
 		F8B19A3FF6F61B87A6FE61FD4A56E158 /* SDAnimatedImageRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageRep.h; path = SDWebImage/Core/SDAnimatedImageRep.h; sourceTree = "<group>"; };
 		F9C58F2D2FB78DEDB8F9623F5A8FEB8F /* IGRPhotoTweakView+AspectRatio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IGRPhotoTweakView+AspectRatio.swift"; path = "IGRPhotoTweaks/PhotoTweakView/IGRPhotoTweakView+AspectRatio.swift"; sourceTree = "<group>"; };
 		FA02E62C50FDAAB2F88E757E1C1986D0 /* GoogleAppMeasurement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleAppMeasurement.debug.xcconfig; sourceTree = "<group>"; };
-		FA315AEF08BA23FB2FC366DF0713D85C /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleAppMeasurement.xcframework; path = Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		FA315AEF08BA23FB2FC366DF0713D85C /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurement.xcframework; path = Frameworks/GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
 		FA7A76C6D4916C8B57F456C7BE564FEF /* MTIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MTIError.swift; path = Frameworks/MetalPetal/MTIError.swift; sourceTree = "<group>"; };
 		FAEC052EC4C3F893C4FE43A8BF9B1CFA /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductQueryRequest.swift; path = Sources/SwiftyStoreKit/InAppProductQueryRequest.swift; sourceTree = "<group>"; };
 		FAF131176F4362BD8E465E573E9757C8 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/Core/NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -2522,7 +2525,7 @@
 		FBD75F1B65B2A9C83D31061DC54A0ACA /* MTIDefer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MTIDefer.h; path = Frameworks/MetalPetal/MTIDefer.h; sourceTree = "<group>"; };
 		FC22372725E757550F59CE59CE0EA51C /* AbstractColorControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AbstractColorControl.swift; path = FlexColorPicker/Classes/Controls/AbstractColorControl.swift; sourceTree = "<group>"; };
 		FC43AE4126BDC81DDFF280B6DD8BD2D0 /* Pods-TextArt-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextArt-Info.plist"; sourceTree = "<group>"; };
-		FC61827982AEA408935F7D0067D40715 /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleAppMeasurementIdentitySupport.xcframework; path = Frameworks/GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
+		FC61827982AEA408935F7D0067D40715 /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = GoogleAppMeasurementIdentitySupport.xcframework; path = Frameworks/GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
 		FC8BFCF8044F82013B53C9F501CA012C /* SDDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDisplayLink.h; path = SDWebImage/Private/SDDisplayLink.h; sourceTree = "<group>"; };
 		FC9114448B1DBC498D1DE41F39D927A9 /* FIRIAMModalViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRIAMModalViewController.m; path = FirebaseInAppMessaging/Sources/DefaultUI/Modal/FIRIAMModalViewController.m; sourceTree = "<group>"; };
 		FD3AB4940C4B80A4D731ABB9FD646B82 /* GULURLSessionDataResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULURLSessionDataResponse.m; path = GoogleUtilities/Environment/URLSessionPromiseWrapper/GULURLSessionDataResponse.m; sourceTree = "<group>"; };
@@ -2771,7 +2774,6 @@
 				30F6FEE046E456D1A071C58E011656B7 /* Resources */,
 				911E8CE32B21684A0D34E81FF0068138 /* Support Files */,
 			);
-			name = AMColorPicker;
 			path = AMColorPicker;
 			sourceTree = "<group>";
 		};
@@ -2809,7 +2811,6 @@
 				7E66E2F1A7AF136AD764ABD05BA7CAD7 /* SwiftyStoreKit+Types.swift */,
 				BC984EC48141D4CC448B45058920BACF /* Support Files */,
 			);
-			name = SwiftyStoreKit;
 			path = SwiftyStoreKit;
 			sourceTree = "<group>";
 		};
@@ -2819,7 +2820,6 @@
 				20BC664B1C4071E28EDB92502B371904 /* Core */,
 				B6C60FD0BF0B73A6E952A0321BEF6B9F /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2829,7 +2829,6 @@
 				1BBF89B5692EEBD1FFA4A86D8E128BBA /* Core */,
 				97760B9D0A7F43270660FE49FB1F3880 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -2968,7 +2967,6 @@
 				20C802F93A0B7CB5C780B0A5E251782E /* Resources */,
 				F13BD7298140069CCCA03BCBB8085DAD /* Support Files */,
 			);
-			name = FirebaseInAppMessaging;
 			path = FirebaseInAppMessaging;
 			sourceTree = "<group>";
 		};
@@ -3187,7 +3185,6 @@
 				FE0D0065B3399936B96651971056AB55 /* FIROptionsInternal.h */,
 				B46162249A8BD41EE05C2BFCB1E782BA /* Support Files */,
 			);
-			name = FirebaseABTesting;
 			path = FirebaseABTesting;
 			sourceTree = "<group>";
 		};
@@ -3413,7 +3410,6 @@
 				17E8BF8F47E734D9C9DE894CA03D8FF0 /* MKToolTip.swift */,
 				E59652259E61B9404FFA8340B241CC7B /* Support Files */,
 			);
-			name = MKToolTip;
 			path = MKToolTip;
 			sourceTree = "<group>";
 		};
@@ -3449,7 +3445,6 @@
 				7D22F7616CCCF8D2E2C81A83A641FD01 /* FloatingBubblesPresentable.swift */,
 				8537B9878922AF20E6365F55DFA90C90 /* Support Files */,
 			);
-			name = FloatingBubbles;
 			path = FloatingBubbles;
 			sourceTree = "<group>";
 		};
@@ -3514,7 +3509,6 @@
 				1047B9DD44D0F0C39C25F9E741376F0E /* FBLPromises.h */,
 				05CD0C3F6BF5C9120C00AA1C76EBC7CE /* Support Files */,
 			);
-			name = PromisesObjC;
 			path = PromisesObjC;
 			sourceTree = "<group>";
 		};
@@ -3528,7 +3522,6 @@
 				2F7B1D2975650E14F7B4BA8AC8E24F4A /* Resources */,
 				2F3D123FC45421A15A7073D20E944E3F /* Support Files */,
 			);
-			name = IHProgressHUD;
 			path = IHProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -3799,7 +3792,6 @@
 				1DC134477E0FF684048812F087D883D5 /* UIButton+ActionHandler.swift */,
 				2A197222EB5D546096EBF90686A8D569 /* Support Files */,
 			);
-			name = ImageActionSheet;
 			path = ImageActionSheet;
 			sourceTree = "<group>";
 		};
@@ -3857,7 +3849,6 @@
 				9935E19FE2BA9FEB45F70FB5ECA82CCD /* FIROptionsInternal.h */,
 				6689AE78413DCFFA9D3CA214F557D90C /* Support Files */,
 			);
-			name = FirebaseInstallations;
 			path = FirebaseInstallations;
 			sourceTree = "<group>";
 		};
@@ -3914,7 +3905,6 @@
 				7AE0F4731AFB9646B05258F810B86F3F /* UIViewWithCommonInit.swift */,
 				B57E352BDB1293F085AD1D4654456D75 /* Support Files */,
 			);
-			name = FlexColorPicker;
 			path = FlexColorPicker;
 			sourceTree = "<group>";
 		};
@@ -3977,7 +3967,6 @@
 				79468C8FC77059EF56C982E663ED3B77 /* HorizontalDial.swift */,
 				B544BC0FFC2EB6083ED9E210BA09586C /* Support Files */,
 			);
-			name = HorizontalDial;
 			path = HorizontalDial;
 			sourceTree = "<group>";
 		};
@@ -3988,7 +3977,6 @@
 				77781EDFCFCBC70524B2B5B0C83B157E /* Support Files */,
 				D6D793C35E38884A495369D024E96416 /* WithoutAdIdSupport */,
 			);
-			name = GoogleAppMeasurement;
 			path = GoogleAppMeasurement;
 			sourceTree = "<group>";
 		};
@@ -4031,7 +4019,6 @@
 				40C2A7CDDB0FDA7E4FE248B9B8022A2B /* UIImage+IGRPhotoTweakExtension.swift */,
 				4C9E2E82612565F752886BE0A270A269 /* Support Files */,
 			);
-			name = IGRPhotoTweaks;
 			path = IGRPhotoTweaks;
 			sourceTree = "<group>";
 		};
@@ -4088,7 +4075,6 @@
 				1C8979AC7D49A02E564BB0B7FBA897A8 /* FIRVersion.m */,
 				0E6CEA2356020FBF0EBF75B49C8086D2 /* Support Files */,
 			);
-			name = FirebaseCore;
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
@@ -4158,7 +4144,6 @@
 				7243228AEF041985B0BD3E659D90D4A2 /* AdIdSupport */,
 				D5C8A4DAED2BA6DD808A3AB14DAF4DD4 /* Support Files */,
 			);
-			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
@@ -4193,7 +4178,6 @@
 				49913A445FBEDC2747574BD55750D17E /* WeakContainer.swift */,
 				C8F88926621D008865D68A3FC12A0A4D /* Support Files */,
 			);
-			name = FirebaseCoreInternal;
 			path = FirebaseCoreInternal;
 			sourceTree = "<group>";
 		};
@@ -4205,7 +4189,7 @@
 				E2B63D462DB7F827C4B11FD51E4F8E2D /* FirebaseCore */,
 				148D0F9E8C7373FEAF40D800FC5F1BAA /* FirebaseCoreInternal */,
 				D62C4F37ECE9B53ACB7DD80C7F0CEA50 /* FirebaseInAppMessaging */,
-				B417416C7A485EDC28E38A89AF647AC7 /* FirebaseInAppMessaging-InAppMessagingDisplayResources */,
+				B417416C7A485EDC28E38A89AF647AC7 /* InAppMessagingDisplayResources.bundle */,
 				13C8C8B254851998F9289F71229B28A2 /* FirebaseInstallations */,
 				741F9D3943FF7542B04631B29216270F /* FlexColorPicker */,
 				5E5689BDDC3141EDE81A504EE8725F78 /* FloatingBubbles */,
@@ -4285,7 +4269,6 @@
 				F80183C048A7526DC131AC19C795D577 /* ProgressHUD.swift */,
 				4BEA96B150EEC39A35BDC3EF73624F57 /* Support Files */,
 			);
-			name = ProgressHUD;
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -4330,7 +4313,6 @@
 				EC546E2A6E744EDE73A46F30FC5F3CDE /* encode */,
 				B7A111AAA2172E41AD59B1D0A4F1DFBF /* Support Files */,
 			);
-			name = nanopb;
 			path = nanopb;
 			sourceTree = "<group>";
 		};
@@ -4413,7 +4395,6 @@
 				5DBE09D88D3DFFAF6B4594645E4E1E22 /* CoreOnly */,
 				168DCF3C0C65C5584045540CFB4B7041 /* Support Files */,
 			);
-			name = Firebase;
 			path = Firebase;
 			sourceTree = "<group>";
 		};
@@ -4443,7 +4424,6 @@
 				892D8EBEBF1E5114C20952C757D1B446 /* SwiftHSVColorPicker.swift */,
 				A681FC1A0F1355AB4CF9FBB1ED2628E9 /* Support Files */,
 			);
-			name = SwiftHSVColorPicker;
 			path = SwiftHSVColorPicker;
 			sourceTree = "<group>";
 		};
@@ -4510,7 +4490,6 @@
 				62692E65163F4BF62670DDB3DD929C1A /* Support Files */,
 				F5E8819F5DD4884D4306909373725C32 /* UserDefaults */,
 			);
-			name = GoogleUtilities;
 			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
@@ -4521,7 +4500,6 @@
 				8DBC8587F9637995AABFF4BBA4628310 /* Support Files */,
 				49CBF4DF2F8379B182232690B5EBFBDF /* Swift */,
 			);
-			name = MetalPetal;
 			path = MetalPetal;
 			sourceTree = "<group>";
 		};
@@ -5424,7 +5402,7 @@
 			);
 			name = "FirebaseInAppMessaging-InAppMessagingDisplayResources";
 			productName = InAppMessagingDisplayResources;
-			productReference = B417416C7A485EDC28E38A89AF647AC7 /* FirebaseInAppMessaging-InAppMessagingDisplayResources */;
+			productReference = B417416C7A485EDC28E38A89AF647AC7 /* InAppMessagingDisplayResources.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		8D7F5D5DD528D21A72DC87ADA5B12E2D /* GoogleUtilities */ = {
@@ -5803,7 +5781,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0490866AF3E54023F2744D3219E18802 /* FirebaseInAppMessaging-InAppMessagingDisplayResources in Resources */,
+				0490866AF3E54023F2744D3219E18802 /* InAppMessagingDisplayResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8493,6 +8471,7 @@
 			baseConfigurationReference = 8BE4234C2CB6C0BDEE77CB6A8B7475F5 /* FirebaseInAppMessaging.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FirebaseInAppMessaging";
+				DEVELOPMENT_TEAM = 7T4SDWZ6VK;
 				IBSC_MODULE = FirebaseInAppMessaging;
 				INFOPLIST_FILE = "Target Support Files/FirebaseInAppMessaging/ResourceBundle-InAppMessagingDisplayResources-FirebaseInAppMessaging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -8925,6 +8904,7 @@
 			baseConfigurationReference = 618D715211175F0FB8A4D4A21DBBA045 /* FirebaseInAppMessaging.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FirebaseInAppMessaging";
+				DEVELOPMENT_TEAM = 7T4SDWZ6VK;
 				IBSC_MODULE = FirebaseInAppMessaging;
 				INFOPLIST_FILE = "Target Support Files/FirebaseInAppMessaging/ResourceBundle-InAppMessagingDisplayResources-FirebaseInAppMessaging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

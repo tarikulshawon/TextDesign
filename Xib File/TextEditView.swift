@@ -88,10 +88,10 @@ class TextEditView: UIView {
         collectionViewForTextControls.showsHorizontalScrollIndicator = false
         
         sliderForRadius.maximumValue = 15
-        sliderForRadius.minimumValue = 3
+        sliderForRadius.minimumValue = 0
         
-        sliderForOffset.maximumValue = 25
-        sliderForOffset.minimumValue = -25
+        sliderForOffset.maximumValue = 5
+        sliderForOffset.minimumValue = -5
         
         sliderForOpacity.maximumValue = 1.0
         sliderForOpacity.minimumValue = 0.0

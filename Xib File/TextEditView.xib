@@ -279,13 +279,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwf-VI-rfO">
-                                                    <rect key="frame" x="5" y="32.5" width="47.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="5" y="35.5" width="36.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aFy-CF-zih" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                                    <rect key="frame" x="62.5" y="0.0" width="323.5" height="86"/>
+                                                    <rect key="frame" x="51.5" y="0.0" width="334.5" height="86"/>
                                                     <connections>
                                                         <action selector="offsetValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="sVr-1a-knR"/>
                                                     </connections>
@@ -305,15 +305,15 @@
                                             <rect key="frame" x="0.0" y="85" width="414" height="85"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8U-wr-X7n">
-                                                    <rect key="frame" x="5" y="32.5" width="59" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="5" y="35.5" width="45" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rQ-C92" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                                    <rect key="frame" x="74" y="0.0" width="312" height="86"/>
+                                                    <rect key="frame" x="60" y="0.0" width="326" height="86"/>
                                                     <connections>
-                                                        <action selector="opacityValuChanges:" destination="iN0-l3-epB" eventType="valueChanged" id="oFh-Wu-DD0"/>
+                                                        <action selector="opacityShadowValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="gmV-jV-PNa"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
@@ -330,14 +330,14 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="san-KQ-FvU">
                                             <rect key="frame" x="0.0" y="170" width="414" height="85"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rdius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUJ-dH-mHb">
-                                                    <rect key="frame" x="5" y="32.5" width="42.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUJ-dH-mHb">
+                                                    <rect key="frame" x="5" y="35.5" width="39.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8bL-Kj-TRZ" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                                    <rect key="frame" x="57.5" y="0.0" width="328.5" height="86"/>
+                                                    <rect key="frame" x="54.5" y="0.0" width="331.5" height="86"/>
                                                     <connections>
                                                         <action selector="radiusValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="1fs-0K-HfU"/>
                                                     </connections>

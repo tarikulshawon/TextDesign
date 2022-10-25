@@ -7,16 +7,15 @@
 
 import UIKit
 
-class ImageShownViewController: UIViewController,URLSessionDelegate, URLSessionDownloadDelegate {
-    
+class ImageShownViewController: UIViewController, URLSessionDelegate, URLSessionDownloadDelegate {
     var imageDetailArrayF = [ImageDetails]()
-    
     
     @IBOutlet weak var collectionViewForImage: UICollectionView!
     
     @IBAction func gotoPreviousView(_ sender: Any) {
         self.dismiss(animated: true)
     }
+    
     func localFilePathForUrl(_ previewUrl: String) -> URL? {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
         let fullPath = documentsPath.appendingPathComponent((URL(string: previewUrl)?.lastPathComponent)!)
