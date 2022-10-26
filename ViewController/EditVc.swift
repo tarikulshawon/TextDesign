@@ -79,6 +79,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var currentLookUpindex = 0
     var plistArray2:NSArray!
     var mainImage:UIImage!
+    var mainImageURL: URL!
     var currentBlurValue:Double = -1
     
     var Brightness: Float = 0.0

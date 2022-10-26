@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Kingfisher
 
-class ImageShownViewController: UIViewController, URLSessionDelegate, URLSessionDownloadDelegate {
+class ImageShownViewController: UIViewController {
     var imageDetailArrayF = [ImageDetails]()
     
     @IBOutlet weak var collectionViewForImage: UICollectionView!
@@ -15,88 +16,6 @@ class ImageShownViewController: UIViewController, URLSessionDelegate, URLSession
     @IBAction func gotoPreviousView(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
-    func localFilePathForUrl(_ previewUrl: String) -> URL? {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        let fullPath = documentsPath.appendingPathComponent((URL(string: previewUrl)?.lastPathComponent)!)
-        return URL(fileURLWithPath:fullPath)
-    }
-    
-    func startDownload(_ image: ImageDetails) {
-        if((activeDownloads[image.downloadURL!]) != nil) {return}
-        if (isFileAvailable(fileName: image.name!)) {return}
-        
-        if let urlString = image.downloadURL, let url =  URL(string: urlString) {
-            let download = DownloadManager(url: urlString)
-            download.downloadTask = downloadsSession.downloadTask(with: url)
-            download.downloadTask!.resume()
-            download.isDownloading = true
-            activeDownloads[download.url] = download
-        }
-    }
-    
-    
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        // 1
-        if let originalURL = downloadTask.originalRequest?.url?.absoluteString,
-           let destinationURL = localFilePathForUrl(originalURL) {
-            
-            //print(destinationURL)
-            
-            // 2
-            let fileManager = FileManager.default
-            do {
-                try fileManager.removeItem(at: destinationURL)
-            } catch {
-                // Non-fatal: file probably doesn't exist
-            }
-            do {
-                try fileManager.copyItem(at: location, to: destinationURL)
-            } catch let error as NSError {
-                print("Could not copy file to disk: \(error.localizedDescription)")
-            }
-        }
-        
-        // 3
-        if let url = downloadTask.originalRequest?.url?.absoluteString {
-            print("Removing url:\(url)")
-            activeDownloads[url] = nil
-            
-            
-            
-            DispatchQueue.main.async { [self] in
-                collectionViewForImage.reloadData()
-            }
-            
-            
-            
-        }
-    }
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
-        
-    }
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        print("\(bytesWritten) == \(totalBytesWritten) == \(totalBytesExpectedToWrite)")
-        if let downloadUrl = downloadTask.originalRequest?.url?.absoluteString,
-           let download = activeDownloads[downloadUrl] {
-            download.progress = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
-            print("Progress Size: \(download.progress)");
-            DispatchQueue.main.async(execute: {
-                
-            })
-        }
-    }
-    
-    
-    
-    lazy var downloadsSession: Foundation.URLSession = {
-        let configuration = URLSessionConfiguration.background(withIdentifier: "bgSessionConfiguration")
-        let session = Foundation.URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        return session
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,45 +62,52 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reusableID, for: indexPath as IndexPath) as! ColorCell
         
+        let imageValue = imageDetailArrayF[indexPath.row]
         
-        var imageValue = imageDetailArrayF[indexPath.row]
-        if (isFileAvailable(fileName: imageValue.name!)) {
-            let im = UIImage.init(contentsOfFile: getFilePathWithName(fileName: imageValue.name!))
-            
-            if(im == nil) {
-                let fileManager = FileManager.default
-                do {
-                    try fileManager.removeItem(at: getFileUrlWithName(fileName: imageValue.name!))
-                } catch {
+        let processor = DownsamplingImageProcessor(size: CGSize(width: 200, height: 200))
+                      |> RoundCornerImageProcessor(cornerRadius: 10)
+        cell.gradietImv.kf.indicatorType = .activity
+        
+        cell.gradietImv.kf.setImage(
+            with: URL(string: imageValue.downloadURL ?? ""),
+            placeholder: UIImage(named: "bg"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .loadDiskFileSynchronously,
+                .cacheOriginalImage,
+                .transition(.fade(0.25))
+                //.lowDataMode(.network(lowResolutionURL))
+            ],
+            progressBlock: { receivedSize, totalSize in
+                print("progress: \(receivedSize) Bytes")
+            },
+            completionHandler: { result in
+                switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
                 }
             }
-            cell.gradietImv.image = im?.resizeImage(targetSize: CGSize(width: 200, height: 200))
-        }else {
-            cell.gradietImv.image = UIImage.init(named: "bg")
-        }
-        
-        self.startDownload(imageValue)
-        
-        cell.gradietImv.contentMode = .scaleAspectFill
+        )
+
         cell.holderView.backgroundColor = UIColor.clear
-        cell.layer.cornerRadius = 10.0
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        var imageValue = imageDetailArrayF[indexPath.row]
-        if (isFileAvailable(fileName: imageValue.name!)) {
-            let im = UIImage.init(contentsOfFile: getFilePathWithName(fileName: imageValue.name!))
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc: EditVc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
-            vc.modalPresentationStyle = .fullScreen
-            vc.mainImage = im
-            present(vc, animated: true, completion: nil)
-            
-        }
-            
+        let imageValue = imageDetailArrayF[indexPath.row]
+                
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: EditVc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
+        vc.modalPresentationStyle = .fullScreen
+        let cell = collectionView.cellForItem(at: indexPath) as? ColorCell
+        vc.mainImage = cell?.gradietImv.image
+        
+        present(vc, animated: true, completion: nil)
         
     }
 }

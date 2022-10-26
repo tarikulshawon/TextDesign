@@ -92,7 +92,7 @@
                "resetting the message cache",
               (unsigned long)self.testMessages.count, (unsigned long)self.regularMessages.count,
               (unsigned long)self.firebaseAnalyticEventsToWatch.count);
-  [self.observer messageDataChanged];
+  [self.observer dataChanged];
 }
 
 // triggered after self.messages are updated so that we can correctly enable/disable listening
@@ -213,7 +213,7 @@
 
   // triggers the observer outside synchronization block
   if (msgToRemove) {
-    [self.observer messageDataChanged];
+    [self.observer dataChanged];
   }
 }
 

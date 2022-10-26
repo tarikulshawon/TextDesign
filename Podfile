@@ -23,15 +23,16 @@ pod 'ImageActionSheet'
 pod 'AMColorPicker'
 pod 'MetalPetal/Swift'
 pod 'FlexColorPicker'
-pod 'SDWebImage', '~> 5.0'
+# pod 'SDWebImage', '~> 5.0'
 pod "FloatingBubbles"
 pod 'MKToolTip'
 pod 'Firebase'
 pod 'Firebase/InAppMessaging'
-pod 'Firebase/Analytics'
+# pod 'Firebase/Analytics'
 pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 pod 'IHProgressHUD', :git => 'https://github.com/Swiftify-Corp/IHProgressHUD.git'
 pod 'ProgressHUD'
 pod 'SwiftyStoreKit'
+pod 'Kingfisher', '~> 5.0'
 
 end
