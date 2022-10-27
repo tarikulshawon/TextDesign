@@ -170,7 +170,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     }
     func chnageValue(value: Float, index:Int) {
         if currentStickerView?.pathType == "Image" {
-            var lol  = getFileUrlWithName(fileName: currentStickerView?.pathName ?? "")
+            var lol = getFileUrlWithName(fileName: currentStickerView?.pathName ?? "")
             
             guard let data = try? Data(contentsOf: lol as URL),let image = UIImage(data: data) else {
                 return

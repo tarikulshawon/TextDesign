@@ -65,7 +65,7 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
         let imageValue = imageDetailArrayF[indexPath.row]
         
         let processor = DownsamplingImageProcessor(size: CGSize(width: 200, height: 200))
-                      //|> RoundCornerImageProcessor(cornerRadius: 10)
+                        |> RoundCornerImageProcessor(cornerRadius: 10)
         cell.gradietImv.kf.indicatorType = .activity
         
         cell.gradietImv.kf.setImage(
@@ -77,15 +77,18 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
                 .loadDiskFileSynchronously,
                 .cacheOriginalImage,
                 .transition(.fade(0.25))
-                //.lowDataMode(.network(lowResolutionURL))
             ],
             progressBlock: { receivedSize, totalSize in
-                print("progress: \(receivedSize) Bytes")
+                print("progress: \((Double(receivedSize)/Double(totalSize)) * 100) %")
             },
             completionHandler: { result in
                 switch result {
                 case .success(let value):
-                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                    // From where the image was retrieved:
+                    // - .none - Just downloaded.
+                    // - .memory - Got from memory cache.
+                    // - .disk - Got from disk cache.
+                    print("Image -- \(value.source), loaded from \(value.cacheType)")
                 case .failure(let error):
                     print("Job failed: \(error.localizedDescription)")
                 }
@@ -98,21 +101,18 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let imageValue = imageDetailArrayF[indexPath.row]
                 
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: EditVc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
+        let vc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
         vc.modalPresentationStyle = .fullScreen
-        let cell = collectionView.cellForItem(at: indexPath) as? ColorCell
         
         downloadImage(with: imageValue.downloadURL ?? "") { image in
             guard let image else {
-                print("There is no downloaded image for: \(imageValue.downloadURL)")
+                print("There is no downloaded image for: \(String(describing: imageValue.downloadURL))")
                 return
             }
-             // do what you need with the returned image.
-            print("Image is set: \(image.size)")
+
             vc.mainImage = image
         }
         
