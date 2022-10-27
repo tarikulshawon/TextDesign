@@ -78,8 +78,7 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     var ov:Float =  0.3
     var currentLookUpindex = 0
     var plistArray2:NSArray!
-    var mainImage:UIImage!
-    var mainImageURL: URL!
+    var mainImage: UIImage!
     var currentBlurValue:Double = -1
     
     var Brightness: Float = 0.0
@@ -349,7 +348,9 @@ class EditVc: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         screenSortView.addGestureRecognizer(tap)
         
-        mainImv.image = mainImage
+        DispatchQueue.main.async { [weak self] in
+            self?.mainImv.image = self?.mainImage
+        }
         
         mainImv.contentMode = .scaleAspectFit
         

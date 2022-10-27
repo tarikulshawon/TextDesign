@@ -65,7 +65,7 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
         let imageValue = imageDetailArrayF[indexPath.row]
         
         let processor = DownsamplingImageProcessor(size: CGSize(width: 200, height: 200))
-                      |> RoundCornerImageProcessor(cornerRadius: 10)
+                      //|> RoundCornerImageProcessor(cornerRadius: 10)
         cell.gradietImv.kf.indicatorType = .activity
         
         cell.gradietImv.kf.setImage(
@@ -105,9 +105,35 @@ extension ImageShownViewController: UICollectionViewDataSource,UICollectionViewD
         let vc: EditVc = storyboard.instantiateViewController(withIdentifier: "EditVc") as! EditVc
         vc.modalPresentationStyle = .fullScreen
         let cell = collectionView.cellForItem(at: indexPath) as? ColorCell
-        vc.mainImage = cell?.gradietImv.image
+        
+        downloadImage(with: imageValue.downloadURL ?? "") { image in
+            guard let image else {
+                print("There is no downloaded image for: \(imageValue.downloadURL)")
+                return
+            }
+             // do what you need with the returned image.
+            print("Image is set: \(image.size)")
+            vc.mainImage = image
+        }
         
         present(vc, animated: true, completion: nil)
+    }
+}
+
+extension ImageShownViewController {
+    func downloadImage(with urlString : String , imageCompletionHandler: @escaping (UIImage?) -> Void){
+        guard let url = URL.init(string: urlString) else {
+            return  imageCompletionHandler(nil)
+        }
+        let resource = ImageResource(downloadURL: url)
         
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+            switch result {
+            case .success(let value):
+                imageCompletionHandler(value.image)
+            case .failure:
+                imageCompletionHandler(nil)
+            }
+        }
     }
 }
