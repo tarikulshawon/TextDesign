@@ -117,7 +117,7 @@ enum TextEditingOption: String, CaseIterable {
     case Rotate
     case Texture
 }
-func getFilteredCImage(withInfo dict: [String : Any]?, for sourceCIImage: CIImage?) -> UIImage? {
+func getFilteredCImage(withInfo dict: [String : Any]?, for sourceCIImage: CIImage?) -> CIImage? {
     let filterName = dict?["filter"] as? String
     
     let context = CIContext(options: nil)
@@ -153,7 +153,8 @@ func getFilteredCImage(withInfo dict: [String : Any]?, for sourceCIImage: CIImag
         
     }
     let adjustedImage = currentFilter?.value(forKey: kCIOutputImageKey) as? CIImage
-    return newImg?.ciImage
+    return adjustedImage
+    
 }
 func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIImage? {
     let filterName = dict?["filter"] as? String
