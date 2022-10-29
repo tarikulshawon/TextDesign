@@ -83,6 +83,14 @@
 		012FA0BC28DA02C000E44786 /* Fruits in Resources */ = {isa = PBXBuildFile; fileRef = 012FA0BB28DA02C000E44786 /* Fruits */; };
 		013AA6F928FAE01F00DBE800 /* QuotesVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6F828FAE01F00DBE800 /* QuotesVc.swift */; };
 		013AA6FB28FAE36300DBE800 /* QuotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013AA6FA28FAE36300DBE800 /* QuotesCell.swift */; };
+		01445B33290D406800500D36 /* AssetVideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B29290D406800500D36 /* AssetVideoScrollView.swift */; };
+		01445B34290D406800500D36 /* AVAssetTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B2A290D406800500D36 /* AVAssetTimeSelector.swift */; };
+		01445B35290D406800500D36 /* ThumbSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B2B290D406800500D36 /* ThumbSelectorView.swift */; };
+		01445B36290D406800500D36 /* VideoCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B2D290D406800500D36 /* VideoCropView.swift */; };
+		01445B37290D406800500D36 /* VideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B2E290D406800500D36 /* VideoScrollView.swift */; };
+		01445B38290D406800500D36 /* CropMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B2F290D406800500D36 /* CropMaskView.swift */; };
+		01445B39290D406800500D36 /* HandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B31290D406800500D36 /* HandlerView.swift */; };
+		01445B3A290D406800500D36 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B32290D406800500D36 /* PryntTrimmerView.swift */; };
 		014F9B1228FCD8390072179E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 014F9B1128FCD8390072179E /* Fonts */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
@@ -416,6 +424,14 @@
 		012FA0BB28DA02C000E44786 /* Fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fruits; sourceTree = "<group>"; };
 		013AA6F828FAE01F00DBE800 /* QuotesVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesVc.swift; sourceTree = "<group>"; };
 		013AA6FA28FAE36300DBE800 /* QuotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCell.swift; sourceTree = "<group>"; };
+		01445B29290D406800500D36 /* AssetVideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetVideoScrollView.swift; sourceTree = "<group>"; };
+		01445B2A290D406800500D36 /* AVAssetTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAssetTimeSelector.swift; sourceTree = "<group>"; };
+		01445B2B290D406800500D36 /* ThumbSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbSelectorView.swift; sourceTree = "<group>"; };
+		01445B2D290D406800500D36 /* VideoCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCropView.swift; sourceTree = "<group>"; };
+		01445B2E290D406800500D36 /* VideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScrollView.swift; sourceTree = "<group>"; };
+		01445B2F290D406800500D36 /* CropMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropMaskView.swift; sourceTree = "<group>"; };
+		01445B31290D406800500D36 /* HandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerView.swift; sourceTree = "<group>"; };
+		01445B32290D406800500D36 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PryntTrimmerView.swift; sourceTree = "<group>"; };
 		014F9B1128FCD8390072179E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
@@ -780,6 +796,45 @@
 			path = Thumb;
 			sourceTree = "<group>";
 		};
+		01445B27290D406800500D36 /* PryntTrimmerView */ = {
+			isa = PBXGroup;
+			children = (
+				01445B28290D406800500D36 /* Parents */,
+				01445B2B290D406800500D36 /* ThumbSelectorView.swift */,
+				01445B2C290D406800500D36 /* Cropper */,
+				01445B30290D406800500D36 /* Trimmer */,
+			);
+			path = PryntTrimmerView;
+			sourceTree = "<group>";
+		};
+		01445B28290D406800500D36 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				01445B29290D406800500D36 /* AssetVideoScrollView.swift */,
+				01445B2A290D406800500D36 /* AVAssetTimeSelector.swift */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		01445B2C290D406800500D36 /* Cropper */ = {
+			isa = PBXGroup;
+			children = (
+				01445B2D290D406800500D36 /* VideoCropView.swift */,
+				01445B2E290D406800500D36 /* VideoScrollView.swift */,
+				01445B2F290D406800500D36 /* CropMaskView.swift */,
+			);
+			path = Cropper;
+			sourceTree = "<group>";
+		};
+		01445B30290D406800500D36 /* Trimmer */ = {
+			isa = PBXGroup;
+			children = (
+				01445B31290D406800500D36 /* HandlerView.swift */,
+				01445B32290D406800500D36 /* PryntTrimmerView.swift */,
+			);
+			path = Trimmer;
+			sourceTree = "<group>";
+		};
 		019BC4C328E026F400B15323 /* SmallFrame */ = {
 			isa = PBXGroup;
 			children = (
@@ -1080,6 +1135,7 @@
 		39F8221928A3505C008925EF = {
 			isa = PBXGroup;
 			children = (
+				01445B27290D406800500D36 /* PryntTrimmerView */,
 				011F93C928E372270090B44E /* Extensions */,
 				01FD5AC528AE51FD00CBF70F /* AddText */,
 				3949331828AB2E5B003E8D67 /* DB */,
@@ -1795,8 +1851,10 @@
 				01219B7E28DF39EE00133E56 /* TextEditViewController.swift in Sources */,
 				39CC0E0C28A4AA0500DF1C64 /* TextEditView.swift in Sources */,
 				39F8225F28A35E7A008925EF /* FirstVc.swift in Sources */,
+				01445B35290D406800500D36 /* ThumbSelectorView.swift in Sources */,
 				39F8228728A36596008925EF /* ColorCell.swift in Sources */,
 				01FD5AD928AE52C700CBF70F /* BorderExtenstion.swift in Sources */,
+				01445B39290D406800500D36 /* HandlerView.swift in Sources */,
 				011761422904488100E431E0 /* SubscriptionVc.swift in Sources */,
 				01FD5ADA28AE52C700CBF70F /* TextViewInof+Structure.swift in Sources */,
 				019BC53828E027E400B15323 /* FrameVc.swift in Sources */,
@@ -1811,6 +1869,8 @@
 				39CC0E2128A4AB2600DF1C64 /* ImageEditView.swift in Sources */,
 				39F8225728A35133008925EF /* HomeVc.swift in Sources */,
 				39F8226B28A36105008925EF /* SecondVc.swift in Sources */,
+				01445B36290D406800500D36 /* VideoCropView.swift in Sources */,
+				01445B34290D406800500D36 /* AVAssetTimeSelector.swift in Sources */,
 				39F8226F28A3616A008925EF /* ThirdVc.swift in Sources */,
 				39CC0E0528A4A6FE00DF1C64 /* CustomSlider.swift in Sources */,
 				01B73EA028F1504D008B8D7A /* SettingCell.swift in Sources */,
@@ -1825,13 +1885,16 @@
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
 				01FD5ACF28AE52AE00CBF70F /* TextStickerContainerView.swift in Sources */,
 				010AFF9E28FF1E1100ED71E0 /* QuotesViewModel.swift in Sources */,
+				01445B37290D406800500D36 /* VideoScrollView.swift in Sources */,
 				01B73E9D28F15029008B8D7A /* SettingVc.swift in Sources */,
 				013AA6F928FAE01F00DBE800 /* QuotesVc.swift in Sources */,
+				01445B3A290D406800500D36 /* PryntTrimmerView.swift in Sources */,
 				01FD5AD228AE52AE00CBF70F /* PanControllerImageView.swift in Sources */,
 				011F93CB28E372390090B44E /* UIColor+Extension.swift in Sources */,
 				3949331728AB2D0E003E8D67 /* StickerView.swift in Sources */,
 				39CC0E1828A4AAC500DF1C64 /* ShapeVc.swift in Sources */,
 				01219B0328DE7DAA00133E56 /* AlphaSlider.swift in Sources */,
+				01445B38290D406800500D36 /* CropMaskView.swift in Sources */,
 				39CC0DF228A4A33C00DF1C64 /* CategoryCell.swift in Sources */,
 				39CC0E2428A4AB5900DF1C64 /* DrawVc.swift in Sources */,
 				01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */,
@@ -1839,6 +1902,7 @@
 				39CC0E0928A4A82C00DF1C64 /* RatioCell.swift in Sources */,
 				01219B0528DE7F1400133E56 /* Adjust.swift in Sources */,
 				39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */,
+				01445B33290D406800500D36 /* AssetVideoScrollView.swift in Sources */,
 				0117614A29044EDE00E431E0 /* CommonViewController.swift in Sources */,
 				01FD5AD028AE52AE00CBF70F /* DeleteImageView.swift in Sources */,
 				0105428428D860040004A516 /* CropVc.swift in Sources */,
