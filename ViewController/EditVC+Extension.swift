@@ -475,7 +475,6 @@ extension EditVc: AddTextDelegate {
             
             if let value = plistArray2[indexPath.row] as? String  {
                 
-                print(value)
                 cell.iconImv.image = UIImage(named: value)?.withRenderingMode(.alwaysTemplate)
                 if indexPath.row == currentlyActiveIndex {
                     cell.iconImv.tintColor = titleColor

@@ -63,16 +63,6 @@ enum BtnName:String {
     case Blur
 }
 
-
-struct ImageType {
-    var typeName = ""
-    var imageDetailArray = [ImageDetails]()
-    init(typeName: String = "", imageDetailArray: [ImageDetails] = [ImageDetails]()) {
-        self.typeName = typeName
-        self.imageDetailArray = imageDetailArray
-    }
-}
-
 enum BtnNameInt:Int {
     case Texts
     case Graphics
@@ -85,6 +75,33 @@ enum BtnNameInt:Int {
     case Shape
     case Blur
 }
+
+enum BtnNameVIDEO:String {
+    case Trim
+    case Adjust
+    case Filter
+    case Graphics
+    case Shape
+}
+
+enum BtnNameVIDEOInt:Int {
+    case Trim
+    case Adjust
+    case Filter
+    case Graphics
+    case Shape
+}
+
+
+struct ImageType {
+    var typeName = ""
+    var imageDetailArray = [ImageDetails]()
+    init(typeName: String = "", imageDetailArray: [ImageDetails] = [ImageDetails]()) {
+        self.typeName = typeName
+        self.imageDetailArray = imageDetailArray
+    }
+}
+
 
 
 enum TextEditingOption: String, CaseIterable {

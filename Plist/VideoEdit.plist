@@ -4,6 +4,7 @@
 <array>
 	<string>Trim</string>
 	<string>Filter</string>
+	<string>Adjust</string>
 	<string>Graphics</string>
 	<string>Shape</string>
 </array>
