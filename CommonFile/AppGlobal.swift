@@ -117,6 +117,44 @@ enum TextEditingOption: String, CaseIterable {
     case Rotate
     case Texture
 }
+func getFilteredCImage(withInfo dict: [String : Any]?, for sourceCIImage: CIImage?) -> UIImage? {
+    let filterName = dict?["filter"] as? String
+    
+    let context = CIContext(options: nil)
+    var currentFilter = CIFilter(name: filterName ?? "")
+    currentFilter?.setDefaults()
+    
+   
+    
+    currentFilter?.setValue(
+        sourceCIImage,
+        forKey: kCIInputImageKey)
+    let keys = dict?.keys
+    keys?.forEach { key in
+        let value = dict?[key ?? ""] as? String
+        if (key != "name") && (key != "filter") && (key != "color") && (key != "ImageName") {
+            currentFilter?.setValue(
+                NSNumber(value: Double(value ?? "") ?? 0.0),
+                forKey: key ?? "")
+        }
+        if key == "color" {
+            let colorValue = value?.components(separatedBy: ",")
+            var r: Float
+            var g: Float
+            var b: Float
+            r = Float(colorValue?[0] ?? "") ?? 0.0
+            g = Float(colorValue?[1] ?? "") ?? 0.0
+            b = Float(colorValue?[2] ?? "") ?? 0.0
+            
+            let color = CIColor(red: CGFloat(r / 255.0), green: CGFloat(g / 255.0), blue: CGFloat(b / 255.0))
+            
+            currentFilter?.setValue(color, forKey: "inputColor")
+        }
+        
+    }
+    let adjustedImage = currentFilter?.value(forKey: kCIOutputImageKey) as? CIImage
+    return newImg?.ciImage
+}
 func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIImage? {
     let filterName = dict?["filter"] as? String
     

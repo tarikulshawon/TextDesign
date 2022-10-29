@@ -12,10 +12,18 @@ import MobileCoreServices
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
-class VideoTrimmerViewController: UIViewController {
+class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
     
+    
+    func filterNameWithIndex(dic: Dictionary<String, Any>?) {
+        currentFilterDic = dic
+    }
+    
+    
+    var currentFilterDic:Dictionary<String, Any>!
+    @IBOutlet weak var filterViewHolder: UIView!
     @IBOutlet weak var bottomSpaceTrim: NSLayoutConstraint!
-    
+    let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
     @IBOutlet weak var collectionViewForBtn: UICollectionView!
     @IBOutlet weak var selectAssetButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -29,7 +37,9 @@ class VideoTrimmerViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
-    
+    @IBOutlet weak var bottomSpaceForFilter: NSLayoutConstraint!
+    var trimmmedComposition:AVMutableComposition!
+    var playerItem:AVPlayerItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         trimmerView.handleColor = UIColor.white
@@ -46,6 +56,53 @@ class VideoTrimmerViewController: UIViewController {
         
     }
     
+    func createComposition(withMuteStatus isMute: Bool) -> AVMutableComposition? {
+        let range: CMTimeRange = CMTimeRangeMake(start: .zero, duration: asset.duration)
+        let tempMixComposition = AVMutableComposition()
+
+        let compositionVideoTrack = tempMixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        if let firstObject = asset.tracks(withMediaType: .video).first {
+            try? compositionVideoTrack?.insertTimeRange(range, of: firstObject, at: .zero)
+        }
+
+        if ((asset as? AVAsset)?.tracks(withMediaType: .audio).count ?? 0) != 0 {
+            let audioAsset = asset.tracks(withMediaType: .audio).last
+            let compositionCommentaryTrack = tempMixComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+            if let audioAsset {
+                try? compositionCommentaryTrack?.insertTimeRange(
+                    CMTimeRangeMake(start: .zero, duration: tempMixComposition.duration),
+                    of: audioAsset,
+                    at: .zero)
+            }
+        }
+        let assetVideoTrack = asset.tracks(withMediaType: .video).last
+
+        if assetVideoTrack != nil && compositionVideoTrack != nil {
+            if let preferredTransform = assetVideoTrack?.preferredTransform {
+                compositionVideoTrack?.preferredTransform = preferredTransform
+            }
+        }
+        return tempMixComposition
+    }
+    
+    func prepareForComposition() {
+
+        playerItem.videoComposition = AVVideoComposition(asset: trimmmedComposition, applyingCIFiltersWithHandler: { request in
+
+            var output:CIImage?
+            do {
+                output = getFilteredCImage(withInfo: self.currentFilterDic, for: request.sourceImage)
+                print(self.currentFilterDic)
+            } catch {
+                print("sadiq")
+            }
+            request.finish(with: output ?? request.sourceImage, context: nil)
+            
+        })
+
+    }
+    
+  
     
     func updateValue() {
         
@@ -54,8 +111,14 @@ class VideoTrimmerViewController: UIViewController {
             if self.currentlyActiveIndex != BtnNameVIDEOInt.Trim.rawValue {
                 self.bottomSpaceTrim.constant = -1000
             }
+            if self.currentlyActiveIndex != BtnNameVIDEOInt.Filter.rawValue {
+                self.bottomSpaceForFilter.constant = -1000
+            }
             
             if currentlyActiveIndex >= 0 {
+                if self.currentlyActiveIndex == BtnNameVIDEOInt.Filter.rawValue {
+                    self.bottomSpaceForFilter.constant = 0
+                }
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Trim.rawValue {
                     self.bottomSpaceTrim.constant = 0
                 }
@@ -81,6 +144,11 @@ class VideoTrimmerViewController: UIViewController {
         trimmerView.delegate = self
         addVideoPlayer(with: asset, playerView: playerView)
         
+        filterVc.frame = CGRect(x: 0,y: 0,width: filterViewHolder.frame.width,height: filterViewHolder.frame.height)
+        filterVc.delegateForFilter = self
+        filterViewHolder.addSubview(filterVc)
+        
+        
     }
     
     @IBAction func play(_ sender: Any) {
@@ -97,8 +165,12 @@ class VideoTrimmerViewController: UIViewController {
     }
     
     private func addVideoPlayer(with asset: AVAsset, playerView: UIView) {
-        let playerItem = AVPlayerItem(asset: asset)
+        
+        trimmmedComposition = self.createComposition(withMuteStatus: false)
+        playerItem = AVPlayerItem(asset: trimmmedComposition)
         player = AVPlayer(playerItem: playerItem)
+        self.prepareForComposition()
+    
         
         NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.itemDidFinishPlaying(_:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
@@ -188,7 +260,8 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
         let totalCellWidth = CellWidth * plistArray2.count
         let totalSpacingWidth = CellSpacing * (plistArray2.count - 1)
 
-        let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let leftInset = (self.view.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        print(leftInset)
         let rightInset = leftInset
 
         return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
@@ -214,7 +287,7 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
             
             cell.iconLabel.text = value
         }
-        
+        cell.backgroundColor = UIColor.red
         return cell
     }
     public func collectionView(
@@ -230,6 +303,15 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameVIDEOInt.Trim.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+            }
+            if btnValue == BtnNameVIDEO.Filter.rawValue {
+                let p = self.bottomSpaceForFilter.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameVIDEOInt.Filter.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }
