@@ -91,6 +91,9 @@
 		01445B38290D406800500D36 /* CropMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B2F290D406800500D36 /* CropMaskView.swift */; };
 		01445B39290D406800500D36 /* HandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B31290D406800500D36 /* HandlerView.swift */; };
 		01445B3A290D406800500D36 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B32290D406800500D36 /* PryntTrimmerView.swift */; };
+		01445B3C290D40FB00500D36 /* MakerVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3B290D40FA00500D36 /* MakerVc.swift */; };
+		01445B3E290D410500500D36 /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */; };
+		01445B40290D411300500D36 /* AVPlayer+isPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */; };
 		014F9B1228FCD8390072179E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 014F9B1128FCD8390072179E /* Fonts */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
@@ -432,6 +435,9 @@
 		01445B2F290D406800500D36 /* CropMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropMaskView.swift; sourceTree = "<group>"; };
 		01445B31290D406800500D36 /* HandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerView.swift; sourceTree = "<group>"; };
 		01445B32290D406800500D36 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PryntTrimmerView.swift; sourceTree = "<group>"; };
+		01445B3B290D40FA00500D36 /* MakerVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerVc.swift; sourceTree = "<group>"; };
+		01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
+		01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+isPlaying.swift"; sourceTree = "<group>"; };
 		014F9B1128FCD8390072179E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
@@ -1086,6 +1092,7 @@
 		39CC0E0328A4A6DB00DF1C64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */,
 				019C619B29045BCB00243B1E /* SSRollingButtonScrollView.h */,
 				019C619C29045BCB00243B1E /* SSRollingButtonScrollView.m */,
 				0117614729044EA100E431E0 /* Store.swift */,
@@ -1199,6 +1206,8 @@
 		39F8225528A3510E008925EF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */,
+				01445B3B290D40FA00500D36 /* MakerVc.swift */,
 				0117614929044EDE00E431E0 /* CommonViewController.swift */,
 				010AFF9C28FF1DBE00ED71E0 /* Quotes Module */,
 				01B73E9C28F15028008B8D7A /* SettingVc.swift */,
@@ -1839,10 +1848,13 @@
 			files = (
 				3949331C28AB2E93003E8D67 /* DBmanager.swift in Sources */,
 				016DA3FC28FB19B1004F4673 /* ImageShownViewController.swift in Sources */,
+				01445B40290D411300500D36 /* AVPlayer+isPlaying.swift in Sources */,
 				0117614629044E3500E431E0 /* IAPManager.swift in Sources */,
 				0105428628D86CA30004A516 /* ExampleCropViewController.swift in Sources */,
 				01FD5ACE28AE52AE00CBF70F /* TextStickerView.swift in Sources */,
+				01445B3C290D40FB00500D36 /* MakerVc.swift in Sources */,
 				01FD5AD128AE52AE00CBF70F /* BreakWordControllerView.swift in Sources */,
+				01445B3E290D410500500D36 /* VideoTrimmerViewController.swift in Sources */,
 				01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */,
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
