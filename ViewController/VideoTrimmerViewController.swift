@@ -32,7 +32,12 @@ class VideoTrimmerViewController: UIViewController {
 
         
     }
-
+    
+    
+    @IBAction func gotoPreviousView(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     @IBAction func selectAsset(_ sender: Any) {
         
     }

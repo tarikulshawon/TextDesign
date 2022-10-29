@@ -94,6 +94,7 @@
 		01445B3C290D40FB00500D36 /* MakerVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3B290D40FA00500D36 /* MakerVc.swift */; };
 		01445B3E290D410500500D36 /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */; };
 		01445B40290D411300500D36 /* AVPlayer+isPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */; };
+		01445B42290D52F300500D36 /* VideoEdit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01445B41290D52F300500D36 /* VideoEdit.plist */; };
 		014F9B1228FCD8390072179E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 014F9B1128FCD8390072179E /* Fonts */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
@@ -438,6 +439,7 @@
 		01445B3B290D40FA00500D36 /* MakerVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakerVc.swift; sourceTree = "<group>"; };
 		01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
 		01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+isPlaying.swift"; sourceTree = "<group>"; };
+		01445B41290D52F300500D36 /* VideoEdit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VideoEdit.plist; sourceTree = "<group>"; };
 		014F9B1128FCD8390072179E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
@@ -1266,6 +1268,7 @@
 		39F8227228A3652F008925EF /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				01445B41290D52F300500D36 /* VideoEdit.plist */,
 				018063F528DFDF1B0015E667 /* Motivational.plist */,
 				01219B0A28DE837C00133E56 /* AdjustV.plist */,
 				0127AAD328D8B71000EE45BC /* FilterGroup.plist */,
@@ -1557,6 +1560,7 @@
 				012FA0BC28DA02C000E44786 /* Fruits in Resources */,
 				01D4B30F29038DF20033C40F /* F37.png in Resources */,
 				01B0DFD228D6506B00081369 /* Paper in Resources */,
+				01445B42290D52F300500D36 /* VideoEdit.plist in Resources */,
 				01D4B2E229038DD90033C40F /* FrameThumb36.png in Resources */,
 				01219B7328DEBC6B00133E56 /* OverlayThumb8.png in Resources */,
 				39CC0E3728A4AF6600DF1C64 /* Cute in Resources */,

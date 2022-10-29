@@ -219,6 +219,16 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
         
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
         
+        let videoAction = UIAlertAction(title: "Video Editor", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc: MakerVc = storyboard.instantiateViewController(withIdentifier: "MakerVc") as! MakerVc
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            
+        })
+        
         let saveAction = UIAlertAction(title: "Camera", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.checkCameraPermission()
@@ -235,6 +245,7 @@ class HomeVc: UIViewController, UIImagePickerControllerDelegate & UINavigationCo
             
         })
         
+        optionMenu.addAction(videoAction)
         optionMenu.addAction(saveAction)
         optionMenu.addAction(deleteAction)
         optionMenu.addAction(cancelAction)
