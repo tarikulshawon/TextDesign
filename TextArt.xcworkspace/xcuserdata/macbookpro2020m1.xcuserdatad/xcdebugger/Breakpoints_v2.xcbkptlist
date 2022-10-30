@@ -46,8 +46,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "saveToJsonFile(data:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -56,6 +56,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "11B45D6F-83F3-4D2E-8DA5-463F755A4E49"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommonFile/AppGlobal.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "saveToJsonFile(data:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99DBE53B-4743-4C88-A5BC-20D4A03652E5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -71,22 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "99DBE53B-4743-4C88-A5BC-20D4A03652E5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CommonFile/AppGlobal.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "saveToJsonFile(data:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CF5082AD-BC84-4984-A163-83C8DE8118F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -94,8 +94,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "saveToJsonFile(data:)"
             landmarkType = "9">
             <Locations>
@@ -623,7 +623,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "154"
                   endingLineNumber = "154"
-                  offsetFromSymbolStart = "2701">
+                  offsetFromSymbolStart = "2296">
                </Location>
                <Location
                   uuid = "1A53D11C-8A5F-4F58-AFDC-307A4AC6DD20 - 27a6f49bddc56191"
@@ -638,7 +638,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "154"
                   endingLineNumber = "154"
-                  offsetFromSymbolStart = "2791">
+                  offsetFromSymbolStart = "2364">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -815,7 +815,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
                   endingLineNumber = "175"
-                  offsetFromSymbolStart = "1229">
+                  offsetFromSymbolStart = "1048">
                </Location>
                <Location
                   uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed8ae"
@@ -830,7 +830,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
                   endingLineNumber = "175"
-                  offsetFromSymbolStart = "1509">
+                  offsetFromSymbolStart = "1212">
                </Location>
                <Location
                   uuid = "FF2BDA99-EE0B-4194-B03C-2577920C222D - b0b697f801aed8ae"
@@ -845,7 +845,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
                   endingLineNumber = "175"
-                  offsetFromSymbolStart = "1649">
+                  offsetFromSymbolStart = "1308">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -876,8 +876,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "485"
-            endingLineNumber = "485"
+            startingLineNumber = "487"
+            endingLineNumber = "487"
             landmarkName = "blur(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -892,9 +892,9 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
-            landmarkName = "UIImage"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
+            landmarkName = "UIApplication"
             landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
@@ -908,8 +908,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "488"
-            endingLineNumber = "488"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "blur(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -924,8 +924,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "blur(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1116,7 +1116,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "575"
                   endingLineNumber = "575"
-                  offsetFromSymbolStart = "173">
+                  offsetFromSymbolStart = "164">
                </Location>
                <Location
                   uuid = "A56C8EDA-85DB-4FB6-A9CA-E49912CCAC9B - e714002ff15ebf0c"
@@ -1131,7 +1131,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "576"
                   endingLineNumber = "576"
-                  offsetFromSymbolStart = "65">
+                  offsetFromSymbolStart = "104">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1324,7 +1324,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "565"
                   endingLineNumber = "565"
-                  offsetFromSymbolStart = "256">
+                  offsetFromSymbolStart = "260">
                </Location>
                <Location
                   uuid = "2FE9BECE-BB76-40CB-BE54-C95A283811E5 - f10e31ae0b33dc5c"
@@ -1339,7 +1339,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "565"
                   endingLineNumber = "565"
-                  offsetFromSymbolStart = "567">
+                  offsetFromSymbolStart = "620">
                </Location>
                <Location
                   uuid = "2FE9BECE-BB76-40CB-BE54-C95A283811E5 - 694df147669a8970"
@@ -1354,7 +1354,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "567"
                   endingLineNumber = "567"
-                  offsetFromSymbolStart = "39">
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1595,7 +1595,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1292"
                   endingLineNumber = "1292"
-                  offsetFromSymbolStart = "1796">
+                  offsetFromSymbolStart = "860">
                </Location>
                <Location
                   uuid = "D921AF3C-A8DD-4570-BB8A-106F9E1A483B - 6b80a7371a093930"
@@ -1610,7 +1610,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1292"
                   endingLineNumber = "1292"
-                  offsetFromSymbolStart = "1815">
+                  offsetFromSymbolStart = "1412">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1739,7 +1739,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
                   endingLineNumber = "111"
-                  offsetFromSymbolStart = "635">
+                  offsetFromSymbolStart = "492">
                </Location>
                <Location
                   uuid = "D22D4C34-5CB7-499B-885B-29E09DB9A2BC - 8bb9b02e8482247b"
@@ -1754,7 +1754,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
                   endingLineNumber = "113"
-                  offsetFromSymbolStart = "70">
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2185,8 +2185,8 @@
             filePath = "CommonFile/AppGlobal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "getFilteredCImage(withInfo:for:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -2201,8 +2201,8 @@
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "play(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2210,64 +2210,240 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F7B740D0-4617-46E4-9786-6023C6845E4E"
+            uuid = "18AA137B-EA16-43B7-8B99-141832E71278"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
-            landmarkName = "collectionView(_:layout:minimumLineSpacingForSectionAt:)"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "220AA78F-5F88-4A29-91C6-D81737B6BA6F"
+            uuid = "711A6D1E-726F-4D15-A8E4-B00F6E805459"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
-            landmarkName = "collectionView(_:layout:minimumLineSpacingForSectionAt:)"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5A8ACABC-E580-41D0-8521-06557C40B67F"
+            uuid = "B24C38DC-C788-49C7-8093-F22C91EEBC0B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "354"
-            endingLineNumber = "354"
-            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F161F08B-86F4-4CAA-A712-2F707429FCCD"
+            uuid = "87C34FC3-0178-4282-A091-088456A5A452"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
-            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            startingLineNumber = "489"
+            endingLineNumber = "489"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AD9D951-C1D0-4014-A469-B391C7521096"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AD9D951-C1D0-4014-A469-B391C7521096 - bba280c5a3e0c37b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.VideoTrimmerViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/VideoTrimmerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "451"
+                  endingLineNumber = "451"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  uuid = "3AD9D951-C1D0-4014-A469-B391C7521096 - bba280c5a3e0c37b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextArt.VideoTrimmerViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "TextArt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro2020m1/Documents/GitHub/TextDesign/ViewController/VideoTrimmerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "451"
+                  endingLineNumber = "451"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCF0D2E9-E7C7-4D5F-A9DC-7CA40BD0350F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "updateValue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DCC28EC9-E6FF-4BD4-AC87-B5678D858F5C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "updateValue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "563895CC-CC37-4276-AF5D-B331CD30E427"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "updateValue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "135D062A-8094-4D39-B995-4B4930A71FDD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "updateValue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "069C254A-2EE9-47D9-9E84-5D26BBFFB0BF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "updateValue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "230EBF26-AE51-4D68-8D78-8B92660FF725"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7CF9925-8D3D-4249-A8D1-830F91A8FD45"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "494"
+            endingLineNumber = "494"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D27F741-436D-4B3C-9645-543EFD2D0F1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewController/VideoTrimmerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,43 +12,64 @@ import MobileCoreServices
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
-class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSticker, StickerViewDelegate, sendShape {
+class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSticker, StickerViewDelegate, sendShape, sendValueForAdjust, sendFrames {
+    func sendFramesIndex(frames: String) {
+        self.addSticker(test: UIImage(named: frames)!)
+    }
+    
+    func sendAdjustValue(value: Float, index: Int) {
+        if index == 0 {
+            Brightness = value
+        }else if index == 1 {
+            Saturation = value
+        }
+        else if index == 2 {
+            hue = value
+        }
+        else if index == 3 {
+            sharpen = value
+        }
+        else if index == 4 {
+            Contrast = value
+        }
+    }
+    
     func sendShape(sticker: String) {
         self.addSticker(test: UIImage(named: sticker) ?? UIImage())
         
     }
     
     func stickerViewDidBeginMoving(_ stickerView: StickerView) {
-         
+        
     }
     
     @IBOutlet weak var bottomSpaceForShape: NSLayoutConstraint!
     func stickerViewDidChangeMoving(_ stickerView: StickerView) {
-         
+        
     }
     
     func stickerViewDidEndMoving(_ stickerView: StickerView) {
-         
+        
     }
     
     func stickerViewDidBeginRotating(_ stickerView: StickerView) {
-         
+        
     }
     
     func stickerViewDidChangeRotating(_ stickerView: StickerView) {
-         
+        
     }
     
     func stickerViewDidEndRotating(_ stickerView: StickerView) {
-         
+        
     }
     
     func stickerViewDidClose(_ stickerView: StickerView) {
-         
+        
     }
     
     func stickerViewDidTap(_ stickerView: StickerView) {
-         
+        
     }
     
     
@@ -83,13 +104,20 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         currentFilterDic = dic
     }
     
+    let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
     
+    
+    
+    @IBOutlet weak var frameHolderVc: UIView!
+    @IBOutlet weak var bottomSpaceFrame: NSLayoutConstraint!
+    @IBOutlet weak var adjustViewHolder: UIView!
+    @IBOutlet weak var botomSpaceForAdjust: NSLayoutConstraint!
     @IBOutlet weak var shapeViewHolder: UIView!
     @IBOutlet weak var stickerView: UIView!
     @IBOutlet weak var heightForStickerView: NSLayoutConstraint!
     @IBOutlet weak var widthForStickerView: NSLayoutConstraint!
     let shapeVc = Bundle.main.loadNibNamed("ShapeVc", owner: nil, options: nil)![0] as! ShapeVc
-
+    
     @IBOutlet weak var stickerViewHolder: UIView!
     @IBOutlet weak var bottomSpaceForSticker: NSLayoutConstraint!
     
@@ -98,6 +126,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     @IBOutlet weak var bottomSpaceTrim: NSLayoutConstraint!
     let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
     let stickerVc = Bundle.main.loadNibNamed("StickerVc", owner: nil, options: nil)![0] as! StickerVc
+    let frameVc =  Bundle.main.loadNibNamed("FrameVc", owner: nil, options: nil)![0] as! FrameVc
     @IBOutlet weak var collectionViewForBtn: UICollectionView!
     @IBOutlet weak var selectAssetButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -114,6 +143,29 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     @IBOutlet weak var bottomSpaceForFilter: NSLayoutConstraint!
     var trimmmedComposition:AVMutableComposition!
     var playerItem:AVPlayerItem!
+    
+    var Brightness: Float = 0.0
+    var max_brightness:Float = 0.7
+    var min_brightness:Float = -0.7
+    
+    var Saturation: Float = 1.0
+    var max_saturation:Float = 3
+    var min_saturation:Float = -1
+    
+    var hue: Float = 0.0
+    var max_hue:Float = 1.0
+    var min_hue:Float = -1.0
+    
+    var Contrast: Float = 1.0
+    var max_contrast:Float = 1.5
+    var min_contrast:Float = 0.5
+    
+    var sharpen:Float = 0
+    var max_sharpen:Float = 4.0
+    var min_sharpen:Float = -4.0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         trimmerView.handleColor = UIColor.white
@@ -133,12 +185,12 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     func createComposition(withMuteStatus isMute: Bool) -> AVMutableComposition? {
         let range: CMTimeRange = CMTimeRangeMake(start: .zero, duration: asset.duration)
         let tempMixComposition = AVMutableComposition()
-
+        
         let compositionVideoTrack = tempMixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
         if let firstObject = asset.tracks(withMediaType: .video).first {
             try? compositionVideoTrack?.insertTimeRange(range, of: firstObject, at: .zero)
         }
-
+        
         if ((asset as? AVAsset)?.tracks(withMediaType: .audio).count ?? 0) != 0 {
             let audioAsset = asset.tracks(withMediaType: .audio).last
             let compositionCommentaryTrack = tempMixComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
@@ -150,7 +202,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
             }
         }
         let assetVideoTrack = asset.tracks(withMediaType: .video).last
-
+        
         if assetVideoTrack != nil && compositionVideoTrack != nil {
             if let preferredTransform = assetVideoTrack?.preferredTransform {
                 compositionVideoTrack?.preferredTransform = preferredTransform
@@ -160,9 +212,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     }
     
     func prepareForComposition() {
-
+        
         playerItem.videoComposition = AVVideoComposition(asset: trimmmedComposition, applyingCIFiltersWithHandler: { request in
-
+            
             var output:CIImage?
             do {
                 output = getFilteredCImage(withInfo: self.currentFilterDic, for: request.sourceImage)
@@ -173,10 +225,10 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
             request.finish(with: output ?? request.sourceImage, context: nil)
             
         })
-
+        
     }
     
-  
+    
     
     func updateValue() {
         
@@ -194,6 +246,12 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
             if self.currentlyActiveIndex != BtnNameVIDEOInt.Shape.rawValue {
                 self.bottomSpaceForShape.constant = -1000
             }
+            if self.currentlyActiveIndex != BtnNameVIDEOInt.Adjust.rawValue {
+                self.botomSpaceForAdjust.constant = -1000
+            }
+            if self.currentlyActiveIndex != BtnNameVIDEOInt.Frames.rawValue {
+                self.bottomSpaceFrame.constant = -1000
+            }
             
             if currentlyActiveIndex >= 0 {
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Filter.rawValue {
@@ -207,6 +265,12 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
                 }
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Shape.rawValue {
                     self.bottomSpaceForShape.constant = 0
+                }
+                if self.currentlyActiveIndex == BtnNameVIDEOInt.Adjust.rawValue {
+                    self.botomSpaceForAdjust.constant = 0
+                }
+                if self.currentlyActiveIndex == BtnNameVIDEOInt.Frames.rawValue {
+                    self.bottomSpaceFrame.constant = 0
                 }
             }
             self.view.layoutIfNeeded()
@@ -258,6 +322,15 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         shapeViewHolder.addSubview(shapeVc)
         
         
+        adjustVc.frame = CGRect(x: 0,y: 0,width: adjustViewHolder.frame.width,height: adjustViewHolder.frame.height)
+        adjustVc.delegate = self
+        adjustViewHolder.addSubview(adjustVc)
+        
+        frameVc.frame = CGRect(x: 0,y: 0,width: frameHolderVc.frame.width,height: frameHolderVc.frame.height)
+        frameVc.delegateForFramesr = self
+        frameHolderVc.addSubview(frameVc)
+        
+        
     }
     
     @IBAction func play(_ sender: Any) {
@@ -279,7 +352,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         playerItem = AVPlayerItem(asset: trimmmedComposition)
         player = AVPlayer(playerItem: playerItem)
         self.prepareForComposition()
-    
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.itemDidFinishPlaying(_:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
@@ -364,7 +437,7 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
         return CGFloat(cellGap)
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(
@@ -406,6 +479,17 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
                     currentlyActiveIndex = -1
                 }
             }
+            
+            if btnValue == BtnNameVIDEO.Adjust.rawValue {
+                let p = self.botomSpaceForAdjust.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameVIDEOInt.Adjust.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+            }
+            
             if btnValue == BtnNameVIDEO.Filter.rawValue {
                 let p = self.bottomSpaceForFilter.constant < 0 ? 0 : -1000
                 
@@ -429,6 +513,15 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameVIDEOInt.Shape.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+            }
+            if btnValue == BtnNameVIDEO.Frames.rawValue {
+                let p = self.bottomSpaceFrame.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameVIDEOInt.Frames.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }

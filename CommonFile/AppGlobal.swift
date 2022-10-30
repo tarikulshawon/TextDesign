@@ -82,6 +82,7 @@ enum BtnNameVIDEO:String {
     case Filter
     case Graphics
     case Shape
+    case Frames
 }
 
 enum BtnNameVIDEOInt:Int {
@@ -90,6 +91,7 @@ enum BtnNameVIDEOInt:Int {
     case Filter
     case Graphics
     case Shape
+    case Frames
 }
 
 

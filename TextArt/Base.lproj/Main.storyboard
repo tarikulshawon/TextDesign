@@ -2540,9 +2540,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPw-CD-jvT" customClass="TrimmerView" customModule="TextArt" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1706" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="642" width="414" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="ewy-u3-diQ"/>
+                                    <constraint firstAttribute="height" constant="120" id="ewy-u3-diQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gX6-Vi-VSs">
@@ -2559,6 +2559,13 @@
                                     <constraint firstAttribute="height" constant="150" id="UjQ-jQ-gai"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k30-Hm-H9l">
+                                <rect key="frame" x="0.0" y="1642" width="414" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="aas-T8-ysC"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-6I-Hs9">
                                 <rect key="frame" x="0.0" y="1642" width="414" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2566,27 +2573,40 @@
                                     <constraint firstAttribute="height" constant="120" id="v1m-0z-bHz"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-ja-1Kb">
+                                <rect key="frame" x="0.0" y="1642" width="414" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="6pJ-aE-eQe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MjS-K5-ID2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WeT-J6-zj4" firstAttribute="centerX" secondItem="kXq-XQ-rqV" secondAttribute="centerX" id="4nI-Ce-DQ2"/>
+                            <constraint firstItem="k30-Hm-H9l" firstAttribute="trailing" secondItem="MjS-K5-ID2" secondAttribute="trailing" id="4zN-84-DWm"/>
                             <constraint firstItem="MjS-K5-ID2" firstAttribute="trailing" secondItem="Gr9-XN-apr" secondAttribute="trailing" id="69Q-Un-5lF"/>
+                            <constraint firstItem="4eE-ja-1Kb" firstAttribute="leading" secondItem="MjS-K5-ID2" secondAttribute="leading" id="7AI-Ei-JGF"/>
+                            <constraint firstItem="4eE-ja-1Kb" firstAttribute="trailing" secondItem="MjS-K5-ID2" secondAttribute="trailing" id="8Pv-Ou-NWm"/>
                             <constraint firstItem="IPw-CD-jvT" firstAttribute="width" secondItem="kXq-XQ-rqV" secondAttribute="width" id="8YP-9t-VAf"/>
+                            <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="k30-Hm-H9l" secondAttribute="bottom" constant="-1000" id="CP3-bz-2sN"/>
                             <constraint firstItem="mnC-P4-yae" firstAttribute="top" secondItem="lMs-T8-IpE" secondAttribute="bottom" id="HBQ-SL-BkF"/>
                             <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="WeT-J6-zj4" secondAttribute="bottom" constant="20" id="JLA-vc-YNH"/>
-                            <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="3YS-6I-Hs9" secondAttribute="bottom" constant="-1000" id="Nyk-Xd-cyz"/>
                             <constraint firstItem="lMs-T8-IpE" firstAttribute="width" secondItem="kXq-XQ-rqV" secondAttribute="width" id="OPk-xh-pn3"/>
                             <constraint firstItem="IPw-CD-jvT" firstAttribute="centerX" secondItem="kXq-XQ-rqV" secondAttribute="centerX" id="OVM-53-YuS"/>
                             <constraint firstItem="WeT-J6-zj4" firstAttribute="width" secondItem="kXq-XQ-rqV" secondAttribute="width" id="Vo8-iz-c6L"/>
                             <constraint firstItem="MjS-K5-ID2" firstAttribute="trailing" secondItem="gX6-Vi-VSs" secondAttribute="trailing" id="XKs-bE-GjX"/>
-                            <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="IPw-CD-jvT" secondAttribute="bottom" constant="-1000" id="XsF-Oy-vHG"/>
+                            <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="IPw-CD-jvT" secondAttribute="bottom" id="XsF-Oy-vHG"/>
                             <constraint firstItem="MjS-K5-ID2" firstAttribute="trailing" secondItem="Bcf-Jp-wTf" secondAttribute="trailing" id="YNq-Td-bPG"/>
                             <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="Gr9-XN-apr" secondAttribute="bottom" constant="-1000" id="ZAy-Yw-e10"/>
                             <constraint firstItem="5wz-Mp-fyr" firstAttribute="centerX" secondItem="WeT-J6-zj4" secondAttribute="centerX" id="Zff-JB-d70"/>
                             <constraint firstItem="Bcf-Jp-wTf" firstAttribute="top" secondItem="kXq-XQ-rqV" secondAttribute="top" id="cF0-G8-RxQ"/>
                             <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="gX6-Vi-VSs" secondAttribute="bottom" constant="-1000" id="el9-rk-fTh"/>
+                            <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="4eE-ja-1Kb" secondAttribute="bottom" constant="-1000" id="g9v-8o-Zuu"/>
                             <constraint firstItem="lMs-T8-IpE" firstAttribute="centerX" secondItem="kXq-XQ-rqV" secondAttribute="centerX" id="gzc-ZV-Ehx"/>
+                            <constraint firstItem="lMs-T8-IpE" firstAttribute="top" secondItem="3YS-6I-Hs9" secondAttribute="bottom" constant="-1000" id="hFy-J9-UY5"/>
+                            <constraint firstItem="k30-Hm-H9l" firstAttribute="leading" secondItem="MjS-K5-ID2" secondAttribute="leading" id="hde-2R-eIg"/>
                             <constraint firstItem="MjS-K5-ID2" firstAttribute="trailing" secondItem="3YS-6I-Hs9" secondAttribute="trailing" id="l27-C9-0f4"/>
                             <constraint firstItem="WeT-J6-zj4" firstAttribute="top" secondItem="TGl-h0-Uzt" secondAttribute="bottom" id="lvn-FM-Kwz"/>
                             <constraint firstItem="5wz-Mp-fyr" firstAttribute="centerY" secondItem="WeT-J6-zj4" secondAttribute="centerY" id="oia-Qd-MEk"/>
@@ -2597,12 +2617,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adjustViewHolder" destination="k30-Hm-H9l" id="UJr-Aq-auA"/>
+                        <outlet property="botomSpaceForAdjust" destination="CP3-bz-2sN" id="OTv-2Y-0wr"/>
                         <outlet property="bottomSpaceForFilter" destination="el9-rk-fTh" id="Yv5-7V-KZd"/>
                         <outlet property="bottomSpaceForShape" destination="ZAy-Yw-e10" id="iXn-ng-eLF"/>
-                        <outlet property="bottomSpaceForSticker" destination="Nyk-Xd-cyz" id="tRB-on-fM1"/>
+                        <outlet property="bottomSpaceForSticker" destination="hFy-J9-UY5" id="ueB-JB-cm2"/>
+                        <outlet property="bottomSpaceFrame" destination="g9v-8o-Zuu" id="3rf-73-7cg"/>
                         <outlet property="bottomSpaceTrim" destination="XsF-Oy-vHG" id="gCr-zB-cE4"/>
                         <outlet property="collectionViewForBtn" destination="cZ9-gq-zOX" id="mWS-43-1f2"/>
                         <outlet property="filterViewHolder" destination="gX6-Vi-VSs" id="h6L-tP-c7K"/>
+                        <outlet property="frameHolderVc" destination="4eE-ja-1Kb" id="bfT-wq-C5p"/>
                         <outlet property="heightForStickerView" destination="KXX-0U-1Ga" id="mHn-Px-U8R"/>
                         <outlet property="playerView" destination="WeT-J6-zj4" id="otH-ps-m1c"/>
                         <outlet property="shapeViewHolder" destination="Gr9-XN-apr" id="6yp-MD-5iE"/>
