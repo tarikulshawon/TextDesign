@@ -330,6 +330,13 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         frameVc.delegateForFramesr = self
         frameHolderVc.addSubview(frameVc)
         
+        guard var videoSize = resolutionForLocalVideo() else { return   }
+        
+        var size = AVMakeRect(aspectRatio: videoSize , insideRect: CGRect(x: 0, y: 0, width:   playerView.frame.width ,height:   playerView.frame.height))
+        
+        widthForStickerView.constant = size.width
+        heightForStickerView.constant = size.height
+        
         
     }
     
@@ -363,6 +370,19 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         layer.videoGravity = AVLayerVideoGravity.resizeAspect
         playerView.layer.sublayers?.forEach({$0.removeFromSuperlayer()})
         playerView.layer.addSublayer(layer)
+        
+      
+        
+        
+        
+        
+        
+    }
+    
+    private func resolutionForLocalVideo() -> CGSize? {
+        guard let track = asset.tracks(withMediaType: AVMediaType.video).first else { return nil }
+       let size = track.naturalSize.applying(track.preferredTransform)
+       return CGSize(width: abs(size.width), height: abs(size.height))
     }
     
     @objc func itemDidFinishPlaying(_ notification: Notification) {
