@@ -21,6 +21,9 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     }
     
     
+    @IBAction func gotoPreviousView(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBAction func gotoSubscription(_ sender: Any) {
         
     }
