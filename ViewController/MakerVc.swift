@@ -49,6 +49,7 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
             imagePickerController.sourceType = .photoLibrary
             imagePickerController.delegate = self
             imagePickerController.mediaTypes = ["public.movie"]
+            imagePickerController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
             self.present(imagePickerController, animated: true, completion: nil)
 
             
