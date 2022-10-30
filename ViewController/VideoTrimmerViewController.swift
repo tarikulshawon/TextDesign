@@ -12,20 +12,83 @@ import MobileCoreServices
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
-class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
+class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSticker, StickerViewDelegate {
+    func stickerViewDidBeginMoving(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidChangeMoving(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidEndMoving(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidBeginRotating(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidChangeRotating(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidEndRotating(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidClose(_ stickerView: StickerView) {
+         
+    }
+    
+    func stickerViewDidTap(_ stickerView: StickerView) {
+         
+    }
+    
+    
+    
+    func sendSticker(sticker: String) {
+        guard let image = UIImage(named: sticker) else { return }
+        self.addSticker(test: image)
+    }
+    
+    
+    func addSticker(test: UIImage) {
+        var testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        testImage.image = test
+        let stickerView3 = StickerView.init(contentView: testImage)
+        stickerView3.backgroundColor = UIColor.clear
+        stickerView3.center = CGPoint.init(x: 50, y: 50)
+        stickerView3.delegate = self
+        stickerView3.setImage(UIImage.init(named: "Close")!, forHandler: StickerViewHandler.close)
+        stickerView3.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
+        stickerView3.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)
+        stickerView3.showEditingHandlers = false
+        stickerView3.tag = -1
+        stickerView.addSubview(stickerView3)
+        stickerView.clipsToBounds = true
+        stickerView3.showEditingHandlers = true
+        stickerView3.showEditingHandlers = true
+        
+    }
     
     
     func filterNameWithIndex(dic: Dictionary<String, Any>?) {
         currentFilterDic = dic
     }
     
+    @IBOutlet weak var stickerView: UIView!
     @IBOutlet weak var heightForStickerView: NSLayoutConstraint!
     @IBOutlet weak var widthForStickerView: NSLayoutConstraint!
+    
+    @IBOutlet weak var stickerViewHolder: UIView!
+    @IBOutlet weak var bottomSpaceForSticker: NSLayoutConstraint!
     
     var currentFilterDic:Dictionary<String, Any>!
     @IBOutlet weak var filterViewHolder: UIView!
     @IBOutlet weak var bottomSpaceTrim: NSLayoutConstraint!
     let filterVc =  Bundle.main.loadNibNamed("FilterVc", owner: nil, options: nil)![0] as! FilterVc
+    let stickerVc = Bundle.main.loadNibNamed("StickerVc", owner: nil, options: nil)![0] as! StickerVc
     @IBOutlet weak var collectionViewForBtn: UICollectionView!
     @IBOutlet weak var selectAssetButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -116,6 +179,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
             if self.currentlyActiveIndex != BtnNameVIDEOInt.Filter.rawValue {
                 self.bottomSpaceForFilter.constant = -1000
             }
+            if self.currentlyActiveIndex != BtnNameVIDEOInt.Graphics.rawValue {
+                self.bottomSpaceForSticker.constant = -1000
+            }
             
             if currentlyActiveIndex >= 0 {
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Filter.rawValue {
@@ -123,6 +189,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
                 }
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Trim.rawValue {
                     self.bottomSpaceTrim.constant = 0
+                }
+                if self.currentlyActiveIndex == BtnNameVIDEOInt.Graphics.rawValue {
+                    self.bottomSpaceForSticker.constant = 0
                 }
             }
             self.view.layoutIfNeeded()
@@ -163,6 +232,10 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
         filterVc.frame = CGRect(x: 0,y: 0,width: filterViewHolder.frame.width,height: filterViewHolder.frame.height)
         filterVc.delegateForFilter = self
         filterViewHolder.addSubview(filterVc)
+        
+        stickerVc.frame = CGRect(x: 0,y: 0,width: stickerViewHolder.frame.width,height: stickerViewHolder.frame.height)
+        stickerVc.delegateForSticker = self
+        stickerViewHolder.addSubview(stickerVc)
         
         
     }
@@ -318,6 +391,15 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameVIDEOInt.Filter.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+            }
+            if btnValue == BtnNameVIDEO.Graphics.rawValue {
+                let p = self.bottomSpaceForSticker.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameVIDEOInt.Graphics.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }

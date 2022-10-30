@@ -2201,8 +2201,8 @@
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "play(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2217,8 +2217,8 @@
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
             landmarkName = "collectionView(_:layout:minimumLineSpacingForSectionAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2233,10 +2233,10 @@
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "collectionView(_:layout:minimumLineSpacingForSectionAt:)"
-            landmarkType = "7">
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "VideoTrimmerViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2249,10 +2249,10 @@
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
-            landmarkType = "7">
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "VideoTrimmerViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2265,8 +2265,8 @@
             filePath = "ViewController/VideoTrimmerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "collectionView(_:layout:sizeForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
