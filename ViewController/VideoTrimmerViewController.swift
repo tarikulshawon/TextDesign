@@ -19,6 +19,8 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
         currentFilterDic = dic
     }
     
+    @IBOutlet weak var heightForStickerView: NSLayoutConstraint!
+    @IBOutlet weak var widthForStickerView: NSLayoutConstraint!
     
     var currentFilterDic:Dictionary<String, Any>!
     @IBOutlet weak var filterViewHolder: UIView!
@@ -32,8 +34,8 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
     var currentlyActiveIndex  = -1
     var plistArray2:NSArray!
     var asset:AVAsset!
-    var CellWidth = 60
-    var CellSpacing = 15
+    var cellWidth:CGFloat = 60
+    var cellGap:CGFloat = 0
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
@@ -140,6 +142,20 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
     }
     
     @objc fileprivate func targetMethod(){
+        
+        let totalCellWidth = cellWidth * CGFloat(plistArray2.count)
+        let totalSpacingWidth = cellGap * CGFloat((plistArray2.count - 1))
+        
+        let leftInset = (collectionViewForBtn.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        layout.minimumInteritemSpacing = cellGap
+        layout.minimumLineSpacing = cellGap
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionViewForBtn?.collectionViewLayout = layout
+        
+        
         trimmerView.asset = asset
         trimmerView.delegate = self
         addVideoPlayer(with: asset, playerView: playerView)
@@ -178,7 +194,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate {
         let layer: AVPlayerLayer = AVPlayerLayer(player: player)
         layer.backgroundColor = UIColor.white.cgColor
         layer.frame = CGRect(x: 0, y: 0, width: playerView.frame.width, height: playerView.frame.height)
-        layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        layer.videoGravity = AVLayerVideoGravity.resizeAspect
         playerView.layer.sublayers?.forEach({$0.removeFromSuperlayer()})
         playerView.layer.addSublayer(layer)
     }
@@ -252,20 +268,10 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(CellSpacing)
+        return CGFloat(cellGap)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 
-        let totalCellWidth = CellWidth * plistArray2.count
-        let totalSpacingWidth = CellSpacing * (plistArray2.count - 1)
-
-        let leftInset = (self.view.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-        print(leftInset)
-        let rightInset = leftInset
-
-        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
-    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(
