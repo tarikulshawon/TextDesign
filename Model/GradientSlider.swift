@@ -1,11 +1,3 @@
-//
-//  GradientSlider.swift
-//  GradientSlider
-//
-//  Created by Jonathan Hull on 8/5/15.
-//  Copyright © 2015 Jonathan Hull. All rights reserved.
-//
-
 import UIKit
 
 @IBDesignable class GradientSlider: UIControl {
@@ -224,6 +216,8 @@ import UIKit
         self.layer.addSublayer(_trackLayer)
         self.layer.addSublayer(_thumbLayer)
         _thumbLayer.addSublayer(_thumbIconLayer)
+        minColor = .blue
+        hasRainbow = true
     }
     
     //MARK: - Layout

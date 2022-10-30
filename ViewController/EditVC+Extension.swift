@@ -211,7 +211,7 @@ extension EditVc: AddTextDelegate {
 
     }
     func offsetShadowValue(value: Double) {
-        currentTextStickerView?.textStickerView.textInputView.layer.shadowOffset = .init(width: 5, height: Int(value))
+        currentTextStickerView?.textStickerView.textInputView.layer.shadowOffset = .init(width: 5, height: value)
         currentTextStickerView?.shadowOffset = value
         
     }

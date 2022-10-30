@@ -52,9 +52,9 @@ class TextEditView: UIView {
     
     weak var delegateForText: AddTextDelegate?
     
-    @IBOutlet weak var sliderForOffset: CustomSlider!
-    @IBOutlet weak var sliderForOpacity: CustomSlider!
-    @IBOutlet weak var sliderForRadius: CustomSlider!
+    @IBOutlet weak var sliderForOffset: GradientSlider!
+    @IBOutlet weak var sliderForOpacity: GradientSlider!
+    @IBOutlet weak var sliderForRadius: GradientSlider!
 
     @IBOutlet weak var shdowHolder: UIView!
     override func awakeFromNib() {
@@ -62,6 +62,10 @@ class TextEditView: UIView {
         
         horizontalSlider.maximumTrackTintColor = unselectedColor
         horizontalSlider.minimumTrackTintColor = titleColor
+        
+        sliderForOffset.thickness = 5
+        sliderForOpacity.thickness = 5
+        sliderForRadius.thickness = 5
         
         //currentOption = TextEditingOption.Fonts
         alighnmentViewHolder.isHidden = true
@@ -98,16 +102,16 @@ class TextEditView: UIView {
     }
     
     
-    @IBAction func offsetValueChanged(_ sender: UISlider) {
+    @IBAction func offsetValueChanged(_ sender: GradientSlider) {
         delegateForText?.offsetShadowValue(value: Double(sender.value))
     }
     
-    @IBAction func opacityShadowValueChanged(_ sender: UISlider) {
+    @IBAction func opacityShadowValueChanged(_ sender: GradientSlider) {
         delegateForText?.opacityShadowValue(value:  Double(sender.value))
     }
     
     
-    @IBAction func radiusValueChanged(_ sender: UISlider) {
+    @IBAction func radiusValueChanged(_ sender: GradientSlider) {
         delegateForText?.radiusShadowalue(value:  Double(sender.value))
     }
     

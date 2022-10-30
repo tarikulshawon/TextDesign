@@ -284,20 +284,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aFy-CF-zih" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                                    <rect key="frame" x="51.5" y="0.0" width="334.5" height="86"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iij-IG-lVl" customClass="GradientSlider" customModule="TextArt" customModuleProvider="target">
+                                                    <rect key="frame" x="53.5" y="27.5" width="330.5" height="30"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="j2S-Wd-bGT"/>
+                                                    </constraints>
                                                     <connections>
-                                                        <action selector="offsetValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="sVr-1a-knR"/>
+                                                        <action selector="offsetValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="c9X-p8-Hbe"/>
                                                     </connections>
-                                                </slider>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="aFy-CF-zih" firstAttribute="leading" secondItem="Hwf-VI-rfO" secondAttribute="trailing" constant="12" id="MYR-rO-HlP"/>
-                                                <constraint firstAttribute="trailing" secondItem="aFy-CF-zih" secondAttribute="trailing" constant="30" id="W41-St-hJy"/>
-                                                <constraint firstItem="aFy-CF-zih" firstAttribute="top" secondItem="X2x-15-ED2" secondAttribute="top" id="XXD-eq-BhH"/>
+                                                <constraint firstItem="iij-IG-lVl" firstAttribute="centerY" secondItem="Hwf-VI-rfO" secondAttribute="centerY" id="6LE-Ah-I2o"/>
+                                                <constraint firstAttribute="trailing" secondItem="iij-IG-lVl" secondAttribute="trailing" constant="30" id="H9Q-6K-E8Z"/>
+                                                <constraint firstItem="iij-IG-lVl" firstAttribute="leading" secondItem="Hwf-VI-rfO" secondAttribute="trailing" constant="12" id="a7U-fN-uif"/>
                                                 <constraint firstItem="Hwf-VI-rfO" firstAttribute="leading" secondItem="X2x-15-ED2" secondAttribute="leading" constant="5" id="rTQ-Qy-1QT"/>
-                                                <constraint firstAttribute="bottom" secondItem="aFy-CF-zih" secondAttribute="bottom" id="tOP-ws-gaF"/>
                                                 <constraint firstItem="Hwf-VI-rfO" firstAttribute="centerY" secondItem="X2x-15-ED2" secondAttribute="centerY" id="wjQ-uM-EsT"/>
                                             </constraints>
                                         </view>
@@ -310,21 +313,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rQ-C92" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                                    <rect key="frame" x="60" y="0.0" width="326" height="86"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwM-2q-gIF" customClass="GradientSlider" customModule="TextArt" customModuleProvider="target">
+                                                    <rect key="frame" x="62" y="27.5" width="322" height="30"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Sxv-hB-GDC"/>
+                                                    </constraints>
                                                     <connections>
-                                                        <action selector="opacityShadowValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="gmV-jV-PNa"/>
+                                                        <action selector="opacityShadowValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="uar-j4-smg"/>
                                                     </connections>
-                                                </slider>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="33h-rQ-C92" secondAttribute="bottom" id="Db5-eA-nfb"/>
+                                                <constraint firstItem="bwM-2q-gIF" firstAttribute="leading" secondItem="i8U-wr-X7n" secondAttribute="trailing" constant="12" id="Aah-fG-s0e"/>
                                                 <constraint firstItem="i8U-wr-X7n" firstAttribute="leading" secondItem="bKy-HC-9Fs" secondAttribute="leading" constant="5" id="Dzo-Ib-mzp"/>
-                                                <constraint firstItem="33h-rQ-C92" firstAttribute="leading" secondItem="i8U-wr-X7n" secondAttribute="trailing" constant="12" id="Ty2-9W-1fk"/>
-                                                <constraint firstItem="33h-rQ-C92" firstAttribute="top" secondItem="bKy-HC-9Fs" secondAttribute="top" id="cfe-T8-fAg"/>
-                                                <constraint firstAttribute="trailing" secondItem="33h-rQ-C92" secondAttribute="trailing" constant="30" id="nnn-1V-952"/>
+                                                <constraint firstAttribute="trailing" secondItem="bwM-2q-gIF" secondAttribute="trailing" constant="30" id="bzu-kN-NI1"/>
                                                 <constraint firstItem="i8U-wr-X7n" firstAttribute="centerY" secondItem="bKy-HC-9Fs" secondAttribute="centerY" id="yJ2-DV-gsT"/>
+                                                <constraint firstItem="bwM-2q-gIF" firstAttribute="centerY" secondItem="i8U-wr-X7n" secondAttribute="centerY" id="zAH-dj-6Ur"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="san-KQ-FvU">
@@ -336,21 +342,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8bL-Kj-TRZ" customClass="CustomSlider" customModule="TextArt" customModuleProvider="target">
-                                                    <rect key="frame" x="54.5" y="0.0" width="331.5" height="86"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmh-De-31i" customClass="GradientSlider" customModule="TextArt" customModuleProvider="target">
+                                                    <rect key="frame" x="56.5" y="27.5" width="327.5" height="30"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="E10-9g-SnM"/>
+                                                    </constraints>
                                                     <connections>
-                                                        <action selector="radiusValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="1fs-0K-HfU"/>
+                                                        <action selector="radiusValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="X0I-jB-7Y9"/>
                                                     </connections>
-                                                </slider>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="kmh-De-31i" firstAttribute="leading" secondItem="FUJ-dH-mHb" secondAttribute="trailing" constant="12" id="2Ad-Mh-eJL"/>
+                                                <constraint firstAttribute="trailing" secondItem="kmh-De-31i" secondAttribute="trailing" constant="30" id="6kG-iT-jtG"/>
+                                                <constraint firstItem="kmh-De-31i" firstAttribute="centerY" secondItem="FUJ-dH-mHb" secondAttribute="centerY" id="K4b-fE-qPi"/>
                                                 <constraint firstItem="FUJ-dH-mHb" firstAttribute="leading" secondItem="san-KQ-FvU" secondAttribute="leading" constant="5" id="MzA-yz-m2w"/>
                                                 <constraint firstItem="FUJ-dH-mHb" firstAttribute="centerY" secondItem="san-KQ-FvU" secondAttribute="centerY" id="WJy-g4-AXC"/>
-                                                <constraint firstAttribute="trailing" secondItem="8bL-Kj-TRZ" secondAttribute="trailing" constant="30" id="dIj-je-o2j"/>
-                                                <constraint firstItem="8bL-Kj-TRZ" firstAttribute="top" secondItem="san-KQ-FvU" secondAttribute="top" id="eEL-9T-XHv"/>
-                                                <constraint firstItem="8bL-Kj-TRZ" firstAttribute="leading" secondItem="FUJ-dH-mHb" secondAttribute="trailing" constant="12" id="k9F-fz-Kn0"/>
-                                                <constraint firstAttribute="bottom" secondItem="8bL-Kj-TRZ" secondAttribute="bottom" id="uHz-TY-G4f"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -408,12 +417,12 @@
                 <outlet property="labelViewList" destination="pZp-n0-ng3" id="a7T-cj-2QA"/>
                 <outlet property="optionHolderView" destination="WFZ-uf-Scb" id="Z5U-Xv-3Ri"/>
                 <outlet property="shdowHolder" destination="UnU-3g-diG" id="dOi-qD-VQO"/>
-                <outlet property="sliderForOffset" destination="aFy-CF-zih" id="kI2-HB-kMz"/>
-                <outlet property="sliderForOpacity" destination="33h-rQ-C92" id="Z3B-Sr-gId"/>
-                <outlet property="sliderForRadius" destination="8bL-Kj-TRZ" id="R2H-lf-vNP"/>
+                <outlet property="sliderForOffset" destination="iij-IG-lVl" id="JNr-NY-Flv"/>
+                <outlet property="sliderForOpacity" destination="bwM-2q-gIF" id="8cq-RP-ZzV"/>
+                <outlet property="sliderForRadius" destination="kmh-De-31i" id="LM9-ab-dvr"/>
                 <outlet property="sliderView" destination="IPa-Ry-taf" id="jUh-RC-5tb"/>
             </connections>
-            <point key="canvasLocation" x="329" y="108"/>
+            <point key="canvasLocation" x="327.536231884058" y="107.8125"/>
         </view>
     </objects>
     <resources>

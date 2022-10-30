@@ -222,6 +222,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
             } catch {
                 print("sadiq")
             }
+            
             request.finish(with: output ?? request.sourceImage, context: nil)
             
         })
