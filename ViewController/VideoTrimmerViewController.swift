@@ -12,11 +12,17 @@ import MobileCoreServices
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
-class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSticker, StickerViewDelegate {
+class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSticker, StickerViewDelegate, sendShape {
+    func sendShape(sticker: String) {
+        self.addSticker(test: UIImage(named: sticker) ?? UIImage())
+        
+    }
+    
     func stickerViewDidBeginMoving(_ stickerView: StickerView) {
          
     }
     
+    @IBOutlet weak var bottomSpaceForShape: NSLayoutConstraint!
     func stickerViewDidChangeMoving(_ stickerView: StickerView) {
          
     }
@@ -77,10 +83,13 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         currentFilterDic = dic
     }
     
+    
+    @IBOutlet weak var shapeViewHolder: UIView!
     @IBOutlet weak var stickerView: UIView!
     @IBOutlet weak var heightForStickerView: NSLayoutConstraint!
     @IBOutlet weak var widthForStickerView: NSLayoutConstraint!
-    
+    let shapeVc = Bundle.main.loadNibNamed("ShapeVc", owner: nil, options: nil)![0] as! ShapeVc
+
     @IBOutlet weak var stickerViewHolder: UIView!
     @IBOutlet weak var bottomSpaceForSticker: NSLayoutConstraint!
     
@@ -182,6 +191,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
             if self.currentlyActiveIndex != BtnNameVIDEOInt.Graphics.rawValue {
                 self.bottomSpaceForSticker.constant = -1000
             }
+            if self.currentlyActiveIndex != BtnNameVIDEOInt.Shape.rawValue {
+                self.bottomSpaceForShape.constant = -1000
+            }
             
             if currentlyActiveIndex >= 0 {
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Filter.rawValue {
@@ -192,6 +204,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
                 }
                 if self.currentlyActiveIndex == BtnNameVIDEOInt.Graphics.rawValue {
                     self.bottomSpaceForSticker.constant = 0
+                }
+                if self.currentlyActiveIndex == BtnNameVIDEOInt.Shape.rawValue {
+                    self.bottomSpaceForShape.constant = 0
                 }
             }
             self.view.layoutIfNeeded()
@@ -236,6 +251,11 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         stickerVc.frame = CGRect(x: 0,y: 0,width: stickerViewHolder.frame.width,height: stickerViewHolder.frame.height)
         stickerVc.delegateForSticker = self
         stickerViewHolder.addSubview(stickerVc)
+        
+        
+        shapeVc.frame = CGRect(x: 0,y: 0,width: shapeViewHolder.frame.width,height: shapeViewHolder.frame.height)
+        shapeVc.delegateForShape = self
+        shapeViewHolder.addSubview(shapeVc)
         
         
     }
@@ -400,6 +420,15 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
                 
                 if p == 0 {
                     currentlyActiveIndex = BtnNameVIDEOInt.Graphics.rawValue
+                } else {
+                    currentlyActiveIndex = -1
+                }
+            }
+            if btnValue == BtnNameVIDEO.Shape.rawValue {
+                let p = self.bottomSpaceForShape.constant < 0 ? 0 : -1000
+                
+                if p == 0 {
+                    currentlyActiveIndex = BtnNameVIDEOInt.Shape.rawValue
                 } else {
                     currentlyActiveIndex = -1
                 }
