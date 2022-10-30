@@ -479,7 +479,7 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
             
             cell.iconLabel.text = value
         }
-        cell.backgroundColor = UIColor.red
+        cell.heightForLabel.constant = 20.0
         return cell
     }
     public func collectionView(
