@@ -95,6 +95,7 @@
 		01445B3E290D410500500D36 /* VideoTrimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */; };
 		01445B40290D411300500D36 /* AVPlayer+isPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */; };
 		01445B42290D52F300500D36 /* VideoEdit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01445B41290D52F300500D36 /* VideoEdit.plist */; };
+		0148D56B290DD60B00001D2A /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148D56A290DD60B00001D2A /* GradientSlider.swift */; };
 		014F9B1228FCD8390072179E /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 014F9B1128FCD8390072179E /* Fonts */; };
 		01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */; };
 		01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01507E2F28E10D0E002E5535 /* UI+Extension.swift */; };
@@ -440,6 +441,7 @@
 		01445B3D290D410500500D36 /* VideoTrimmerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTrimmerViewController.swift; sourceTree = "<group>"; };
 		01445B3F290D411300500D36 /* AVPlayer+isPlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+isPlaying.swift"; sourceTree = "<group>"; };
 		01445B41290D52F300500D36 /* VideoEdit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VideoEdit.plist; sourceTree = "<group>"; };
+		0148D56A290DD60B00001D2A /* GradientSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
 		014F9B1128FCD8390072179E /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		01507E2D28E10AF4002E5535 /* EditVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditVC+Extension.swift"; sourceTree = "<group>"; };
 		01507E2F28E10D0E002E5535 /* UI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extension.swift"; sourceTree = "<group>"; };
@@ -1111,6 +1113,7 @@
 				3949331628AB2D0E003E8D67 /* StickerView.swift */,
 				39CC0E2628A4AD4100DF1C64 /* ODRManager.swift */,
 				39CC0E0428A4A6FE00DF1C64 /* CustomSlider.swift */,
+				0148D56A290DD60B00001D2A /* GradientSlider.swift */,
 				019C619A29045BCA00243B1E /* TextArt-Bridging-Header.h */,
 			);
 			path = Model;
@@ -1881,6 +1884,7 @@
 				3949332028AB2F20003E8D67 /* StickerValueObj.swift in Sources */,
 				3949331E28AB2F07003E8D67 /* ImageInfoData.swift in Sources */,
 				39CC0E0228A4A5B000DF1C64 /* EditVc.swift in Sources */,
+				0148D56B290DD60B00001D2A /* GradientSlider.swift in Sources */,
 				01FD5AC728AE521800CBF70F /* AddTextViewController.swift in Sources */,
 				39CC0E2128A4AB2600DF1C64 /* ImageEditView.swift in Sources */,
 				39F8225728A35133008925EF /* HomeVc.swift in Sources */,
