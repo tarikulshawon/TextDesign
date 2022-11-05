@@ -61,19 +61,7 @@ extension EditVc {
                 let fontIndex = Int(textObj.font)!
                 let align = Int(textObj.align)!
                 
-                if align == 0 {
-                    sticker.textStickerView.textAlignment = .left
-                }
-                if align == 1 {
-                    sticker.textStickerView.textAlignment = .center
-                }
-                if align == 2 {
-                    sticker.textStickerView.textAlignment = .right
-                }
-                if align == 0 {
-                    sticker.textStickerView.textAlignment = .justified
-                }
-                
+                sticker.textStickerView.textAlignment = NSTextAlignment(rawValue: align) ?? .left
                 
                 let fontSize = Double(textObj.fontSize)!
                 let bacground = textObj.bcColor
@@ -81,7 +69,7 @@ extension EditVc {
                 let texture = Int(textObj.bcTexture)!
                 
                 if texture >= 0 {
-                    var value =  "Texture" + String(texture) + ".png"
+                    let value =  "Texture" + String(texture) + ".png"
                     sticker.backgroundColor = UIColor(patternImage: UIImage(named: value)!)
                 }
                 
@@ -128,7 +116,7 @@ extension EditVc {
                 }
                 let textureIndex = Int(textObj.texture)!
                 let gradientIndex = Int(textObj.gradient)!
-                var opacityValue = Double(textObj.opacity)
+                let opacityValue = Double(textObj.opacity)
                 
                 if opacityValue != -1 {
                     sticker.textStickerView.alpha = opacityValue ?? 1.0
@@ -159,6 +147,14 @@ extension EditVc {
                 }
                 
                 
+                // SET SHADOW
+                let offset = Double(textObj.shadowOffset)
+                let opacity = Double(textObj.shadowOpacity)
+                let radius = Double(textObj.shadowRadius)
+                                
+                sticker.textStickerView.textInputView.layer.shadowOffset = .init(width: 5, height: offset!)
+                sticker.textStickerView.textInputView.layer.shadowOpacity = Float(opacity!)
+                sticker.textStickerView.textInputView.layer.shadowRadius = radius!
                 
                 sticker.textStickerView.updateTextFont()
                 sticker.transform = sticker.transform.rotated(by: radians)

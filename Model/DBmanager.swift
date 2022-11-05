@@ -233,9 +233,9 @@ class DBmanager: NSObject {
                     let bcColor =       sqlite3_column_text(queryStatement, 11)
                     let bcTexture =       sqlite3_column_text(queryStatement, 12)
                     let bcGradient =       sqlite3_column_text(queryStatement, 13)
-                    let shadowOpacity =       sqlite3_column_text(queryStatement, 13)
-                    let shadowOffset =       sqlite3_column_text(queryStatement, 14)
-                    let shadowRadius =       sqlite3_column_text(queryStatement, 15)
+                    let shadowOpacity =       sqlite3_column_text(queryStatement, 14)
+                    let shadowOffset =       sqlite3_column_text(queryStatement, 15)
+                    let shadowRadius =       sqlite3_column_text(queryStatement, 16)
                    
                     obj.font = String(cString: font!)
                     obj.color = String(cString: color!)
@@ -370,7 +370,7 @@ class DBmanager: NSObject {
                     obj.sh = String(cString: sh!)
                     
         
-                    mutableArray .append(obj)
+                    mutableArray.append(obj)
                     
                 }
                 

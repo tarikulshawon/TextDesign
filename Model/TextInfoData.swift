@@ -23,7 +23,7 @@ class TextInfoData {
     var bcColor = ""
     var bcTexture = "-1"
     var bcGradient = "-1"
-    var shadowOpacity = "1.0"
-    var shadowOffset = "3.0"
-    var shadowRadius = "10.0"
+    var shadowOpacity = "-1"
+    var shadowOffset = "-1"
+    var shadowRadius = "-1"
 }
