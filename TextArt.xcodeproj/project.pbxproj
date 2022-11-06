@@ -104,9 +104,6 @@
 		016DA3FE28FB21B3004F4673 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 016DA3FD28FB21B3004F4673 /* bg.png */; };
 		018063F628DFDF1B0015E667 /* Motivational.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018063F528DFDF1B0015E667 /* Motivational.plist */; };
 		018CAB5B29050C9500D6BD42 /* sub-1st-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 018CAB5A29050C9400D6BD42 /* sub-1st-button.png */; };
-		018E70CA2916C9BF00438FD2 /* authors.json in Resources */ = {isa = PBXBuildFile; fileRef = 018E70C72916C9BE00438FD2 /* authors.json */; };
-		018E70CB2916C9BF00438FD2 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 018E70C82916C9BE00438FD2 /* quotes.json */; };
-		018E70CC2916C9BF00438FD2 /* tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 018E70C92916C9BE00438FD2 /* tags.json */; };
 		019BC4E028E026F400B15323 /* FrameThumb20.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C428E026F400B15323 /* FrameThumb20.png */; };
 		019BC4E128E026F400B15323 /* FrameThumb0.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C528E026F400B15323 /* FrameThumb0.png */; };
 		019BC4E228E026F400B15323 /* FrameThumb1.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C628E026F400B15323 /* FrameThumb1.png */; };
@@ -453,9 +450,6 @@
 		016DA3FD28FB21B3004F4673 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		018063F528DFDF1B0015E667 /* Motivational.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Motivational.plist; sourceTree = "<group>"; };
 		018CAB5A29050C9400D6BD42 /* sub-1st-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sub-1st-button.png"; sourceTree = "<group>"; };
-		018E70C72916C9BE00438FD2 /* authors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authors.json; sourceTree = "<group>"; };
-		018E70C82916C9BE00438FD2 /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
-		018E70C92916C9BE00438FD2 /* tags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tags.json; sourceTree = "<group>"; };
 		019BC4C428E026F400B15323 /* FrameThumb20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb20.png; sourceTree = "<group>"; };
 		019BC4C528E026F400B15323 /* FrameThumb0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb0.png; sourceTree = "<group>"; };
 		019BC4C628E026F400B15323 /* FrameThumb1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb1.png; sourceTree = "<group>"; };
@@ -730,7 +724,6 @@
 		010AFF9C28FF1DBE00ED71E0 /* Quotes Module */ = {
 			isa = PBXGroup;
 			children = (
-				018E70C62916C9BE00438FD2 /* Data */,
 				013AA6F828FAE01F00DBE800 /* QuotesVc.swift */,
 				010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */,
 				010AFF9F28FF1E4900ED71E0 /* Views */,
@@ -850,17 +843,6 @@
 				01445B32290D406800500D36 /* PryntTrimmerView.swift */,
 			);
 			path = Trimmer;
-			sourceTree = "<group>";
-		};
-		018E70C62916C9BE00438FD2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				018E70C72916C9BE00438FD2 /* authors.json */,
-				018E70C82916C9BE00438FD2 /* quotes.json */,
-				018E70C92916C9BE00438FD2 /* tags.json */,
-			);
-			name = Data;
-			path = ../../../../Desktop/SwiftProject/Quotes/Quotes/Data;
 			sourceTree = "<group>";
 		};
 		019BC4C328E026F400B15323 /* SmallFrame */ = {
@@ -1659,7 +1641,6 @@
 				01219B4B28DEBC6B00133E56 /* OverlayThumb6.png in Resources */,
 				01D4B30D29038DF20033C40F /* F28.png in Resources */,
 				019C619329045B4200243B1E /* 3.png in Resources */,
-				018E70CC2916C9BF00438FD2 /* tags.json in Resources */,
 				3949337F28AB347F003E8D67 /* Texture17.png in Resources */,
 				01219B0B28DE837C00133E56 /* AdjustV.plist in Resources */,
 				019BC53428E0270A00B15323 /* F12.jpg in Resources */,
@@ -1671,7 +1652,6 @@
 				39CC0E1928A4AAC500DF1C64 /* ShapeVc.xib in Resources */,
 				01219B5C28DEBC6B00133E56 /* OverlayThumb25.png in Resources */,
 				01D4B30829038DF20033C40F /* F41.png in Resources */,
-				018E70CB2916C9BF00438FD2 /* quotes.json in Resources */,
 				019BC4E128E026F400B15323 /* FrameThumb0.png in Resources */,
 				01219B4928DEBC6B00133E56 /* OverlayThumb42.png in Resources */,
 				01D4B2D829038DD90033C40F /* FrameThumb50.png in Resources */,
@@ -1717,7 +1697,6 @@
 				019BC53528E0270A00B15323 /* F10.jpg in Resources */,
 				019BC4E328E026F400B15323 /* FrameThumb21.png in Resources */,
 				39F8222D28A3505C008925EF /* Main.storyboard in Resources */,
-				018E70CA2916C9BF00438FD2 /* authors.json in Resources */,
 				3949337528AB347F003E8D67 /* Texture9.png in Resources */,
 				019BC4E028E026F400B15323 /* FrameThumb20.png in Resources */,
 				3949338828AB347F003E8D67 /* Texture11.png in Resources */,
