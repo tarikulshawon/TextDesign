@@ -216,8 +216,8 @@ import UIKit
         self.layer.addSublayer(_trackLayer)
         self.layer.addSublayer(_thumbLayer)
         _thumbLayer.addSublayer(_thumbIconLayer)
-        minColor = .blue
-        hasRainbow = true
+        minColor = UIColor(hex: "#ddd6f3")
+        maxColor = UIColor(hex: "#faaca8")
     }
     
     //MARK: - Layout
