@@ -2473,7 +2473,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
-                                            <action selector="gotoShare:" destination="hPL-Dv-MQC" eventType="touchUpInside" id="a0f-T8-6LD"/>
+                                            <action selector="gotoExport:" destination="TxT-1F-hv6" eventType="touchUpInside" id="rwH-DQ-syA"/>
                                         </connections>
                                     </button>
                                 </subviews>

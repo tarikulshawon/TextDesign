@@ -17,7 +17,6 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     @IBOutlet weak var viewToHidden: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
     
     
@@ -27,6 +26,7 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     @IBAction func gotoSubscription(_ sender: Any) {
         
     }
+    
     @IBOutlet weak var addImv: UIImageView!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -38,36 +38,23 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         self.photoLibraryAvailabilityCheck()
     }
     
-    @objc func reloadDataOfPhoto()
-    {
-        
-        
+    @objc func reloadDataOfPhoto() {
         DispatchQueue.main.async {
-            
-            
             let imagePickerController = UIImagePickerController()
             imagePickerController.sourceType = .photoLibrary
             imagePickerController.delegate = self
             imagePickerController.mediaTypes = ["public.movie"]
             imagePickerController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
             self.present(imagePickerController, animated: true, completion: nil)
-
-            
-            
-            
         }
         
     }
     
-    func processSnapShotPhotos()
-        
-    {
-        
+    func processSnapShotPhotos() {
         self.reloadDataOfPhoto()
-        
     }
-    func showAlert()
-    {
+    
+    func showAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(
                 title: "Access Denied",
@@ -85,8 +72,7 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         
     }
     
-    func photoLibraryAvailabilityCheck()
-    {
+    func photoLibraryAvailabilityCheck() {
         PHPhotoLibrary.requestAuthorization { status in
             switch status {
             case .authorized:
@@ -112,12 +98,11 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
      */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 1
-        if let selectedVideo:URL = (info[UIImagePickerController.InfoKey.mediaURL] as? URL) {
-            
-            
+        if let selectedVideo: URL = (info[UIImagePickerController.InfoKey.mediaURL] as? URL) {
             picker.dismiss(animated: true) {
                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "VideoTrimmerViewController") as? VideoTrimmerViewController
                 vc?.asset = AVAsset.init(url: selectedVideo)
+                vc?.videoUrl = selectedVideo
                 vc?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
                 self.present(vc!, animated: true, completion: nil)
             }
@@ -164,10 +149,6 @@ class MakerVc: UIViewController, UIImagePickerControllerDelegate & UINavigationC
       }
     }
     @IBAction func takeVideo(_ sender: Any) {
-        
           self.checkCamera()
-        
     }
-    
-    
 }

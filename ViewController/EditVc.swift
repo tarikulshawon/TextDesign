@@ -1253,7 +1253,7 @@ extension EditVc: sendSticker, imageIndexDelegate, filterIndexDelegate, sendShap
 }
 
 extension EditVc: StickerViewDelegate,quotesDelegate {
-    func sendText1(text: String) {
+    func sendQuoteText(text: String) {
         self.addText(text: text, font: UIFont.systemFont(ofSize: 20.0))
     }
     

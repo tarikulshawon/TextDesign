@@ -601,8 +601,11 @@ extension EditVc: AddTextDelegate {
                 
                 if btnValue == BtnName.Quotes.rawValue {
                     shouldRemove = false
-                    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc: QuotesVc = storyboard.instantiateViewController(withIdentifier: "QuotesVc") as! QuotesVc
+                    let storyboard: UIStoryboard = UIStoryboard(name: "QuotesStoryBoard", bundle: nil)
+//                    let vc: QuotesVc = storyboard.instantiateViewController(withIdentifier: "QuotesVc") as! QuotesVc
+                    
+                    let vc = storyboard.instantiateViewController(withIdentifier: "QuotesStoryBoard") as! QuotesViewController
+                    
                     vc.modalPresentationStyle = .fullScreen
                     vc.delegateForQuotes = self
                     self.present(vc, animated: true, completion: nil)

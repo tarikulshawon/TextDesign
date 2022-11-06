@@ -49,7 +49,7 @@ class OverLayVc: UIView, ODRManagerDelegate {
         let sideInset = frame.width / 2 - layoutMargins
         collectionViewForFilter.contentInset = UIEdgeInsets(
             top: 0,
-            left: sideInset,
+            left: collectionViewForFilter.layoutMargins.left,
             bottom: 0,
             right: sideInset
         )
@@ -185,6 +185,7 @@ extension UICollectionView {
                 closestCellIndex = self.indexPath(for: cell)!.row
             }
         }
+        
         if closestCellIndex != -1 {
             self.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         }

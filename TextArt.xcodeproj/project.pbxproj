@@ -107,6 +107,15 @@
 		018E70CA2916C9BF00438FD2 /* authors.json in Resources */ = {isa = PBXBuildFile; fileRef = 018E70C72916C9BE00438FD2 /* authors.json */; };
 		018E70CB2916C9BF00438FD2 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 018E70C82916C9BE00438FD2 /* quotes.json */; };
 		018E70CC2916C9BF00438FD2 /* tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 018E70C92916C9BE00438FD2 /* tags.json */; };
+		018E70DA2917CC5600438FD2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E70D92917CC5500438FD2 /* Tag.swift */; };
+		018E70DB2917CC5600438FD2 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E70D62917CC5500438FD2 /* Author.swift */; };
+		018E70DD2917CC5600438FD2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E70D82917CC5500438FD2 /* Quote.swift */; };
+		018E70EB2917CD8300438FD2 /* TagableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E70E72917CD8300438FD2 /* TagableCell.swift */; };
+		018E70EC2917CD8300438FD2 /* QuotableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E70E82917CD8300438FD2 /* QuotableCell.swift */; };
+		018E70ED2917CD8300438FD2 /* QuotableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E70E92917CD8300438FD2 /* QuotableCell.xib */; };
+		018E70EE2917CD8300438FD2 /* TagableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018E70EA2917CD8300438FD2 /* TagableCell.xib */; };
+		018E70F02917CE0000438FD2 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E70EF2917CE0000438FD2 /* QuotesViewController.swift */; };
+		018E70F22917CE6200438FD2 /* QuotesStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 018E70F12917CE6200438FD2 /* QuotesStoryBoard.storyboard */; };
 		019BC4E028E026F400B15323 /* FrameThumb20.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C428E026F400B15323 /* FrameThumb20.png */; };
 		019BC4E128E026F400B15323 /* FrameThumb0.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C528E026F400B15323 /* FrameThumb0.png */; };
 		019BC4E228E026F400B15323 /* FrameThumb1.png in Resources */ = {isa = PBXBuildFile; fileRef = 019BC4C628E026F400B15323 /* FrameThumb1.png */; };
@@ -456,6 +465,15 @@
 		018E70C72916C9BE00438FD2 /* authors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authors.json; sourceTree = "<group>"; };
 		018E70C82916C9BE00438FD2 /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		018E70C92916C9BE00438FD2 /* tags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tags.json; sourceTree = "<group>"; };
+		018E70D62917CC5500438FD2 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		018E70D82917CC5500438FD2 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		018E70D92917CC5500438FD2 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		018E70E72917CD8300438FD2 /* TagableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagableCell.swift; sourceTree = "<group>"; };
+		018E70E82917CD8300438FD2 /* QuotableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotableCell.swift; sourceTree = "<group>"; };
+		018E70E92917CD8300438FD2 /* QuotableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuotableCell.xib; sourceTree = "<group>"; };
+		018E70EA2917CD8300438FD2 /* TagableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagableCell.xib; sourceTree = "<group>"; };
+		018E70EF2917CE0000438FD2 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		018E70F12917CE6200438FD2 /* QuotesStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuotesStoryBoard.storyboard; sourceTree = "<group>"; };
 		019BC4C428E026F400B15323 /* FrameThumb20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb20.png; sourceTree = "<group>"; };
 		019BC4C528E026F400B15323 /* FrameThumb0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb0.png; sourceTree = "<group>"; };
 		019BC4C628E026F400B15323 /* FrameThumb1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FrameThumb1.png; sourceTree = "<group>"; };
@@ -731,8 +749,14 @@
 			isa = PBXGroup;
 			children = (
 				018E70C62916C9BE00438FD2 /* Data */,
+				018E70D62917CC5500438FD2 /* Author.swift */,
+				018E70D82917CC5500438FD2 /* Quote.swift */,
+				018E70D92917CC5500438FD2 /* Tag.swift */,
 				013AA6F828FAE01F00DBE800 /* QuotesVc.swift */,
 				010AFF9D28FF1E1100ED71E0 /* QuotesViewModel.swift */,
+				018E70EF2917CE0000438FD2 /* QuotesViewController.swift */,
+				018E70F12917CE6200438FD2 /* QuotesStoryBoard.storyboard */,
+				018E70E62917CD8300438FD2 /* View */,
 				010AFF9F28FF1E4900ED71E0 /* Views */,
 			);
 			path = "Quotes Module";
@@ -861,6 +885,18 @@
 			);
 			name = Data;
 			path = ../../../../Desktop/SwiftProject/Quotes/Quotes/Data;
+			sourceTree = "<group>";
+		};
+		018E70E62917CD8300438FD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				018E70E72917CD8300438FD2 /* TagableCell.swift */,
+				018E70E82917CD8300438FD2 /* QuotableCell.swift */,
+				018E70E92917CD8300438FD2 /* QuotableCell.xib */,
+				018E70EA2917CD8300438FD2 /* TagableCell.xib */,
+			);
+			name = View;
+			path = "../../../../Downloads/Quotify-main/Quotes/View";
 			sourceTree = "<group>";
 		};
 		019BC4C328E026F400B15323 /* SmallFrame */ = {
@@ -1521,6 +1557,7 @@
 				3949338228AB347F003E8D67 /* Texture0.png in Resources */,
 				01219B4328DEBC6B00133E56 /* OverlayThumb0.png in Resources */,
 				3949337928AB347F003E8D67 /* Texture6.png in Resources */,
+				018E70EE2917CD8300438FD2 /* TagableCell.xib in Resources */,
 				019BC4E728E026F400B15323 /* FrameThumb22.png in Resources */,
 				019BC4EC28E026F400B15323 /* FrameThumb19.png in Resources */,
 				01219B5D28DEBC6B00133E56 /* OverlayThumb31.png in Resources */,
@@ -1545,7 +1582,9 @@
 				01D4B2E129038DD90033C40F /* FrameThumb34.png in Resources */,
 				01D4B2DF29038DD90033C40F /* FrameThumb29.png in Resources */,
 				01219B5628DEBC6B00133E56 /* OverlayThumb36.png in Resources */,
+				018E70F22917CE6200438FD2 /* QuotesStoryBoard.storyboard in Resources */,
 				01D4B2E429038DD90033C40F /* FrameThumb41.png in Resources */,
+				018E70ED2917CD8300438FD2 /* QuotableCell.xib in Resources */,
 				01219B6E28DEBC6B00133E56 /* OverlayThumb39.png in Resources */,
 				01219B6028DEBC6B00133E56 /* OverlayThumb18.png in Resources */,
 				39CC0E2528A4AB5900DF1C64 /* DrawVc.xib in Resources */,
@@ -1885,6 +1924,7 @@
 				01445B3E290D410500500D36 /* VideoTrimmerViewController.swift in Sources */,
 				01507E2E28E10AF4002E5535 /* EditVC+Extension.swift in Sources */,
 				39CC0E1128A4AA5C00DF1C64 /* FilterVc.swift in Sources */,
+				018E70DA2917CC5600438FD2 /* Tag.swift in Sources */,
 				39F8222A28A3505C008925EF /* ViewController.swift in Sources */,
 				0117614429044E0A00E431E0 /* PoohWisdomProducts.swift in Sources */,
 				019C619D29045BCB00243B1E /* SSRollingButtonScrollView.m in Sources */,
@@ -1892,6 +1932,7 @@
 				39CC0E0C28A4AA0500DF1C64 /* TextEditView.swift in Sources */,
 				39F8225F28A35E7A008925EF /* FirstVc.swift in Sources */,
 				01445B35290D406800500D36 /* ThumbSelectorView.swift in Sources */,
+				018E70DD2917CC5600438FD2 /* Quote.swift in Sources */,
 				39F8228728A36596008925EF /* ColorCell.swift in Sources */,
 				01FD5AD928AE52C700CBF70F /* BorderExtenstion.swift in Sources */,
 				01445B39290D406800500D36 /* HandlerView.swift in Sources */,
@@ -1918,9 +1959,11 @@
 				0117614829044EA100E431E0 /* Store.swift in Sources */,
 				39F8222628A3505C008925EF /* AppDelegate.swift in Sources */,
 				01FD5ADD28AED4BD00CBF70F /* TextInfoData.swift in Sources */,
+				018E70EC2917CD8300438FD2 /* QuotableCell.swift in Sources */,
 				01FD5AD828AE52C700CBF70F /* UIColor+ExtensionOfTextSticker.swift in Sources */,
 				39CC0E1D28A4AADE00DF1C64 /* StickerVc.swift in Sources */,
 				01507E3028E10D0E002E5535 /* UI+Extension.swift in Sources */,
+				018E70F02917CE0000438FD2 /* QuotesViewController.swift in Sources */,
 				39F8222828A3505C008925EF /* SceneDelegate.swift in Sources */,
 				010AFFA228FF1E9000ED71E0 /* QuotesCardCell.swift in Sources */,
 				39F8225B28A358BF008925EF /* AppGlobal.swift in Sources */,
@@ -1941,11 +1984,13 @@
 				01E9232D28D7231700F21554 /* ImageDetails.swift in Sources */,
 				01FD5ADB28AE52C700CBF70F /* StringExtension.swift in Sources */,
 				39CC0E0928A4A82C00DF1C64 /* RatioCell.swift in Sources */,
+				018E70DB2917CC5600438FD2 /* Author.swift in Sources */,
 				01219B0528DE7F1400133E56 /* Adjust.swift in Sources */,
 				39CC0E2728A4AD4100DF1C64 /* ODRManager.swift in Sources */,
 				01445B33290D406800500D36 /* AssetVideoScrollView.swift in Sources */,
 				0117614A29044EDE00E431E0 /* CommonViewController.swift in Sources */,
 				01FD5AD028AE52AE00CBF70F /* DeleteImageView.swift in Sources */,
+				018E70EB2917CD8300438FD2 /* TagableCell.swift in Sources */,
 				0105428428D860040004A516 /* CropVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

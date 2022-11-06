@@ -122,8 +122,8 @@ enum TextEditingOption: String, CaseIterable {
 func getFilteredCImage(withInfo dict: [String : Any]?, for sourceCIImage: CIImage?) -> CIImage? {
     let filterName = dict?["filter"] as? String
     
-    let context = CIContext(options: nil)
-    var currentFilter = CIFilter(name: filterName ?? "")
+    _ = CIContext(options: nil)
+    let currentFilter = CIFilter(name: filterName ?? "")
     currentFilter?.setDefaults()
     
    
@@ -133,12 +133,13 @@ func getFilteredCImage(withInfo dict: [String : Any]?, for sourceCIImage: CIImag
         forKey: kCIInputImageKey)
     let keys = dict?.keys
     keys?.forEach { key in
-        let value = dict?[key ?? ""] as? String
+        let value = dict?[key] as? String
         if (key != "name") && (key != "filter") && (key != "color") && (key != "ImageName") {
             currentFilter?.setValue(
                 NSNumber(value: Double(value ?? "") ?? 0.0),
-                forKey: key ?? "")
+                forKey: key)
         }
+        
         if key == "color" {
             let colorValue = value?.components(separatedBy: ",")
             var r: Float
@@ -162,7 +163,7 @@ func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIIm
     let filterName = dict?["filter"] as? String
     
     let context = CIContext(options: nil)
-    var currentFilter = CIFilter(name: filterName ?? "")
+    let currentFilter = CIFilter(name: filterName ?? "")
     currentFilter?.setDefaults()
     
     var sourceCIImage: CIImage? = nil
@@ -175,11 +176,11 @@ func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIIm
         forKey: kCIInputImageKey)
     let keys = dict?.keys
     keys?.forEach { key in
-        let value = dict?[key ?? ""] as? String
+        let value = dict?[key] as? String
         if (key != "name") && (key != "filter") && (key != "color") && (key != "ImageName") {
             currentFilter?.setValue(
                 NSNumber(value: Double(value ?? "") ?? 0.0),
-                forKey: key ?? "")
+                forKey: key)
         }
         if key == "color" {
             let colorValue = value?.components(separatedBy: ",")
@@ -199,7 +200,7 @@ func getFilteredImage(withInfo dict: [String : Any]?, for img: UIImage?) -> UIIm
     let adjustedImage = currentFilter?.value(forKey: kCIOutputImageKey) as? CIImage
     var cgimg: CGImage? = nil
     if let adjustedImage {
-        cgimg = context.createCGImage(adjustedImage, from: adjustedImage.extent ?? CGRect.zero)
+        cgimg = context.createCGImage(adjustedImage, from: adjustedImage.extent)
     }
     var newImg: UIImage? = nil
     if let cgimg {
@@ -366,7 +367,6 @@ func getColor(colorString: String) -> UIColor {
 
 
 extension MTIImage {
-    
     public func adjusting(saturation: Float, outputPixelFormat: MTLPixelFormat = .unspecified) -> MTIImage {
         let filter = MTISaturationFilter()
         filter.saturation = saturation

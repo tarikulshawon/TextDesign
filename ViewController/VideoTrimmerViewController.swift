@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import MobileCoreServices
+import Photos
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
@@ -81,7 +82,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     
     
     func addSticker(test: UIImage) {
-        var testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let testImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         testImage.image = test
         let stickerView3 = StickerView.init(contentView: testImage)
         stickerView3.backgroundColor = UIColor.clear
@@ -96,17 +97,13 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         stickerView.clipsToBounds = true
         stickerView3.showEditingHandlers = true
         stickerView3.showEditingHandlers = true
-        
     }
-    
     
     func filterNameWithIndex(dic: Dictionary<String, Any>?) {
         currentFilterDic = dic
     }
     
     let adjustVc = Bundle.main.loadNibNamed("Adjust", owner: nil, options: nil)![0] as! Adjust
-    
-    
     
     @IBOutlet weak var frameHolderVc: UIView!
     @IBOutlet weak var bottomSpaceFrame: NSLayoutConstraint!
@@ -143,6 +140,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     @IBOutlet weak var bottomSpaceForFilter: NSLayoutConstraint!
     var trimmmedComposition:AVMutableComposition!
     var playerItem:AVPlayerItem!
+    var videoUrl: URL!
+    var compositionVideoTrack: AVMutableCompositionTrack!
+    var assetTrack: AVAssetTrack!
     
     var Brightness: Float = 0.0
     var max_brightness:Float = 0.7
@@ -183,13 +183,14 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     }
     
     func createComposition(withMuteStatus isMute: Bool) -> AVMutableComposition? {
-        let range: CMTimeRange = CMTimeRangeMake(start: .zero, duration: asset.duration)
+        let range = CMTimeRangeMake(start: .zero, duration: asset.duration)
         let tempMixComposition = AVMutableComposition()
         
-        let compositionVideoTrack = tempMixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
-        if let firstObject = asset.tracks(withMediaType: .video).first {
-            try? compositionVideoTrack?.insertTimeRange(range, of: firstObject, at: .zero)
-        }
+        compositionVideoTrack = tempMixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        assetTrack = asset.tracks(withMediaType: .video).first
+        
+        try? compositionVideoTrack?.insertTimeRange(range, of: assetTrack, at: .zero)
+    
         
         if ((asset as? AVAsset)?.tracks(withMediaType: .audio).count ?? 0) != 0 {
             let audioAsset = asset.tracks(withMediaType: .audio).last
@@ -281,6 +282,53 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         })
     }
     
+    @IBAction func gotoExport(_ sender: Any) {
+        let composition = allLayerComposition(imageName: "overlay", videoSize: assetTrack.naturalSize)
+        print("Export")
+        guard let export = AVAssetExportSession(
+          asset: trimmmedComposition,
+          presetName: AVAssetExportPresetHighestQuality)
+          else {
+            print("Cannot create export session.")
+            //onComplete(nil)
+            return
+        }
+        
+        let videoName = UUID().uuidString
+        let exportURL = URL(fileURLWithPath: NSTemporaryDirectory())
+          .appendingPathComponent(videoName)
+          .appendingPathExtension("mov")
+        
+        export.videoComposition = composition
+        export.outputFileType = .mov
+        export.outputURL = exportURL
+        
+        export.exportAsynchronously {
+          DispatchQueue.main.async {
+            switch export.status {
+            case .completed:
+                print("Completed")
+              //onComplete(exportURL)
+            default:
+              print("Something went wrong during export.")
+              print(export.error ?? "unknown error")
+              //onComplete(nil)
+              break
+            }
+          }
+        }
+        
+        PHPhotoLibrary.requestAuthorization { [weak self] status in
+          switch status {
+          case .authorized:
+            self?.saveVideoToPhotos()
+          default:
+            print("Photos permissions not granted.")
+            return
+          }
+        }
+    }
+    
     @IBAction func gotoPreviousView(_ sender: Any) {
         player?.pause()
         self.dismiss(animated: true)
@@ -295,7 +343,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         let totalCellWidth = cellWidth * CGFloat(plistArray2.count)
         let totalSpacingWidth = cellGap * CGFloat((plistArray2.count - 1))
         
-        let leftInset = (collectionViewForBtn.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+//        _ = (collectionViewForBtn.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
@@ -331,9 +379,9 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
         frameVc.delegateForFramesr = self
         frameHolderVc.addSubview(frameVc)
         
-        guard var videoSize = resolutionForLocalVideo() else { return   }
+        guard let videoSize = resolutionForLocalVideo() else { return   }
         
-        var size = AVMakeRect(aspectRatio: videoSize , insideRect: CGRect(x: 0, y: 0, width:   playerView.frame.width ,height:   playerView.frame.height))
+        let size = AVMakeRect(aspectRatio: videoSize , insideRect: CGRect(x: 0, y: 0, width:   playerView.frame.width ,height:   playerView.frame.height))
         
         widthForStickerView.constant = size.width
         heightForStickerView.constant = size.height
@@ -355,19 +403,24 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     }
     
     private func addVideoPlayer(with asset: AVAsset, playerView: UIView) {
-        
-        trimmmedComposition = self.createComposition(withMuteStatus: false)
+        trimmmedComposition = self.createComposition(withMuteStatus: true) // sound is muted
         playerItem = AVPlayerItem(asset: trimmmedComposition)
         player = AVPlayer(playerItem: playerItem)
+        
         self.prepareForComposition()
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(VideoTrimmerViewController.itemDidFinishPlaying(_:)),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: playerItem
+        )
         
-        NotificationCenter.default.addObserver(self, selector: #selector(VideoTrimmerViewController.itemDidFinishPlaying(_:)),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-        
-        let layer: AVPlayerLayer = AVPlayerLayer(player: player)
+        let layer = AVPlayerLayer(player: player)
         layer.backgroundColor = UIColor.white.cgColor
         layer.frame = CGRect(x: 0, y: 0, width: playerView.frame.width, height: playerView.frame.height)
+        // layer.frame = playerView.bounds
+        
         layer.videoGravity = AVLayerVideoGravity.resizeAspect
         playerView.layer.sublayers?.forEach({$0.removeFromSuperlayer()})
         playerView.layer.addSublayer(layer)
@@ -382,8 +435,8 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     
     private func resolutionForLocalVideo() -> CGSize? {
         guard let track = asset.tracks(withMediaType: AVMediaType.video).first else { return nil }
-       let size = track.naturalSize.applying(track.preferredTransform)
-       return CGSize(width: abs(size.width), height: abs(size.height))
+        let size = track.naturalSize.applying(track.preferredTransform)
+        return CGSize(width: abs(size.width), height: abs(size.height))
     }
     
     @objc func itemDidFinishPlaying(_ notification: Notification) {
@@ -439,7 +492,7 @@ extension VideoTrimmerViewController: TrimmerViewDelegate {
         player?.pause()
         player?.seek(to: playerTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
         let duration = (trimmerView.endTime! - trimmerView.startTime!).seconds
-        print(duration)
+        //print"duration)
     }
 }
 
@@ -551,4 +604,83 @@ extension VideoTrimmerViewController: UICollectionViewDelegate, UICollectionView
         }
         
     }
+}
+
+extension VideoTrimmerViewController {
+    private func allLayerComposition(imageName: String, videoSize: CGSize) -> AVMutableVideoComposition {
+        let videoLayer = CALayer()
+        videoLayer.frame = CGRect(origin: .zero, size: videoSize)
+        let overlayLayer = CALayer()
+        overlayLayer.frame = CGRect(origin: .zero, size: videoSize)
+        
+        //
+        let image = UIImage(named: imageName)!
+        let imageLayer = CALayer()
+        
+        let aspect: CGFloat = image.size.width / image.size.height
+        let width = videoSize.width
+        let height = width / aspect
+        imageLayer.frame = CGRect(
+          x: 0,
+          y: -height * 0.15,
+          width: width,
+          height: height)
+        
+        imageLayer.contents = image.cgImage
+        overlayLayer.addSublayer(imageLayer)
+        //
+        
+        let outputLayer = CALayer()
+        outputLayer.frame = CGRect(origin: .zero, size: videoSize)
+        outputLayer.addSublayer(videoLayer)
+        outputLayer.addSublayer(overlayLayer)
+        
+        let videoComposition = AVMutableVideoComposition()
+        videoComposition.renderSize = videoSize
+        videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
+        videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(
+            postProcessingAsVideoLayer: videoLayer,
+            in: outputLayer)
+        
+        let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRange(
+            start: .zero,
+            duration: trimmmedComposition.duration)
+        videoComposition.instructions = [instruction]
+        let layerInstruction = compositionLayerInstruction(
+            for: compositionVideoTrack,
+            assetTrack: assetTrack)
+        instruction.layerInstructions = [layerInstruction]
+        
+        return videoComposition
+    }
+    
+    private func compositionLayerInstruction(
+        for track: AVCompositionTrack,
+        assetTrack: AVAssetTrack) -> AVMutableVideoCompositionLayerInstruction
+    {
+      let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
+      let transform = assetTrack.preferredTransform
+      
+      instruction.setTransform(transform, at: .zero)
+      
+      return instruction
+    }
+    
+    private func saveVideoToPhotos() {
+      PHPhotoLibrary.shared().performChanges( {
+        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoUrl)
+      }) { [weak self] (isSaved, error) in
+        if isSaved {
+          print("Video saved.")
+        } else {
+          print("Cannot save video.")
+          print(error ?? "unknown error")
+        }
+        DispatchQueue.main.async {
+          self?.navigationController?.popViewController(animated: true)
+        }
+      }
+    }
+    
 }
