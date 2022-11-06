@@ -149,7 +149,7 @@ class DBmanager: NSObject {
     
     
     func insertTextFile(fileObj: TextInfoData) {
-        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id,bcTexture,bcColor,bcGradient,shadowOpacity,shadowOffset,shadowRadius) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)','\(fileObj.bcTexture)','\(fileObj.bcColor)','\(fileObj.gradient)','\(fileObj.shadowOpacity)','\(fileObj.shadowOffset)','\(fileObj.shadowRadius)')"
+        let insertData = "INSERT INTO TextInfo (file,font,color,gradient,texture,opacity,shadow,align,rotate,text,fontSize,id,bcTexture,bcColor,bcGradient,shadowOpacity,shadowOffset,shadowRadius) VALUES  ('\(fileObj.file)','\(fileObj.font)','\(fileObj.color)','\(fileObj.gradient)','\(fileObj.texture)','\(fileObj.opacity)','\(fileObj.shadow)','\(fileObj.align)','\(fileObj.rotate)','\(fileObj.text)','\(fileObj.fontSize)','\(fileObj.id)','\(fileObj.bcTexture)','\(fileObj.bcColor)','\(fileObj.bcGradient)','\(fileObj.shadowOpacity)','\(fileObj.shadowOffset)','\(fileObj.shadowRadius)')"
         
         let  rc = sqlite3_open_v2(DBpath, &db, SQLITE_OPEN_READWRITE , nil);
         
