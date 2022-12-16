@@ -41,36 +41,36 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     }
     
     func stickerViewDidBeginMoving(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     @IBOutlet weak var bottomSpaceForShape: NSLayoutConstraint!
     func stickerViewDidChangeMoving(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     func stickerViewDidEndMoving(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     func stickerViewDidBeginRotating(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     func stickerViewDidChangeRotating(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     func stickerViewDidEndRotating(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     func stickerViewDidClose(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     func stickerViewDidTap(_ stickerView: StickerView) {
-        
+        currentStickerView = stickerView
     }
     
     
@@ -143,6 +143,7 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     var videoUrl: URL!
     var compositionVideoTrack: AVMutableCompositionTrack!
     var assetTrack: AVAssetTrack!
+    var currentStickerView: StickerView!
     
     var Brightness: Float = 0.0
     var max_brightness:Float = 0.7
@@ -283,49 +284,17 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     }
     
     @IBAction func gotoExport(_ sender: Any) {
-        let composition = allLayerComposition(imageName: "overlay", videoSize: assetTrack.naturalSize)
-        print("Export")
-        guard let export = AVAssetExportSession(
-          asset: trimmmedComposition,
-          presetName: AVAssetExportPresetHighestQuality)
-          else {
-            print("Cannot create export session.")
-            //onComplete(nil)
-            return
-        }
-        
-        let videoName = UUID().uuidString
-        let exportURL = URL(fileURLWithPath: NSTemporaryDirectory())
-          .appendingPathComponent(videoName)
-          .appendingPathExtension("mov")
-        
-        export.videoComposition = composition
-        export.outputFileType = .mov
-        export.outputURL = exportURL
-        
-        export.exportAsynchronously {
-          DispatchQueue.main.async {
-            switch export.status {
-            case .completed:
-                print("Completed")
-              //onComplete(exportURL)
-            default:
-              print("Something went wrong during export.")
-              print(export.error ?? "unknown error")
-              //onComplete(nil)
-              break
+        makeBirthdayCard(fromVideoAt: videoUrl, forName: "TIS") { url in
+            print("DONE?")
+            PHPhotoLibrary.requestAuthorization { [weak self] status in
+              switch status {
+              case .authorized:
+                  self?.saveVideoToPhotos(url!)
+              default:
+                print("Photos permissions not granted.")
+                return
+              }
             }
-          }
-        }
-        
-        PHPhotoLibrary.requestAuthorization { [weak self] status in
-          switch status {
-          case .authorized:
-            self?.saveVideoToPhotos()
-          default:
-            print("Photos permissions not granted.")
-            return
-          }
         }
     }
     
@@ -621,10 +590,10 @@ extension VideoTrimmerViewController {
         let width = videoSize.width
         let height = width / aspect
         imageLayer.frame = CGRect(
-          x: 0,
-          y: -height * 0.15,
-          width: width,
-          height: height)
+            x: 0,
+            y: -height * 0.15,
+            width: width,
+            height: height)
         
         imageLayer.contents = image.cgImage
         overlayLayer.addSublayer(imageLayer)
@@ -659,28 +628,199 @@ extension VideoTrimmerViewController {
         for track: AVCompositionTrack,
         assetTrack: AVAssetTrack) -> AVMutableVideoCompositionLayerInstruction
     {
-      let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
-      let transform = assetTrack.preferredTransform
-      
-      instruction.setTransform(transform, at: .zero)
-      
-      return instruction
+        let instruction = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
+        let transform = assetTrack.preferredTransform
+        
+        instruction.setTransform(transform, at: .zero)
+        
+        return instruction
     }
     
-    private func saveVideoToPhotos() {
-      PHPhotoLibrary.shared().performChanges( {
-        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.videoUrl)
-      }) { [weak self] (isSaved, error) in
-        if isSaved {
-          print("Video saved.")
+    private func saveVideoToPhotos(_ url: URL) {
+        PHPhotoLibrary.shared().performChanges( {
+            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
+        }) { [weak self] (isSaved, error) in
+            if isSaved {
+                print("Video saved.")
+            } else {
+                print("Cannot save video.")
+                print(error ?? "unknown error")
+            }
+            DispatchQueue.main.async {
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+}
+
+extension VideoTrimmerViewController {
+    func makeBirthdayCard(fromVideoAt videoURL: URL, forName name: String, onComplete: @escaping (URL?) -> Void) {
+        let asset = AVURLAsset(url: videoURL)
+        let composition = AVMutableComposition()
+        
+        guard
+            let compositionTrack = composition.addMutableTrack(
+                withMediaType: .video,
+                preferredTrackID: kCMPersistentTrackID_Invalid
+            ),
+            let assetTrack = asset.tracks(withMediaType: .video).first
+        else {
+            print("Something is wrong with the asset.")
+            onComplete(nil)
+            return
+        }
+        
+        do {
+            let timeRange = CMTimeRange(start: .zero, duration: asset.duration)
+            try compositionTrack.insertTimeRange(timeRange, of: assetTrack, at: .zero)
+            
+            if let audioAssetTrack = asset.tracks(withMediaType: .audio).first,
+               let compositionAudioTrack = composition.addMutableTrack(
+                withMediaType: .audio,
+                preferredTrackID: kCMPersistentTrackID_Invalid) {
+                try compositionAudioTrack.insertTimeRange(
+                    timeRange,
+                    of: audioAssetTrack,
+                    at: .zero
+                )
+            }
+        } catch {
+            print(error)
+            onComplete(nil)
+            return
+        }
+        
+        compositionTrack.preferredTransform = assetTrack.preferredTransform
+        let videoInfo = orientation(from: assetTrack.preferredTransform)
+        
+        let videoSize: CGSize
+        
+        if videoInfo.isPortrait {
+            videoSize = CGSize(
+                width: assetTrack.naturalSize.height,
+                height: assetTrack.naturalSize.width
+            )
         } else {
-          print("Cannot save video.")
-          print(error ?? "unknown error")
+            videoSize = assetTrack.naturalSize
         }
-        DispatchQueue.main.async {
-          self?.navigationController?.popViewController(animated: true)
+
+        let backgroundLayer = CALayer()
+        backgroundLayer.frame = CGRect(origin: .zero, size: videoSize)
+        let videoLayer = CALayer()
+        videoLayer.frame = CGRect(origin: .zero, size: videoSize)
+        let overlayLayer = CALayer()
+        overlayLayer.frame = CGRect(origin: .zero, size: videoSize)
+        
+        addImage(to: overlayLayer, videoSize: videoSize)
+        
+        let outputLayer = CALayer()
+        outputLayer.frame = CGRect(origin: .zero, size: videoSize)
+        outputLayer.addSublayer(backgroundLayer)
+        outputLayer.addSublayer(videoLayer)
+        outputLayer.addSublayer(overlayLayer)
+        
+        let videoComposition = AVMutableVideoComposition()
+        videoComposition.renderSize = videoSize
+        videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
+        videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(
+            postProcessingAsVideoLayer: videoLayer,
+            in: outputLayer)
+        
+        let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRange(
+            start: .zero,
+            duration: composition.duration)
+        
+        videoComposition.instructions = [instruction]
+        let layerInstruction = compositionLayerInstruction(
+            for: compositionTrack,
+            assetTrack: assetTrack
+        )
+        
+        instruction.layerInstructions = [layerInstruction]
+        
+        guard let export = AVAssetExportSession(
+            asset: composition,
+            presetName: AVAssetExportPresetHighestQuality)
+        else {
+            print("Cannot create export session.")
+            onComplete(nil)
+            return
         }
-      }
+        
+        let videoName = UUID().uuidString
+        let exportURL = URL(fileURLWithPath: NSTemporaryDirectory())
+            .appendingPathComponent(videoName)
+            .appendingPathExtension("mov")
+        
+        export.videoComposition = videoComposition
+        export.outputFileType = .mov
+        export.outputURL = exportURL
+        
+        export.exportAsynchronously {
+            DispatchQueue.main.async {
+                switch export.status {
+                case .completed:
+                    onComplete(exportURL)
+                default:
+                    print("Something went wrong during export.")
+                    print(export.error ?? "unknown error")
+                    onComplete(nil)
+                    break
+                }
+            }
+        }
     }
     
+    private func orientation(from transform: CGAffineTransform) -> (orientation: UIImage.Orientation, isPortrait: Bool) {
+        var assetOrientation = UIImage.Orientation.up
+        var isPortrait = false
+        if transform.a == 0 && transform.b == 1.0 && transform.c == -1.0 && transform.d == 0 {
+            assetOrientation = .right
+            isPortrait = true
+        } else if transform.a == 0 && transform.b == -1.0 && transform.c == 1.0 && transform.d == 0 {
+            assetOrientation = .left
+            isPortrait = true
+        } else if transform.a == 1.0 && transform.b == 0 && transform.c == 0 && transform.d == 1.0 {
+            assetOrientation = .up
+        } else if transform.a == -1.0 && transform.b == 0 && transform.c == 0 && transform.d == -1.0 {
+            assetOrientation = .down
+        }
+        
+        return (assetOrientation, isPortrait)
+    }
+    
+    private func addImage(to layer: CALayer, videoSize: CGSize) {
+        guard let currentStickerView else {
+            print("view is nil")
+            return
+        }
+        print("video size: \(videoSize)")
+        if let image = currentStickerView.contentView.image {
+            let imageLayer = CALayer()
+            //CGRect(origin: .zero, size: videoSize)
+            let aspect: CGFloat = image.size.width / image.size.height
+            let width = videoSize.width
+            let height = width / aspect
+            //currentStickerView.contentView.frame
+            //imageLayer.frame = currentStickerView.contentView.frame
+            //imageLayer.backgroundColor = UIColor.red.cgColor
+            print("Position: \(currentStickerView.frame), aspect: \(aspect)")
+            imageLayer.frame = CGRect(
+                origin: .zero,
+                size: currentStickerView.frame.size
+            )
+//            imageLayer.frame = CGRect(
+//                x: 0,
+//                y: -height * 0.15,
+//                width: width, //currentStickerView.frame.width,
+//                height: height) //currentStickerView.frame.height)
+            
+            print("Position image: \(imageLayer.frame)")
+            imageLayer.contents = image.cgImage
+            layer.addSublayer(imageLayer)
+        } else {
+            print("Image is nil")
+        }
+    }
 }
