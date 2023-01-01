@@ -50,6 +50,8 @@ class VideoTrimmerViewController: UIViewController, filterIndexDelegate, sendSti
     }
     
     func stickerViewDidEndMoving(_ stickerView: StickerView) {
+        
+        print(stickerView.center)
         currentStickerView = stickerView
     }
     
@@ -795,26 +797,33 @@ extension VideoTrimmerViewController {
             print("view is nil")
             return
         }
+
         print("video size: \(videoSize)")
         if let image = currentStickerView.contentView.image {
             let imageLayer = CALayer()
             //CGRect(origin: .zero, size: videoSize)
             let aspect: CGFloat = image.size.width / image.size.height
-            let width = videoSize.width
-            let height = width / aspect
+            let width = image.size.width
+            let height = image.size.height
             //currentStickerView.contentView.frame
             //imageLayer.frame = currentStickerView.contentView.frame
             //imageLayer.backgroundColor = UIColor.red.cgColor
-            print("Position: \(currentStickerView.frame), aspect: \(aspect)")
-            imageLayer.frame = CGRect(
-                origin: .zero,
-                size: currentStickerView.frame.size
-            )
+            print("Position: \(currentStickerView.frame), \(currentStickerView.center)")
 //            imageLayer.frame = CGRect(
-//                x: 0,
-//                y: -height * 0.15,
-//                width: width, //currentStickerView.frame.width,
-//                height: height) //currentStickerView.frame.height)
+//                origin: .zero,
+//                size: currentStickerView.frame.size
+//            )
+            // 390.0 x 720
+            // 624.0 y 1280
+            
+            let adjustedX = (currentStickerView.center.x / 390) * 720
+            let adjustedY = 1280 - (currentStickerView.center.y / 624) * 1280
+            print("Adjusted x,y = \(adjustedX), \(adjustedY)")
+            imageLayer.frame = CGRect(
+                x: adjustedX - width/2, //layer.frame.maxX - currentStickerView.frame.maxX,
+                y: adjustedY - height/2,  //layer.frame.maxY - currentStickerView.frame.maxY,
+                width: 2*currentStickerView.frame.width,
+                height: 2*currentStickerView.frame.height)
             
             print("Position image: \(imageLayer.frame)")
             imageLayer.contents = image.cgImage
