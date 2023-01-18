@@ -42,7 +42,7 @@
 		<key>FirebaseCoreDiagnostics.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>30</integer>
 		</dict>
 		<key>FirebaseCoreInternal.xcscheme</key>
 		<dict>
@@ -136,7 +136,7 @@
 		<key>Kingfisher.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>32</integer>
+			<integer>29</integer>
 		</dict>
 		<key>MKToolTip.xcscheme</key>
 		<dict>
